@@ -17,7 +17,7 @@
    * [http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=11887 The Art of Agent-Oriented Modeling]: Leon Stirling. 
  * Schedule : Wednesday, 1300-1550
  * Location : ESB 841a
- * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/aro09)
+ * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/agent-oriented)
  * Consultation times : Wednesday 4:00 to 5:30pm, 841a or by appointment 
 
 = Objectives =
@@ -34,10 +34,10 @@ Upon successful completion of this course, students should have:
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
  * http://www.arc.wvu.edu/examschedule_fall.html : exam schedule page] not applicable)
- * http://groups.google.com/group/aro09 : Class discussion list
+ * http://groups.google.com/group/agent-oriented : Class discussion list
 
-All students are required to join the GOOGLE news group [ http://groups.google.com/group/aro09 aro09].
-Official annountements will be posted to the thread [http://groups.google.com/group/aro09/browse_thread/thread/5e25821300973c88 admin]. Students are require to read these thread on a regular basis.
+All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
+Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
 
 = Expected Workload =
 

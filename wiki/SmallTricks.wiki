@@ -8,8 +8,8 @@
 = Finding Out More About Smalltalk =
 == Smalltalk101 ==
 <ul>
-<li>The famous [http://aro.googlecode.com/svn/trunk/share/pdf/st-cheatsheet.pdf Smalltalk cheatsheet]</li>
-<li>List of [http://aro.googlecode.com/svn/trunk/share/pdf/commonMethods.pdf commonly-used methods]</li>
+<li>The famous [http://agent-ready.googlecode.com/svn/trunk/share/pdf/st-cheatsheet.pdf Smalltalk cheatsheet]</li>
+<li>List of [http://agent-ready.googlecode.com/svn/trunk/share/pdf/commonMethods.pdf commonly-used methods]</li>
 <li>A beginner's [http://www.cs.oswego.edu/~odendahl/manuals/smalltalk/tutorial/ Tutorial on GST Smalltalk]</li>
 </ul>
 == Mailing Lists ==

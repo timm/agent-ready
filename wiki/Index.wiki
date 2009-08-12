@@ -1,6 +1,6 @@
 #summary this is the top page of the ARO documentation project
 #labels featured,Teach,Admin
-http://aro.googlecode.com/svn/trunk/share/img/gangMedium.png
+http://agent-ready.googlecode.com/svn/trunk/share/img/gangMedium.png
 
 Note: ARO, pronounced "arrow",  is still pre-released. We expect a releasable version by December 2009.
 
