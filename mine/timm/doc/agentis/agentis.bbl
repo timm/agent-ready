@@ -1,0 +1,142 @@
+\begin{thebibliography}{10}
+
+\bibitem{booch94}
+G.~Booch.
+\newblock {\em {O}bject-{O}riented {D}esign with {A}pplications (second
+  edition)}.
+\newblock Benjamin/ Cummings, 1994.
+
+\bibitem{bratko89}
+I.~Bratko, I.~Mozetic, and N.~Lavrac.
+\newblock {\em KARDIO: a Study in Deep and Qualitative Knowledge for Expert
+  Systems}.
+\newblock MIT Press, 1989.
+
+\bibitem{Clancey96a}
+W.~Clancey, P.~Sachs, M.~Sierhuis, and R.~van Hoof.
+\newblock Brahms: Simulating practice for work systems design.
+\newblock In P.~Compton, R.~Mizoguchi, H.~Motoda, and T.~Menzies, editors, {\em
+  Proceedings PKAW '96: Pacific Knowledge Acquisition Workshop}. Department of
+  Artificial Intelligence, 1996.
+
+\bibitem{dinv98}
+M.~d'Inverno, K.~M., L.~D., and M.~Wooldridge.
+\newblock A formal specification of dmars.
+\newblock In A.~Singh and M.Wooldridge, editors, {\em Intelligent Agents IV:
+  Proc. of the Fourth International Workshop on Agent Theories. Architectures
+  and Languages, Springer Verlag}, 1998.
+
+\bibitem{gaines89}
+B.~Gaines and M.~Shaw.
+\newblock Comparing the conceptual systems of experts.
+\newblock In {\em IJCAI '89}, pages 633--638, 1989.
+
+\bibitem{han99}
+K.~Han and M.~Veloso.
+\newblock Automated robot behaviour recognition applied to robot soccer.
+\newblock In {\em Proceedings of the Sixteenth Interntional Joint Conference on
+  Artificial Intelligence. Workshop on Team Behaviour and Plan Recognition},
+  pages 47--52, 1999.
+
+\bibitem{heinze02}
+C.~Heinze, S.~Goss, T.~Josefsson, K.~Bennett, S.~Waugh, I.~Lloyd, G.~Murray,
+  and J.~Oldfeild.
+\newblock Interchanging agents and humans in military simulation.
+\newblock {\em AI Magazine}, 23(2), Summer 2002.
+
+\bibitem{jones99}
+R.~M. Jones, J.~E. Laird, P.~E. Nielsen, K.~J. Coulter, P.~G. Kenny, and F.~V.
+  Koss.
+\newblock Automated intelligent pilots for combat flight simulation.
+\newblock {\em AI Magazine}, 20(1):27--41, 1999.
+
+\bibitem{kummer00}
+O.~Kummer.
+\newblock The petri nets bibliography; keyword: reliability.
+  \url{http://www.informatik.uni-hamburg.de/TGI/pnbib/keywords/r/reliability.h%
+tml}, 2000.
+
+\bibitem{lyu96}
+M.~Lyu.
+\newblock {\em The Handbook of Software Reliability Engineering}.
+\newblock McGraw-Hill, 1996.
+
+\bibitem{me00a}
+T.~Menzies, E.~Sinsel, and T.~Kurtz.
+\newblock Learning to reduce risks with cocomo-ii.
+\newblock In {\em Workshop on Intelligent Software Engineering, an ICSE
+  workshop, and NASA/WVU Software Research Lab, Fairmont, WV, Tech report \#
+  NASA-IVV-99-027}, 2000.
+\newblock Available from \url{http://menzies.us/pdf/00wise.pdf}.
+
+\bibitem{musc98}
+N.~Muscettola, P.~P. Nayak, B.~Pell, and B.~Williams.
+\newblock Remote agent: To boldly go where no ai system has gone before.
+\newblock {\em Artificial Intelligence}, 103(1-2):5--48, August 1998.
+
+\bibitem{pand97}
+P.~P. Nayak and B.~C. Williams.
+\newblock Fast context switching in real-time propositional reasoning.
+\newblock In {\em Proceedings of AAAI-97}, 1997.
+\newblock Available from
+  \url{http://ack.arc.nasa.gov:80/ic/projects/mba/papers/aaai97.ps}.
+
+\bibitem{pearce00}
+A.~Pearce, C.~Heinz, and S.~Goss.
+\newblock Meeting plan recognition requirements for real-time air-mission
+  simulations, 2000.
+
+\bibitem{pearce88}
+D.~Pearce.
+\newblock The induction of fault diagnosis systems from qualitative models.
+\newblock In {\em Proc. AAAI-88}, 1988.
+
+\bibitem{reisig82}
+W.~Reisig.
+\newblock {\em Petri Nets}.
+\newblock Springer Verlag, 1982.
+
+\bibitem{rao95}
+A.~Roa and M.~Georgeff.
+\newblock Bdi agents: From theory to practice.
+\newblock In {\em Proceedings of the First International Conference on
+  Multi-Agent Systems, San Francisco, CA, June}, 1995.
+
+\bibitem{sammut92}
+C.~Sammut, S.~Hurst, D.~Kedzier, and D.~Michie.
+\newblock Learning to fly.
+\newblock In D.~Sleeman, editor, {\em Ninth International Conference on Machine
+  Learning}, pages 385--393. Morgan Kaufmann, 1992.
+
+\bibitem{shaw97}
+M.~Shaw.
+\newblock {\em WebGrid: a WWW PCP Server}.
+\newblock Knowledge Systems Institute, University of Calgary,
+  \url{http://Tiger.cpsc.ucalgary.ca/WebGrid/WebGrid.html}, 1997.
+
+\bibitem{tidhar99}
+G.~Tidar, C.~Heinze, S.~Goss, G.~Murray, D.~Appla, and I.~Lloyd.
+\newblock Using intelligent agents in military simulations or 'using agents
+  intelligently.'.
+\newblock In {\em Proc. of Eleventh Innovative Applications of Artificial
+  Intelligence Conference, American Association of Artificial Intelligence},
+  1999.
+
+\bibitem{tidhar98}
+G.~Tidhar, C.~Heinze, and M.~Selvestrel.
+\newblock Flying together: Modelling air mission teams.
+\newblock {\em Applied Intelligence}, 8(3):195--218, 1998.
+
+\bibitem{woolridge95}
+M.~Wooldridge and N.~Jennings.
+\newblock Intelligent agents: Theory and practice.
+\newblock {\em The Knowledge Engineering Review}, 10(2):115--152, 1995.
+\newblock Available from
+  \url{http://www.cs.umbc.edu/agents/introduction/ker.ps.Z}.
+
+\bibitem{yost89}
+G.~Yost and A.~Newell.
+\newblock A {P}roblem {S}pace {A}pproach to {E}xpert {S}ystem {S}pecification.
+\newblock In {\em {IJCAI} '89}, pages 621--627, 1989.
+
+\end{thebibliography}
