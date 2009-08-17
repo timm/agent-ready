@@ -102,7 +102,7 @@ Generates this output (note the error message on line 1 saying that
 = Annoyances (which need to be fixed) =
 == Tags not supported ==
 
-he current implementation does not add tags to bar
+The current implementation does not add tags to bar
 graphs. The above output should have been:
 {{{
 20    -----------------------|
