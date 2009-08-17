@@ -1,8 +1,6 @@
-"XXX find an implement any empty methods in the following; e.g.
-Tag subclasses need to make the right calls to this Graph,
-then this class needs to do the drawing"
-
-"XXX as per assignment 2a, there are bugs in Graph that you have to fix"
+"design note: this is a MODEL class that should not be polluted with
+ DATA concepts (e.g. reading graph spec)
+"
 ! Graph class methods !
 new
 	^super new init
@@ -32,7 +30,7 @@ init
 	matrix := OrderedCollection new.
 	self height: 0  width: 0.
 	ox=6.
-    oy=2.
+	oy=2.
 !
 resize 
        matrix := Array new: height.

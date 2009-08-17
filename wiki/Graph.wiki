@@ -1,0 +1,187 @@
+<h2>Say "hello" to GRAPH</h2>
+<p>In this subject, you will implement the same program, four different ways (using data-driven languages, OO languages, functional languages,
+and logic languages). 
+<p>The target program is "GRAPH", a tiny ascii GRAPH utility written by 
+by Alfred V. Aho, Brian W. Kernighan, and Peter J. Weinberger. In inputs files that look like this:
+<pre>
+label here's some stuff
+bottom ticks 1 2 5 10
+left ticks 1 2 10 20
+range 1 1 10 20
+height 10
+width 30
+1 2 *
+2 4 * 
+3 6 *
+4 8 *
+</pre>
+
+And outputs stuff that looks like this:
+<pre>
+20    -----------------------|
+      |                      |
+      |                      |
+      |                      |
+10    -       *              |
+      |    *                 |
+      |  *                   |
+2     *--|------|------------|
+     1  2      5            10
+         here's some stuff    
+</pre>
+<p>A sample implementation is supplied at 
+<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/graph.awk">
+http://unbox.org/wisp/var/timm/09/310/lib/proj1a/GRAPH.awk</a>
+and understanding it will take up most of the time of project1.
+<p>Sample input files can be found at 
+<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg">
+http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg</a>. For example,
+the above input file is actually 
+<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg/1">
+eg/1</a>. 
+
+To generate a graph, using GRAPH,
+run
+<pre>
+
+gawk -f graph.awk eg/1
+</pre>
+<p>Graphs can contain multiple lines, so you can generate bar
+graphs as follows. This input:
+<pre>
+label mean IQ
+left ticks  0 10 20 30 40
+height 20
+width  30
+3 1 *
+3 2 * 
+3 3 *
+3 4 *
+3 5 *
+3 6 *
+3 7 *
+7 1 +
+7 2 +
+7 3 +
+7 4 +
+7 5 +
+7 6 +
+7 7 +
+7 8 +
+7 9 +
+7 10 +
+7 11 +
+7 12 +
+7 13 +
+range 0 0 10 20
+tags  3 boys 7 girls  
+</pre>
+Generates this output (note the error message on line 1 saying that
+<b><i>tags</i></b> is not found
+<pre>
+?? line 26: [tags  3 boys 7 girls  ]
+20    -----------------------|
+      |                      |
+      |                      |
+      |                      |
+      |                      |
+      |                      |
+      |               +      |
+      |               +      |
+10    -               +      |
+      |               +      |
+      |               +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+0     -----------------------|
+                              
+              mean IQ         
+</pre>
+
+<h2>Annoyances (which you will fix)</h2>
+<h3>Tags not supported</h3>
+
+<p>The current implementation does not add tags to bar
+graphs. The above output should have been:
+<pre>
+20    -----------------------|
+      |                      |
+      |                      |
+      |                      |
+      |                      |
+      |                      |
+      |               +      |
+      |               +      |
+10    -               +      |
+      |               +      |
+      |               +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+      |      *        +      |
+0     -------|--------|------|
+             boys     girls   
+              mean IQ         
+</pre>
+<p>(This desired output can be found at
+<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg/6.want">
+eg/6.want</a>).
+<h3>Tedious specifications</h3>
+<p>Another tedious feature of the current implementation is that
+the bar graphs have to be hard-coded using lines and lines of numbers.
+Ideally, we should be able to write bar graphs using the following
+shorthand:
+<pre>
+label mean IQ
+left ticks  0 10 20 30 40
+height 20
+width  30
+range 0 0 10 20
+tag 3 boys 7 *
+tag 7 girls 13 +
+</pre>
+<h2>Quirks (that you will accept)</h2>
+<p> 
+
+Your OO/functional/logical
+versions of this this system should all produce the
+same output as the reference system.
+Except for the annoyances listed above,
+the reference implementation should be treated
+as <b><i>the</i></b> implementation.
+<p>This means that you must understand the reference system,
+warts and all, in order to reproduce it in other languages.<h2>The Problem</h2>
+<p>The current version of GRAPH is broken, as revealed by the following
+test engine:
+<pre>
+cd proj1
+make score
+?? line 12: [tags  2 things]
+?? line 26: [tags  3 boys 7 girls  ]
+?? line 6: [tags  3 apples 10 oranges 16 pears]
+?? line 5: [tag 2 things 7 *]
+?? line 6: [tag 3 boys 7 *]
+?? line 7: [tag 7 girls 13 +]
+?? line 3: [tag 3 apple 7 *]
+?? line 4: [tag 10 oranges 24 +]
+?? line 5: [tag 16 pears 16 $]
+   6 FAILED
+   4 PASSED
+</pre>
+That is, the current system fails 6 of its current tests. You need
+to fix that. To do that, you'll need to:
+<ol>
+<li>Understand the GRAPH system
+<li>Set up the files
+<li>Understand the test engine
+<li>Understand what is causing the above failures
+
+<li>Fix the implementation.
+</ol>
+
