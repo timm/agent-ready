@@ -1,7 +1,11 @@
 = Say "hello" to GRAPH =
 
 "GRAPH", a tiny ascii GRAPH utility written by 
-by Alfred V. Aho, Brian W. Kernighan, and Peter J. Weinberger. In inputs files that look like this:
+by Alfred V. Aho, Brian W. Kernighan, and Peter J. Weinberger. 
+It is an example "domain-specific language" (DSL) where a new syntax shorthand is invented,
+just for processing data for a particular example. DSLs are [DsL very useful]. 
+
+Graph  inputs files that look like this:
 {{{
 label here's some stuff
 bottom ticks 1 2 5 10
