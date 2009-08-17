@@ -1,9 +1,7 @@
 <h2>Say "hello" to GRAPH</h2>
-<p>In this subject, you will implement the same program, four different ways (using data-driven languages, OO languages, functional languages,
-and logic languages). 
-<p>The target program is "GRAPH", a tiny ascii GRAPH utility written by 
+<p>"GRAPH", a tiny ascii GRAPH utility written by 
 by Alfred V. Aho, Brian W. Kernighan, and Peter J. Weinberger. In inputs files that look like this:
-<pre>
+{{{
 label here's some stuff
 bottom ticks 1 2 5 10
 left ticks 1 2 10 20
@@ -14,10 +12,10 @@ width 30
 2 4 * 
 3 6 *
 4 8 *
-</pre>
+}}}
 
 And outputs stuff that looks like this:
-<pre>
+{{{
 20    -----------------------|
       |                      |
       |                      |
@@ -28,7 +26,7 @@ And outputs stuff that looks like this:
 2     *--|------|------------|
      1  2      5            10
          here's some stuff    
-</pre>
+}}}
 <p>A sample implementation is supplied at 
 <a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/graph.awk">
 http://unbox.org/wisp/var/timm/09/310/lib/proj1a/GRAPH.awk</a>
@@ -42,13 +40,12 @@ eg/1</a>.
 
 To generate a graph, using GRAPH,
 run
-<pre>
-
+{{{
 gawk -f graph.awk eg/1
-</pre>
+}}}
 <p>Graphs can contain multiple lines, so you can generate bar
 graphs as follows. This input:
-<pre>
+{{{
 label mean IQ
 left ticks  0 10 20 30 40
 height 20
@@ -75,10 +72,10 @@ width  30
 7 13 +
 range 0 0 10 20
 tags  3 boys 7 girls  
-</pre>
+}}}
 Generates this output (note the error message on line 1 saying that
 <b><i>tags</i></b> is not found
-<pre>
+{{{
 ?? line 26: [tags  3 boys 7 girls  ]
 20    -----------------------|
       |                      |
@@ -100,14 +97,14 @@ Generates this output (note the error message on line 1 saying that
 0     -----------------------|
                               
               mean IQ         
-</pre>
+}}}
 
 <h2>Annoyances (which you will fix)</h2>
 <h3>Tags not supported</h3>
 
 <p>The current implementation does not add tags to bar
 graphs. The above output should have been:
-<pre>
+{{{
 20    -----------------------|
       |                      |
       |                      |
@@ -128,7 +125,7 @@ graphs. The above output should have been:
 0     -------|--------|------|
              boys     girls   
               mean IQ         
-</pre>
+}}}
 <p>(This desired output can be found at
 <a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg/6.want">
 eg/6.want</a>).
@@ -137,7 +134,7 @@ eg/6.want</a>).
 the bar graphs have to be hard-coded using lines and lines of numbers.
 Ideally, we should be able to write bar graphs using the following
 shorthand:
-<pre>
+{{{
 label mean IQ
 left ticks  0 10 20 30 40
 height 20
@@ -145,7 +142,7 @@ width  30
 range 0 0 10 20
 tag 3 boys 7 *
 tag 7 girls 13 +
-</pre>
+}}}
 <h2>Quirks (that you will accept)</h2>
 <p> 
 
@@ -159,7 +156,7 @@ as <b><i>the</i></b> implementation.
 warts and all, in order to reproduce it in other languages.<h2>The Problem</h2>
 <p>The current version of GRAPH is broken, as revealed by the following
 test engine:
-<pre>
+{{{
 cd proj1
 make score
 ?? line 12: [tags  2 things]
@@ -173,7 +170,7 @@ make score
 ?? line 5: [tag 16 pears 16 $]
    6 FAILED
    4 PASSED
-</pre>
+}}}
 That is, the current system fails 6 of its current tests. You need
 to fix that. To do that, you'll need to:
 <ol>
