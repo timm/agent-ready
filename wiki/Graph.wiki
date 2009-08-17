@@ -1,5 +1,6 @@
-<h2>Say "hello" to GRAPH</h2>
-<p>"GRAPH", a tiny ascii GRAPH utility written by 
+= Say "hello" to GRAPH =
+
+"GRAPH", a tiny ascii GRAPH utility written by 
 by Alfred V. Aho, Brian W. Kernighan, and Peter J. Weinberger. In inputs files that look like this:
 {{{
 label here's some stuff
@@ -27,23 +28,22 @@ And outputs stuff that looks like this:
      1  2      5            10
          here's some stuff    
 }}}
-<p>A sample implementation is supplied at 
-<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/graph.awk">
-http://unbox.org/wisp/var/timm/09/310/lib/proj1a/GRAPH.awk</a>
-and understanding it will take up most of the time of project1.
-<p>Sample input files can be found at 
-<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg">
-http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg</a>. For example,
+A sample implementation is supplied at 
+http://unbox.org/wisp/var/timm/09/310/lib/proj1/graph.awk .
+
+Sample input files can be found at 
+http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg .
+For example
 the above input file is actually 
-<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg/1">
-eg/1</a>. 
+http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg/1
 
 To generate a graph, using GRAPH,
 run
 {{{
 gawk -f graph.awk eg/1
 }}}
-<p>Graphs can contain multiple lines, so you can generate bar
+
+Graphs can contain multiple lines, so you can generate bar
 graphs as follows. This input:
 {{{
 label mean IQ
@@ -74,7 +74,7 @@ range 0 0 10 20
 tags  3 boys 7 girls  
 }}}
 Generates this output (note the error message on line 1 saying that
-<b><i>tags</i></b> is not found
+"tags" is not found
 {{{
 ?? line 26: [tags  3 boys 7 girls  ]
 20    -----------------------|
@@ -99,10 +99,10 @@ Generates this output (note the error message on line 1 saying that
               mean IQ         
 }}}
 
-<h2>Annoyances (which you will fix)</h2>
-<h3>Tags not supported</h3>
+= Annoyances (which need to be fixed) =
+== Tags not supported ==
 
-<p>The current implementation does not add tags to bar
+he current implementation does not add tags to bar
 graphs. The above output should have been:
 {{{
 20    -----------------------|
@@ -126,11 +126,12 @@ graphs. The above output should have been:
              boys     girls   
               mean IQ         
 }}}
-<p>(This desired output can be found at
-<a href="http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg/6.want">
-eg/6.want</a>).
-<h3>Tedious specifications</h3>
-<p>Another tedious feature of the current implementation is that
+This desired output can be found at
+http://unbox.org/wisp/var/timm/09/310/lib/proj1a/eg/6.want .
+
+== Tedious specifications ==
+
+Another tedious feature of the current implementation is that
 the bar graphs have to be hard-coded using lines and lines of numbers.
 Ideally, we should be able to write bar graphs using the following
 shorthand:
@@ -143,18 +144,20 @@ range 0 0 10 20
 tag 3 boys 7 *
 tag 7 girls 13 +
 }}}
-<h2>Quirks (that you will accept)</h2>
-<p> 
+== Quirks (that you should accept) ==
 
 Your OO/functional/logical
 versions of this this system should all produce the
 same output as the reference system.
 Except for the annoyances listed above,
 the reference implementation should be treated
-as <b><i>the</i></b> implementation.
-<p>This means that you must understand the reference system,
-warts and all, in order to reproduce it in other languages.<h2>The Problem</h2>
-<p>The current version of GRAPH is broken, as revealed by the following
+as "the" implementation.
+This means that you must understand the reference system,
+warts and all, in order to reproduce it in other languages.
+
+= The Problem =
+
+The current version of GRAPH is broken, as revealed by the following
 test engine:
 {{{
 cd proj1
@@ -173,12 +176,9 @@ make score
 }}}
 That is, the current system fails 6 of its current tests. You need
 to fix that. To do that, you'll need to:
-<ol>
-<li>Understand the GRAPH system
-<li>Set up the files
-<li>Understand the test engine
-<li>Understand what is causing the above failures
 
-<li>Fix the implementation.
-</ol>
-
+ # Understand the GRAPH system
+ # Set up the files
+ # Understand the test engine
+ # Understand what is causing the above failures
+ # Fix the implementation.
