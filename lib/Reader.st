@@ -21,11 +21,9 @@ handlerOf: aString
     ^(handler handlerOf: aString) ifNil: [^self cantDo: aString]
 !
 line: string for: this
-    |words thing  klass|
-    words := string asWords.
-    thing := words removeFirst. 
-    klass := self handlerOf: thing.
-    ^klass new  line: words for: this at: line
+    |klass|
+    klass := self handlerOf: string.
+    ^klass new  line: string for: this at: line
 !
 lines: aFileName for: this
 	line := 0.

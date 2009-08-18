@@ -12,10 +12,13 @@ worker: aWorker
 !
 workers 	^workers !
 reset 		self init: seed.  !
-rand 		^rand next !!
+rand 		^rand next !
+!
 
 ! Manager class methods !
-new 			^self new: Random next !!
+new 			
+	^self new: Random next 
+!
 new: seed 		
 	Last := super new init: seed  .
 	^Last
