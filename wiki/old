@@ -1,0 +1,34 @@
+#summary Some useful Makefile tricks
+
+= Why Need to Test =
+
+<em>I should be able to write a test in any language. --J. Random Hacker</em>
+
+Every programming has to be debugged:
+
+ Debugging had to be discovered. I can remember the exact instant when I realized that a large part of my life from then on was going to be spent in finding mistakes in my own programs. <br>
+ - Maurice Wilkes 1949 
+
+Wilkes is pointing out that the time required to debug a system is surprisingly large- over half the effort of building. According to Brooks (The Mythical Man Month, 1995), the time required to build software divides as follows:
+
+    * 1/3 in management and planning
+    * 1/6 in development
+    * 1/4 in unit test (testing all parts in isolation)
+    * 1/4 in system testing (testing all parts, in combination) 
+
+Decades later, the same distribution persists.  That is, if you
+want to drastically change the economics of software development,
+do something about testability. 
+
+= Test-Driven Development (TDD) =
+
+<em>From Wikipedia:</em> Test-driven development (TDD) is a software development technique
+that relies on the repetition of a very short development cycle:
+First the developer writes a failing automated test case that defines
+a desired improvement or new function, then produces code to pass
+that test and finally refactors the new code to acceptable standards.
+Kent Beck, who is credited with having developed or 'rediscovered'
+the technique, stated in 2003 that TDD encourages simple designs
+and inspires confidence.
+
+= Makefile Support for TDD =
