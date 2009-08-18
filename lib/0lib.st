@@ -43,6 +43,20 @@ s       ^self displayString !!
  
 ";;;; collection tricks"
 ! SequenceableCollection methods !
+shuffle
+	^self shuffle: Random new
+!
+shuffle: r
+	|n j k tmp| 
+	n := self size.
+	1 to: n  do: [:i|
+		k := r between: 0 and: (n-i).
+		j := i + k .
+		tmp := self at: j.
+		self at: j put: (self at: i).
+		self at: i put: tmp 
+	]
+!
 first: first then: then
          | atFirst |
          atFirst := true .
@@ -62,20 +76,29 @@ printOn: aStream
 ";;;; string ticks"
 ! String methods ! 
 asWords  
-      ^(self tokenize: '\s+') asOrderedCollection !
+      ^(self tokenize: '\s+') asOrderedCollection 
+!
 fileLinesDo: aBlock
     |f last|         
     f := File name: self.
     f readStream linesDo: [:line|
         last := aBlock value: line].
 	f readStream close.
-    ^last !!
+    ^last 
+!!
 
 ";;;; nil tricks"
 ! UndefinedObject methods !
 ifNil:  aBlock 		^aBlock value !
-notNil: aBlock 		^self !!
+notNil: aBlock 		^self !
+!
 
 ! Object methods !
 ifNil:  aBlock      ^self !
-notNil: aBlock 		^aBlock value !!
+notNil: aBlock 		^aBlock value !
+!
+
+! Integer methods !
+upTo
+	^Random between: 0 and: self - 1 !
+!
