@@ -51,7 +51,8 @@ http://unbox.org/wisp/var/timm/09/310/lib/proj1/eg/1
 To generate a graph, using GRAPH,
 run
 {{{
-gawk -f graph.awk eg/1
+cd  trunk/lib/eg/graph
+gawk -f graph.awk 1
 }}}
 
 Graphs can contain multiple lines, so you can generate bar
