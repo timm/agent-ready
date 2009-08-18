@@ -36,7 +36,7 @@ and inspires confidence.
 [http://agent-ready.googlecode.com/svn/trunk/lib/MakeFile MakeFile] offers a generic method for TDD:
 
  * Examples are stored in Bash scripts in a directory [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg].
- * Expectation for the ouput of (e.g.)  [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st] lib/eg/0lib.st] is stored in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st.want] lib/eg/0lib.st/want].
+ * Expectation for the ouput of (e.g.)  [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st lib/eg/0lib.st] is stored in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st.want lib/eg/0lib.st.want].
 
 The following commands are supported:
 <dl>
