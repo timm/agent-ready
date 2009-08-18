@@ -199,7 +199,7 @@ to fix that. To do that, you'll need to:
 Here is a partial description of an object-oriented
 processor for Graph. This description is incomplete; e.g. the instance
 variables shown below missing important concepts.  The challenge to
-the reader is to fully emualate the 
+the reader is to fully emulate the 
 [http://unbox.org/wisp/var/timm/09/310/lib/proj1/graph.awk Awk version of Graph].
 
 == Tag ==
@@ -218,24 +218,25 @@ width 30
 }}}
 Each class in the  _Tag_ hierarchy process each different type of lines.
 The root
-of this hierarchy has a emethod that accepts a string and then asks its subclasses for
+of this hierarchy has a method that accepts a string and then asks its subclasses for
 who should handle this string. 
 {{{
-handlerOf: tag
+handlerOf: line
 	   self allSubclasses do: [:class|	
-	   		class handles ~ tag ifTrue: [^class]].
+	   		line ~ class handles ifTrue: [^class]].
         ^nil 
 }}}
-Each subclass of _Tag_ supports two instance methods _handles_ and 
-_line:for:at:_. The _handles_ method returns a regular expression which
+Each subclass of _Tag_ supports two methods _handles_ and 
+_line:for:at:_. The _handles_ class method returns a regular expression which
 detects which lines it should handle.  If handler returns true, then
-_line:for:at:_ is called. 
+the
+_line:for:at:_ instance method is called. 
 
 For example, this method recognizes lines like _width 30_:
 {{{
-! TagWidth methods !
+! TagWidth class methods !
 handles
-	^'\s*width\s+\d+\s*'
+	 ^'^\s*width\s+(\d+)\s*$'
 !!
 }}}
 If this method recognizes a line, the following method parses the line
@@ -253,8 +254,13 @@ functionality, we should define _Tag_ subclasses, not _Reader_.
 
 This class can be called like this:
 {{{
-Reader new lines: specFile for: aGraph
+|g r| 
+g := Graph new.
+r := Reader new lines: 'eg/graph/0' for: g.
+g width oo.
 }}}
+The file _eg/graph/0_ looks like this:
+
 After this method,  _aGraph_ will have been updated with the information read
 from _specFile_.
 
@@ -264,7 +270,7 @@ This class stores information about a graph, and formats it for the screen.
 The graph holds a matrix of symbols. The graph is laid out that matrix, then
 the matrix is dumped to the screen.
 
-
+That is, that's what would happen if this was fully implemented.
 == Range ==
 
 This is a simple helper class that accepts a set of numbers and maintains  

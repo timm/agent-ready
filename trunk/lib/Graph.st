@@ -50,6 +50,9 @@ splot: aPoint with: aString
 width
 	^width
 !
+width: aNumber
+	^width := aNumber
+!
 wxidth: w 
        self height: height width: w
 !
