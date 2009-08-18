@@ -16,6 +16,9 @@ rand 		^rand next !
 !
 
 ! Manager class methods !
+last
+	^Last
+!
 new 			
 	^self new: Random next 
 !
