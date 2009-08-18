@@ -32,3 +32,8 @@ the technique, stated in 2003 that TDD encourages simple designs
 and inspires confidence.
 
 = Makefile Support for TDD =
+
+http://agent-ready.googlecode.com/svn/trunk/lib/Makefile
+offers a generic method for TDD. Examples are stored in  Bash scripts
+in a directory http://agent-ready.googlecode.com/svn/trunk/lib/eg/.
+
