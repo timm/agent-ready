@@ -42,10 +42,16 @@ The following commands are supported:
 <dl>
 <dt>_make X=file run_</dt>
 <dd>Run the script in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg/X].</dd>
+<dt>_make X=file cache_</dt>
+<dd>Run the script in 
+[http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg/X] 
+and cache the results to
+[http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg/X.want] 
+</dd>
 <dt>_make X=file test_</dt>
 <dd>Run the script then compare the results to _file.want_. Print "PASSED" if it the same; "FAILED" otherwise.</dd>
-<dt>make tests </dt>
+<dt>_make tests_ </dt>
 <dd>Run all the scripts in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg].</dd>
-<dt>make score </dt>
+<dt>_make score_ </dt>
 <dd>Run _make tests_ and count up the sum of the "PASSED"s and "FAILED"s.  </dd>
 </dl>
