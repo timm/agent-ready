@@ -3,22 +3,27 @@
 handles
 	 ^'someImpossibBle STRing'
 !
-handlerOf: tag
+handlerOf: line
 	   "XXX if not class handles tag, then instiate  TagError
            and get it to handle it by printing an error message"
 	   self allSubclasses do: [:class|	
-	   	class handles = tag ifTrue: [^class]].
-           ^nil "XXX once TagError is running, get rid of this return" !
+	   		class handles ~ line ifTrue: [^class]].
+       ^nil "XXX once TagError is running, get rid of this return" !
+!!
+!Tag methods !
+handles
+	^'^\s*\[.+\]\s*$'
+!
+line: string for: this at: line
+	this block: (Behavior evaluate: string )
 !!
 ! TagWidth class methods !
 handles
-	^'width'
+	^'^\s+width\s+(\d+)\s*$'
 !!
+
 ! TagWidth methods !
-line: words for: this at: line
-	words first asInteger oo.
-	words size > 1
-		ifTrue: [^self error: (line,')  expected 1 argument ')].
-	this width: words first asInteger.
-	"XXX need to complain when the first item is not an integer"
+line: string for: graph at: line
+	graph width: string asWords first asInteger.
+	"if we expect a float, use Float readFrom: self"
 ! !

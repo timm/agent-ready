@@ -5,8 +5,9 @@
 #Graph       isa: Object with: 'label matrix height width ox oy xrange yrange'. 
 					"XXX does Graph need anymore attributes?"
 #Tag         isa: Object.
-#TagWidth    isa: Tag.
-#TagError    isa: Tag.
+#GraphTag    isa: Tag.
+#TagWidth    isa: GraphTag.
+#TagError    isa: GraphTag.
 
 "XXX define subclasses of Tag to handle every tag"
 
