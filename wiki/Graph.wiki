@@ -232,10 +232,12 @@ detects which lines it should handle.  If handler returns true, then
 _line:for:at:_ is called. 
 
 For example, this method recognizes lines like _width 30_:
+{{{
 ! TagWidth methods !
 handles
 	^'\s*width\s+\d+\s*'
 !!
+}}}
 If this method recognizes a line, the following method parses the line
 and passes the result to _graph_ (specifically, it sets the width of the
 _graph_
