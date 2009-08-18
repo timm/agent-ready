@@ -1,3 +1,5 @@
+#summary Notes on the Graph application
+
 = Say "hello" to GRAPH =
 
 "GRAPH", a tiny ascii GRAPH utility written by 
