@@ -33,7 +33,19 @@ and inspires confidence.
 
 = Makefile Support for TDD =
 
-http://agent-ready.googlecode.com/svn/trunk/lib/Makefile
-offers a generic method for TDD. Examples are stored in  Bash scripts
-in a directory http://agent-ready.googlecode.com/svn/trunk/lib/eg/.
+[http://agent-ready.googlecode.com/svn/trunk/lib/MakeFile MakeFile] offers a generic method for TDD:
 
+ * Examples are stored in Bash scripts in a directory [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg].
+ * Expectation for the ouput of (e.g.)  [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st] lib/eg/0lib.st] is stored in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/0lib.st.want] lib/eg/0lib.st/want].
+
+The following commands are supported:
+<dl>
+<dt>_make X=file run_</dt>
+<dd>Run the script in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg/X].</dd>
+<dt>_make X=file test_</dt>
+<dd>Run the script then compare the results to _file.want_. Print "PASSED" if it the same; "FAILED" otherwise.</dd>
+<dt>make tests </dt>
+<dd>Run all the scripts in [http://agent-ready.googlecode.com/svn/trunk/lib/eg/ lib/eg].</dd>
+<dt>make score </dt>
+<dd>Run _make tests_ and count up the sum of the "PASSED"s and "FAILED"s.  </dd>
+</dl>
