@@ -9,15 +9,19 @@
 #TagWidth    isa: GraphTag.
 #TagError    isa: GraphTag.
 
-#Cycle       isa: Object with: 'list pointer rand'.
-#Machines    isa: Object with: 'rand time aSychnronous time' shares: 'All'.
-#Machine     isa: Object with: 'states current defaultState'.
-#Transition  isa: Object with: 'state if then next'.
-#State       isa: Object with: 'name'.
+(#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.
+
+#Cycle       isa: Status with: 'list pointer rand'.
+#Machines    isa: Status with: 'rand time aSychnronous time' shares: 'All'.
+#Machine     isa: Status with: 'id owner states current default transitions'.
+(#Transition isa: Status with: 'state if then next') isPublic; selfInits.
+#State       isa: Status with: 'name'.
 #ErrorState  isa: State.
 #LoopState   isa: State.
 #EndState    isa: State.
 #NormalState isa: State.
+
+#Random 	 isa: Stream with: 'seed'  shares: 'TheRandom'.
 
 "XXX define subclasses of Tag to handle every tag"
 

@@ -4,6 +4,9 @@ ObjectMemory gcMessage: false
 
 ";;;; convenint get/set creation "
 ! Class methods !
+selfInits
+	self class compile: 'new [^super new init]'
+!
 isPublic
 	|getter setter|
 	self instanceVariableString asWords do: [:what |
@@ -28,6 +31,13 @@ isa: dad with: vars
      ^dad subclass: self       instanceVariableNames: vars
           classVariableNames: '' poolDictionaries: ''
           category: nil !
+isa: dad  shares: classVars
+     ^dad subclass: self
+          instanceVariableNames: '' 
+		  classVariableNames: classVars
+          poolDictionaries: ''        
+	      category: nil 
+!
 isa: dad with: vars shares: classVars
      ^dad subclass: self
           instanceVariableNames: vars classVariableNames: classVars

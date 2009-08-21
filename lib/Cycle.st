@@ -1,11 +1,17 @@
 ! Cycle class methods !
 new: list
-	^super new init: list on: Random new
+	^super new init: list on: self randomNumberGenerator.
+!
+randomNumberGenerator
+	^Random the
 !
 new: list on: rand
 	^super new init: list on: rand
 !!
 ! Cycle methods !
+add: item
+	list add: item
+!
 init: aList on: r
 	rand := r.
 	list := aList.
