@@ -1,5 +1,0 @@
-#labels Navigation
- * [PageOne Home]
- * [DOMReference DOM]
- * [HTMLElements HTML]
- * [CSSReference CSS]
