@@ -24,12 +24,14 @@
 
 Upon successful completion of this course, students should have:
 
-    * An understanding of the basic theory of agent systems.
-    * An understanding of the differences between normal and agent-based systems.
-    * An aility to code an agent system;
-    * An understanding of incremental data mining methods
-    * An ability to add incremental data mining tools to an agent system.
-    * An ability to write technical documentation.
+    * Be exposed to object-based agent-oriented programming languages (CS.a).
+    * Have knowledge of advanced principles (data structures, algorithms) required for:
+        *  Writing new agent languages (CS.b)
+        *  Solving agent programming problem (CS.c).
+    * Have knowledge of principles required for the design, implementation and analysis of complex  experiments with agents (CS.e).
+    * Be familiar with advanced concepts of agents (CS.g.k)
+    * Be able to communicate ideas effectively: in writing (CS.g.g1)
+    * Be able to communicate ideas effectively: verbally (CS.g.g2)
 
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
