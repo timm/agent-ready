@@ -3,6 +3,9 @@
 
 || <img src="http://agent-ready.googlecode.com/svn/trunk/share/img/agentSmith.jpg" width=250> || <wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || 
 
+The official version of this syllabus is http://code.google.com/p/agent-ready/source/browse/wiki/Syllabus.wiki?r=48
+
+
 ----
 
 = Syllabus =
