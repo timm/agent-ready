@@ -34,7 +34,6 @@ Upon successful completion of this course, students should have:
 
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
- * http://www.arc.wvu.edu/examschedule_fall.html : exam schedule page] not applicable)
  * http://groups.google.com/group/agent-oriented : Class discussion list
 
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
@@ -53,12 +52,24 @@ and run there. Please note that a Linux server can be accessed from
 any PC using a secure connection service, such as SSH (explanation
 to be provided in class).   
 
-
 = Assessment =
 
-September 30, 2009: Smalltalk 101 exercise
+1. _(10 marks)_ September 11, 2009: Smalltalk 101 exercise (implementing a domain-specific language for the [Graph  language].
 
-October 14, 2009: Theory of Agents: essay (8 pages, 2 column)
+2. October 5, 2009: 
+ * _(10 marks)_ A real world object-oriented agent system demonstrating at least Woolridige's weak agency.
+ *  _(10 marks)_ Essay: perform baseline results for the OO agent systems. Includes a description of your model, the DSL used for that model, and [http://t16web.lanl.gov/Kawano/gnuplot/index-e.html Gnuplots] of base line results. 4 pages, pdf submission [http://www.acm.org/sigs/publications/proceedings-templates Latex, ACM tighter alternative style]
+
+3. November 2,2009
+ * Essay: 4 pages, pdf submission [http://www.acm.org/sigs/publications/proceedings-templates Latex, ACM tighter alternative style].
+     * _(10 marks)_ summary of agents theory (2 pages)
+     * _(10 marks)_ summary of data minign theory (2 pages)
+ * _(10 marks)_ Data mining utils, coded in Smalltalk
+
+4. _(10 marks)_ November 16, 2009: data mining results on the model.
+ * Lots of Gnuplots
+
+5. _(30 marks)_ Nov 30: final report. In a format suitable for ACM conference submission.  Includes a rework and extension of 2,3 and 4.
 
 Late marks: 2 marks off per day (weekend = 1 day)
 
