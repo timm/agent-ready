@@ -5,7 +5,6 @@
 
 ----
 
-
 = Syllabus =
 
  * Course name: cs791J Agent Oriented SW Devel
@@ -39,9 +38,9 @@ Upon successful completion of this course, students should have:
  * http://groups.google.com/group/agent-oriented : Class discussion list
 
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
- * Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. 
+ * Official announcements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. 
 
-Students are require to read these thread on a regular basis.
+Students are require to read this thread on a regular basis.
 
 = Expected Workload =
 
