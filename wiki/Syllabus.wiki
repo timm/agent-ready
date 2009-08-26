@@ -1,7 +1,7 @@
 #summary cs791J syllabus for agent-oriented SW Devel (WVU, Fall 2009)
 #labels teaching,timm,Featured
 
-||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/agentSmith.jpg" width=250> ||
+||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://agent-ready.googlecode.com/svn/trunk/share/img/agentSmith.jpg" width=250> ||
 
 ----
 
