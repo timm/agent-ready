@@ -66,8 +66,7 @@ to be provided in class).
      * _(10 marks)_ summary of data minign theory (2 pages)
  * _(10 marks)_ Data mining utils, coded in Smalltalk
 
-4. _(10 marks)_ November 16, 2009: data mining results on the model.
- * Lots of Gnuplots
+4. _(10 marks)_ November 16, 2009: data mining results on the model (lots of Gnuplots).
 
 5. _(30 marks)_ Nov 30: final report. In a format suitable for ACM conference submission.  Includes a rework and extension of 2,3 and 4.
 
