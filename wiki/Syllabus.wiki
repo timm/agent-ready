@@ -68,7 +68,11 @@ See also, below, for how to lose marks due to poor attendance.
 For special consideration on the above, either:
 
     * See me at start of semester advising planned absences or
-    * provide a doctor's certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration) 
+    * provide a doctor's certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration).
+
+Students must regularly commit their work to a code repository provided by the lecturer. This repository will be monitored by the lecturer and students who are not making regular commits will be told to opt out of the group projects and work on their own.
+
+Students can choose, or be told, to opt out of the group projects. If so, they will write 2*2000 essays for each remaining project in the term. They will also loose 7.5 marks from their end-of-year grade.  
 
 = Attendance policy =
 
