@@ -1,4 +1,0 @@
-#labels Navigation
- * [Articles HOWTO articles]
-  * [ArticlesXSS Web security]
- * [DOMReference DOM reference]
