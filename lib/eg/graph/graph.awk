@@ -17,7 +17,8 @@ $1 == "label"  {                       # for bottom
     next
 }
 $1 == "bottom" && $2 == "ticks" {     # ticks for x-axis
-    for (i = 3; i <= NF; i++) bticks[++nb] = $i
+    for (i = 3; i <= NF; i++) 
+	bticks[++nb] = $i;
     next
 }
 $1 == "left" && $2 == "ticks" {       # ticks for y-axis
@@ -28,6 +29,15 @@ $1 == "range" {                       # xmin ymin xmax ymax
     xmin = $2; ymin = $3; xmax = $4; ymax = $5
     next
 }
+$1 == "tags" || $1 =="tag"{
+   for(i=2; i<=NF;i=++i)    #get tags pairs 
+   {
+	tl[++tal] =$i;      # tag symbol
+        tr[++tar] =$++i;    # tag meaning
+   }    	
+next
+}
+
 $1 ~ number && $2 ~ number {          # pair of numbers
     nd++    # count number of data points
     x[nd] = $1; y[nd] = $2
@@ -51,7 +61,7 @@ $1 == "mb" {  # m b [mark]
     { print "?? line " NR ": ["$0"]" >"/dev/stderr"
 }
 END {    # draw graph
-    expand();   frame(); ticks(); label(); data(); draw()
+    expand();   frame(); ticks(); label(); tags(); data(); draw()
 }
 function expand(note) { if (xmin == "") expand1(note) }
 function expand1(note) {
@@ -74,11 +84,21 @@ function ticks(    i) {   # create tick marks for both axes
     for (i = 1; i <= nb; i++) {
         plot(xscale(bticks[i]), oy, "|")
         splot(xscale(bticks[i])-1, 1, bticks[i])
+        #splot(tl(i)-1,1,tr(i))
+	#idx = findidx(bticks[i])
+	#if(idx!=-1)
+        # splot(xscale(bticks[i])-1, 1, tl[idx])
+        #else
+        # splot(xscale(bticks[i])-1, 1, bticks[i])
     }
     for (i = 1; i <= nl; i++) {
         plot(ox, yscale(lticks[i]), "-")
         splot(0, yscale(lticks[i]), lticks[i])
     }
+}
+function tags() {
+    for(i=1;i<=tal;i++)
+     splot(xscale(tl[i])-1,1,tr[i])
 }
 function label() {        # center label under x-axis
     splot(int((wid + ox - length(botlab))/2), 0, botlab)
@@ -101,6 +121,15 @@ function xscale(x) {      # scale x-value
 function yscale(y) {      # scale y-value
     return int((y-ymin)/(ymax-ymin) * (ht-1-oy) + oy + 0.5)
 }
+
+#function findidx(sym) {    # find index in tags 
+# for(idx in tl){
+#      print tl[idx];
+#      #if(tl[idx]==sym)
+#	return idx;
+#    }
+#    return -1
+#}
 function plot(x, y, c) {  # put character c in array
     array[x,y] = c
 }
