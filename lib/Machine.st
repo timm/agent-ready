@@ -1,34 +1,51 @@
 ! Machine class methods !
-new: id with: machines
-	^super new init: id with: machines
-!
+new: machines
+	^super new init: machines
+!!
 ! Machine methods !
-init: name with: machines	
-	id := name.
-	owner := machines.
+init: machines
+	partOf := machines	
+	machines all add: self.
+	id          := App nextId.
+	starts      := Bag new.
+	stops       := Bag new.
 	transitions := Dictionary new.
-	states := Dictionary new.
 !
 error: message
 	^super error: ('Machine[,'id s,']: ', message) 
 ! 
 add: transition
-	|state|
-	state := transition state.
-	state m: self.
-	default ifNil: [default := state].
-	transitions at: state
-				ifAbsent: [states at: state put: Cycle new.  ].
-	(transitions at: state) add: transition.
+	|state currentSymbol|
+	transition machine: self.
+	current       := transition state.
+	currentSymbol := current name.
+	starts add: currentSymbol.
+	stops  add: currentSymbol.
+	transitions at: currentSymbol
+				ifAbsent: [transitions at: currentSymbol
+                                      put: Cycle new].
+	(transitions at: currentSymbol) add: transition.
 !
-state: aSymbol
-	transitions at: aSymbol 
-			   ifAbsent: [^self error: ('Missing state: [', aSymbol s)]
+current
+	^current
 !
-step: ifNoStep
-	current ifNil: [current:= default].
-	(self state: current) do: [:transition |
-		transition ready ifTrue: [^current := transition fire]].
-	^ifNoStep value.	
+transitions
+	^transitions
 !
+candidates
+	^self candidates:  current 
 !
+candidates: aState
+     ^transitions at: aState name
+	        ifAbsent: [
+                self error: ('Missing state: [', aState printString)].
+!
+steps
+	self candidates do: [:candidate |
+		candidate ready 
+			ifTrue: [current onExit.
+					 current := candidate fire.
+					 current onEntry.
+					 ^true]].
+	^false
+!!

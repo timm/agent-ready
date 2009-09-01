@@ -4,10 +4,10 @@ ObjectMemory gcMessage: false
 
 ";;;; convenint get/set creation "
 ! Class methods !
-selfInits
+inits
 	self class compile: 'new [^super new init]'
 !
-isPublic
+public
 	|getter setter|
 	self instanceVariableString asWords do: [:what |
 		getter := '%1 [
@@ -53,20 +53,6 @@ s       ^self displayString !!
  
 ";;;; collection tricks"
 ! SequenceableCollection methods !
-shuffle
-	^self shuffle: Random new
-!
-shuffle: r
-	|n j k tmp| 
-	n := self size.
-	1 to: n  do: [:i|
-		k := r between: 0 and: (n-i).
-		j := i + k .
-		tmp := self at: j.
-		self at: j put: (self at: i).
-		self at: i put: tmp 
-	]
-!
 first: first then: then
          | atFirst |
          atFirst := true .
@@ -106,9 +92,4 @@ notNil: aBlock 		^self !
 ! Object methods !
 ifNil:  aBlock      ^self !
 notNil: aBlock 		^aBlock value !
-!
-
-! Integer methods !
-upTo
-	^Random between: 0 and: self - 1 !
 !
