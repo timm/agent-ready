@@ -19,9 +19,6 @@ onEntry
 !
 onExit
 	^nil
-!
-canStop
-	^false 
 !!
 ! EndState methods !
 onEntry

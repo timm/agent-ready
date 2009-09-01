@@ -6,6 +6,9 @@ new: list
 	^super new init: list 
 !!
 ! Stagger methods !
+contents
+	^contents
+!
 add: item
 	contents add: item
 !
@@ -23,11 +26,13 @@ once: aBlock
 !
 next
 	|tmp|
-	(pointer >= contents size) ifTrue: [
-		pointer := 1.
-		contents shuffle.
-	].
+	(pointer >= contents size) 
+		ifTrue: [ self reset ].
 	tmp := contents at: pointer.
 	pointer := pointer + 1.
 	^tmp
+!
+reset
+	pointer := 1.
+	contents shuffle.
 !!

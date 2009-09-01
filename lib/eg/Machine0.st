@@ -1,19 +1,16 @@
 |machines running waiting machine|
 
 machines := Machines new.
-machine := Machine new.
+machine := Machine new: machines.
 waiting := #waiting state.
 running := #running state.
 
-machine 
-	add: (Transition new
+
+machine add:
+	 (Transition new
 			state: #start state;
 			then: ['i am staring ' oo];
 			next: waiting).
-
 machines add: machine.
-"
-machine transitions do: [:cycle| 
-	cycle do: [:t| 
-		t oo]]"
+machines do:  [:machine| 1 oo. machine transitions oo].
 !

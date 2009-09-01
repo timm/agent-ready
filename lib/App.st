@@ -1,7 +1,7 @@
 ! App class methods !
 nextId
 	Ids ifNil:[ Ids := 0].
-	^Id := Id + 1.
+	^Ids := Ids + 1.
 !
 ready
 	^self ready: 1

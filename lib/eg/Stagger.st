@@ -1,7 +1,11 @@
-| c |
-c := Stagger new: #(#see #jane #run).
+| c b|
+c := Stagger new: #(#see #jane #run #past #the #ball).
 
-10 timesRepeat: [
-	c next oo
-]
+3 timesRepeat: [
+	10 timesRepeat: [' ' o. c next o].
+	'' oo
+].
+b := Bag new.
+1000 timesRepeat: [ b add: c next].
+b oo.
 !

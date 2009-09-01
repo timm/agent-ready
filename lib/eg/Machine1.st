@@ -4,11 +4,13 @@ machine := Machine new.
 waiting := #waiting state.
 running := #running state.
 
-machine 
+machine
 	add: (Transition new
 			state: waiting;
 			then: ['i am waiting ' oo];
-			next: waiting);
+			next: waiting)
+
+"
 	add: (Transition new
 			state: waiting;
 			if:    [App random next > 0.8]);
@@ -29,12 +31,10 @@ machine
 			state: #start state;
 			then: ['i am staring ' oo];
 			next: waiting).
-	
-machine transitions do: [:cycle| 
-	cycle do: [:t| 
-		t oo]].
-machine step.
-machine candidates do:[:c| c oo].
-!
+"
+machine oo.
+"machines add: machine.
+machines do:  [:stagger| stagger oo].
+"
 
-  
+!

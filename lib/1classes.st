@@ -11,7 +11,7 @@
             shares: 'Rand Asynchronousp Trace Ids' .
 
 #Stagger     isa: App with: 'contents pointer'.
-#Machines    isa: App with: 'time ' shares: 'All'.
+#Machines    isa: App with: 'time ' shares: 'All'. 
 #Machine     isa: App with: 'partOf id current starts stops transitions'.
 (#Transition isa: App with: 'machine state if then next') public; inits.
 (#State      isa: App with: 'id name') public.

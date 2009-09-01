@@ -4,8 +4,8 @@ new: machines
 !!
 ! Machine methods !
 init: machines
-	partOf := machines	
-	machines all add: self.
+	partOf := machines.
+	machines add: self.
 	id          := App nextId.
 	starts      := Bag new.
 	stops       := Bag new.
@@ -23,8 +23,9 @@ add: transition
 	stops  add: currentSymbol.
 	transitions at: currentSymbol
 				ifAbsent: [transitions at: currentSymbol
-                                      put: Cycle new].
+                                      put: Stagger new].
 	(transitions at: currentSymbol) add: transition.
+
 !
 current
 	^current
