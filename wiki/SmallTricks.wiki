@@ -40,6 +40,7 @@ Now you can browse the raw syntax of the Smalltalk system. Hint: do not edit thi
 <li>A truly great book on [http://stephane.ducasse.free.fr/FreeBooks/BestSmalltalkPractices/Draft-Smalltalk%20Best%20Practice%20Patterns%20Kent%20Beck.pdf Smalltalk best practices] by
 one of the great Smalltalk grand masters.</li>
 <li>A very advanced book on [http://www.amazon.com/Object-Oriented-Implementation-Numerical-Methods-Introduction/dp/1558606793/ref=sr_11_1/182-7961430-6156935?ie=UTF8&qid=1234352470&sr=11-1 mathematical methods in Smalltalk].</li>
+<li> A <a href="http://www.canol.info/smalltalk/gnu_smalltalk_book.pdf">beginner's book on GNU Smalltalk</a> (unfinished, just the first three chapters, constantly evolving)</li>
 </ul>
 
 = GNU Smalltalk = JASL (Just Another Scripting Language) =
