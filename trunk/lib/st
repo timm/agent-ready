@@ -1,1 +1,4 @@
-gst  *.st  $*
+if [ -n "$Gst" ]
+then $Gst *.st  $*
+else  gst *.st $*
+fi
