@@ -85,11 +85,16 @@ fileLinesDo: aBlock
 
 ";;;; nil tricks"
 ! UndefinedObject methods !
-ifNil:  aBlock 		^aBlock value !
-notNil: aBlock 		^self !
+ifNil:  aBlock 		
+	^aBlock value 
 !
-
+notNil: aBlock 		
+	^self 
+!!
 ! Object methods !
-ifNil:  aBlock      ^self !
-notNil: aBlock 		^aBlock value !
+ifNil:  aBlock      
+	^self 
 !
+notNil: aBlock 		
+	^aBlock value 
+!!
