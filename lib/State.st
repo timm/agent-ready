@@ -12,6 +12,21 @@ new: aSymbol
 	^super new init: aSymbol
 !!
 ! State methods !
+machine: aMachine
+	container := aMachine
+!
+machine
+	^container
+!
+mill
+	^container mill
+!
+incFroms
+	froms := froms + 1.
+!
+incTos
+	tos := tos + 1.
+!
 = aState
 	name = aState name
 !
@@ -19,6 +34,7 @@ init: aSymbol
 	name := aSymbol.
 	self reset.
 	id := App nextId.
+	froms := tos := 0
 !
 reset
 	visits := 0
@@ -27,9 +43,11 @@ printOn: aStream
 	aStream nextPutAll: self class name;
 			nextPut: $(.
 	id printOn: aStream.
-	aStream	nextPutAll: ': ';
-			nextPutAll: name; 
-			nextPut: $)
+	aStream	nextPutAll: ':';
+			nextPutAll: name;
+			nextPut: $#.
+	id printOn: aStream. 
+	aStream	nextPut: $)
 !
 onStay
 	^nil

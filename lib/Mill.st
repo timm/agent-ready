@@ -1,16 +1,32 @@
+! Mill class methods !
+new: aString
+	^super new init: aString
+!
 ! Mill methods !
-init 
-	all := Stagger new.
+init: aString 
+	machines := Stagger new.
+	name := aString
+!
+printOn: aStream
+	super printOn: aStream.
+	name printOn: aStream
 !
 reset
-	all do:[:machine | machine reset]
+	machines do:[:machine | machine reset]
 !
-add: machine
-	all add: machine
+newMachine: name
+	self machine: (Machine new: name).
+!
+machine: machine
+	current := machine.
+	machines add: machine.
+	machine mill: self.
+!
+transition: trans
+	current add: trans
 !
 do: aBlock
-	all contents size oo.
-	all do: [:machine| aBlock value: machine]
+	machines do: [:machine| aBlock value: machine]
 !
 start
 	self do: [:machine| machine start].

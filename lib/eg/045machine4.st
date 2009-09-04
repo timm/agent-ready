@@ -1,40 +1,34 @@
-|waiting machine|
+|mill|
 
-machine := Machine new.
-waiting := #waiting state.
-running := #running state.
-
-machine
-	add: (Transition new
-			state: waiting;
-			then: ['i am waiting ' oo];
-			next: waiting)
-
-"
-	add: (Transition new
-			state: waiting;
-			if:    [App random next > 0.8]);
-	add: (Transition new
-			staysAt: running;
+(mill := Mill new: 'city') 
+	newMachine: 'suburb';
+	transition: (Transition new
+			state: #waiting state;
+			if:    [App random next > 0.8];
+			then:  ['and , we are off' oo];
+			next:  #running state);
+	transition: (Transition new
+			staysAt: #running state;
 			then:  ['going to the pool' oo]);
-	add: (Transition new
-			staysAt: running;
-			then:  ['going to the shop' oo]);
-	add: (Transition new
-			staysAt: running;
-			then:  ['going to the store' oo]);
-	add: (Transition new
-			state: running;
+	transition: (Transition new
+			state: #running state;
 			then: ['going home to sleep. Nite!' oo];
-			next: #end endState);
-	add: (Transition new
+			next: #endF state);
+	transition: (Transition new
+			staysAt: #running state;
+			then:  ['going to the shop' oo]);
+	transition: (Transition new
+			state:  #running state;
+			then:  ['going to the store' oo];
+			next:  #running state);
+	transition: (Transition new
 			state: #start state;
 			then: ['i am staring ' oo];
-			next: waiting).
-"
-machine oo.
-"mill add: machine.
-mill do:  [:stagger| stagger oo].
-"
+			next: #waiting state).
 
+mill do: [:machine|
+	machine inspect.
+	machine transitions pairs: [:key :candidates| 
+		key loo.
+		candidates contents do: [:c| c oo ]]]
 !

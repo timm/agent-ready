@@ -1,5 +1,5 @@
 
----| 10-0lib.st |-----------------------------------------
+---| 010-0lib.st |-----------------------------------------
 
 flintsoneflintsone
 (11 22 33)
@@ -19,7 +19,7 @@ OrderedCollection ('to' 'be' 'or' 'not' 'to' 'be' )
 13:	
 14:	|i|
 15:	i := 0.
-16:	'eg/10-0lib.st' fileLinesDo: [:line| 
+16:	'eg/010-0lib.st' fileLinesDo: [:line| 
 17:	   i := i + 1.
 18:	        (i s, ':', Character tab s, line ) oo].
 19:	!
