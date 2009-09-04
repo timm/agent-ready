@@ -3,6 +3,10 @@ new: machines
 	^super new init: machines
 !!
 ! Machine methods !
+reset
+	transitions do: [:transition|
+		transition reset]
+!
 init: machines
 	partOf := machines.
 	machines add: self.
@@ -10,6 +14,12 @@ init: machines
 	starts      := Bag new.
 	stops       := Bag new.
 	transitions := Dictionary new.
+!
+continue
+	^current continue
+!
+start
+	current start
 !
 error: message
 	^super error: ('Machine[,'id s,']: ', message) 
@@ -38,15 +48,23 @@ candidates
 !
 candidates: aState
      ^transitions at: aState name
-	        ifAbsent: [
-                self error: ('Missing state: [', aState printString)].
+	    ifAbsent: [
+           self error: ('Missing state: [', aState printString)].
 !
-steps
+step
+	self stopped ifTrue: [^false].
 	self candidates do: [:candidate |
 		candidate ready 
-			ifTrue: [current onExit.
-					 current := candidate fire.
-					 current onEntry.
-					 ^true]].
+			ifTrue: [
+				current := candidate fire.
+				current = candidate next
+					ifTrue:  [current onStay]
+					ifFalse: [current onExit.
+							  current := candidate next.
+							  current onEntry].
+				^true]].
 	^false
+!
+stopped
+	^current stopped
 !!

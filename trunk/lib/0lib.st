@@ -47,8 +47,8 @@ asObject
 	^Smalltalk at: self !!
 ";;;; convenient printing"
 ! Object methods ! 
-o       ^self s display   !
-oo      ^self s displayNl !
+o       self s display   !
+oo      self s displayNl !
 s       ^self displayString !!
  
 ";;;; collection tricks"

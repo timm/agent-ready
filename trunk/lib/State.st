@@ -1,10 +1,27 @@
 ! State class methods !
+nameToClass: aSymbol
+	self ~ '^_' ifTrue: [^ErrorState].
+	self ~ ':$' ifTrue: [^LoopState].
+	self ~ '_$' ifTrue: [^EndState].
+	^NormalState
+!
+from: aSymbol
+	(self nameToClass: aSymbol) new: aSymbol.
+!
 new: aSymbol
-	^self new id: App nextId; name: aSymbol
+	^super new init: aSymbol
 !!
 ! State methods !
-id: aNumber
-	id := aNumber.
+= aState
+	name = aState name
+!
+init: aSymbol
+	name := aSymbol.
+	self reset.
+	id := App nextId.
+!
+reset
+	visits := 0
 !
 printOn: aStream
 	aStream nextPutAll: self class name;
@@ -14,13 +31,34 @@ printOn: aStream
 			nextPutAll: name; 
 			nextPut: $)
 !
-onEntry
+onStay
 	^nil
+!
+onEntry
+	visits := visits + 1.
+	self tooManyLoops
 !
 onExit
 	^nil
+!
+start
+	self onEntry.
+!
+stopped
+	^false
+!	
+tooManyLoops
+	visits > App tooManyLoops
+		 ifTrue: [self error: 'too many loops']
+!!
+! LoopState !
+tooManyLoops
+	^nil
 !!
 ! EndState methods !
+stopped
+	^true
+!
 onEntry
 	'that''s all folks!' oo
 !!

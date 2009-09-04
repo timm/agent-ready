@@ -1,0 +1,1 @@
+make X=$1.st cache

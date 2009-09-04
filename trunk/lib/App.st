@@ -3,11 +3,28 @@ nextId
 	Ids ifNil:[ Ids := 0].
 	^Ids := Ids + 1.
 !
+tooManyLoops
+	^TooManyLoops
+!
+tooManyLoops: anInteger
+	^TooManyLoops := anInteger.
+!
+dawnOfTime
+	Clock := 0
+!
+tick
+	^Clock := Clock + 1
+!
 ready
-	^self ready: 1
-! 
-ready: seed
-	self 	seed: seed;
+	^self reset.
+!
+reset
+	^self reset: 1 maxLoops: 250
+!
+reset: seed maxLoops: n
+	self 	dawnOfTime;
+			tooManyLoops: n;
+			seed: seed;
 			asynchronousOff;
 			silent 
 !
@@ -22,7 +39,7 @@ seed: seed
 	^(Rand := Random new seed: seed )
 !
 say: message
-	Trace ifTrue: [('Status> ' s, message ) o] 
+	Trace ifTrue: [('Status> ' s, message ) oo] 
 !
 silent
 	Trace := false 

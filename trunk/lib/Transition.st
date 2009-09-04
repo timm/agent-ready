@@ -8,6 +8,13 @@ printOn: aStream
 			nextPutAll: next name;
 			nextPut: $)
 !
+reset
+	state reset.
+	next reset.
+!
+start
+	state onEntry
+!
 staysAt: here
 	state := next := here.
 !
@@ -19,6 +26,10 @@ init
 	if   := [true].
 	then := [true].
 !
-ready 
-	^if value 
+ready
+	^if value.
+!
+fire
+	then value.
+	^next.
 !!
