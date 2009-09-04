@@ -2,14 +2,18 @@
 printOn: aStream
 	aStream nextPutAll: #Transition;
 			nextPut: $(;
-			nextPutAll: 'from: ';
-			nextPutAll: state name;
-			nextPutAll: ' to: ';
-			nextPutAll: next name;
-			nextPut: $)
+			nextPutAll: 'from: '.
+	state printOn: aStream.
+    aStream	nextPutAll: ' to: '.
+	next printOn: aStream.
+	aStream nextPut: $)
 !
-machine: aMachine
-	container := aMachine
+machine: aMachine 
+	container := aMachine.
+	state := aMachine addState: state.
+	next  := aMachine addState: next.
+	state incFroms.
+	next  incTos.
 !
 mill
 	^container mill
@@ -25,7 +29,8 @@ start
 	state onEntry
 !
 staysAt: here
-	state := next := here.
+	state := here.
+	next := here.
 !
 fire
 	then value.

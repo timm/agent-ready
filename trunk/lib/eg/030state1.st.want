@@ -1,7 +1,7 @@
 
----| 30-State1.st |-----------------------------------------
+---| 030state1.st |-----------------------------------------
 
-ErrorState(1: errorX)
-LoopState(2: andThenL)
-EndState(3: finallyF)
-NormalState(4: other)
+ErrorState(1:errorX#1)
+LoopState(2:andThenL#2)
+EndState(3:finallyF#3)
+NormalState(4:other#4)

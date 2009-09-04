@@ -48,7 +48,10 @@ asObject
 ";;;; convenient printing"
 ! Object methods ! 
 o       self s display   !
+no      '' oo. self s display !
 oo      self s displayNl !
+noo     '' oo. self s displayNl !
+loo     '' oo. (60 chars:$_) oo. self s displayNl !
 s       ^self displayString !!
  
 ";;;; collection tricks"

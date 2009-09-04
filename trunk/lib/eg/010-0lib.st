@@ -13,7 +13,7 @@ f name oo.
 
 |i|
 i := 0.
-'eg/10-0lib.st' fileLinesDo: [:line| 
+'eg/010-0lib.st' fileLinesDo: [:line| 
    i := i + 1.
         (i s, ':', Character tab s, line ) oo].
 !

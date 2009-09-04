@@ -1,0 +1,7 @@
+
+---| 041machine1.st |-----------------------------------------
+
+Transition(from: NormalState(2:waiting#2) to: NormalState(3:running#3))
+NormalState(2:waiting#2)
+NormalState(3:running#3)
+(Machine#1 with 1 group)
