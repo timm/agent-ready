@@ -1,8 +1,9 @@
-|mill machine|
+|mill |
 
 mill := Mill new.
-machine := Machine new: mill.
-mill do: [:machine|
-	machine oo.
-    ]].
+Machine new: mill.
+Machine new: mill.
+Machine new: mill.
+Machine new: mill.
+mill do: [:machine| machine oo.  ].
 	
