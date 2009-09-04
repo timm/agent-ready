@@ -8,6 +8,15 @@ printOn: aStream
 			nextPutAll: next name;
 			nextPut: $)
 !
+machine: aMachine
+	container := aMachine
+!
+mill
+	^container mill
+!
+machine
+	^container
+!
 reset
 	state reset.
 	next reset.
