@@ -1,0 +1,7 @@
+
+---| 13-Stagger.st |-----------------------------------------
+
+ #ball #run #the #see #past #jane #ball #past #run #see
+ #ball #jane #the #see #past #run #the #ball #past #see
+ #past #ball #the #see #run #the #run #past #ball #jane
+Bag(#run:159 #past:166 #see:162 #the:169 #jane:174 #ball:170 )

@@ -1,0 +1,7 @@
+
+---| 30-State1.st |-----------------------------------------
+
+ErrorState(1: errorX)
+LoopState(2: andThenL)
+EndState(3: finallyF)
+NormalState(4: other)
