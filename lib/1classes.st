@@ -11,9 +11,9 @@
             shares: 'Clock Rand Asynchronousp Trace Ids TooManyLoops' .
 
 #Stagger     isa: App with: 'contents pointer'.
-#Machines    isa: App with: 'all machines '. 
-#Machine     isa: App with: 'partOf id current starts stops transitions'.
-(#Transition isa: App with: 'machine state if then next') public; inits.
+(#Mill    isa: App with: 'machines') inits. 
+#Machine     isa: App with: 'container id current starts stops transitions'.
+(#Transition isa: App with: 'contain state if then next') public; inits.
 (#State      isa: App with: 'visits id name') public.
 #ErrorState  isa: State.
 #LoopState   isa: State.

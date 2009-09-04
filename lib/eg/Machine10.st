@@ -1,10 +1,8 @@
-|mill machine|
+|waiting machine|
 
-mill := Mill new.
-machine := Machine new: mill.
+machine := Machine new.
 waiting := #waiting state.
 running := #running state.
-
 
 machine
 	add: (Transition new

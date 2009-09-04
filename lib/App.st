@@ -39,7 +39,7 @@ seed: seed
 	^(Rand := Random new seed: seed )
 !
 say: message
-	Trace ifTrue: [('Status> ' s, message ) oo] 
+	Trace ifTrue: [('Mill> ' s, message ) oo] 
 !
 silent
 	Trace := false 

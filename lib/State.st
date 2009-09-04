@@ -1,12 +1,12 @@
 ! State class methods !
 nameToClass: aSymbol
-	self ~ '^_' ifTrue: [^ErrorState].
-	self ~ ':$' ifTrue: [^LoopState].
-	self ~ '_$' ifTrue: [^EndState].
+	aSymbol s ~ 'X$' ifTrue: [^ErrorState].
+	aSymbol s ~ 'L$' ifTrue: [^LoopState].
+	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	^NormalState
 !
 from: aSymbol
-	(self nameToClass: aSymbol) new: aSymbol.
+	^(self nameToClass: aSymbol) new: aSymbol.
 !
 new: aSymbol
 	^super new init: aSymbol

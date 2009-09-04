@@ -1,8 +1,4 @@
-! Machines class methods !
-new
-	^super new init
-!!
-! Machines methods !
+! Mill methods !
 init 
 	all := Stagger new.
 !
@@ -13,8 +9,8 @@ add: machine
 	all add: machine
 !
 do: aBlock
-	self class all contents size oo.
-	self class all do: [:machine| aBlock value: machine]
+	all contents size oo.
+	all do: [:machine| aBlock value: machine]
 !
 start
 	self do: [:machine| machine start].
@@ -23,10 +19,11 @@ step
 	| more |
 	more := false.
 	self do: [:machine|
-		machine step 
-			ifTrue: [more := true.
-					 Asynchronousp 
-					    	ifTrue: [^true]]].
+	  machine step 
+		ifTrue: [
+			more := true.
+		    Asynchronousp 
+		   	   ifTrue: [^true]]].
 	^more
 !
 walk

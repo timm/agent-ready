@@ -1,15 +1,18 @@
 ! Machine class methods !
-new: machines
-	^super new init: machines
+new: mill
+	^super new init: mill
 !!
 ! Machine methods !
 reset
 	transitions do: [:transition|
 		transition reset]
 !
-init: machines
-	partOf := machines.
-	machines add: self.
+mill
+	^container
+!
+init: mill
+	container := mill.
+	mill add: self.
 	id          := App nextId.
 	starts      := Bag new.
 	stops       := Bag new.

@@ -1,5 +1,5 @@
 run => main start function. calls reset, then walk
-walk ==> does one pass thru the machines, then maybe
+walk ==> does one pass thru all the  machines in the mill, then maybe
          does one more
 step =>  returns true if at least one transition in
          one machine fired
@@ -8,11 +8,11 @@ many objects
 init
 	- when an instance is created
 
-App, Machines, Machine, Transition, State
+App, Mill, Machine, Transition, State
 reset
 	- set run time info back to eden.
 
-Machines, Machine, Transition, State
+Mill, Machine, Transition, State
 start
 	- any start up actions
 Machine and State
