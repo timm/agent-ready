@@ -1,5 +1,5 @@
 (#Fred isa:  Object 
-       with: 'name age ') isPublic !
+       with: 'name age ') public !
 
 |f|
 f := Fred new name: 'flintsone'.
@@ -13,7 +13,7 @@ f name oo.
 
 |i|
 i := 0.
-'eg/0lib.st' fileLinesDo: [:line| 
+'eg/10-0lib.st' fileLinesDo: [:line| 
    i := i + 1.
         (i s, ':', Character tab s, line ) oo].
 !
