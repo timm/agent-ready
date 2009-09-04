@@ -1,36 +1,40 @@
 ! Machines class methods !
-all
-	All ifNil: [All := Stagger new].
-	^All
-!
-id
-	Ids ifNil: [Ids := 0].
-	^Ids := Ids + 1.
-!
+new
+	^super new init
+!!
 ! Machines methods !
-time
-	^time
+init 
+	all := Stagger new.
+!
+reset
+	all do:[:machine | machine reset]
 !
 add: machine
-	self class all add: machine
+	all add: machine
 !
 do: aBlock
 	self class all contents size oo.
 	self class all do: [:machine| aBlock value: machine]
 !
-walks
-	| steps |
-	steps := 0.
-	self do: [:machine| machine current onEntry].
-	self do: [:machine|
-		machine steps 
-			ifTrue: [steps := steps + 1.
-					 Asynchronousp 
-					  	ifTrue: [^true]]
-	].
-	^steps > 0
+start
+	self do: [:machine| machine start].
 !
-runs
-	time := 1.
-	[self walks] whileTrue: [time := time + 1].
+step
+	| more |
+	more := false.
+	self do: [:machine|
+		machine step 
+			ifTrue: [more := true.
+					 Asynchronousp 
+					    	ifTrue: [^true]]].
+	^more
+!
+walk
+	"Important: must be tail recursive."
+	App tick.
+	self step ifTrue: [self walk].
+!
+run
+	App reset.
+	self reset; start; walk
 !!

@@ -1,4 +1,5 @@
 | c b|
+App seed: 1.
 c := Stagger new: #(#see #jane #run #past #the #ball).
 
 3 timesRepeat: [

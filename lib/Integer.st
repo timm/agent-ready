@@ -1,4 +1,4 @@
 ! Integer methods !
-upTo
-	^App random between: 0 and: self - 1 
+below
+	^App random between: 1 and: self    
 !!
