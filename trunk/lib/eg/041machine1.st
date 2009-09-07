@@ -1,6 +1,6 @@
-|mill trans|
+|f trans|
 
-(mill := Mill new: 'city')
+(f := Factory new: 'city')
 	newMachine: 'suburb';
 	transition: (trans:= Transition new
 					state: #waiting state;
@@ -10,7 +10,7 @@ trans oo.
 trans state oo.
 trans next oo.
 
-mill do:  [:stagger| stagger oo].
+f do:  [:stagger| stagger oo].
 
 
 !

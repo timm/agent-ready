@@ -3,29 +3,51 @@ new: name
 	^super new init: name
 !!
 ! Machine methods !
-reset
-	transitions do: [:transition|
-		transition reset]
+add: transition
+	|what|
+	transition machine: self.
+	what := transition state name.
+	transitions at: what
+				ifAbsent: [transitions at: what
+                                      put: Stagger new].
+	(transitions at: what) add: transition.
+
 !
-printOn: aStream
-	|s|
-	aStream nextPutAll: '(Machine#'.
-    id printOn: aStream.
-	aStream nextPutAll: ' with '.
-	s := transitions size .
-	s printOn: aStream.
-	aStream nextPutAll: ' group'.
-    s=1 ifFalse: [aStream nextPut: $s].
-    aStream nextPut: $)
+addState: aState
+	|new|
+	new := states at: aState name ifAbsent: [aState].
+	new machine: self.
+	states at: aState name put: new.
+	(aState name == #start) ifTrue: [start := aState].
+	^new.
+!
+anyState
+	states do: [:state | ^state].
+!
+candidates
+	^self candidates:  current 
+!
+candidates: aState
+     ^transitions at: aState name
+	    ifAbsent: [#()].
+!
+continue
+	^current continue
+!
+current
+	^current
+!
+error: message
+	^super error: ('Machine[,'id s,']: ', message) 
+! 
+factory
+	^container
+!
+factory: aFactory
+	container := aFactory
 !
 id
 	^id
-!
-mill
-	^container
-!
-mill: aMill
-	container := aMill
 !
 init: aString
 	name        := aString.
@@ -33,61 +55,53 @@ init: aString
 	transitions := Dictionary new.
 	states      := Dictionary new.
 !
-continue
-	^current continue
+name
+	^name
+!
+printOn: aStream
+	|s|
+	aStream nextPut: $(;
+	        nextPutAll: self class name  asString;
+			nextPut: $#.
+	id printOn: aStream.
+    aStream space.
+	name printOn: aStream.
+	aStream nextPutAll: ' with '.
+	s := transitions size .
+	s printOn: aStream.
+	aStream nextPutAll: ' group'.
+    s=1 ifFalse: [aStream nextPut: $s].
+    aStream nextPut: $)
+!
+reset
+	current := start isNil ifTrue:  [self anyState]
+                           ifFalse: [start].
+	states do: [:state|
+		state reset]
 !
 start
-	current start
-!
-error: message
-	^super error: ('Machine[,'id s,']: ', message) 
-! 
-addState: aState
-	|new|
-	new := states at: aState name ifAbsent: [aState].
-	new machine: self.
-	states at: aState name put: new.
-	^new.
-!
-add: transition
-	|state currentSymbol|
-	transition machine: self.
-	current       := transition state.
-	currentSymbol := current name.
-	transitions at: currentSymbol
-				ifAbsent: [transitions at: currentSymbol
-                                      put: Stagger new].
-	(transitions at: currentSymbol) add: transition.
-
-!
-current
-	^current
-!
-transitions
-	^transitions
-!
-candidates
-	^self candidates:  current 
-!
-candidates: aState
-     ^transitions at: aState name
-	    ifAbsent: [
-           self error: ('Missing state: [', aState printString)].
+	^current := start
 !
 step
+	|now next|
 	self stopped ifTrue: [^false].
 	self candidates do: [:candidate |
+		The := candidate.
 		candidate ready 
 			ifTrue: [
-				current := candidate fire.
-				current = candidate next
+				now  := current.
+				next := candidate fire.
+				(next name = current name)
 					ifTrue:  [current onStay]
-					ifFalse: [current onExit.
-							  current := candidate next.
+					ifFalse: [now onExit.
+							  current := next.
 							  current onEntry].
 				^true]].
 	^false
 !
 stopped
 	^current stopped
+!
+transitions
+	^transitions
 !!

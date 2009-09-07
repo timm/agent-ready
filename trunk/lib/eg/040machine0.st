@@ -1,9 +1,9 @@
-|mill |
+|f |
 
-mill := Mill new.
-Machine new: mill.
-Machine new: mill.
-Machine new: mill.
-Machine new: mill.
-mill do: [:machine| machine oo.  ].
+f := factory new.
+Machine new: f.
+Machine new: f.
+Machine new: f.
+Machine new: f.
+f do: [:machine| machine oo.  ].
 	

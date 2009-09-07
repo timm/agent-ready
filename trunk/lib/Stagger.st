@@ -26,7 +26,7 @@ once: aBlock
 !
 next
 	|tmp|
-	(pointer >= contents size) 
+	(pointer > contents size) 
 		ifTrue: [ self reset ].
 	tmp := contents at: pointer.
 	pointer := pointer + 1.
