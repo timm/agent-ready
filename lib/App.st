@@ -1,19 +1,25 @@
 ! App class methods !
-nextId
-	Ids ifNil:[ Ids := 0].
-	^Ids := Ids + 1.
+asynchronousOn
+    Asynchronousp  := true
 !
-tooManyLoops
-	^TooManyLoops
+asynchronousOff
+    Asynchronousp  := false
 !
-tooManyLoops: anInteger
-	^TooManyLoops := anInteger.
+clock
+	^Clock
 !
 dawnOfTime
 	Clock := 0
 !
-tick
-	^Clock := Clock + 1
+impatient
+	^(Patience := Patience - 1 ) < 0  
+!
+nextId
+	Ids ifNil:[ Ids := 0].
+	^Ids := Ids + 1.
+!
+patience: anInteger
+	Patience := anInteger
 !
 ready
 	^self reset.
@@ -21,11 +27,15 @@ ready
 reset
 	^self reset: 1 maxLoops: 250
 !
+resetAny
+	^self reset: (Random next*100000) asInteger maxLoops: 250
+!
 reset: seed maxLoops: n
 	self 	dawnOfTime;
 			tooManyLoops: n;
 			seed: seed;
 			asynchronousOff;
+			patience: 50;
 			silent 
 !
 random
@@ -39,17 +49,20 @@ seed: seed
 	^(Rand := Random new seed: seed )
 !
 say: message
-	Trace ifTrue: [('Mill> ' s, message ) oo] 
+	Trace ifTrue: [('Actory> ' s, message ) oo] 
 !
 silent
 	Trace := false 
 !
+tick
+	^Clock := Clock + 1
+!
+tooManyLoops
+	^TooManyLoops
+!
+tooManyLoops: anInteger
+	^TooManyLoops := anInteger.
+!
 verbose
 	Trace := true 
-!
-asynchronousOn
-	Asyncrhonoup := true 
-!
-asynchronousOff
-	Asyncrhonoup := false 
 !!

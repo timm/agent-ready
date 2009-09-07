@@ -7,16 +7,20 @@
 #TagError    isa: GraphTag.
 
 #App         isa:    Object 
-             shares: 'Clock Rand Asynchronousp Trace Ids TooManyLoops' .
+             shares: 'Clock Rand Asynchronousp Patience Trace Ids TooManyLoops' .
 
 #Stagger     isa: App with: 'contents pointer'.
-#Mill       isa: App with: 'machines name current'.
-#Machine     isa: App with: 'container name current states id transitions'.
-(#State      isa: App with: 'container name visits id froms tos') public.
-(#Transition isa: App with: 'container state if then next') public; inits.
+#Factory     isa: App with: 'machines name current'.
+#Machine     isa: App with: 'container name id current start states transitions'.
+(#State      isa: App with: 'container name id visits froms tos') public.
+(#Transition isa: App with: 'container      id state if then next') public; inits.
 #ErrorState  isa: State.
 #LoopState   isa: State.
 #EndState    isa: State.
 #NormalState isa: State.
+#Happy       isa: NormalState.
+#KillJoy     isa: Machine with: 'happiness'.
+
+Smalltalk at: #The put: nil. "one global"
 
 !

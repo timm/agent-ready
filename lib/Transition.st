@@ -1,4 +1,26 @@
 ! Transition methods!
+factory
+	^container factory
+!
+fire
+	then value.
+	^next
+!
+init
+	id  := App nextId.
+	if   := [true].
+	then := [true].
+!
+machine
+	^container
+!
+machine: aMachine 
+	container := aMachine.
+	state := aMachine addState: state.
+	next  := aMachine addState: next.
+	state oneMoreFrom.
+	next  oneMoreTo.
+!
 printOn: aStream
 	aStream nextPutAll: #Transition;
 			nextPut: $(;
@@ -8,22 +30,8 @@ printOn: aStream
 	next printOn: aStream.
 	aStream nextPut: $)
 !
-machine: aMachine 
-	container := aMachine.
-	state := aMachine addState: state.
-	next  := aMachine addState: next.
-	state incFroms.
-	next  incTos.
-!
-mill
-	^container mill
-!
-machine
-	^container
-!
-reset
-	state reset.
-	next reset.
+ready
+	^if value.
 !
 start
 	state onEntry
@@ -31,19 +39,4 @@ start
 staysAt: here
 	state := here.
 	next := here.
-!
-fire
-	then value.
-	^next
-!
-init
-	if   := [true].
-	then := [true].
-!
-ready
-	^if value.
-!
-fire
-	then value.
-	^next.
 !!

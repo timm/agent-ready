@@ -1,6 +1,5 @@
-|mill|
-
-(mill := Mill new: 'city') 
+App reset.
+(Factory new: 'city') 
 	newMachine: 'suburb';
 	transition: (Transition new
 			state: #waiting state;
@@ -24,11 +23,10 @@
 	transition: (Transition new
 			state: #start state;
 			then: ['i am staring ' oo];
-			next: #waiting state).
-
-mill do: [:machine|
-	machine inspect.
-	machine transitions pairs: [:key :candidates| 
-		key loo.
-		candidates contents do: [:c| c oo ]]]
+			next: #waiting state);
+	do: [:machine|
+		machine inspect.
+		machine transitions pairs: [:key :candidates| 
+			key loo.
+			candidates contents do: [:c| c oo ]]]
 !

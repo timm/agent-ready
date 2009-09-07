@@ -37,7 +37,7 @@ test : ready $(Testdir)/$(X).want
 	$(MAKE) run > $(Tmp)/$X.got 
 	if   diff -s $(Tmp)/$X.got $(Testdir)/$X.want > /dev/null;  \
         then echo PASSED $X ; \
-        else echo FAILED $X,  got $(Tmp)/$X.got; \
+        else echo FAILED $X:  expected $(Testdir)/$X.want, got $(Tmp)/$X.got; \
     fi
 
 run : ready $(Testdir)/$(X) 

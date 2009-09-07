@@ -1,7 +1,7 @@
-|mill machine trans|
+|f machine trans|
 
-mill := Mill new.
-machine := Machine new: mill.
+f := Factory new.
+machine := Machine new: f.
 waiting := #waiting state.
 running := #running state.
 

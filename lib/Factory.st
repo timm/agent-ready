@@ -1,0 +1,110 @@
+! Factory class methodsFor: 'initialization' !
+new: aString
+	^super new init: aString
+!
+
+"==============================================="
+! Factory methodsFor: 'initialization' !
+  
+init: aString 
+	machines := Stagger new.
+	name := aString
+!!
+
+"==============================================="
+! Factory methodsFor: 'set, get' !
+machine: machine
+	current := machine.
+	machines add: machine.
+	machine factory: self.
+!
+newMachine: name
+	self machine: (Machine new: name).
+!
+transition: trans
+	current add: trans
+!!
+
+"==============================================="
+! Factory methodsFor: 'setting transitions' !
+go: state1 to: state2                          
+	^self go: state1 to: state2 if: [true] then: [true] 
+!
+go: state1 to: state2 if: gaurd                
+	^self go: state1 to: state2 if: gaurd  then: [true] 
+!
+go: state1 to: state2 then: sideEffect         
+	^self go: state1 to: state2 if: [true] then: sideEffect 
+!
+go: state1 to: state2 then: sideEffect if: gaurd 
+	^self go: state1 to: state2 if: gaurd then: sideEffect 
+!
+go: state1 to: state2 if: gaurd then: sideEffect
+	self transition:
+		(Transition new
+			state:  state1 state;
+			if:     gaurd;   
+			then:   sideEffect;
+			next:   state2 state)
+!! 
+
+"==============================================="
+! Factory methodsFor: 'printing' !
+printOn: aStream
+	super printOn: aStream.
+	name printOn: aStream
+!!
+
+"==============================================="
+! Factory methodsFor: 'iteration' !
+do: aBlock
+	machines do: [:machine| aBlock value: machine]
+!!
+
+"==============================================="
+! Factory methodsFor: 'control' !
+reset
+	machines do:[:machine | machine reset]
+!
+report
+	'' loo.
+	('Terminated at tick ', Clock s) oo.
+	('Final patience ', Patience s) oo.
+!
+run
+	self reset; start; walk; report.
+!
+start
+	self do: [:machine| machine start].
+!
+step
+	| more |
+	App tick.
+	more := false.
+	self do: [:machine|
+	  machine step 
+		ifTrue: [
+			more := true.
+            Asynchronousp 
+		   	   ifTrue: [^true]]].
+	^more
+!
+walk
+	App patience: self patience.
+	[true] whileTrue: [
+		App clock > self tooMuch 
+			ifTrue:[ ^true].
+		self step 
+			ifTrue:  [App patience: self patience]
+			ifFalse: [App impatient 
+						ifTrue: [^true]]].
+!!
+
+"==============================================="
+! Factory methodsFor: 'magic constants' !
+patience
+	^50
+!
+tooMuch
+	^100
+!!
