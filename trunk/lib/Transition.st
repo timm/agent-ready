@@ -1,15 +1,28 @@
-! Transition methods!
+! Transition methodsFor: 'creation'!
+init
+	id  := App nextId.
+	if   := [true].
+	then := [true].
+!!
+
+"========================================"
+! Transition methodsFor: 'printing'!
+printOn: aStream
+	aStream nextPutAll: #Transition;
+			nextPut: $(;
+			nextPutAll: 'from: '.
+	state printOn: aStream.
+    aStream	nextPutAll: ' to: '.
+	next printOn: aStream.
+	aStream nextPut: $)
+!!
+
 factory
 	^container factory
 !
 fire
 	then value.
 	^next
-!
-init
-	id  := App nextId.
-	if   := [true].
-	then := [true].
 !
 machine
 	^container
@@ -20,15 +33,6 @@ machine: aMachine
 	next  := aMachine addState: next.
 	state oneMoreFrom.
 	next  oneMoreTo.
-!
-printOn: aStream
-	aStream nextPutAll: #Transition;
-			nextPut: $(;
-			nextPutAll: 'from: '.
-	state printOn: aStream.
-    aStream	nextPutAll: ' to: '.
-	next printOn: aStream.
-	aStream nextPut: $)
 !
 ready
 	^if value.

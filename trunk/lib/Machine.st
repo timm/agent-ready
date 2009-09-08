@@ -1,8 +1,19 @@
-! Machine class methods !
+! Machine class methodsFor: 'creation' !
 new: name
 	^super new init: name
 !!
-! Machine methods !
+
+"============================================="
+! Machine methodsFor: 'creation' !
+init: aString
+	name        := aString.
+	id          := App nextId.
+	transitions := Dictionary new.
+	states      := Dictionary new.
+!!
+
+"============================================="
+! Machine methodsFor: 'storing' !
 add: transition
 	|what|
 	transition machine: self.
@@ -20,7 +31,10 @@ addState: aState
 	states at: aState name put: new.
 	(aState name == #start) ifTrue: [start := aState].
 	^new.
-!
+!!
+
+"============================================="
+! Machine methodsFor: 'accessing' !
 anyState
 	states do: [:state | ^state].
 !
@@ -37,9 +51,7 @@ continue
 current
 	^current
 !
-error: message
-	^super error: ('Machine[,'id s,']: ', message) 
-! 
+
 factory
 	^container
 !
@@ -49,30 +61,19 @@ factory: aFactory
 id
 	^id
 !
-init: aString
-	name        := aString.
-	id          := App nextId.
-	transitions := Dictionary new.
-	states      := Dictionary new.
-!
 name
 	^name
 !
-printOn: aStream
-	|s|
-	aStream nextPut: $(;
-	        nextPutAll: self class name  asString;
-			nextPut: $#.
-	id printOn: aStream.
-    aStream space.
-	name printOn: aStream.
-	aStream nextPutAll: ' with '.
-	s := transitions size .
-	s printOn: aStream.
-	aStream nextPutAll: ' group'.
-    s=1 ifFalse: [aStream nextPut: $s].
-    aStream nextPut: $)
+stopped
+	^current stopped
 !
+transitions
+	^transitions
+!!
+
+
+"============================================="
+! Machine methodsFor: 'simulation' !
 reset
 	current := start isNil ifTrue:  [self anyState]
                            ifFalse: [start].
@@ -98,10 +99,28 @@ step
 							  current onEntry].
 				^true]].
 	^false
-!
-stopped
-	^current stopped
-!
-transitions
-	^transitions
+!!
+
+"============================================="
+! Machine methodsFor: 'errors' !
+error: message
+	^super error: ('Machine[,'id s,']: ', message) 
+!! 
+
+"============================================="
+! Machine methodsFor: 'printing' !
+printOn: aStream
+	|s|
+	aStream nextPut: $(;
+	        nextPutAll: self class name  asString;
+			nextPut: $#.
+	id printOn: aStream.
+    aStream space.
+	name printOn: aStream.
+	aStream nextPutAll: ' with '.
+	s := transitions size .
+	s printOn: aStream.
+	aStream nextPutAll: ' group'.
+    s=1 ifFalse: [aStream nextPut: $s].
+    aStream nextPut: $)
 !!

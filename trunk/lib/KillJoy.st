@@ -1,4 +1,4 @@
-! KillJoy class methods !
+! KillJoy class methodsFor: 'creation' !
 new: name
 	^(super new: name) init
 !
@@ -26,16 +26,24 @@ worksIn: factory
                                          The machine oo.
                                          The factory oo].
 !!
-! KillJoy methods !
+
+"============================================"
+! KillJoy methodsFor: 'creation' !
+init
+    happiness := 10
+!!
+
+"============================================"
+! KillJoy methodsFor: 'operations' !
 drinks
     happiness := happiness sqrt
 !
 happiness
     ^happiness
-!
-init
-    happiness := 10
-!
+!!
+
+"============================================"
+! KillJoy methodsFor: 'printing' !
 talks: x
     ('Machine:[', id s, '] ', x s)o
 !!
