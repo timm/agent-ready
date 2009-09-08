@@ -1,4 +1,4 @@
-! SequenceableCollection methods !
+! SequenceableCollection methodsFor: 'operations' !
 shuffle
 	^self shuffle: App random
 !

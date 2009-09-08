@@ -1,32 +1,15 @@
-! Factory class methodsFor: 'initialization' !
+! Factory class methodsFor: 'creation' !
 new: aString
 	^super new init: aString
 !
 
 "==============================================="
-! Factory methodsFor: 'initialization' !
+! Factory methodsFor: 'creation' !
   
 init: aString 
 	machines := Stagger new.
 	name := aString
-!!
-
-"==============================================="
-! Factory methodsFor: 'set, get' !
-machine: machine
-	current := machine.
-	machines add: machine.
-	machine factory: self.
 !
-newMachine: name
-	self machine: (Machine new: name).
-!
-transition: trans
-	current add: trans
-!!
-
-"==============================================="
-! Factory methodsFor: 'setting transitions' !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
 !
@@ -49,6 +32,20 @@ go: state1 to: state2 if: gaurd then: sideEffect
 !! 
 
 "==============================================="
+! Factory methodsFor: 'storing' !
+machine: machine
+	current := machine.
+	machines add: machine.
+	machine factory: self.
+!
+newMachine: name
+	self machine: (Machine new: name).
+!
+transition: trans
+	current add: trans
+!!
+
+"==============================================="
 ! Factory methodsFor: 'printing' !
 printOn: aStream
 	super printOn: aStream.
@@ -56,13 +53,13 @@ printOn: aStream
 !!
 
 "==============================================="
-! Factory methodsFor: 'iteration' !
+! Factory methodsFor: 'enumerating' !
 do: aBlock
 	machines do: [:machine| aBlock value: machine]
 !!
 
 "==============================================="
-! Factory methodsFor: 'control' !
+! Factory methodsFor: 'simulation' !
 reset
 	machines do:[:machine | machine reset]
 !
@@ -101,7 +98,7 @@ walk
 !!
 
 "==============================================="
-! Factory methodsFor: 'magic constants' !
+! Factory methodsFor: 'constants' !
 patience
 	^50
 !

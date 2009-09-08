@@ -1,22 +1,33 @@
-! Stagger class methods !
+! Stagger class methodsFor: 'creation' !
 new
 	^super new init: OrderedCollection new.
 !
 new: list
 	^super new init: list 
 !!
-! Stagger methods !
-contents
-	^contents
-!
-add: item
-	contents add: item
-!
+
+"========================================"
+! Stagger methodsFor: 'creation' !
 init: aList 
 	contents := aList asOrderedCollection.
 	contents shuffle.
  	pointer := 1	
-!
+!!
+
+"========================================"
+! Stagger methodsFor: 'accessing' !
+contents
+	^contents
+!!
+
+"========================================"
+! Stagger methodsFor: 'storing' !
+add: item
+	contents add: item
+!!
+
+"========================================"
+! Stagger methodsFor: 'enumeration' !
 do: aBlock
 	contents size timesRepeat: [ 
 		aBlock value: self next ].
@@ -25,14 +36,12 @@ once: aBlock
 	aBlock value: self next.
 !
 next
-	|tmp|
-	(pointer > contents size) 
+	pointer >= contents size 
 		ifTrue: [ self reset ].
-	tmp := contents at: pointer.
 	pointer := pointer + 1.
-	^tmp
+	^contents at: pointer.
 !
 reset
-	pointer := 1.
+	pointer := 0.
 	contents shuffle.
 !!

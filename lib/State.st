@@ -1,4 +1,4 @@
-! State class methods !
+! State class methodsFor: 'coercing' !
 from: aSymbol
 	^(self nameToClass: aSymbol) new: aSymbol.
 !
@@ -8,29 +8,49 @@ nameToClass: aSymbol
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
 	^NormalState
-!
+!!
+
+"============================================"
+! State class methodsFor: 'creation' !
 new: aSymbol
 	^super new init: aSymbol
 !!
-! State methods !
-= aState
-	^name = aState name
-!
-factory
-	^container factory
-!
+
+"============================================"
+! State methodsFor: 'creation' !
 init: aSymbol
 	name := aSymbol.
 	self reset.
 	id := App nextId.
 	froms := tos := 0
 !
+oneMoreFrom
+	froms := froms + 1.
+!
+oneMoreTo
+	tos := tos + 1.
+!!
+
+"============================================"
+! State methodsFor: 'comparing' !
+= aState
+	^name = aState name
+!!
+
+"============================================"
+! State methodsFor: 'accessing' !
+factory
+	^container factory
+!
 machine: aMachine
 	container := aMachine
 !
 machine
 	^container
-!
+!!
+
+"============================================"
+! State methodsFor: 'simulation' !
 onEntry
 	visits := visits + 1.
 	self tooManyLoops
@@ -40,20 +60,6 @@ onExit
 !
 onStay
 	^nil
-!
-oneMoreFrom
-	froms := froms + 1.
-!
-oneMoreTo
-	tos := tos + 1.
-!
-printOn: aStream
-	aStream nextPutAll: self class name;
-			nextPut: $(.
-	aStream	nextPutAll: name;
-			nextPut: $#.
-	id printOn: aStream. 
-	aStream	nextPut: $)
 !
 reset
 	visits := 0
@@ -69,7 +75,19 @@ tooManyLoops
 		 ifTrue: [self error: 'too many loops']
 !!
 
-! LoopState !
+"============================================"
+! State methodsFor: 'printing' !
+printOn: aStream
+	aStream nextPutAll: self class name;
+			nextPut: $(.
+	aStream	nextPutAll: name;
+			nextPut: $#.
+	id printOn: aStream. 
+	aStream	nextPut: $)
+!
+
+"============================================"
+! LoopState methods !
 tooManyLoops
 	^false
 !!

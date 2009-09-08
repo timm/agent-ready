@@ -1,4 +1,4 @@
-! Number methods !
+! Number methodsFor: 'printing' !
 chars: c
 	|s|
 	s := WriteStream on: ''.
