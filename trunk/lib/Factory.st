@@ -1,7 +1,10 @@
 ! Factory class methodsFor: 'creation' !
-new: aString
-	^super new init: aString
+new
+	self error: 'should not create Factories without nameStrings'
 !
+new: nameString
+	^super new init: nameString
+!!
 
 "==============================================="
 ! Factory methodsFor: 'creation' !
@@ -59,9 +62,15 @@ do: aBlock
 !!
 
 "==============================================="
+! Factory methodsFor: 'accessing' !
+machines
+	^machines
+!!
+
+"==============================================="
 ! Factory methodsFor: 'simulation' !
 reset
-	machines do:[:machine | machine reset]
+	machines contents do:[:machine | machine reset]
 !
 report
 	'' loo.

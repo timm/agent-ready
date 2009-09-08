@@ -1,7 +1,6 @@
 |f machine trans|
 
-f := Factory new.
-machine := Machine new: f.
+machine := Machine new: 'new'.
 waiting := #waiting state.
 running := #running state.
 

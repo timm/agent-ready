@@ -3,8 +3,12 @@
 
 |f|
 f := Fred new name: 'flintsone'.
-f name o.
+f name loo.
+f name noo.
 f name oo.
+f name no.
+f name o.
+'' oo.
 !
 
 #(11 22 33) oo.
@@ -20,4 +24,4 @@ i := 0.
 
 |x|
 x ifNil: 	[x := 23].
-x notNil: 	[x oo].
+x notNil: 	[x loo].
