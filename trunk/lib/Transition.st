@@ -17,22 +17,12 @@ printOn: aStream
 	aStream nextPut: $)
 !!
 
-factory
-	^container factory
-!
+
+"========================================"
+! Transition methodsFor: 'simulation'!
 fire
 	then value.
 	^next
-!
-machine
-	^container
-!
-machine: aMachine 
-	container := aMachine.
-	state := aMachine addState: state.
-	next  := aMachine addState: next.
-	state oneMoreFrom.
-	next  oneMoreTo.
 !
 ready
 	^if value.
@@ -44,3 +34,23 @@ staysAt: here
 	state := here.
 	next := here.
 !!
+
+"========================================"
+! Transition methodsFor: 'accessing'!
+machine
+	^container
+!
+factory
+	^container factory
+!!
+
+"========================================"
+! Transition methodsFor: 'storing'!
+machine: aMachine 
+	container := aMachine.
+	state := aMachine addState: state.
+	next  := aMachine addState: next.
+	state oneMoreFrom.
+	next  oneMoreTo.
+!!
+
