@@ -1,4 +1,5 @@
-! App class methods !
+"=============================================="
+! App class methodsFor: 'variables' !
 asynchronousOn
     Asynchronousp  := true
 !
@@ -21,6 +22,34 @@ nextId
 patience: anInteger
 	Patience := anInteger
 !
+random
+	Rand ifNil: [ Rand := self seed].
+	^Rand
+!  
+seed
+	^self seed: 1
+!
+seed: seed
+	^(Rand := Random new seed: seed )
+!
+silent
+	Trace := false 
+!
+tick
+	^Clock := Clock + 1
+!
+tooManyLoops
+	^TooManyLoops
+!
+tooManyLoops: anInteger
+	^TooManyLoops := anInteger.
+!
+verbose
+	Trace := true 
+!!
+
+"=============================================="
+! App class methodsFor: 'creation' !
 ready
 	^self reset.
 !
@@ -37,32 +66,10 @@ reset: seed maxLoops: n
 			asynchronousOff;
 			patience: 50;
 			silent 
-!
-random
-	Rand ifNil: [ Rand := self seed].
-	^Rand
-!  
-seed
-	^self seed: 1
-!
-seed: seed
-	^(Rand := Random new seed: seed )
-!
+!!
+
+"=============================================="
+! App class methodsFor: 'printing' !
 say: message
 	Trace ifTrue: [('Actory> ' s, message ) oo] 
-!
-silent
-	Trace := false 
-!
-tick
-	^Clock := Clock + 1
-!
-tooManyLoops
-	^TooManyLoops
-!
-tooManyLoops: anInteger
-	^TooManyLoops := anInteger.
-!
-verbose
-	Trace := true 
 !!
