@@ -1,0 +1,231 @@
+#summary How to split up your Smalltalk code
+
+When splitting up code, it is useful to use headings that other programmers are familiar with. One standard list, found via Google, was:
+
+{{{
+updating
+callbacks
+initializing
+navigating
+opening
+applying primitives
+closure-prims
+comparing
+debugging
+initialize-release
+objects from disk
+system primitives
+testing
+}}}
+
+This list seemed a little sparse to me, so I grepped the categories seen in GNU Smalltalk. That list is shown below,  along with their frequency of use:
+
+{{{
+ 908 accessing
+ 273 basic
+ 272 private
+ 242 creation
+ 198 ins
+ 195 testing
+ 133 methods
+ 123 printing
+  89 operations
+  89 converting
+  72 enumerating
+  63 arithmetic
+  56 comparing
+  56 builtins
+  55 storing
+  45 Language-Exceptions
+  44 characterization
+  40 hierarchy
+  40 functionality
+  39 copying
+  37 variables
+  37 types
+  36 interface
+  36 all
+  34 call-outs
+  34 I/O
+  33 removing
+  32 dictionary
+  31 regex
+  31 private-printing
+  31 adding
+  30 delegation
+  29 math
+  28 protocol
+  28 Language-Implementation
+  27 management
+  27 instances
+  27 computations
+  25 handling
+  25 coercing
+  24 accessing-reading
+  23 positioning
+  23 enumeration
+  22 initialization
+  21 collections
+  21 classes
+  20 loading
+  20 conversion
+  20 coercion
+  19 Streams-Files
+  18 functions
+  17 description
+  17 alternative
+  16 superspaces
+  16 Collections-Sequenceable
+  15 process
+  15 polymorphism
+  15 constants
+  14 operators
+  14 initializing
+  13 processing
+  12 priorities
+  12 patterns
+  12 buffering
+  11 signaling
+  11 off
+  11 methodDictionary
+  11 encodings
+  11 defaults
+  11 access
+  11 SequenceableCollections
+  11 Language-Packaging
+  11 Book)
+  10 writing
+  10 sorting
+  10 modifying
+  10 hacks
+  10 disabled
+  10 debugging
+  10 arithmetics
+  10 accessing-writing
+   9 retrying
+   9 restoring
+   9 options
+   9 iteration
+   9 invocation
+   9 finalization
+   9 filing
+   9 file-in
+   9 compiling
+   9 built-ins
+   9 behavior
+   9 accesses
+   9 Collections
+   8 update
+   8 tools
+   8 linking
+   8 concatenating
+   8 bytecodes
+   8 Language-Processes
+   7 streaming
+   7 searching
+   7 members
+   7 iterators
+   7 filtering
+   7 evaluating
+   7 collection
+   7 code
+   7 builtin
+   7 Collections-Weak
+   7 Collections-Text
+   6 zones
+   6 shortcuts
+   6 overridden
+   6 initialize-release
+   6 checks
+   6 attributes
+   6 (non-ANSI)
+   6 (alternative)
+   5 structures
+   5 rehashing
+   5 raising
+   5 items
+   5 implemented)
+   5 declarations
+   5 clocks
+   5 callbacks
+   5 DateAndTimes)
+   4 transforming
+   4 tasks
+   4 tables
+   4 streams
+   4 security
+   4 refreshing
+   4 querying
+   4 overriding
+   4 file
+   4 equality
+   4 comparison
+   4 cases
+   4 calling
+   4 api
+   4 Streams-Collections
+   4 LargePositiveInteger
+   4 Durations)
+   4 Collections-Unordered
+   4 Collections-Keyed
+   3 times
+   3 table
+   3 protection
+   3 private-abstract
+   3 objects
+   3 miscellaneous
+   3 maps
+   3 limits
+   3 information
+   3 info
+   3 dependencies
+   3 dependancies
+   3 demo
+   3 URLs
+   3 Streams
+   3 (UTC)
+   2 up
+   2 subpackages
+   2 pragmas
+   2 introspection
+   2 interoperability
+   2 image
+   2 filesystem
+   2 exclusion
+   2 errors
+   2 command-line
+   2 allocation
+   2 TrappableEvents
+   2 NetClients-URIResolver
+   2 Language-Security
+   2 (ANSI)
+   1 utilities
+   1 truncating
+   1 translation
+   1 subclassing
+   1 singleton
+   1 private-initializing
+   1 private-initialization
+   1 private-buffering
+   1 out
+   1 opening
+   1 misc
+   1 manipulation
+   1 invoking
+   1 installing
+   1 initialize
+   1 images
+   1 hashing
+   1 hacking
+   1 flushing
+   1 filesystems
+   1 extension
+   1 delaying
+   1 decoration
+   1 continuations
+   1 Streams-Generators
+   1 Language-Exception
+   1 Kernel-Processes
+   1 ExceptionCollections
+   1 ANSI
+}}}
