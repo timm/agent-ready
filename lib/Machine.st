@@ -71,7 +71,6 @@ transitions
 	^transitions
 !!
 
-
 "============================================="
 ! Machine methodsFor: 'simulation' !
 reset
