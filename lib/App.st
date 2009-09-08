@@ -17,7 +17,8 @@ impatient
 !
 nextId
 	Ids ifNil:[ Ids := 0].
-	^Ids := Ids + 1.
+	Ids := Ids + 1.
+	^Ids.
 !
 patience: anInteger
 	Patience := anInteger

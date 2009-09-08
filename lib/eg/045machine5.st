@@ -18,9 +18,11 @@ App reset.
 	go: #running to: #endF    then: ['going home to sleep. Nite!' o];
 	go: #start   to: #waiting then: ['i am starting.' o];
 	
-	do: [:machine|
+	machines inspect.
+"contents oo.
+	#() do: [:machine|
 		machine name loo.
 		machine transitions pairs: [:key :candidates| 
 			key loo.
-			candidates contents do: [:c| c oo ]]]
+			candidates contents do: [:c| c oo ]]]"
 !

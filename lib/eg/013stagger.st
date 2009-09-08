@@ -7,6 +7,6 @@ c := Stagger new: #(#see #jane #run #past #the #ball).
 	'' oo
 ].
 b := Bag new.
-1000 timesRepeat: [ b add: c next].
+10000 timesRepeat: [ b add: c next].
 b oo.
 !
