@@ -81,7 +81,7 @@ run
 	self reset; start; walk; report.
 !
 start
-	self do: [:machine| machine start].
+	machines contents do: [:machine| machine start].
 !
 step
 	| more |
