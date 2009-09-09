@@ -13,8 +13,14 @@ AI MAGAZINE: SPRING 1995
 
 = SOAR =
 
-A multi-disciplinary, multi-site attempt at developing, understanding, and applying a cognitive architecture capable of supporting general intelligence. Research spanned areas such as machine learning, problem solving and planning, production systems, intelligent agents, virtual humans, multi-agent systems, knowledge-based systems, neural networks, and cognitive modeling. The most significant applications were intelligent automated pilots and commanders for synthetic battlespaces, as deployed in Synthetic Theater of War '97 (STOW-97).
+A multi-disciplinary, multi-site attempt at developing, understanding, and applying a cognitive architecture capable of supporting general intelligence. Research spanned areas such as machine learning, problem solving and planning, production systems, intelligent agents, virtual humans, multi-agent systems, knowledge-based systems, neural networks, and cognitive modeling. The most significant applications were intelligent automated pilots and commanders for synthetic battlespaces, as deployed in Synthetic Theater of War '97 (STOW-97) :  4–7 November 1994:
 
+ * 2000 entities originating from 19 sites across the United States and Europe.
+ * represented everything from aircraft, ships, and ground vehicles to individual soldiers and missiles. 
+ * Some entities corresponded to actual manned vehicles (for example, actual F18 fighter jets) that were broadcasting their status over the DIS network or to manned simulators.
+
+
+= Inside SOAR =
 
 All tasks in Soar are formulated as attempts to achieve
 goals in problem spaces (Newell et al. 1991). Each
