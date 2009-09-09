@@ -12,6 +12,15 @@ frame
        oy to: (height - 1) do: [:i| self plot: ox @ i            with: $| ].
        oy to: (height - 1) do: [:i| self plot: (width - 1) @ i   with: $| ] 
 !
+
+label
+	^label
+!
+
+label: l
+       label := l
+!
+
 height
 	^height
 !
@@ -50,10 +59,8 @@ splot: aPoint with: aString
 width
 	^width
 !
-width: aNumber
-	^width := aNumber
-!
-wxidth: w 
+
+width: w 
        self height: height width: w
 !
 xscale: aNumber
