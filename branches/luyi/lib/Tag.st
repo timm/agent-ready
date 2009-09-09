@@ -26,40 +26,6 @@ line: string for: graph at: line
 	"if we expect a float, use Float readFrom: self"
 ! !
 
-! TagLable class methods !
-handels
-	^'^\s*label\s+(\d+)\s*$'
-!!
-
-! TagLabel methods !
-line: string for: graph at: line
-	graph splot ((graph width + ox - (string size))/2) with: string.
-!!
-
-! TagBottom class methods !
-handels 
-        ^'^\s*bottom\s*ticks(\s\d+)*\s*$'
-!!
-
-! TagBottom methods !
-line: string for: graph at: line
-	fline := string asWords.
-        3 to: (fline size) do: [:x|
-		graph plot: (Point x: (x asInteger) y:0) with: '|'. 
-!!
-
-! TagLeft class methods !
-handels
-        ^'^\s*left\s*ticks(\s\d+)*\s*$'
-!!
-
-! TagLeft methods !
-line: string for: graph at: line
-        fline := string asWords.    
-        3 to: (fline size) do: [:x|
-                graph plot: (Point x: 0 y:(x asInteger)) with: '-'.
-!!
-
 ! TagRange class methods !
 handels
 	^'^\s*range(\s\d+)*\s*$'
@@ -67,14 +33,13 @@ handels
 
 ! TagRange methods !
 line: string for: graph at: line
-        fline := string asWords.    
-	xmin := fline at: 2.
-	ymin := fline at: 3.
-	xmax := fline at: 4.
-        ymax := fline at: 5. 
-        xrange := Range (xmin to: xmax).
-	yrange := Range (ymin to: ymax).
-!!
+	|fline|
+        fline := string asWords.
+	graph xrange min: (fline at: 2).
+    	graph yrange min: (fline at: 3).
+	graph xrange max: (fline at: 4).
+        graph yrange max: (fline at: 5).        
+! !
 
 ! TagHeight class methods !
 handels
@@ -84,20 +49,69 @@ handels
 ! TagHeight methods !
 line: string for: graph at: line
 	graph height: string asWords second  asInteger.
+	graph resize.
+	graph frame.
+! !
 
+
+! TagLable class methods !
+handels
+	^'^\s*label\s+(\d+)\s*$'
+!!
+
+! TagLabel methods !
+line: string for: graph at: line
+	|label twidth|	
+	label := string.
+	twidth := ((graph width)+(graph ox) - (label size))/2. 
+	graph splot:( Point x:twidth y:0) with: label.
+!!
+
+! TagBottom class methods !
+handels 
+        ^'^\s*bottom\s*ticks(\s\d+)*\s*$'
+!!
+
+! TagBottom methods !
+line: string for: graph at: line
+	|fline xpoint|
+	fline := string asWords.
+        3 to: (fline size) do: [:x|
+	xpoint := graph xscale: (x asInteger).	
+	graph plot: (Point x:xpoint y:(graph oy)) with: '|'.
+	graph splot: (Point x:x-1 y:1) with: x.]  
+!!
+
+! TagLeft class methods !
+handels
+        ^'^\s*left\s*ticks(\s\d+)*\s*$'
+!!
+
+! TagLeft methods !
+line: string for: graph at: line
+	|fline ypoint|
+        fline := string asWords.    
+        3 to: (fline size) do: [:x|
+		ypoint := graph yscale: (x asInteger).
+                graph plot: (Point x:(graph ox) y:(x asInteger)) with: '-'.
+		graph splot:(Point x:0 y:(x asInteger)) with: x. ]
 !!
 
 ! TagData class methods !
 handels
-        ^'^(\s*\d+)*\s\*$'
+        ^'^(\s*\d+)*\s.*$'
 !!
 
 ! TagData methods !
 line: string for: graph at: line
+	|fline trimx trimy bpoint bsymbol| 
         fline := string asWords.
-	bpoint := Point x:((fline at: 1) asInteger) y:((fline at: 2) asInteger).
+	trimx := graph xscale: ((fline at: 1) asInteger).
+	trimy := graph yscale: ((fline at: 2) asInteger). 
+	bpoint := (Point x:trimx y:trimy).
 	bsymbol := fline at: 3.
 	graph plot: bpoint with: bsymbol. 
+	graph draw
 !!
 
 

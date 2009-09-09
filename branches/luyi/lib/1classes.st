@@ -5,11 +5,10 @@
 #Graph       isa: Object with: 'label matrix height width ox oy xrange yrange'. 
 					"XXX does Graph need anymore attributes?"
 #Tag         isa: Object.
-#GraphTag    isa: Tag with 
+#GraphTag    isa: Tag. 
 #TagWidth    isa: GraphTag.
 #TagError    isa: GraphTag.
 #TagLabel    isa: GraphTag.
-#TagTag      isa: GraphTag.
 #TagBottom   isa: GraphTag.
 #TagLeft     isa: GraphTag.
 #TagRange    isa: GraphTag.

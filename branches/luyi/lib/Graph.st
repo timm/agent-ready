@@ -15,6 +15,14 @@ frame
 height
 	^height
 !
+xrange ^xrange
+!
+yrange ^yrange
+!
+ox ^ox
+!
+oy ^oy
+!
 height: h 
 	self height: h width: width 
 !
@@ -61,4 +69,15 @@ xscale: aNumber
 !
 yscale: aNumber
 	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+!
+draw
+	|cArray|
+	1 to: (matrix size)-1 do: [:cindex|
+	cArray := (matrix at: cindex).
+       	1 to: (cArray size)-1 do:[:citem|
+	(citem isNil)
+		ifTrue:  [ '' printNl]
+		ifFalse: [citem printNl ]
+		]
+	]
 !!
