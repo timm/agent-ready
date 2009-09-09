@@ -137,7 +137,81 @@ that led to its formation. This chunking process is a
 form of explanation-based learning (Mitchell, Keller,
 and Kedar-Cabelli 1986; Rosenbloom and Laird 1986).
 
-== SOAR and ACTORY  ==
+= SOAR's Operator Hierarchy and STOW-07 =
+
+(See Figure 10).
+
+In the top-most problem space (top-PS), LL
+is attempting to accomplish its mission by
+applying the execute-mission operator. The termination
+condition of this operator is the
+completion of LL’s mission (which is to protect
+its home base for a mission-specified
+time period). Because this condition has not
+yet been achieved, a subgoal is generated to
+complete the application of execute-mission.
+
+The execute-mission problem space is selected
+for use in this subgoal. In this problem
+space, LL selects the intercept operator to perform
+the intercept. The termination condition
+of this operator—that the opponents are
+either destroyed or chased away—is also not
+yet achieved, leading to a second subgoal of
+completing the intercept. 
+
+The intercept problem
+space is selected for use in this goal.
+Within this problem space, LL selects the
+employ-missile operator, which uses missiles to
+either destroy the opponents or force them to
+run away. However, because LL has not
+reached a position from which it can fire a
+missile, a third subgoal is generated.
+
+The
+employ-missile problem space is selected for
+use in this subgoal. Within this problem
+space, LL attempts to achieve a firing position
+for its missile by selecting the get-missile-LAR
+operator. (LAR stands for launch acceptability
+region, that is, the region from which LL can
+effectively fire a missile at its opponents).
+Because such a position has not been
+achieved, a fourth subgoal is generated, and
+the get-missile-LAR problem space is selected
+for it. 
+
+Here, the cut-to-LS operator is selected
+to achieve lateral separation. Finally, the cutto-
+LS operator leads to a fifth subgoal, within
+which the desired-maneuver problem space
+is selected. Within this space, the just-turn
+operator is selected and applies directly to
+issue a new heading command to the cockpit
+interface,
+ causing the aircraft to turn in an
+attempt to achieve lateral separation.
+
+As LL turns, if the termination conditions
+of any of the operators in the hierarchy are
+satisfied, then the operator is terminated, and
+all the subgoals generated in response to this
+operator are removed—they are now irrelevant.
+For example, if the desired lateral separation
+is achieved, then the termination condition
+of the cut-to-LS operator is achieved.
+The operator is then terminated and replaced
+by the maintain-LS operator—to maintain lateral
+separation—and its subgoal and associated
+problem space (desired-maneuver) are
+flushed. Similarly, if a missile-firing position
+is reached, the termination condition of LL’s
+get-missile-LAR operator is satisfied; hence, it
+is terminated along with the two subgoals
+beneath it.
+
+= SOAR and ACTORY  =
 
 SOAR's core implementation is based on rules. Why? Cog Sci research in the 1970s.
 
@@ -145,3 +219,53 @@ What would an SE/OO version of SOAR look like?  Not rules, but (possibly stochas
 States as objects. Machines as objects. Not "nested problem spaces"  but nested calls to machines. 
 
 What would chunking  (learning) look like over stochastic finite state machines? Learn biases on transition selection.
+
+One similarity: SOAR's rule selection mechanism for its rules is a bunch of rules.  Similarly, our control strategy could be a master FSM that fires off an machine that says if any machine has stopped firing new transitions, ask that machine what are its sub-goals and fire off one of those.
+
+= Related Work =
+
+Semiautomated forces tend to be developed as
+combinations of finite-state machines (FSMs)
+and arbitrary code (Calder et al. 1993). 
+
+ * This strategy has proven adequate for encoding fragments of well-defined behavior 
+ * But,  so far, have fallen considerably short of autonomously competent behavior (thus requiring frequent intervention by knowledgeable humans). 
+
+FSM
+languages are simply  restrictive to support
+the representation of humanlike intelligence.
+ * The ability to use arbitrary code does provide significant improvements in flexibility.
+ * This flexibility of language unfortunately does not by itself translate into flexibility of behavior by the system that is programmed within the language. 
+ * What is missing is higher-level support necessary to enable such behavioral flexibility, such as the support for
+  *  dynamic integration of knowledge during behavior and goal-driven problem solving and planning
+
+Most of the systems that go beyond the
+simple FSM strategy are structured as simple
+rule-based expert systems for tactical decision
+making:
+
+ *  Given TacAir-Soar’s own knowledgeintensive (rule-based) approach to decision making, it does share some similarities with such systems. 
+ * However, standard rule-based syste,s they are weak in other areas. 
+ * For example, in a standard rule-based approach, it is difficult to capture the complexity of the multiple dynamic goals about which pilots must reason. 
+ * In addition, these systems typically rely only on high-level tactical knowledge and, as a result, prove to be rather rigid—unless they can be preprogrammed for every possible contingency, their performance degrades greatly when
+faced with unexpected situations.
+ * Finally, expert systems generally ignore the other cognitive aspects of the task, such as modeling of other agents in the environment and behaving in a humanlike manner. 
+
+Soar was specifically constructed to overcome such limitations of standard rule-based expert systems.
+
+Besides Soar, one other system in this class that attempts to provide for flexible behavior is a recent effort at the Australian Artificial Intelligence Institute (Rao et al. 1993) that attempts to use the procedural reasoning system
+(PRS) (Georgeff and Lansky 1986) as a basis for modeling pilots in air-combat simulation.
+
+ * However, this effort does not yet appear to be far enough along to evaluate the extent to which it can actually provide such flexibility in this demanding domain.
+
+The second class of systems includes those
+based on other AI agent architectures that
+attempt the integration of a variety of component
+capabilities. 
+ * Unfortunately, the characteristics of the space of agent designs and architectures are not well enough understood to enable a clear understanding of the relationship between
+TacAir-Soar and these other systems. 
+ * About the best we can do at this point is to compare the number and types of capabilities exhibited by these systems. 
+ * Based on such an evaluation, TacAir-Soar appears to be one of a very few systems that integrate so many distinct capabilities 
+
+
+Other systems use variants of TAC-SOAR: see paper.
