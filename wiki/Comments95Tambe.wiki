@@ -189,9 +189,7 @@ which the desired-maneuver problem space
 is selected. Within this space, the just-turn
 operator is selected and applies directly to
 issue a new heading command to the cockpit
-interface,
- causing the aircraft to turn in an
-attempt to achieve lateral separation.
+interface, causing the aircraft to turn in an  attempt to achieve lateral separation.
 
 As LL turns, if the termination conditions
 of any of the operators in the hierarchy are
@@ -247,8 +245,7 @@ making:
  *  Given TacAir-Soar’s own knowledgeintensive (rule-based) approach to decision making, it does share some similarities with such systems. 
  * However, standard rule-based syste,s they are weak in other areas. 
  * For example, in a standard rule-based approach, it is difficult to capture the complexity of the multiple dynamic goals about which pilots must reason. 
- * In addition, these systems typically rely only on high-level tactical knowledge and, as a result, prove to be rather rigid—unless they can be preprogrammed for every possible contingency, their performance degrades greatly when
-faced with unexpected situations.
+ * In addition, these systems typically rely only on high-level tactical knowledge and, as a result, prove to be rather rigid—unless they can be preprogrammed for every possible contingency, their performance degrades greatly when faced with unexpected situations.
  * Finally, expert systems generally ignore the other cognitive aspects of the task, such as modeling of other agents in the environment and behaving in a humanlike manner. 
 
 Soar was specifically constructed to overcome such limitations of standard rule-based expert systems.
@@ -262,8 +259,7 @@ The second class of systems includes those
 based on other AI agent architectures that
 attempt the integration of a variety of component
 capabilities. 
- * Unfortunately, the characteristics of the space of agent designs and architectures are not well enough understood to enable a clear understanding of the relationship between
-TacAir-Soar and these other systems. 
+ * Unfortunately, the characteristics of the space of agent designs and architectures are not well enough understood to enable a clear understanding of the relationship between TacAir-Soar and these other systems. 
  * About the best we can do at this point is to compare the number and types of capabilities exhibited by these systems. 
  * Based on such an evaluation, TacAir-Soar appears to be one of a very few systems that integrate so many distinct capabilities 
 
