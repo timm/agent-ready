@@ -120,3 +120,12 @@ the required result and possibly avoiding the impasse
 that led to its formation. This chunking process is a
 form of explanation-based learning (Mitchell, Keller,
 and Kedar-Cabelli 1986; Rosenbloom and Laird 1986).
+
+== SOAR and ACTORY  ==
+
+SOAR's core implementation is based on rules. Why? Cog Sci research in the 1970s.
+
+What would an SE/OO version of SOAR look like?  Not rules, but (possibly stochastic) finite state machines.
+States as objects. Machines as objects. Not "nested problem spaces"  but nested calls to machines. 
+
+What would chunking  (learning) look like over stochastic finite state machines? Learn biases on transition selection.
