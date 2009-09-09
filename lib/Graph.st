@@ -61,4 +61,22 @@ xscale: aNumber
 !
 yscale: aNumber
 	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+!
+label
+	^label
+!
+matrix
+	^matrix
+!
+ox
+	^ox
+!
+oy
+	^oy
+!
+xrange
+	^xrange
+!
+yrange
+	^yrange
 !!
