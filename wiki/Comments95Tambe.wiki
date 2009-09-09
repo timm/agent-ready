@@ -24,9 +24,8 @@ A multi-disciplinary, multi-site attempt at developing, understanding, and apply
 
 Figure 2 shows a snapshot taken of Mod-SAF’s plan-view display of an air-combat simulation.
 
- * The background shading indicates the terrain. The grid is used for measurement; in this case, each grid cell indicates an area of 10 * 10 kilometers. 
- * The light-shaded aircraft are simulated F-14Ds, and the dark-shaded ones are
-simulated MiG-29 aircraft. 
+ * The background shading indicates the terrain. The grid is used for measurement; in this case, each grid cell indicates an area of 10 by 10 kilometers. 
+ * The light-shaded aircraft are simulated F-14Ds, and the dark-shaded ones are simulated MiG-29 aircraft. 
  * The smaller windows along the side of the figure display information about the active goal(/operator) hierarchies of the TacAir-Soar–based pilots controlling these aircraft. 
  * These goal hierarchies are a small portion of the entire forest of goals that the pilots can possibly have (figure 3).
 
