@@ -7,7 +7,13 @@
 #Tag         isa: Object.
 #GraphTag    isa: Tag.
 #TagWidth    isa: GraphTag.
+#TagHeight   isa: GraphTag.
+#TagRange    isa: GraphTag.
+#TagBottom   isa: GraphTag.
+#TagLeft     isa: GraphTag.
+#TagLabel    isa: GraphTag.
 #TagError    isa: GraphTag.
+#TagData     isa: GraphTag.
 
 (#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.
 
