@@ -1,0 +1,122 @@
+#summary Intelligent Agents for Interactive Simulation Environments
+
+Milind Tambe, W. Lewis Johnson, Randolph M. Jones, Frank Koss, John E. Laird, Paul S. Rosenbloom, and Karl Schwamb
+
+AI MAGAZINE: SPRING 1995
+
+= Cast =
+
+ * Laird: AI for human modeling
+ * Rosenbloom:  co-PI of  [http://sitemaker.umich.edu/soar/home Soar Project] (? with Laird)
+ * Tambe: the optimization king
+ * amongst others
+
+= SOAR =
+
+A multi-disciplinary, multi-site attempt at developing, understanding, and applying a cognitive architecture capable of supporting general intelligence. Research spanned areas such as machine learning, problem solving and planning, production systems, intelligent agents, virtual humans, multi-agent systems, knowledge-based systems, neural networks, and cognitive modeling. The most significant applications were intelligent automated pilots and commanders for synthetic battlespaces, as deployed in Synthetic Theater of War '97 (STOW-97).
+
+
+All tasks in Soar are formulated as attempts to achieve
+goals in problem spaces (Newell et al. 1991). Each
+problem space consists of a set of states and a set of
+operators. States represent situations, and operators
+represent actions. Operators perform the basic deliberate
+acts of the system. They can perform simple, primitive
+actions that modify the internal state (such as
+determining if all commit criteria are achieved) and/or
+generate primitive external actions (such as switching
+radar modes), or they can perform arbitrarily complex
+actions, such as executing a mission. The basic processing
+cycle is to repeatedly propose, select, and
+apply operators of the problem space to a state, moving
+ahead one decision at a time. Operator selection,
+application, and termination are all dynamically determined
+by the system’s knowledge.
+
+For expert-level performance, sufficient knowledge
+is generally available so that the selection of the next
+appropriate operator is not problematic. However,
+when operator-selection knowledge is insufficient to
+determine the next operator to apply, an impasse
+occurs, leading to the creation of a subgoal to determine
+which operator should be selected (possibly
+through some search or planning technique [Rosenbloom,
+Lee, and Unruh 1993; Laird, Newell, and
+Rosenbloom 1987]). Similarly, if an operator is too
+complex or unfamiliar for the available application
+knowledge to handle directly, an impasse occurs, leading
+to the creation of a subgoal to apply the operator.
+This type of operator and associated subgoal is ubiquitous
+in TacAir-Soar, where operators such as intercept
+are selected and, in turn, lead to a goal in which operators
+specific to intercepts, such as plan-interceptgeometry
+or employ-missile, are proposed, selected,
+and applied to carry out the intercept. This is a goaldecomposition
+scheme in which the decomposition of
+a goal is not static but is determined step by step as
+operators are dynamically selected and applied. Thus,
+subgoals arise during the process of selecting and
+applying operators, leading to the dynamic generation
+of a goal hierarchy. These subgoals disappear when
+the associated impasse is resolved, either because an
+operator can be selected or because a selected operator
+is terminated.
+
+Each problem space for each goal in the hierarchy
+has its own state. Each such state includes a representation
+of all its supergoals (and their states)—Soar’s
+subgoals are functionally at the metalevel (Rosenbloom,
+Laird, and Newell 1988)—plus, possibly, representations
+that are local to the particular goal and
+problem space. The top state includes all sensor data
+from the external environment, which is thus also
+available in all subgoals. At any time, states at any level
+of the goal hierarchy can change, usually through
+the changing of sensor values. Because Soar’s knowledge
+is also active for all levels, an operator can terminate
+at any level of the hierarchy—including intermediate
+levels—at any time. Such a termination
+automatically flushes all lower levels of the hierarchy
+and can lead to the selection of a new operator to
+replace the terminated one.
+
+All Soar’s knowledge, be it for selection, application,
+or termination of operators, is stored in the form of
+productions (condition-action rules). Any changes in
+goals, states, and perceptions can cause these productions
+to fire. There is no conflict resolution, so all applicable
+productions are allowed to fire in parallel. Operator-
+selection knowledge consists of productions that
+test the current goal or state and generate symbolic
+preferences about the absolute or relative worth of
+operators. For example, given a particular situation, a
+production might generate a preference that an operator
+to turn left is better than an operator to turn
+right. As the state changes, some preferences can be
+retracted (if the situation no longer matches the conditions
+of the rules that generated them) and others
+generated, so that decisions—which are made by a
+fixed, architectural decision procedure—can always be
+based on preferences relevant to the current situation.
+Operator-application knowledge consists of productions
+that modify the state in accordance with the particular
+operator selected and, possibly, generate output commands.
+Operator-termination knowledge consists of
+productions that test the state and generate a termination
+signal if the state corresponds to what the
+operator is to accomplish.
+
+Goals and their results form the basis of Soar’s learning
+mechanism, chunking. Chunking acquires new
+productions, called chunks, that summarize the processing
+that leads to subgoal results, that is, to elements
+generated in subgoals that are accessible in
+supergoals. A chunk’s actions are based on these
+results. Its conditions are based on those aspects of
+the supergoals that are relevant to the determination
+of the results. Once a chunk is learned, it can fire in
+relevantly similar future situations, directly producing
+the required result and possibly avoiding the impasse
+that led to its formation. This chunking process is a
+form of explanation-based learning (Mitchell, Keller,
+and Kedar-Cabelli 1986; Rosenbloom and Laird 1986).
