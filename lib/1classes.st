@@ -8,6 +8,12 @@
 #GraphTag    isa: Tag.
 #TagWidth    isa: GraphTag.
 #TagError    isa: GraphTag.
+#TagHeight   isa: GraphTag.
+#TagLabel    isa: GraphTag.
+#TagBottomTicks	  isa: GraphTag.
+#TagLeftTicks	  isa: GraphTag.
+#TagRange	  isa: GraphTag.
+#TagPoint	  isa: GraphTag.
 
 (#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.
 
