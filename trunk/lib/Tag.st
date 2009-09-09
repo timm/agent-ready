@@ -33,7 +33,7 @@ handels
 
 ! TagLabel methods !
 line: string for: graph at: line
-	graph splot ((graph width + ox - size: string)/2) with: string.
+	graph splot ((graph width + ox - (string size))/2) with: string.
 !!
 
 ! TagBottom class methods !
@@ -45,7 +45,7 @@ handels
 line: string for: graph at: line
 	fline := string asWords.
         3 to: (fline size) do: [:x|
-		graph plot: (Point x: (x asInteger) y:0) with '|'. 
+		graph plot: (Point x: (x asInteger) y:0) with: '|'. 
 !!
 
 ! TagLeft class methods !
@@ -57,7 +57,7 @@ handels
 line: string for: graph at: line
         fline := string asWords.    
         3 to: (fline size) do: [:x|
-                graph plot: (Point x: 0 y:(x asInteger)) with '-'.
+                graph plot: (Point x: 0 y:(x asInteger)) with: '-'.
 !!
 
 ! TagRange class methods !
@@ -72,6 +72,8 @@ line: string for: graph at: line
 	ymin := fline at: 3.
 	xmax := fline at: 4.
         ymax := fline at: 5. 
+        xrange := Range (xmin to: xmax).
+	yrange := Range (ymin to: ymax).
 !!
 
 ! TagHeight class methods !
