@@ -16,7 +16,7 @@ worksIn: factory
                                             talks: 4;
                                             talks: 'Too drunk to stay awake.'];
        go: #even    to: #run;
-       go: #run     to: #endF    if:    [App random next > 0.5] 
+       go: #run     to: #endF    if:    [App random next > 0.9] 
                                  then:  [The machine 
                                             talks: 5;
                                             talks: 'that is all folks'.
