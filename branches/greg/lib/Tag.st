@@ -73,8 +73,8 @@ line: string for: graph at: line
 	bottomString := string asWords.
 	3 to: (bottomString size) do: [:ticks|
 		where := graph xscale:((bottomString at: ticks) asInteger).
-		"graph plot: (Point x:where y:(graph oy)) with: '|'."
-		"graph splot: (Point x:where y:1) with: (bottomString at:ticks)."].	
+		graph plot: (Point x:where y:(graph oy)) with: '|'.
+		graph splot: (Point x:where y:1) with: (bottomString at:ticks).].	
 !!
 ! TagLeft class methods !
 handles
@@ -82,11 +82,12 @@ handles
 !!
 ! TagLeft methods !
 line: string for: graph at: line
-	|leftString|
+	|leftString where|
 	leftString := string asWords.
 	3 to: (leftString size) do: [:ticks|
-		graph plot: (Point x:(graph ox) y:(graph yscale: (ticks asInteger))) with: '-'.
-		graph splot: (Point x:0 y:(graph yscale: (ticks asInteger))) with: ticks.].
+		where := graph yscale:((leftString at: ticks) asInteger).
+		graph plot: (Point x:(graph ox) y:where) with: '-'.
+		graph splot: (Point x:0 y:where) with: (leftString at: ticks).].
 !!
 ! TagLabel class methods !
 handles

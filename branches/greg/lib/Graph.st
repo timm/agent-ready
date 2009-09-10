@@ -11,8 +11,8 @@ init
 	yrange := Range new.
 	matrix := OrderedCollection new.
 	self height: 0  width: 0.
-	ox=6.
-	oy=2.
+	ox:=6. 
+	oy:=2.
 !!
 "=============================================="
 ! Graph methodsFor: 'doing' !
@@ -52,10 +52,10 @@ wxidth: w
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - 1 - ox) + ox) round 
+	^((xrange scale: aNumber) * (width - 1 - ox) + ox) 
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+	^((yrange scale: aNumber) * (height - 1 - oy) + oy) 
 !
 draw
 	|current|
