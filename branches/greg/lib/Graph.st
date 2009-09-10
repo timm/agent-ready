@@ -1,28 +1,10 @@
-"design note: this is a MODEL class that should not be polluted with
- DATA concepts (e.g. reading graph spec)
-"
-! Graph class methods !
+"=============================================="
+! Graph class methodsFor: 'creation' !
 new
 	^super new init
 !!
-! Graph methods !
-frame
-       ox to: (width  - 1) do: [:i| self plot: i  @ oy           with: $- ].
-       ox to: (width  - 1) do: [:i| self plot: i  @ (height - 1) with: $- ].
-       oy to: (height - 1) do: [:i| self plot: ox @ i            with: $| ].
-       oy to: (height - 1) do: [:i| self plot: (width - 1) @ i   with: $| ] 
-!
-height
-	^height
-!
-height: h 
-	self height: h width: width 
-!
-height: h width: w
-	height := h.
-	width  := w.
-	self resize 
-!
+"=============================================="
+! Graph methodsFor: 'creation' !
 init
 	label  := ''. 
 	xrange := Range new.
@@ -31,6 +13,22 @@ init
 	self height: 0  width: 0.
 	ox=6.
 	oy=2.
+!!
+"=============================================="
+! Graph methodsFor: 'doing' !
+frame
+       ox to: (width  - 1) do: [:i| self plot: i  @ oy           with: $- ].
+       ox to: (width  - 1) do: [:i| self plot: i  @ (height - 1) with: $- ].
+       oy to: (height - 1) do: [:i| self plot: ox @ i            with: $| ].
+       oy to: (height - 1) do: [:i| self plot: (width - 1) @ i   with: $| ] 
+!
+height: h 
+	self height: h width: width 
+!
+height: h width: w
+	height := h.
+	width  := w.
+	self resize 
 !
 resize 
        matrix := Array new: height.
@@ -47,9 +45,6 @@ splot: aPoint with: aString
        	    self plot: (aPoint x + i) @ aPoint y with: elm.
             i := i + 1 ]
 !
-width
-	^width
-!
 width: aNumber
 	^width := aNumber
 !
@@ -61,6 +56,27 @@ xscale: aNumber
 !
 yscale: aNumber
 	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+!
+draw
+	|current|
+	1 to: ((matrix size)-1) do: [:where|
+		current := (matrix at: where).
+		1 to: ((current size)-1) do:[:where|
+			(current isNil)
+				ifTrue: [
+					'' o]
+				ifFale: [
+					where o]
+		]
+	]
+!!
+"================================================================"
+!Graph methodsFor: 'accessing'!
+height
+	^height
+!
+width
+	^width
 !
 label
 	^label
