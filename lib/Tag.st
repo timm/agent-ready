@@ -74,7 +74,7 @@ line: string for: graph at: line
 	3 to: (bottomString size) do: [:ticks|
 		where := graph xscale:((bottomString at: ticks) asInteger).
 		graph plot: (Point x:where y:(graph oy)) with: '|'.
-		graph splot: (Point x:where y:1) with: (bottomString at:ticks).].	
+		graph splot: (Point x:where y:((graph oy)-1)) with: (bottomString at:ticks).].	
 !!
 ! TagLeft class methods !
 handles
