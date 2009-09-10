@@ -44,8 +44,8 @@ handles
 line: string for: graph at: line
 	|rangeString xMin xMax yMin yMax|
 	rangeString := string asWords.
-	xMin := rangeString: at 2.
-	xMax := rangeString: at 4.
+	xMin := rangeString at: 2.
+	xMax := rangeString at: 4.
 	(xMin < xMax) 
 		ifTrue: [
 			graph xrange add: xMin.
@@ -54,8 +54,8 @@ line: string for: graph at: line
 			'Warning: Your max is smaller than your min. They will be swapped' o.
 			graph xrange add: xMin.
 			graph xrange add: xMax.].	 
-	yMin := rangeString: at 3.
-	yMax := rangeString: at 5.
+	yMin := rangeString at: 3.
+	yMax := rangeString at: 5.
 	(yMin < yMax) 
 		ifTrue: [
 			graph yrange add: yMin.
@@ -71,12 +71,12 @@ handles
 !!
 ! TagBottom methods !
 line: string for: graph at: line
-	|bottomString|
+	|bottomString where|
 	bottomString := string asWords.
 	3 to: (bottomString size) do: [:ticks|
-		graph plot: (Point x: (graph xscale: (ticks asInteger)) y:(graph oy)) with: '|'.
-		graph splot: (Point x: (graph xscale: (ticks asInteger)) y:1) with: ticks.].
-		
+		where := graph xscale:((bottomString at: ticks) asInteger).
+		"graph plot: (Point x:where y:(graph oy)) with: '|'."
+		"graph splot: (Point x:where y:1) with: (bottomString at:ticks)."].	
 !!
 ! TagLeft class methods !
 handles
@@ -92,11 +92,13 @@ line: string for: graph at: line
 !!
 ! TagLabel class methods !
 handles
-	^'^\s*label\s+(\d+)\s*$'
+	^'^\s*label(\s\d+)*\s*$'
 !!
 ! TagLabel methods !
 line: string for: graph at: line
-	graph splot: (Point x:(((graph width)+(graph ox)-(label size))/2) y:0) with: string.
+	|label|
+	label := string
+	graph splot: (Point x:(((graph width)+(graph ox)-(label size))/2) y:0) with: label.
 !!
 ! TagData class methods !
 handles
