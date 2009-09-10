@@ -32,8 +32,6 @@ handles
 ! TagHeight methods !
 line: string for: graph at: line
 	graph height: string asWords second asInteger.
-	graph resize.
-	graph frame.
 !!
 ! TagRange class methods !
 handles
