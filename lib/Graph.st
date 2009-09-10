@@ -31,19 +31,36 @@ height: h width: w
 	width  := w.
 	self resize 
 !
+xindices
+	^xindices
+!
+yindices
+	^yindices
+!
+xindices: xin
+	xindices := xin.
+!
+yindices: yin
+	yindices := yin.
+!	 
 init
 	label  := ''. 
 	xrange := Range new.
 	yrange := Range new.
+	xindices := OrderedCollection new.
+	yindices := OrderedCollection new.
 	matrix := OrderedCollection new.
 	self height: 0  width: 0.
-	ox=6.
-	oy=2.
+	ox :=6.
+	oy :=2.
 !
 resize 
        matrix := Array new: height.
        1 to: height do: [:i|
            matrix at: i put: (Array new: width) ].
+!
+label: aString
+	label := aString.
 !
 plot: aPoint with: aSymbol	
       (matrix at: aPoint y) at: aPoint x put: aSymbol. 
@@ -69,6 +86,22 @@ xscale: aNumber
 !
 yscale: aNumber
 	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+!
+prtLabel
+	|twidth|
+        twidth := (width+ ox - (label size))/2.
+        self splot:( Point x:twidth y:0) with: label.
+!
+prtticks
+	|xpoint ypoint|
+	1 to: xindices size do:[:i|
+	xpoint := xindices at:i.
+        self plot: xpoint with: '|'.
+        self splot: xpoint with: (xpoint x)].
+	1 to: yindices size do:[:j|
+	ypoint := yindices at:j.
+	self plot: ypoint with: '-'.
+        self splot: ypoint with: (ypoint y)].
 !
 draw
 	|cArray|

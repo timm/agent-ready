@@ -27,7 +27,7 @@ line: string for: graph at: line
 ! !
 
 ! TagRange class methods !
-handels
+handles
 	^'^\s*range(\s\d+)*\s*$'
 !!
 
@@ -42,33 +42,35 @@ line: string for: graph at: line
 ! !
 
 ! TagHeight class methods !
-handels
+handles
         ^'^\s*height\s*(\d+)\s*$'
 !!
 
 ! TagHeight methods !
 line: string for: graph at: line
 	graph height: string asWords second  asInteger.
-	graph resize.
-	graph frame.
-! !
-
+	"graph resize."
+	"graph frame."
+!!
 
 ! TagLable class methods !
-handels
+handles
 	^'^\s*label\s+(\d+)\s*$'
 !!
 
 ! TagLabel methods !
 line: string for: graph at: line
-	|label twidth|	
-	label := string.
-	twidth := ((graph width)+(graph ox) - (label size))/2. 
-	graph splot:( Point x:twidth y:0) with: label.
+	|label fstream|
+	fstream := WriteStream on: ''. 
+	label := string asWords.
+	2 to: label size do: [:i|
+	label at:i printOn: fstream.
+	]
+	graph label: (fstream content)
 !!
 
 ! TagBottom class methods !
-handels 
+handles 
         ^'^\s*bottom\s*ticks(\s\d+)*\s*$'
 !!
 
@@ -78,12 +80,12 @@ line: string for: graph at: line
 	fline := string asWords.
         3 to: (fline size) do: [:x|
 	xpoint := graph xscale: (x asInteger).	
-	graph plot: (Point x:xpoint y:(graph oy)) with: '|'.
-	graph splot: (Point x:x-1 y:1) with: x.]  
+	graph xindices add: (Point x:xpoint y:(graph oy)).
+	]
 !!
 
 ! TagLeft class methods !
-handels
+handles
         ^'^\s*left\s*ticks(\s\d+)*\s*$'
 !!
 
@@ -93,12 +95,11 @@ line: string for: graph at: line
         fline := string asWords.    
         3 to: (fline size) do: [:x|
 		ypoint := graph yscale: (x asInteger).
-                graph plot: (Point x:(graph ox) y:(x asInteger)) with: '-'.
-		graph splot:(Point x:0 y:(x asInteger)) with: x. ]
+		graph yindices add: (Point x:(graph ox) y:ypoint).]
 !!
 
 ! TagData class methods !
-handels
+handles
         ^'^(\s*\d+)*\s.*$'
 !!
 
@@ -113,5 +114,3 @@ line: string for: graph at: line
 	graph plot: bpoint with: bsymbol. 
 	graph draw
 !!
-
-
