@@ -2,7 +2,7 @@
 #Role        isa: Object with: 'name eman from to fromCard toCard froms tos'.
 #Range       isa: Object with: 'min max'.
 #Reader 	 isa: Object with: 'line array handler commentChar'.
-#Graph       isa: Object with: 'label matrix height width ox oy xrange yrange xindices yindices'. 
+#Graph       isa: Object with: 'label matrix height width ox oy xrange yrange xindices yindices rawdata'. 
 					"XXX does Graph need anymore attributes?"
 #Tag         isa: Object.
 #GraphTag    isa: Tag. 
