@@ -23,13 +23,15 @@ ox ^ox
 !
 oy ^oy
 !
+matrix ^matrix
+!
 height: h 
-	self height: h width: width 
+	height := h.
 !
 height: h width: w
 	height := h.
 	width  := w.
-	self resize 
+	self resize. 
 !
 xindices
 	^xindices
@@ -43,6 +45,10 @@ xindices: xin
 yindices: yin
 	yindices := yin.
 !	 
+label ^label
+!
+rawdata ^rawdata
+!
 init
 	label  := ''. 
 	xrange := Range new.
@@ -50,14 +56,18 @@ init
 	xindices := OrderedCollection new.
 	yindices := OrderedCollection new.
 	matrix := OrderedCollection new.
-	self height: 0  width: 0.
+	rawdata := Dictionary new.
 	ox :=6.
 	oy :=2.
+	self height: 0  width: 0.
 !
-resize 
-       matrix := Array new: height.
-       1 to: height do: [:i|
-           matrix at: i put: (Array new: width) ].
+resize
+	|nheight nwidth|
+	nheight := height +oy.
+	nwidth := width +ox. 
+       matrix := Array new: nheight.
+       1 to: nheight do: [:i|
+           matrix at: i put: (Array new: nwidth) ].
 !
 label: aString
 	label := aString.
@@ -78,14 +88,11 @@ width
 width: aNumber
 	^width := aNumber
 !
-wxidth: w 
-       self height: height width: w
-!
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - 1 - ox) + ox) round 
+	^((xrange scale: aNumber) * (width - 1 - ox) + ox) rounded
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+	^((yrange scale: aNumber) * (height - 1 - oy) + oy) rounded
 !
 prtLabel
 	|twidth|
@@ -93,24 +100,42 @@ prtLabel
         self splot:( Point x:twidth y:0) with: label.
 !
 prtticks
-	|xpoint ypoint|
+	|btemppoint bltemppoint ltemppoint lltemppoint xpoint ypoint|
+
 	1 to: xindices size do:[:i|
-	xpoint := xindices at:i.
-        self plot: xpoint with: '|'.
-        self splot: xpoint with: (xpoint x)].
+	xpoint := xindices at: i.
+	btemppoint :=(Point x: (self xscale: (xpoint x)) y: (xpoint y)).
+	bltemppoint :=(Point x: (btemppoint x) y:oy-1).
+        self plot: btemppoint with: '|'.
+        self plot: bltemppoint with: (xpoint x)].
+
 	1 to: yindices size do:[:j|
 	ypoint := yindices at:j.
-	self plot: ypoint with: '-'.
-        self splot: ypoint with: (ypoint y)].
+	ltemppoint := (Point x: (ypoint x) y: (self yscale: (ypoint y))).
+	lltemppoint := (Point x: ox-1 y:(ltemppoint y)).
+	self plot: ltemppoint with: '-'.
+        self plot: lltemppoint with: (ypoint y)].
+!
+datatrans
+	|tempx tempy|
+	rawdata keysAndValuesDo: [:key :value|
+	tempx := (self xscale: key x).
+	tempy := (self yscale: key y).
+	self plot: (Point x: (self xscale: key x) y:(self yscale: key y)) with: value ]
 !
 draw
-	|cArray|
-	1 to: (matrix size)-1 do: [:cindex|
+	|cArray ccitem cstream|
+	self frame.
+	self prtticks.
+	self datatrans.
+	(matrix size) to: 1 by: -1 do: [:cindex|
 	cArray := (matrix at: cindex).
-       	1 to: (cArray size)-1 do:[:citem|
-	(citem isNil)
-		ifTrue:  [ '' printNl]
-		ifFalse: [citem printNl ]
-		]
+       	1 to: (cArray size) do:[:citem|
+	ccitem := cArray at: citem.
+	(ccitem isNil)
+		ifTrue:  [' ' o.]
+		ifFalse: [ccitem o ]
+	].
+	' ' oo.
 	]
 !!
