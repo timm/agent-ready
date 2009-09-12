@@ -35,15 +35,15 @@ line: string for: graph at: line
 !!
 ! TagRange class methods !
 handles
-	^'^\s*range(\s\d+)\s*$'
+	^'^\s*range(\s\d+)*\s*$'
 !!
 
 ! TagRange methods !
 line: string for: graph at: line
 	|rangeString xMin xMax yMin yMax|
 	rangeString := string asWords.
-	xMin := rangeString at: 2.
-	xMax := rangeString at: 4.
+	xMin := (rangeString at: 2) asInteger.
+	xMax := (rangeString at: 4) asInteger.
 	(xMin < xMax) 
 		ifTrue: [
 			graph xrange add: xMin.
@@ -52,8 +52,8 @@ line: string for: graph at: line
 			'Warning: Your max is smaller than your min. They will be swapped' o.
 			graph xrange add: xMin.
 			graph xrange add: xMax.].	 
-	yMin := rangeString at: 3.
-	yMax := rangeString at: 5.
+	yMin := (rangeString at: 3) asInteger.
+	yMax := (rangeString at: 5) asInteger.
 	(yMin < yMax) 
 		ifTrue: [
 			graph yrange add: yMin.
@@ -73,8 +73,7 @@ line: string for: graph at: line
 	bottomString := string asWords.
 	3 to: (bottomString size) do: [:ticks|
 		where := graph xscale:((bottomString at: ticks) asInteger).
-		graph plot: (Point x:where y:(graph oy)) with: '|'.
-		graph splot: (Point x:where y:((graph oy)-1)) with: (bottomString at:ticks).].	
+		graph xTicks add: (Point x:where y:(graph oy)).].
 !!
 ! TagLeft class methods !
 handles
@@ -86,18 +85,16 @@ line: string for: graph at: line
 	leftString := string asWords.
 	3 to: (leftString size) do: [:ticks|
 		where := graph yscale:((leftString at: ticks) asInteger).
-		graph plot: (Point x:(graph ox) y:where) with: '-'.
-		graph splot: (Point x:0 y:where) with: (leftString at: ticks).].
+		graph yTicks add: (Point x:(graph ox) y:where).].
 !!
 ! TagLabel class methods !
 handles
-	^'^\s*label(\s\d+)*\s*$'
+	^'^\s*label\s+'
 !!
 ! TagLabel methods !
 line: string for: graph at: line
-	|label|
-	label := string
-	graph splot: (Point x:(((graph width)+(graph ox)-(label size))/2) y:0) with: label.
+	"Idea for handling this from Andres."
+	graph label: (string replacingRegex: '^\s*label\s+' with: '').
 !!
 ! TagData class methods !
 handles
@@ -110,6 +107,5 @@ line: string for: graph at: line
 	whereX := graph xscale: ((dataString at: 1) asInteger).
 	whereY := graph yscale: ((dataString at: 2) asInteger).
 	what := dataString at: 3.
-	graph plot: (Point x:whereX y:whereY) with: what.
-	graph draw
+	graph dataPoints at: (Point x:whereX y:whereY) put: what.
 !!
