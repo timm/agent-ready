@@ -10,6 +10,9 @@ init
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
+	xTicks := OrderedCollection new.
+	yTicks := OrderedCollection new.
+	dataPoints := Dictionary new. "<- this idea borrowed from Luyi. Very good idea!"
 	self height: 0  width: 0.
 	ox:=6. 
 	oy:=2.
@@ -29,6 +32,9 @@ height: h width: w
 	height := h.
 	width  := w.
 	self resize 
+!
+label: aString
+	label := aString.
 !
 resize 
        matrix := Array new: height.
@@ -52,26 +58,58 @@ wxidth: w
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - 1 - ox) + ox) 
+	^((xrange scale: aNumber) * (width - 1 - ox) + ox) rounded 
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - 1 - oy) + oy) 
+	^((yrange scale: aNumber) * (height - 1 - oy) + oy) rounded
+!!
+"================================================================"
+!Graph methodsFor: 'printing'!
+drawLabel
+	self splot: (Point x:((width+ox-(label size))/2) y:0) with: label.
+!
+drawTicks
+	|xPoint yPoint|
+	1 to: (xTicks size) do:[:where|
+		xPoint:= xTicks at: where.
+		self plot: xPoint with: '|'.
+		self splot: xPoint with: (xPoint x)].
+	1 to: (yTicks size) do:[:where2|
+		yPoint:= yTicks at: where2.
+		self plot: yPoint with: '-'.
+		self splot: yPoint with: (yPoint y)].	
+!
+"Idea for how to handle this also borrowed from Luyi"
+prepData
+	|tempX tempY|
+	dataPoints keysAndValuesDo: [:key :value|
+		tempX := (self xscale: key x).
+		tempY := (self yscale: key y).
+		self plot: (Point x: (self scale: key x) y: (self yscale: key y)) with: value ].
 !
 draw
-	|current|
-	1 to: ((matrix size)-1) do: [:where|
-		current := (matrix at: where).
-		1 to: ((current size)-1) do:[:where|
-			(current isNil)
+	|currentSet currentItem|
+	self frame.
+	self drawTicks.
+	self prepData.
+	(matrix size) to: 1 by: -1 do: [:where|
+		currentSet := (matrix at: where).
+		1 to: (currentSet size) do:[:where2|
+			currentItem := currentSet at: where2.
+			(currentItem isNil)
 				ifTrue: [
-					'' o]
-				ifFale: [
-					where o]
-		]
+					' ' o.]
+				ifFalse:[
+					currentItem o.]
+		].
+		' ' oo.
 	]
 !!
 "================================================================"
 !Graph methodsFor: 'accessing'!
+dataPoints
+	^dataPoints
+!
 height
 	^height
 !
@@ -95,4 +133,10 @@ xrange
 !
 yrange
 	^yrange
+!
+xTicks
+	^xTicks
+!
+yTicks
+	^yTicks
 !!

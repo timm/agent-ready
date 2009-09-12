@@ -1,3 +1,4 @@
+label here's some stuff
 width 30
 height 10
 bottom ticks 1 2 5 10
@@ -7,4 +8,3 @@ range 1 1 10 20
 2 4 * 
 3 6 *
 4 8 *
-label here's some stuff
