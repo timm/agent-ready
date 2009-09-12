@@ -20,10 +20,10 @@ init
 "=============================================="
 ! Graph methodsFor: 'doing' !
 frame
-       ox to: (width  - 1) do: [:i| self plot: i  @ oy           with: $- ].
-       ox to: (width  - 1) do: [:i| self plot: i  @ (height - 1) with: $- ].
-       oy to: (height - 1) do: [:i| self plot: ox @ i            with: $| ].
-       oy to: (height - 1) do: [:i| self plot: (width - 1) @ i   with: $| ] 
+       ox to: width do: [:i| self plot: i  @ oy           with: $- ].
+       ox to: width do: [:i| self plot: i  @ (height-1) with: $- ].
+       oy to: (height-1) do: [:i| self plot: ox @ i            with: $| ].
+       oy to: (height-1) do: [:i| self plot: (width-1) @ i   with: $| ] 
 !
 height: h 
 	self height: h width: width 
@@ -66,18 +66,18 @@ yscale: aNumber
 "================================================================"
 !Graph methodsFor: 'printing'!
 drawLabel
-	self splot: (Point x:((width+ox-(label size))/2) y:0) with: label.
+	self splot: (Point x:(((width+ox-(label size))/2) rounded) y:1) with: label.
 !
 drawTicks
 	|xPoint yPoint|
 	1 to: (xTicks size) do:[:where|
 		xPoint:= xTicks at: where.
-		self plot: xPoint with: '|'.
-		self splot: xPoint with: (xPoint x)].
+		self plot: (Point x:(self xscale: (xPoint x)) y:(xPoint y)) with: '|'.
+		self plot: (Point x:((self xscale: (xPoint x))-1) y:(oy-1)) with: (xPoint x)].
 	1 to: (yTicks size) do:[:where2|
 		yPoint:= yTicks at: where2.
-		self plot: yPoint with: '-'.
-		self splot: yPoint with: (yPoint y)].	
+		self plot: (Point x:(yPoint x) y:(self yscale: (yPoint y))) with: '-'.
+		self plot: (Point x:(ox-5) y:(self yscale: (yPoint y))) with: (yPoint y)].	
 !
 "Idea for how to handle this also borrowed from Luyi"
 prepData
@@ -85,12 +85,13 @@ prepData
 	dataPoints keysAndValuesDo: [:key :value|
 		tempX := (self xscale: key x).
 		tempY := (self yscale: key y).
-		self plot: (Point x: (self scale: key x) y: (self yscale: key y)) with: value ].
+		self plot: (Point x: (self xscale: key x) y: (self yscale: key y)) with: value ].
 !
 draw
 	|currentSet currentItem|
 	self frame.
-	self drawTicks.
+	self drawTicks.	
+	"self drawLabel."
 	self prepData.
 	(matrix size) to: 1 by: -1 do: [:where|
 		currentSet := (matrix at: where).
@@ -103,7 +104,7 @@ draw
 					currentItem o.]
 		].
 		' ' oo.
-	]
+	].
 !!
 "================================================================"
 !Graph methodsFor: 'accessing'!

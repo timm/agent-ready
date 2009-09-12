@@ -1,5 +1,5 @@
 |g r| 
 g := Graph new.
-r := Reader new lines: 'eg/graph/3' for: g.
+r := Reader new lines: 'eg/graph/1' for: g.
 g draw.
 !
