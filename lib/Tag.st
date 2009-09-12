@@ -92,3 +92,23 @@ handles
 line: string for: graph at: line
       graph data: string.
 !!
+
+! TagTags class methods !
+handles
+	^'^\s*tags\s+'
+!!
+
+! TagTags methods !
+line: string for: graph at: line
+      graph tags: (string replacingRegex: '^\s*tags\s+' with: '') asWords.
+!!
+
+! TagMb class methods !
+handles
+	^'^\s*mb\s+'
+!!
+
+! TagMb methods !
+line: string for: graph at: line
+      graph mb: (string replacingRegex: '^\s*mb\s+' with: '') asWords.
+!!

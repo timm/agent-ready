@@ -14,33 +14,52 @@ init
 	matrix := OrderedCollection new.
 	bottomticks := OrderedCollection new.
 	leftticks := OrderedCollection new.
-	height:= 0.
-	width:= 0.
+	tags := OrderedCollection new.
+	height:= 24.
+	width:= 80.
 	ox := 6.
 	oy := 3.
 !
 
 
 frame
-       ox to: (width) do: [:i| self plot: i  @ oy           with: $- ].
-       ox to: (width) do: [:i| self plot: i  @ (height) with: $- ].
-       oy to: (height) do: [:i| self plot: ox @ i            with: $| ].
-       oy to: (height) do: [:i| self plot: (width) @ i   with: $| ]
+       self resize.
+       ox to: width	do: [:i| self plot: i	    @ oy      with: $- ].
+       ox to: width 	do: [:i| self plot: i	    @ height  with: $- ].
+       oy to: height 	do: [:i| self plot: ox 	    @ i       with: $| ].
+       oy to: height 	do: [:i| self plot: width   @ i       with: $| ]
 !
 
 
 
 writeticks
-	| scaled |
+	| scaled tick |
 	1 to: bottomticks size do: [:i|
-	  scaled := self xscale: (bottomticks at: i) asInteger.
+	  tick := (bottomticks at: i) asWords.
+	  scaled := self xscale: tick first asInteger.
 	  self plot: scaled @ oy with: $|.
-	  self splot: scaled @ (oy - 1) with: (bottomticks at: i) ].
+	  self splot: scaled @ (oy - 1) with: (tick second) ].
+	1 to: tags size do: [:i|
+	  tick := (tags at: i) asWords.
+	  scaled := self xscale: tick first asInteger.
+	  self plot: scaled @ oy with: $|.
+	  self splot: scaled @ (oy - 1) with: (tick second) ].
 	1 to: leftticks size  do: [:i|
-	  scaled := self yscale: (leftticks at: i) asInteger.
+	  tick := (leftticks at: i) asWords.
+	  scaled := self yscale: (tick first) asInteger.
 	  self plot: ox @ (scaled) with: $-.
-	  self splot: 1 @ scaled with: (leftticks at: i) ].
+	  self splot: 1 @ scaled with: (tick second) ].
 !
+
+tags: t
+      | tick |
+      [t isEmpty] whileFalse: [ 
+      	 tick := t removeFirst.
+      	 xrange add: tick asInteger.
+	 tags add: tick , ' ', (t removeFirst)
+	 ].
+!
+
 
 writedata
 	|datapoint xsc ysc|
@@ -76,6 +95,10 @@ splot: aPoint with: aString
 
 draw
 	|row|
+	self frame.
+	self writeticks.
+	self writedata.
+	self writelabel.
 	(matrix size - oy) to: 1 by: -1 do: [:x|
 	      	     	      row := matrix at: x.
 			      1 to: row size do: [:y|
@@ -90,7 +113,9 @@ data
 !
 
 data: d
-	data addLast: d.
+      xrange add: d asWords first asInteger.
+      yrange add: d asWords second asInteger.
+      data addLast: d.
 !
 
 range: r
@@ -112,16 +137,22 @@ leftticks
 	^leftticks
 !
 
-leftticks: x
-	leftticks := x
+leftticks: y
+	   1 to: y size do: [:i|
+	     yrange add: (y at: i) asInteger.
+	     leftticks add: (((y at: i) asString), ' ') , ((y at: i) asString).
+	     ].
 !
 
 bottomticks
 	^bottomticks
 !
 
-bottomticks: y
-	bottomticks := y
+bottomticks: x
+	   1 to: x size do: [:i|
+	     xrange add: (x at: i) asInteger.
+	     bottomticks add: (((x at: i) asString), ' ') , ((x at: i) asString).
+	     ].
 !
 
 label
@@ -131,6 +162,11 @@ label
 label: l
        label := l
 !
+
+mb: s
+    ^s
+!
+
 
 height
 	^height
