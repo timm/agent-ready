@@ -28,6 +28,7 @@ line: string for: this
 lines: aFileName for: this
 	line := 0.
 	aFileName fileLinesDo: [:words|
+		words replacingRegex: '(.*)#(.*)' with: '$%1$'.
 		line := line + 1.
 		words size > 1 ifTrue: [ 
 			self line: words for: this]] !
