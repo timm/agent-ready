@@ -30,7 +30,7 @@ line: string for: graph at: line
 
 ! TagHeight class methods !
 handles
-	^'\s*height\s+(\d+)\s*$'
+	^'^\s*height\s+(\d+)\s*$'
 !!
 
 ! TagHeight methods !
@@ -41,24 +41,54 @@ line: string for: graph at: line
 
 ! TagLabel class methods !
 handles
-	^'\s*label\s+(\w+\s*)+$'
+	^'^\s*label\s+'
 !!
 
 ! TagLabel methods !
 line: string for: graph at: line
-      | lbl |
-      lbl := string asWords.
-      lbl removeFirst.
-      graph label: lbl asArray.
+      graph label: (string replacingRegex: '^\s*label\s+' with: '').
 !!
 
 ! TagBottomTicks class methods !
 handles
-	^'\s*bottom\s+ticks\s+(\d+)+$'
+	^'^\s*bottom\s+ticks\s+(\d+\s*)+\s*$'
 !!
 
 
 ! TagBottomTicks methods !
 line: string for: graph at: line
-     graph width: string asWords second asInteger.
+     graph bottomticks: (string replacingRegex: '^\s*bottom\s+ticks\s+' with: '') asWords.
+!!
+
+! TagLeftTicks class methods !
+handles
+	^'^\s*left\s+ticks\s+(\d+\s*)+\s*$'
+!!
+
+
+! TagLeftTicks methods !
+line: string for: graph at: line
+     graph leftticks: (string replacingRegex: '^\s*left\s+ticks\s+' with: '') asWords.
+!!
+
+! TagRange class methods !
+handles
+	^'^\s*range\s+(\d+\s*)+\s*$'
+!!
+
+
+! TagRange methods !
+line: string for: graph at: line
+     graph range: (string replacingRegex: '^\s*range\s+' with: '') asWords.
+!!
+
+
+! TagDataPoint class methods !
+handles
+	^'^\s*((\d+)\s+)+.\s*$'
+!!
+
+! TagDataPoint methods !
+line: string for: graph at: line
+      graph data: string.
 !!

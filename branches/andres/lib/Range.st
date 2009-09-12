@@ -43,4 +43,10 @@ max: aNumber
 scale: aNumber
   	"scale a number according to where it falls in the range min..max"
   	^(aNumber - min)/(max - min)
+!
+
+min	^min !
+
+max	^max !
+
 !!
