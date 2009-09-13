@@ -2,20 +2,21 @@
 #Role        isa: Object with: 'name eman from to fromCard toCard froms tos'.
 #Range       isa: Object with: 'min max'.
 #Reader 	 isa: Object with: 'line array handler commentChar'.
-#Graph       isa: Object with: 'dataPoints label matrix height width ox oy tags xrange yrange xTicks yTicks'. 
-					"XXX does Graph need anymore attributes?"
+#Graph       isa: Object with: 'dataPoints label matrix mb height width ox oy tags xrange yrange xTicks yTicks'. 
 #Tag         isa: Object.
 #GraphTag    isa: Tag.
-#TagWidth    isa: GraphTag.
-#TagHeight   isa: GraphTag.
-#TagRange    isa: GraphTag.
 #TagBottom   isa: GraphTag.
-#TagLeft     isa: GraphTag.
-#TagLabel    isa: GraphTag.
-#TagError    isa: GraphTag.
+#TagComment  isa: GraphTag.
 #TagData     isa: GraphTag.
+#TagError    isa: GraphTag.
+#TagHeight   isa: GraphTag.
+#TagLabel    isa: GraphTag.
+#TagLeft     isa: GraphTag.
+#TagMb	     isa: GraphTag.
+#TagRange    isa: GraphTag.
 #TagTag	     isa: GraphTag.
 #TagTags     isa: GraphTag.
+#TagWidth    isa: GraphTag.
 
 (#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.
 
@@ -31,8 +32,4 @@
 
 #Random 	 isa: Stream with: 'seed'  shares: 'TheRandom'.
 
-"XXX define subclasses of Tag to handle every tag"
-
-"XXX Note that 'Tags' should run by calling 'tag'
-the right number of times"
 !

@@ -28,6 +28,14 @@ line: string for: graph at: line
 		graph xrange add: (bottomString at: ticks) asInteger.
 		graph xTicks add: (Point x:where y:(graph oy)).].
 !!
+! TagComment class methods !
+handles
+	^'^\s*\#'
+!!
+! TagComment methods!
+line: string for: graph at: line
+	"Current behavior is to do nothing with comments."
+!!
 ! TagData class methods !
 handles
 	^'^\s*((\d+)\s+)+.\s*$'
@@ -71,6 +79,14 @@ line: string for: graph at: line
 		graph yrange add: (leftString at: ticks) asInteger.
 		graph yTicks add: (Point x:(graph ox) y:where).].
 !!
+! TagMb class methods !
+handles
+	^'^\s*mb'
+!!
+! TagMb methods !
+line: string for: graph at: line
+	"We are not required to impliment MB"
+!!
 ! TagRange class methods !
 handles
 	^'^\s*range\s*(\s\d+)*\s*$'
@@ -99,6 +115,20 @@ line: string for: graph at: line
 			'Warning: Your max is smaller than your min. They will be swapped' o
 			graph yrange add: yMin.
 			graph yrange add: yMax.].
+!!
+! TagTag class methods !
+handles
+	^'^\s*tag\s+'
+!!
+!TagTag methods !
+line: string for: graph at: line
+	|tagString|
+	tagString:=string asWords.
+	graph tags at: ((tagString at:2) asInteger) put: (tagString at: 3).
+	graph yrange add: ((tagString at: 4) asInteger).
+	1 to: ((tagString at: 4) asInteger) do: [:where|
+		graph dataPoints at: (Point x:((tagString at: 2) asInteger) y:where) put:(tagString at: 5).
+	].
 !!
 ! TagTags class methods !
 handles
