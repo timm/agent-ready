@@ -49,6 +49,10 @@ label ^label
 !
 rawdata ^rawdata
 !
+tags ^tags
+!
+mb ^mb
+!
 init
 	label  := ''. 
 	xrange := Range new.
@@ -57,9 +61,11 @@ init
 	yindices := OrderedCollection new.
 	matrix := OrderedCollection new.
 	rawdata := Dictionary new.
+	tags :=Dictionary new.
+	mb := Dictionary new.
 	ox :=6.
-	oy :=2.
-	self height: 0  width: 0.
+	oy :=3.
+	self height: 24  width: 80.
 !
 resize
 	|nheight nwidth|
@@ -96,38 +102,52 @@ yscale: aNumber
 !
 prtLabel
 	|twidth|
-        twidth := (width+ ox - (label size))/2.
-        self splot:( Point x:twidth y:0) with: label.
+        twidth := ((width + ox - (label size))/2) rounded.
+        self splot:( Point x:twidth y:1) with: label.
 !
 prtticks
 	|btemppoint bltemppoint ltemppoint lltemppoint xpoint ypoint|
 
 	1 to: xindices size do:[:i|
 	xpoint := xindices at: i.
-	btemppoint :=(Point x: (self xscale: (xpoint x)) y: (xpoint y)).
+	btemppoint :=(Point x: (self xscale: (xpoint x)) y: oy).
 	bltemppoint :=(Point x: (btemppoint x) y:oy-1).
         self plot: btemppoint with: '|'.
-        self plot: bltemppoint with: (xpoint x)].
+        self plot: bltemppoint with: (xpoint x)  ].
 
 	1 to: yindices size do:[:j|
 	ypoint := yindices at:j.
-	ltemppoint := (Point x: (ypoint x) y: (self yscale: (ypoint y))).
-	lltemppoint := (Point x: ox-1 y:(ltemppoint y)).
+	ltemppoint := (Point x:ox y: (self yscale: (ypoint y))).
+	lltemppoint := (Point x:ox y:(ltemppoint y)).
 	self plot: ltemppoint with: '-'.
         self plot: lltemppoint with: (ypoint y)].
+	
+	tags keysAndValuesDo: [:key :value|
+	self splot: (self xscale: key)@(oy-1) with: value]. 	
+	
 !
 datatrans
 	|tempx tempy|
 	rawdata keysAndValuesDo: [:key :value|
 	tempx := (self xscale: key x).
 	tempy := (self yscale: key y).
-	self plot: (Point x: (self xscale: key x) y:(self yscale: key y)) with: value ]
+	self plot: (Point x: (self xscale: key x) y:(self yscale: key y)) with: value ].
+!
+printMB
+	|xmin xmax|
+	xmin := xrange min.
+	xmax := xrange max.
+	xmin to: xmax do: [:i|
+	self plot: (Point x:(self xscale: i) y:(self yscale: ((mb at: 1)*i+(mb at: 2)))) with: (mb at: 3).].
 !
 draw
 	|cArray ccitem cstream|
+	self datatrans.
 	self frame.
 	self prtticks.
-	self datatrans.
+	self prtLabel.
+	(mb size) ==0
+		ifFalse: [self printMB].
 	(matrix size) to: 1 by: -1 do: [:cindex|
 	cArray := (matrix at: cindex).
        	1 to: (cArray size) do:[:citem|
