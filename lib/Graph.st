@@ -13,17 +13,17 @@ init
 	xTicks := OrderedCollection new.
 	yTicks := OrderedCollection new.
 	dataPoints := Dictionary new. "<- this idea borrowed from Luyi. Very good idea!"
-	self height: 0  width: 0.
-	ox:=6. 
-	oy:=2.
+	self height: 24  width: 80.
+	ox:=7. 
+	oy:=3.
 !!
 "=============================================="
 ! Graph methodsFor: 'doing' !
 frame
        ox to: width do: [:i| self plot: i  @ oy           with: $- ].
-       ox to: width do: [:i| self plot: i  @ (height-1) with: $- ].
-       oy to: (height-1) do: [:i| self plot: ox @ i            with: $| ].
-       oy to: (height-1) do: [:i| self plot: (width-1) @ i   with: $| ] 
+       ox to: width do: [:i| self plot: i  @ height with: $- ].
+       oy to: height do: [:i| self plot: ox @ i            with: $| ].
+       oy to: height do: [:i| self plot: width @ i   with: $| ] 
 !
 height: h 
 	self height: h width: width 
@@ -58,10 +58,10 @@ wxidth: w
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - 1 - ox) + ox) rounded 
+	^((xrange scale: aNumber) * (width - ox) + ox) rounded 
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - 1 - oy) + oy) rounded
+	^((yrange scale: aNumber) * (height - oy) + oy) rounded
 !!
 "================================================================"
 !Graph methodsFor: 'printing'!
@@ -72,12 +72,15 @@ drawTicks
 	|xPoint yPoint|
 	1 to: (xTicks size) do:[:where|
 		xPoint:= xTicks at: where.
-		self plot: (Point x:(self xscale: (xPoint x)) y:(xPoint y)) with: '|'.
+		self plot: (Point x:(self xscale: (xPoint x)) y:oy) with: '|'.
 		self plot: (Point x:((self xscale: (xPoint x))-1) y:(oy-1)) with: (xPoint x)].
 	1 to: (yTicks size) do:[:where2|
-		yPoint:= yTicks at: where2.
-		self plot: (Point x:(yPoint x) y:(self yscale: (yPoint y))) with: '-'.
-		self plot: (Point x:(ox-5) y:(self yscale: (yPoint y))) with: (yPoint y)].	
+		yPoint:= yTicks at: where2.	
+		self plot: (Point x:ox y:(self yscale: (yPoint y))) with: '-'.	
+		self plot: (Point x:ox-6 y:(self yscale: (yPoint y))) with: (yPoint y).
+		(((yPoint y) asInteger)>9)
+			ifTrue: [self plot: (Point x:ox-4 y:(self yscale:(yPoint y))) with: ''.].
+	].	
 !
 "Idea for how to handle this also borrowed from Luyi"
 prepData
@@ -88,11 +91,11 @@ prepData
 		self plot: (Point x: (self xscale: key x) y: (self yscale: key y)) with: value ].
 !
 draw
-	|currentSet currentItem|
+	|currentSet currentItem|	
 	self frame.
 	self drawTicks.	
-	"self drawLabel."
 	self prepData.
+	self drawLabel.
 	(matrix size) to: 1 by: -1 do: [:where|
 		currentSet := (matrix at: where).
 		1 to: (currentSet size) do:[:where2|
@@ -101,7 +104,8 @@ draw
 				ifTrue: [
 					' ' o.]
 				ifFalse:[
-					currentItem o.]
+					currentItem o.
+				].
 		].
 		' ' oo.
 	].
