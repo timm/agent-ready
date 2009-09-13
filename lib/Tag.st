@@ -17,7 +17,7 @@ line: string for: this at: line
 !!
 ! TagBottom class methods !
 handles
-	^'^\s*bottom\s*ticks(\s\d+)*\s*$'
+	^'^\s*bottom\s*ticks\s*(\s\d+)*\s*$'
 !!
 ! TagBottom methods !
 line: string for: graph at: line
@@ -25,6 +25,7 @@ line: string for: graph at: line
 	bottomString := string asWords.
 	3 to: (bottomString size) do: [:ticks|
 		where := (bottomString at: ticks) asInteger.
+		graph xrange add: (bottomString at: ticks) asInteger.
 		graph xTicks add: (Point x:where y:(graph oy)).].
 !!
 ! TagData class methods !
@@ -35,6 +36,8 @@ handles
 line: string for: graph at: line
 	|dataString|
 	dataString := string asWords.
+	graph xrange add: ((dataString at:1) asInteger).
+	graph yrange add: ((dataString at:2) asInteger).
 	graph dataPoints at: (Point x:((dataString at:1) asInteger) y:((dataString at: 2) asInteger)) put: (dataString at: 3).
 !!
 ! TagHeight class methods !
@@ -57,7 +60,7 @@ line: string for: graph at: line
 
 ! TagLeft class methods !
 handles
-	^'^\s*left\s*ticks(\s\d+)*\s*$'
+	^'^\s*left\s*ticks\s*(\s\d+)*\s*$'
 !!
 ! TagLeft methods !
 line: string for: graph at: line
@@ -65,11 +68,12 @@ line: string for: graph at: line
 	leftString := string asWords.
 	3 to: (leftString size) do: [:ticks|
 		where := (leftString at: ticks) asInteger.
+		graph yrange add: (leftString at: ticks) asInteger.
 		graph yTicks add: (Point x:(graph ox) y:where).].
 !!
 ! TagRange class methods !
 handles
-	^'^\s*range(\s\d+)*\s*$'
+	^'^\s*range\s*(\s\d+)*\s*$'
 !!
 ! TagRange methods !
 line: string for: graph at: line
@@ -95,6 +99,17 @@ line: string for: graph at: line
 			'Warning: Your max is smaller than your min. They will be swapped' o
 			graph yrange add: yMin.
 			graph yrange add: yMax.].
+!!
+! TagTags class methods !
+handles
+	^'^\s*tags\s+'
+!!
+!TagTags methods !
+line: string for: graph at: line
+	|tagString|
+	tagString:=string asWords.
+	2 to: tagString size by: 2 do: [:where|
+		graph tags at: ((tagString at:where) asInteger) put: (tagString at: where+1).].
 !!
 ! TagWidth class methods !
 handles

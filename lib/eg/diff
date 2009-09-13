@@ -1,22 +1,63 @@
-4,13c4,13
-<       |----------------------|                                                   
-< 20    -                      |                                                   
-<       |                      |                                                   
-<       |         +            |                                                   
-< 10    -            + +       |                                                   
-<       |       *              |                                                   
-<       |  * *                 |                                                   
-< 2     *--|------|------------|                                                   
-<      1  2      5            10                                                    
+4,44c4,23
+< Object: Reader new "<0x40857358>" error: line 2) cannot handle [left ticks  0 10 20 30 40]
+< Error(Exception)>>signal (AnsiExcept.st:216)
+< Error(Exception)>>signal: (AnsiExcept.st:226)
+< Reader(Object)>>error: (AnsiExcept.st:1565)
+< Reader>>cantDo: (Reader.st:12)
+< [] in Reader>>handlerOf: (Reader.st:21)
+< UndefinedObject>>ifNil: (0lib.st:102)
+< Reader>>handlerOf: (Reader.st:21)
+< Reader>>line:for: (Reader.st:26)
+< [] in Reader>>lines:for: (Reader.st:33)
+< [] in String>>fileLinesDo: (0lib.st:95)
+< [] in FileStream(Stream)>>linesDo: (Stream.st:361)
+< BlockClosure>>on:do: (BlkClosure.st:192)
+< FileStream(Stream)>>linesDo: (Stream.st:363)
+< String>>fileLinesDo: (0lib.st:96)
+< Reader>>lines:for: (Reader.st:30)
+< UndefinedObject>>executeStatements (eg/4reader.st:3)
+<       |------------------------------------------------------------------------| 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |                                                                        | 
+<       |------------------------------------------------------------------------| 
 <                                                                                  
+<                                   here's some stuff                              
 ---
->       |----------------------|
-> 20    -                      |
->       |                      |
->       |         +            |
-> 10    -            + +       |
->       |       *              |
->       |  * *                 |
-> 2     *--|------|------------|
->      1  2      5            10
->                               
+> 40    -------------------------------------------------------------------------|
+>       |                                                                        |
+>       |                                                                        |
+>       |                            *                     $                     |
+> 30    -                                                                        |
+>       |                                           $                            |
+>       |                                    $                                   |
+>       |                                                                        |
+> 20    -                            $       +                                   |
+>       |                                                                        |
+>       |                     $                                                  |
+>       |              $                                                         |
+>       |                                                                        |
+> 10    -      $       *                            +                            |
+>       |                                                                        |
+>       |      *                                           +                     |
+>       |                                                                        |
+> 0     -------------------------------------------------------------------------|
+>                                                                                 
+>                                   here's some stuff                             

@@ -10,6 +10,7 @@ init
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
+	tags := Dictionary new.
 	xTicks := OrderedCollection new.
 	yTicks := OrderedCollection new.
 	dataPoints := Dictionary new. "<- this idea borrowed from Luyi. Very good idea!"
@@ -81,6 +82,9 @@ drawTicks
 		(((yPoint y) asInteger)>9)
 			ifTrue: [self plot: (Point x:ox-4 y:(self yscale:(yPoint y))) with: ''.].
 	].	
+
+	tags keysAndValuesDo: [:key :value|
+		self splot: (self xscale: key)@(oy-1) with: value].
 !
 "Idea for how to handle this also borrowed from Luyi"
 prepData
@@ -132,6 +136,9 @@ ox
 !
 oy
 	^oy
+!
+tags
+	^tags
 !
 xrange
 	^xrange
