@@ -18,7 +18,7 @@ line: string for: this at: line
 
 ! TagRange class methods !
 handles
-        ^'^\s*range(\s\d+)*\s*$'
+        ^'^\s*range(\s*\d+)*\s*$'
 !!
 
 ! TagRange methods !
@@ -41,8 +41,6 @@ handles
 line: string for: graph at: line
 	graph width: string asWords second asInteger.
 	"if we expect a float, use Float readFrom: self"
-	graph height == 0
-		ifFalse: [ graph height: (graph height) width: (graph width)]
 ! !
 ! TagHeight class methods !
 handles
@@ -52,8 +50,30 @@ handles
 ! TagHeight methods !
 line: string for: graph at: line
 	graph height: string asWords second asInteger.
-	graph width ==0
-		ifFalse: [graph height: (graph height) width: (graph width)]
+	graph height: (graph height) width: (graph width)
+!!
+
+! TagIgnore class methods!
+handles 
+	^'^\s*\#'
+!!
+
+! TagIgnore methods!
+line: string for: graph at: line
+	
+!!
+! TagTag class methods !
+handles 
+	^'^\s*.*\s*tag.*(\s+\d+\s+.*)+\s*$'
+!!
+!TagTag methods!
+line: string for: graph at: line
+	|fline symbol ptag |
+	fline  := string asWords.
+	2 to: fline size by: 2 do: [:i| 
+	symbol := (fline at: i) asInteger.
+	ptag   := (fline at: i+1).
+	graph tags at: symbol put: ptag.].
 !!
 
 ! TagData class methods !
@@ -68,24 +88,31 @@ line: string for: graph at: line
          trimy := (fline at: 2) asInteger.
          bsymbol := fline at: 3.
          graph rawdata at: (Point x:trimx y:trimy) put: bsymbol.
+	 graph xrange add: trimx.
+	 graph yrange add: trimy.
 !!      
 
 
-! TagLable class methods !
+! TagLabel class methods !
 handles
-	^'^\s*label\s+(\d+)\s*$'
+	^'^\s*label'
 !!
 ! TagLabel methods !
 line: string for: graph at: line
-	|label fstream|
-	fstream := WriteStream on: ''. 
-	label := string asWords.
-	2 to: label size do: [:i|
-	label at:i printOn: fstream.
-	]
-	graph label: (fstream content)
+	graph label: (string replacingRegex: '^\s*label\s+' with: '').
+!!
+! TagMB class methods!
+handles ^'^\s*mb'
 !!
 
+!TagMB methods!
+line: string for: graph at: line
+	|fline xpoint|
+	fline := string asWords.
+	(graph mb) at: 1 put: ((fline at: 2) asInteger).
+	(graph mb) at: 2 put: ((fline at: 3) asInteger).
+	(graph mb) at: 3 put:  (fline at:4).
+!!
 ! TagBottom class methods !
 handles 
         ^'^\s*bottom\s*ticks(\s\d+)*\s*$'
@@ -96,14 +123,14 @@ line: string for: graph at: line
 	|fline xpoint|
 	fline := string asWords.
         3 to: (fline size) do: [:x|
+	graph yrange add: ((fline at: x) asInteger).
 	graph xindices add: (Point x:((fline at: x) asInteger) y:(graph oy)).  
-	"xpoint := graph xscale: ."
 	]
 !!
 
 ! TagLeft class methods !
 handles
-        ^'^\s*left\s*ticks(\s\d+)*\s*$'
+        ^'^\s*left\s*ticks(\s*\d+)*\s*$'
 !!
 
 ! TagLeft methods !
@@ -111,7 +138,7 @@ line: string for: graph at: line
 	|fline ypoint|
         fline := string asWords.    
         3 to: (fline size) do: [:x|
-		"ypoint := graph yscale:"
+		graph yrange add: (fline at: x) asInteger.
 		graph yindices add: (Point x:(graph ox) y:((fline at: x) asInteger)).]
 !!
 
