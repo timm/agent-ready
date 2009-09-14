@@ -6,11 +6,27 @@ new
 	^super new init
 !!
 ! Graph methods !
+draw	
+	height to: ox by: -1 do: [:i| oy to: width do: [:j|
+			"i o. ' ' o. j o. ' ' o."
+			[self getColumn: j row: i] value o].
+		'' oo]
+!
 frame
-       ox to: (width  - 1) do: [:i| self plot: i  @ oy           with: $- ].
-       ox to: (width  - 1) do: [:i| self plot: i  @ (height - 1) with: $- ].
-       oy to: (height - 1) do: [:i| self plot: ox @ i            with: $| ].
-       oy to: (height - 1) do: [:i| self plot: (width - 1) @ i   with: $| ] 
+	"ox o. oy o."
+	ox to: width do: [:i| self plot: i  @ oy	with: $- ].
+	ox to: width do: [:i| self plot: i  @ height	with: $- ].
+	oy to: height do: [:i| self plot: ox @ i	with: $| ].
+	oy to: height do: [:i| self plot: width @ i	with: $| ].
+!
+matrix
+	^matrix
+!
+matrix: x
+	^(matrix at: x)
+!
+getColumn: x row: y
+	^((self matrix: y) at: x)
 !
 height
 	^height
@@ -28,17 +44,20 @@ init
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
-	self height: 0  width: 0.
-	ox=6.
-	oy=2.
+	ox := 1.
+	oy := 2.
+	self height: 24  width: 80	
 !
 resize 
-       matrix := Array new: height.
-       1 to: height do: [:i|
+	"'tt' o."
+	matrix := Array new: height.
+	1 to: height do: [:i|
            matrix at: i put: (Array new: width) ].
+	self frame
 !
 plot: aPoint with: aSymbol	
       (matrix at: aPoint y) at: aPoint x put: aSymbol. 
+	"((matrix at: aPoint y) at: aPoint x) o."
 !
 splot: aPoint with: aString
        |i|
@@ -53,12 +72,12 @@ width
 width: aNumber
 	^width := aNumber
 !
-wxidth: w 
+width: w 
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - 1 - ox) + ox) round 
+	^((xrange scale: aNumber) * (width - ox) + ox) round 
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - 1 - oy) + oy) round 
+	^((yrange scale: aNumber) * (height - oy) + oy) round 
 !!

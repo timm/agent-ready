@@ -2,4 +2,4 @@
 the
 	TheRandom ifNil: [TheRandom := Random new].
 	^TheRandom 
-! !
+!!
