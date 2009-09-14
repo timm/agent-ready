@@ -1,1 +1,5 @@
+if [ -d ~timm/opt/st-bin/bin/gst ]; then
 ~timm/opt/st-bin/bin/gst *.st  $*
+else
+gst *.st  $*
+fi
