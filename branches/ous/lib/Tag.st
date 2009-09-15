@@ -24,4 +24,57 @@ handles
 line: string for: graph at: line
 	graph width: string asWords second asInteger.
 	"if we expect a float, use Float readFrom: self"
-! !
+!!
+! TagHeight class methods !
+handles
+	 ^'^\s*height\s+(\d+)\s*$'
+!!
+
+! TagHeight methods !
+line: string for: graph at: line
+	graph height: string asWords second asInteger.
+	"if we expect a float, use Float readFrom: self"
+!!
+
+! TagLabel class methods !
+handles
+	 ^'^\s*label\s+'
+!!
+
+! TagLabel methods !
+line: string for: graph at: line
+	graph label: (string replacingRegex: '^\s*label\s+' with: '')
+!!
+
+! TagBottomT class methods !
+handles
+	 ^'^\s*bottom\s+ticks\s+(\d+\s*)+\s*$'
+!!
+
+! TagBottomT methods !
+line: string for: graph at: line
+	graph bottomT: (string replacingRegex: '^\s*bottom\s+ticks\s+' with: '') asWords
+!!
+
+! TagLeftT class methods !
+handles
+	 ^'^\s*left\s+ticks\s+(\d+\s*)+\s*$'
+!!
+
+! TagLeftT methods !
+line: string for: graph at: line
+	graph leftT: (string replacingRegex: '^\s*left\s+ticks\s+' with: '') asWords
+!!
+
+! TagRange class methods !
+handles
+	 ^'^\s*range\s+(\d+\s*)\s+(\d+\s*)\s+(\d+\s*)\s+(\d+\s*)\s*$'
+!!
+
+! TagRange methods !
+line: string for: graph at: line
+	|buff|
+	buff := (string replacingRegex: '^\s*range\s+' with: '') asWords.
+	graph xrange: (buff at:1) asInteger max: (buff at:3) asInteger.
+	graph yrange: (buff at:2) asInteger max: (buff at:4) asInteger
+!!
