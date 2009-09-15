@@ -8,6 +8,8 @@ new
 ! Graph methods !
 draw	
 	|buffer|
+	self rangecheck.
+	self frame.
 	self ticks.
 	self data.
 	self botlab.
@@ -19,6 +21,12 @@ draw
 				ifFalse: [buffer o].
 			].
 		'' oo]
+!
+rangecheck
+	((xrange min) > (xrange max))
+		ifTrue: [1 to: graphpoints size do: [:i| xrange add: (graphpoints at: i) x.]].
+	((yrange min) > (yrange max))
+		ifTrue: [1 to: graphpoints size do: [:i| yrange add: (graphpoints at: i) y.]].	
 !
 frame
 	ox to: width do: [:i| self plot: i  @ oy	with: $- ].
@@ -65,13 +73,13 @@ height: h width: w
 !
 init
 	label  := ''. 
+	graphpoints := OrderedCollection new.
+	graphsymbols := OrderedCollection new.
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
 	bottomT := OrderedCollection new.
-	leftT := OrderedCollection new.
-	graphpoints := OrderedCollection new.
-	graphsymbols := OrderedCollection new.
+	leftT := OrderedCollection new.	
 	ox := 7.
 	oy := 3.
 	self height: 24  width: 80	
