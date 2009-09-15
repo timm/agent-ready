@@ -104,3 +104,13 @@ line: string for: graph at: line
 	|buff|
 	buff := (string replacingRegex: '^\s*mb\s+' with: '') asWords.
 !!
+
+! TagTagTag class methods !
+handles
+	 ^'^\s*tags\s+'
+!!
+
+! TagTagTag methods !
+line: string for: graph at: line
+	graph tags: (string replacingRegex: '^\s*tags\s+' with: '') asWords.	
+!!

@@ -11,6 +11,7 @@ draw
 	self rangecheck.
 	self frame.
 	self ticks.
+	self tagit.
 	self data.
 	self botlab.
 	height to: 1 by: -1 do: [:i| 1 to: width do: [:j|
@@ -36,12 +37,25 @@ frame
 !
 ticks
 	1 to: bottomT size do: [:i|
-		self plot: ((self xscale:(bottomT at: i) asInteger) @ oy) with: '|'.
-		self splot: ((self xscale:((bottomT at: i) asInteger )- (0.5)) @ 2) with: (bottomT at: i)].
+		(((bottomT at: i) asInteger) > (xrange max))	
+			ifFalse: [
+				self plot: ((self xscale:(bottomT at: i) asInteger) @ oy) with: '|'.
+				self splot: ((self xscale:((bottomT at: i) asInteger )- (0.5)) @ 2) with: (bottomT at: i)].
+			].
 	
 	1 to: leftT size do: [:i|
-		self plot: (ox @ (self yscale:(leftT at: i) asInteger)) with: '-'.
-		self splot: (1 @ (self yscale:((leftT at: i) asInteger ))) with: (leftT at: i)]. 
+		(((leftT at: i) asInteger) > (yrange max))	
+			ifFalse: [
+				self plot: (ox @ (self yscale:(leftT at: i) asInteger)) with: '-'.
+				self splot: (1 @ (self yscale:((leftT at: i) asInteger ))) with: (leftT at: i)]. 
+			].
+!
+tagit
+	1 to: tags size by:2 do: [:i|
+		(((tags at: i) asInteger) > (xrange max))
+			ifFalse: [
+				self splot: ((self xscale:((tags at: i) asInteger )- (0.5)) @ 2) with: (tags at: (i+1))].
+	].
 !
 botlab
 	self splot: (((width + ox - label size)/2) asInteger) @ 1 with: label
@@ -75,6 +89,7 @@ init
 	label  := ''. 
 	graphpoints := OrderedCollection new.
 	graphsymbols := OrderedCollection new.
+	tags := OrderedCollection new.
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
@@ -171,4 +186,11 @@ graphsymbols
 !
 graphsymbols: symbol
 	graphsymbols addLast: symbol
+!
+
+tags
+	^tags
+!
+tags: list
+	tags := list
 !!
