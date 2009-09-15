@@ -76,9 +76,9 @@ writelabel
 !
 
 resize 
-       matrix := Array new: (height + oy).
+       matrix := Array new: (height).
        1 to: height do: [:i|
-           matrix at: i put: (Array new: width + ox) ].
+           matrix at: i put: (Array new: width + 1) ].
 !
 
 plot: aPoint with: aSymbol
@@ -99,9 +99,9 @@ draw
 	self writeticks.
 	self writedata.
 	self writelabel.
-	(matrix size - oy) to: 1 by: -1 do: [:x|
+	height to: 1 by: -1 do: [:x|
 	      	     	      row := matrix at: x.
-			      1 to: row size do: [:y|
+			      1 to: width do: [:y|
 						(row at: y) isNil ifTrue: [' ' o]
 			      			  	ifFalse: [(row at: y) o].
 						].
@@ -202,7 +202,6 @@ height: h
 height: h width: w
 	height := h.
 	width  := w.
-	self resize 
 !
 
 width
