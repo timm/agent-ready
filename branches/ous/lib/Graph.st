@@ -54,7 +54,8 @@ tagit
 	1 to: tags size by:2 do: [:i|
 		(((tags at: i) asInteger) > (xrange max))
 			ifFalse: [
-				self splot: ((self xscale:((tags at: i) asInteger )- (0.5)) @ 2) with: (tags at: (i+1))].
+				self splot: ((self xscale:((tags at: i) asInteger )- (0.5)) @ 2) with: (tags at: (i+1)).
+				self plot: ((self xscale:((tags at: i) asInteger )) @ oy) with: '|'].
 	].
 !
 botlab
