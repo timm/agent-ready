@@ -114,3 +114,12 @@ handles
 line: string for: graph at: line
 	graph tags: (string replacingRegex: '^\s*tags\s+' with: '') asWords.	
 !!
+
+! TagComment class methods !
+handles
+	 ^'^\s*#\s+'
+!!
+
+! TagComment methods !
+line: string for: graph at: line
+!!
