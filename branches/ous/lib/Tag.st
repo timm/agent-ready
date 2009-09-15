@@ -68,7 +68,7 @@ line: string for: graph at: line
 
 ! TagRange class methods !
 handles
-	 ^'^\s*range\s+(\d+\s*)\s+(\d+\s*)\s+(\d+\s*)\s+(\d+\s*)\s*$'
+	 ^'^\s*range\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s*$'
 !!
 
 ! TagRange methods !
@@ -77,4 +77,17 @@ line: string for: graph at: line
 	buff := (string replacingRegex: '^\s*range\s+' with: '') asWords.
 	graph xrange: (buff at:1) asInteger max: (buff at:3) asInteger.
 	graph yrange: (buff at:2) asInteger max: (buff at:4) asInteger
+!!
+
+! TagDataPt class methods !
+handles
+	 ^'^\s*(\d+)\s+(\d+)\s+.+\s*$'
+!!
+
+! TagDataPt methods !
+line: string for: graph at: line
+	|buff|
+	buff := string asWords.
+	graph graphpoints: ((buff at:1) asInteger @ (buff at:2) asInteger).
+	graph graphsymbols: (buff at:3)
 !!

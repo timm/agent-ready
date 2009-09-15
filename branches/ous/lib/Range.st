@@ -32,9 +32,15 @@ add: aNumber
 	self 	min: aNumber; 
 			max: aNumber	
 !
+min
+	^min
+!
 min: aNumber
   	"take a number, reset min if needed"
 	min := min min: aNumber
+!
+max
+	^max
 !
 max: aNumber
   	"take a number, reset max if needed"

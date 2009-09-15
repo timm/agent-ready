@@ -8,6 +8,9 @@ new
 ! Graph methods !
 draw	
 	|buffer|
+	self ticks.
+	self data.
+	self botlab.
 	height to: 1 by: -1 do: [:i| 1 to: width do: [:j|
 			"i o. ' ' o. j o. ' ' o."
 			buffer := (self getColumn: j row: i).
@@ -24,6 +27,23 @@ frame
 	oy to: height do: [:i| self plot: ox @ i	with: $| ].
 	oy to: height do: [:i| self plot: width @ i	with: $| ].
 !
+ticks
+	1 to: bottomT size do: [:i|
+		self plot: ((self xscale:(bottomT at: i) asInteger) @ oy) with: '|'].
+	
+	1 to: leftT size do: [:i|
+		self plot: (ox @ (self yscale:(leftT at: i) asInteger)) with: '-']. 
+!
+botlab
+	self splot: (((width + ox - label size)/2) asInteger) @ 1 with: label
+!
+data	
+	1 to: graphpoints size do: [:i|
+		((graphsymbols at: i) = '') 
+			ifTrue: [self plot: (self xyscale: (graphpoints at: i)) with: '*'.]
+			ifFalse: [self plot: (self xyscale: (graphpoints at: i)) with: (graphsymbols at: i)].]
+!
+
 matrix
 	^matrix
 !
@@ -51,6 +71,8 @@ init
 	matrix := OrderedCollection new.
 	bottomT := OrderedCollection new.
 	leftT := OrderedCollection new.
+	graphpoints := OrderedCollection new.
+	graphsymbols := OrderedCollection new.
 	ox := 7.
 	oy := 3.
 	self height: 24  width: 80	
@@ -83,10 +105,16 @@ width: w
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * (width - ox) + ox) round 
+	^((xrange scale: aNumber) * (width - ox) + ox) rounded
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * (height - oy) + oy) round 
+	^((yrange scale: aNumber) * (height - oy) + oy) rounded
+!
+xyscale: aPoint
+	|xs ys|
+	xs := self xscale: (aPoint x).
+	ys := self yscale: (aPoint y).
+	^(xs @ ys)
 !
 label
 	^label
@@ -122,4 +150,18 @@ yrange
 yrange: miny max: maxy
 	yrange min: miny.
 	yrange max: maxy
+!
+
+graphpoints
+	^graphpoints
+!
+graphpoints: aPoint
+	graphpoints addLast: aPoint
+!
+
+graphsymbols
+	^graphsymbols
+!
+graphsymbols: symbol
+	graphsymbols addLast: symbol
 !!
