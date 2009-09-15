@@ -64,9 +64,9 @@ tags: t
 writedata
 	|datapoint xsc ysc|
 	1 to: data size do: [:i|
-	  datapoint := (data at: i) asWords.
-	  xsc := self xscale: datapoint first asInteger.
-	  ysc := self yscale: datapoint second asInteger.
+	  datapoint := data at: i.
+	  xsc := self xscale: datapoint first.
+	  ysc := self yscale: datapoint second.
 	  self plot: xsc @ ysc with: datapoint third.
 	  ]
 !
@@ -113,9 +113,20 @@ data
 !
 
 data: d
-      xrange add: d asWords first asInteger.
-      yrange add: d asWords second asInteger.
-      data addLast: d.
+      | datapoint tmp |
+      tmp := d asWords.
+      datapoint := Array new: 3.
+      tmp size = 3 ifTrue: [
+      	  datapoint at: 1 put: tmp first asInteger.
+	  datapoint at: 2 put: tmp second asInteger.
+	  datapoint at: 3 put: tmp third].
+      tmp size = 2 ifTrue: [
+      	  datapoint at: 1 put: data size asInteger.
+	  datapoint at: 2 put: tmp first asInteger.
+	  datapoint at: 3 put: tmp second].
+      xrange add: datapoint first.
+      yrange add: datapoint second.
+      data addLast: datapoint.
 !
 
 range: r
@@ -164,7 +175,19 @@ label: l
 !
 
 mb: s
-    ^s
+    |c a b xt yt datapoint|
+    a := s first asInteger.
+    b := s second asInteger.
+    c := s third.
+    1 to: data size do: [:i|
+      datapoint := Array new: 3.
+      xt := (data at: i) first.
+      yt := (a * xt) + b.
+      datapoint at: 1 put: xt.
+      datapoint at: 2 put: yt.
+      datapoint at: 3 put: c.
+      data addLast: datapoint.
+      ].
 !
 
 
