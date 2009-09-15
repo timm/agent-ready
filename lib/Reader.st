@@ -26,10 +26,13 @@ line: string for: this
     ^klass new  line: string for: this at: line
 !
 lines: aFileName for: this
+       | cleanline |
 	line := 0.
 	aFileName fileLinesDo: [:words|
-		words replacingRegex: '(.*)#(.*)' with: '$%1$'.
+		words =~ '(.*)#(.*)' ifMatched: [:match|
+		      cleanline := (match at: 1) ]
+		      ifNotMatched: [cleanline:= words].
 		line := line + 1.
-		words size > 1 ifTrue: [ 
-			self line: words for: this]] !
+		cleanline size > 1 ifTrue: [ 
+			self line: cleanline for: this]] !
 !!
