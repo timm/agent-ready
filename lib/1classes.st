@@ -2,7 +2,7 @@
 #Role        isa: Object with: 'name eman from to fromCard toCard froms tos'.
 #Range       isa: Object with: 'min max'.
 #Reader 	 isa: Object with: 'line array handler commentChar'.
-#Graph       isa: Object with: 'label matrix height width ox oy xrange yrange bottomT leftT graphpoints graphsymbols'. 
+#Graph       isa: Object with: 'label matrix height width ox oy xrange yrange bottomT leftT graphpoints graphsymbols tags'. 
 					"XXX does Graph need anymore attributes?"
 #Tag         isa: Object.
 #GraphTag    isa: Tag.
@@ -14,6 +14,7 @@
 #TagRange    isa: GraphTag.
 #TagDataPt   isa: GraphTag.
 #TagMb       isa: GraphTag.
+#TagTagTag   isa: GraphTag.
 #TagError    isa: GraphTag.
 
 (#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.
