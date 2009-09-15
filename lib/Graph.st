@@ -8,21 +8,21 @@ new
 ! Graph methods !
 draw	
 	|buffer|
-	(height - 1) to: ox by: -1 do: [:i| oy to: (width - 1) do: [:j|
+	height to: 1 by: -1 do: [:i| 1 to: width do: [:j|
 			"i o. ' ' o. j o. ' ' o."
 			buffer := (self getColumn: j row: i).
 			(buffer isNil)
-				ifTrue: [buffer := ' '.]
-				ifFalse: [].
-			buffer o].
+				ifTrue: [' ' o.]
+				ifFalse: [buffer o].
+			].
 		'' oo]
 !
 frame
 	"ox o. oy o."
-	ox to: (width - 1) do: [:i| self plot: i  @ oy	with: $- ].
-	ox to: (width - 1) do: [:i| self plot: i  @ (height - 1)	with: $- ].
-	oy to: (height - 1) do: [:i| self plot: ox @ i	with: $| ].
-	oy to: (height - 1) do: [:i| self plot: (width - 1) @ i	with: $| ].
+	ox to: width do: [:i| self plot: i  @ oy	with: $- ].
+	ox to: width do: [:i| self plot: i  @ height	with: $- ].
+	oy to: height do: [:i| self plot: ox @ i	with: $| ].
+	oy to: height do: [:i| self plot: width @ i	with: $| ].
 !
 matrix
 	^matrix
@@ -49,8 +49,10 @@ init
 	xrange := Range new.
 	yrange := Range new.
 	matrix := OrderedCollection new.
-	ox := 6.
-	oy := 2.
+	bottomT := OrderedCollection new.
+	leftT := OrderedCollection new.
+	ox := 7.
+	oy := 3.
 	self height: 24  width: 80	
 !
 resize 
@@ -81,8 +83,43 @@ width: w
        self height: height width: w
 !
 xscale: aNumber
-	^((xrange scale: aNumber) * ((width - 1) - ox) + ox) round 
+	^((xrange scale: aNumber) * (width - ox) + ox) round 
 !
 yscale: aNumber
-	^((yrange scale: aNumber) * ((height - 1) - oy) + oy) round 
+	^((yrange scale: aNumber) * (height - oy) + oy) round 
+!
+label
+	^label
+!
+label: l
+	label := l
+!
+bottomT
+	^bottomT
+!
+bottomT: list
+	bottomT := list
+!
+
+leftT
+	^leftT
+!
+leftT: list
+	leftT := list
+!
+	
+xrange
+	^xrange
+!
+xrange: minx max: maxx
+	xrange min: minx.
+	xrange max: maxx
+!
+
+yrange
+	^yrange
+!
+yrange: miny max: maxy
+	yrange min: miny.
+	yrange max: maxy
 !!
