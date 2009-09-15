@@ -13,6 +13,7 @@
 #TagLeftT    isa: GraphTag.
 #TagRange    isa: GraphTag.
 #TagDataPt   isa: GraphTag.
+#TagMb       isa: GraphTag.
 #TagError    isa: GraphTag.
 
 (#Status     isa: Object shares: 'Asynchronousp Trace') selfInits.

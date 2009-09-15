@@ -93,3 +93,14 @@ line: string for: graph at: line
 		ifTrue: [graph graphsymbols: '*']
 		ifFalse: [graph graphsymbols: (buff at:3)].
 !!
+
+! TagMb class methods !
+handles
+	 ^'^\s*mb\s+(\d+)\s+(\d+)\s+.*\s*$'
+!!
+
+! TagMb methods !
+line: string for: graph at: line
+	|buff|
+	buff := (string replacingRegex: '^\s*mb\s+' with: '') asWords.
+!!
