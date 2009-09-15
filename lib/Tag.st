@@ -81,7 +81,7 @@ line: string for: graph at: line
 
 ! TagDataPt class methods !
 handles
-	 ^'^\s*(\d+)\s+(\d+)\s+.+\s*$'
+	 ^'^\s*(\d+)\s+(\d+)\s*.*\s*$'
 !!
 
 ! TagDataPt methods !
@@ -89,5 +89,7 @@ line: string for: graph at: line
 	|buff|
 	buff := string asWords.
 	graph graphpoints: ((buff at:1) asInteger @ (buff at:2) asInteger).
-	graph graphsymbols: (buff at:3)
+	((buff size) < 3)
+		ifTrue: [graph graphsymbols: '*']
+		ifFalse: [graph graphsymbols: (buff at:3)].
 !!

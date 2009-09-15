@@ -21,7 +21,6 @@ draw
 		'' oo]
 !
 frame
-	"ox o. oy o."
 	ox to: width do: [:i| self plot: i  @ oy	with: $- ].
 	ox to: width do: [:i| self plot: i  @ height	with: $- ].
 	oy to: height do: [:i| self plot: ox @ i	with: $| ].
@@ -29,19 +28,19 @@ frame
 !
 ticks
 	1 to: bottomT size do: [:i|
-		self plot: ((self xscale:(bottomT at: i) asInteger) @ oy) with: '|'].
+		self plot: ((self xscale:(bottomT at: i) asInteger) @ oy) with: '|'.
+		self splot: ((self xscale:((bottomT at: i) asInteger )- (0.5)) @ 2) with: (bottomT at: i)].
 	
 	1 to: leftT size do: [:i|
-		self plot: (ox @ (self yscale:(leftT at: i) asInteger)) with: '-']. 
+		self plot: (ox @ (self yscale:(leftT at: i) asInteger)) with: '-'.
+		self splot: (1 @ (self yscale:((leftT at: i) asInteger ))) with: (leftT at: i)]. 
 !
 botlab
 	self splot: (((width + ox - label size)/2) asInteger) @ 1 with: label
 !
 data	
 	1 to: graphpoints size do: [:i|
-		((graphsymbols at: i) = '') 
-			ifTrue: [self plot: (self xyscale: (graphpoints at: i)) with: '*'.]
-			ifFalse: [self plot: (self xyscale: (graphpoints at: i)) with: (graphsymbols at: i)].]
+		self plot: (self xyscale: (graphpoints at: i)) with: (graphsymbols at: i)]
 !
 
 matrix
