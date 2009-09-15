@@ -64,7 +64,7 @@ function expand1(note) {
         if (y[i] > ymax) ymax = y[i]
     }
 }
-function frame() {        # create frame for graph
+function fram                      e() {        # create frame for graph
     for (i = ox; i < wid; i++) plot(i, oy, "-")     # bottom
     for (i = ox; i < wid; i++) plot(i, ht-1, "-")   # top
     for (i = oy; i < ht; i++) plot(ox, i, "|")      # left
