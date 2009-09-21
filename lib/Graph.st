@@ -17,7 +17,7 @@ init
 	tags := OrderedCollection new.
 	height:= 24.
 	width:= 80.
-	ox := 6.
+	ox := 7.
 	oy := 3.
 !
 
@@ -76,7 +76,7 @@ writelabel
 !
 
 resize 
-       matrix := Array new: (height).
+       matrix := Array new: height.
        1 to: height do: [:i|
            matrix at: i put: (Array new: width + 1) ].
 !
@@ -89,7 +89,7 @@ splot: aPoint with: aString
        |i|
        i := 0.
        aString do: [:elm |
-       	    self plot: (aPoint x + i) @ aPoint y with: elm.
+    	    self plot: (aPoint x + i) @ aPoint y with: elm.
             i := i + 1 ]
 !
 
