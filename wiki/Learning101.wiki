@@ -103,7 +103,7 @@ Support-based pruning during re-biasing??
    * But do we need more?
  * Perhaps ignore all ranges with b/r < Dull
    * Default: Dull=1
- * Perhaps ignore all ranges with b < Rare*(B/100*N)
+ * Perhaps ignore all ranges with b < Rare{{{*}}}(B/100*N)
    * Default: Rare =0.5
 How big should B ("best") be? 
  * Default, try 20%
