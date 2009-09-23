@@ -110,9 +110,13 @@ How to implement the re-biasing?
    * tar4.1 b^2^/(b+r) 
  * Column selectors
      * Given _N = Best + Rest_ rows 
-	   * P,,Best,, = Best/N
+       * P,,Best,, = Best/N
        * P,,Rest,, = Rest/N
      * Before:
+         * C,,i,, = how often V,,i,, appears in all rows
+         * p,,i,all,, = C,,i,,/N
+         * e,,i,all,, = -p{{{*}}}log,,2,,(p)
+         * Before =  , {{{*}}}  (∑ ,,i,, e,,i,,all)
      * After:
          * Divide each column into the values V,,1,,, V,,2,,... seen in the classes C,,x,, = _Best_ or _Rest_.
          * C,,i,, = how often V,,i,, appears in the C,,x,, rows.
@@ -120,8 +124,8 @@ How to implement the re-biasing?
          * p,,i,rest,, = C,,i,,/Rest
          * e,,i,x,, = -p{{{*}}}log,,2,,(p)
          * After =  ∑,,x,, P,,x,, {{{*}}}  (∑ ,,i,, e,,i,,x)
-
-
+     * Gain = Before - After
+     * Bias the firings towards the transitions with the highest gains.
 Divide divided into Rank each column Normalize all the new biases by (bias,,i,,) /(∑ bias,,i,,) 
  * For more on nomograms, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/mozina04.pdf Mozina'04]
  * For more on InfoGain, see [http://code.google.com/p/ourmine/wiki/Hh#hall03 Hall'03]
