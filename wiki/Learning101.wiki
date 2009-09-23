@@ -90,8 +90,8 @@ How many simulations before rebiasing?
 How to implement the re-biasing?
  * Infogain?
  * Some old favorites
-   * let b = f(x in best) / (B/100*N)
-   * let r = f(x in rest) / (R/100/*N))
+   * let b = f(x in best) / (B/100{{{*}}}N)
+   * let r = f(x in rest) / (R/100{{{*}}}N))
    * log of the odds ratio = log(b/r)
    * tar4.1 b^2^/(b+r) 
  * For more on nomograms, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/mozina04.pdf Mozina'04]
@@ -110,8 +110,8 @@ How big should B ("best") be?
 Should we learn how to fix? Or break?
  * Consider another classification scheme: 80% best, 20% rest
  * Then learn how to break the system using: 
-   * b = f(x in rest) / (B/100*N)
-   * r = f(x in best) / (R/100/*N))
+   * b = f(x in rest) / (B/100{{{*}}}N)
+   * r = f(x in best) / (R/100{{{*}}}N))
 When picking:
  * Add some more bias to the bias 
 	* Don't use rand(), but rand()^w^
