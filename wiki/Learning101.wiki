@@ -28,9 +28,11 @@ Classify the rows
 Re-bias
  * Increase the bias on transition,,x,, if it appears _more_ frequently in best than _rest_.
  * Normalize all the new biases by (bias,,i,,) /(∑ bias,,i,,) 
+    * So all biases are between zero and one.
 
-Select over new biases:
- * Sort the transitions in their biased order.
+Singleton re-normalization
+ * Select new biases
+ * Sort the transitions in their normalized biased order.
  * Pick _u_ at random (zero to one)
 	* Perhaps, bias _u_ to favor the most likely transitions.
  * Starting from transition 2
@@ -44,6 +46,17 @@ function pick(cdf,n,  bias,u,i) {
     return n
 }
 }}}
+ * Note: if w < 1, favors lower biased values less and less. 
+
+Repeat for multiple _rounds_ (N runs, re-biasing, repeat).
+
+Visualize the results
+ * See Figure 5 of [http://ourmine.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
+ * Median = 50th percentile
+ * Spread = 75th percentile
+ * Success if:
+     * Better medians (better performance)
+     * Smaller spreads (more certainty)
 
 = One Million Questions =
 Have you made enough decision / domain decisions explict?
@@ -95,8 +108,8 @@ How to implement the re-biasing?
    * log of the odds ratio = log(b/r)
    * tar4.1 b^2^/(b+r) 
  * For more on nomograms, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/mozina04.pdf Mozina'04]
- * For more on Infogain, see [http://code.google.com/p/ourmine/wiki/Hh#hall03 Hall'03]
-   * Note: infogram requires discretization.
+ * For more on InfoGain, see [http://code.google.com/p/ourmine/wiki/Hh#hall03 Hall'03]
+   * Note: InfoGain requires discretization.
  * For more on tar4.1, see [http://now.unbox.org/all/trunk/doc/05/apes2/talk-v2.pdf Menzies '05]
 Support-based pruning during re-biasing??
  * Tar4.1 has a support term, already
@@ -116,3 +129,8 @@ When picking:
  * Add some more bias to the bias 
 	* Don't use rand(), but rand()^w^
     * If w < 1, favors lower biased values less and less. 
+Is singleton rebiasing enough:
+ * Should we work in pairs/triples/etc of data?
+ * That is, before rebiasing, do a little search trying out some conjunctions.
+ * See tar4.1 or [http://ourmine.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
+
