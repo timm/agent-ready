@@ -23,7 +23,7 @@ For each row:
 
 Classify the rows
  * Sort the rows 
- * Seperate them out into B% _best_ and (100-B)% _rest_.
+ * Separate them out into B% _best_ and (100-B)% _rest_.
 
 Re-bias
  * Increase the bias on transition,,x,, if it appears _more_ frequently in best than _rest_.
@@ -59,25 +59,25 @@ Visualize the results
      * Smaller spreads (more certainty)
 
 = One Million Questions =
-Have you made enough decision / domain decisions explict?
+Have you made enough decision / domain decisions explicit?
   * If important options aren't in the transitions, then this learner won't work.
-Have you made too many decision / domain decisions explict?
+Have you made too many decision / domain decisions explicit?
   * If you code too many transitions, then the learning will fail.
 At what level do you learn?
   * All factories/machines/transitions in one big table?
      * Default: yes
-  * Manually seperate by factory?
-  * Manually seperate by machine?
-  * Automatically seperate by clustering?
+  * Manually separate by factory?
+  * Manually separate by machine?
+  * Automatically separate by clustering?
     * For a fast incremental clusterer, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/gupta04.pdf Gupta'04]'s GENIC algorithm
-Is the model ruuning too slow?
+Is the model running too slow?
   * If the final model takes too long to run..
   * .. need to cluster the log of prior behavior and only try new behaviors in zones of high variability
     * Cause in regions of low variance, you can just extrapolate from the neighbors.
 Discretization
   * A repeated result in data mining is that collapsing numeric ranges into a small number of bins is a _good idea_
-     * Unsupervised discretizaion:
-         * Given _B_ bins with breaks b,,1,,, b,,2,,, b,,3,,,.. countaining counts c,,1,,, c,,2,,, c,,3,,...
+     * Unsupervised discretization:
+         * Given _B_ bins with breaks b,,1,,, b,,2,,, b,,3,,,.. containing counts c,,1,,, c,,2,,, c,,3,,...
             * Equal width discretization: (b,,i+1,, - b,,i,,) = (b,,i,, - b,,i-i,,)  
             * Equal frequency  discretization: c,,i,,= c,,j,,
          * How many bins? 
@@ -87,7 +87,7 @@ Discretization
          * Find the point where the distribution of classes is _most_different_ left and right of that point
              * Call that b,,1,,
          * Recurse for all values left and right of the break
-	          * Recusively generates breaks b,,2,,, b,,3,,, etc
+	          * Recursively generates breaks b,,2,,, b,,3,,, etc
               * Note that _B_ is derived, not pre-guessed.
          * Stop recursing when sub-group too small: say, less than sqrt(number of rows)
              * Sub-group has low variance: say, less than 75% of the max log(variance)
@@ -96,7 +96,7 @@ Can you better than an initial totally random bias?
  * Any probabilities from the domain?
 Should all transitions be re-biased?
  * Perhaps some are not controllable.
-How many simulations before rebiasing?
+How many simulations before re-biasing?
  * Default, try N=100 
  * Do we even need to wait N times?
    * Can this be done fully incrementally?
@@ -116,14 +116,14 @@ How to implement the re-biasing?
          * C,,i,, = how often V,,i,, appears in all rows
          * p,,i,all,, = C,,i,,/N
          * e,,i,all,, = -p{{{*}}}log,,2,,(p)
-         * Before =  , {{{*}}}  (∑ ,,i,, e,,i,,all)
+         * Before =   ∑ ,,i,, e,,i,,all
      * After:
          * Divide each column into the values V,,1,,, V,,2,,... seen in the classes C,,x,, = _Best_ or _Rest_.
          * C,,i,, = how often V,,i,, appears in the C,,x,, rows.
          * p,,i,best,, = C,,i,,/Best
          * p,,i,rest,, = C,,i,,/Rest
          * e,,i,x,, = -p{{{*}}}log,,2,,(p)
-         * After =  ∑,,x,, P,,x,, {{{*}}}  (∑ ,,i,, e,,i,,x)
+         * After =  ∑,,x,, (P,,x,, {{{*}}}  (∑ ,,i,, e,,i,,x))
      * Gain = Before - After
      * Bias the firings towards the transitions with the highest gains.
 Divide divided into Rank each column Normalize all the new biases by (bias,,i,,) /(∑ bias,,i,,) 
@@ -149,8 +149,8 @@ When picking:
  * Add some more bias to the bias 
 	* Don't use rand(), but rand()^w^
     * If w < 1, favors lower biased values less and less. 
-Is singleton rebiasing enough:
+Is singleton re-biasing enough:
  * Should we work in pairs/triples/etc of data?
- * That is, before rebiasing, do a little search trying out some conjunctions.
+ * That is, before re-biasing, do a little search trying out some conjunctions.
  * See tar4.1 or [http://agent-ready.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
 
