@@ -51,7 +51,7 @@ function pick(cdf,n,  bias,u,i) {
 Repeat for multiple _rounds_ (N runs, re-biasing, repeat).
 
 Visualize the results
- * See Figure 5 of [http://ourmine.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
+ * See Figure 5 of [http://agent-ready.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
  * Median = 50th percentile
  * Spread = 75th percentile
  * Success if:
@@ -81,13 +81,15 @@ Discretization
             * Equal width discretization: (b,,i+1,, - b,,i,,) = (b,,i,, - b,,i-i,,)  
             * Equal frequency  discretization: c,,i,,= c,,j,,
          * How many bins? 
-            * Try B=2,4,8,16 or log,,2,,(number of different values)
+            * Try _B_=2,4,8,16 or log,,2,,(number of different values)
      * Supervised discretization:
          * Sort a column of numerics, along with their class score
          * Find the point where the distribution of classes is _most_different_ left and right of that point
              * Call that b,,1,,
          * Recurse for all values left and right of the break
-             * Stop when sub-group too small: say, less than sqrt(number of rows)
+	          * Recusively generates breaks b,,2,,, b,,3,,, etc
+              * Note that _B_ is derived, not pre-guessed.
+         * Stop recursing when sub-group too small: say, less than sqrt(number of rows)
              * Sub-group has low variance: say, less than 75% of the max log(variance)
   * For more on discretization, see [http://code.google.com/p/ourmine/source/browse/trunk/share/pdf/dougherty95supervised.pdf Dougherty'95]
 Can you better than an initial totally random bias?
@@ -101,12 +103,26 @@ How many simulations before rebiasing?
    * FYI, GENIC is incremental.
    * For a simple, but effective, incremental discretizer, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/gama06.pdf Gama'06]
 How to implement the re-biasing?
- * Infogain?
- * Some old favorites
+ * Range selectors
    * let b = f(x in best) / (B/100{{{*}}}N)
    * let r = f(x in rest) / (R/100{{{*}}}N))
    * log of the odds ratio = log(b/r)
    * tar4.1 b^2^/(b+r) 
+ * Column selectors
+     * Given _N = Best + Rest_ rows 
+	   * P,,Best,, = Best/N
+       * P,,Rest,, = Rest/N
+     * Before:
+     * After:
+         * Divide each column into the values V,,1,,, V,,2,,... seen in the classes C,,x,, = _Best_ or _Rest_.
+         * C,,i,, = how often V,,i,, appears in the C,,x,, rows.
+         * p,,i,best,, = C,,i,,/Best
+         * p,,i,rest,, = C,,i,,/Rest
+         * e,,i,x,, = -p{{{*}}}log,,2,,(p)
+         * After =  ∑,,x,, P,,x,, {{{*}}}  (∑ ,,i,, e,,i,,x)
+
+
+Divide divided into Rank each column Normalize all the new biases by (bias,,i,,) /(∑ bias,,i,,) 
  * For more on nomograms, see [http://ourmine.googlecode.com/svn/trunk/share/pdf/mozina04.pdf Mozina'04]
  * For more on InfoGain, see [http://code.google.com/p/ourmine/wiki/Hh#hall03 Hall'03]
    * Note: InfoGain requires discretization.
@@ -132,5 +148,5 @@ When picking:
 Is singleton rebiasing enough:
  * Should we work in pairs/triples/etc of data?
  * That is, before rebiasing, do a little search trying out some conjunctions.
- * See tar4.1 or [http://ourmine.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
+ * See tar4.1 or [http://agent-ready.googlecode.com/svn/trunk/share/pdf/keys2.pdf Keys2]
 
