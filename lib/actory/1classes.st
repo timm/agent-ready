@@ -12,6 +12,10 @@
 #Stagger     isa: App with: 'contents pointer'.
 #Factory     isa: App with: 'machines name current'.
 #Machine     isa: App with: 'container name id current start states transitions'.
+#Democrat   isa: Machine with: 'bill comittee scandals caughtLikelihood'.
+#Republican isa: Machine with: 'bill comittee scandals caughtLikelihood'.
+#RonPaul    isa: Machine with: 'bill comittee scandals caughtLikelihood'.
+(#Bill 	     isa: App with: 'senator comittee support') public.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container      id state if then next') public; inits.
 #ErrorState  isa: State.
