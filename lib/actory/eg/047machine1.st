@@ -1,0 +1,8 @@
+|f|
+App reset; asynchronousOff.
+f := Factory new: 'f2'.
+Professor worksIn: f.
+"KillJoy worksIn: f."
+f run.
+f run.
+!
