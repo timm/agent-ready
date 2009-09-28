@@ -20,6 +20,7 @@
 #NormalState isa: State.
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
+#Professor   isa: Machine with: 'hunger exhaustion taught'.
 
 Smalltalk at: #The put: nil. "one global"
 
