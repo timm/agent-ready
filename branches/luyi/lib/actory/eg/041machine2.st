@@ -31,8 +31,8 @@ machine
 	
 
 machine inspect.
-machine transitions pairs: [:key :candidates| 
+machine transitions keysAndValuesDo: [:key :value| 
 	key noo.
-	candidates do: [:c| c oo]
+	value do: [:c| c oo].
 ]
 !
