@@ -7,6 +7,7 @@ nameToClass: aSymbol
 	aSymbol s ~ 'L$' ifTrue: [^LoopState].
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
+	aSymbol s ~ 'S$'    ifTrue: [^Scandal].
 	^NormalState
 !!
 
@@ -109,4 +110,10 @@ onStay
 !
 onExit
 	'the fun stops here' oo.
+!!
+
+!Scandal methods !
+onEntry
+	
+       'comitting a potential scandal' oo.
 !!
