@@ -21,6 +21,10 @@
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
+
+#CourseFactory isa: Factory.
+#Course        isa: Machine.
+#LifeEvent     isa: Machine.
 Smalltalk at: #The put: nil. "one global"
 
 !

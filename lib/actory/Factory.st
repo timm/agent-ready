@@ -99,7 +99,7 @@ walk
 	App patience: self patience.
 	[true] whileTrue: [
 		App clock > self tooMuch 
-			ifTrue:[ ^true].
+			ifTrue:[ ^false].
 		self step 
 			ifTrue:  [App patience: self patience]
 			ifFalse: [App impatient 
