@@ -2,209 +2,325 @@
 ---| 050machine1.st |-----------------------------------------
 
 Machine:[26] gathering support
+Machine:[1] says yes
 Machine:[51] gathering support
+Machine:[26] says yes
 Machine:[76] gathering support
+Machine:[26] says no
+Machine:[26] bribing a colleague
 You got too greedy and were caught.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You got too greedy and were caught.
-comitting a potential scandal
 Machine:[1] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[26] presenting to comittee
+Machine:[76] says no
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[51] presenting to committee
+Machine:[76] phone tapped by the FBI
+You got too greedy and were caught.
 Machine:[76] gathering support
-You got too greedy and were caught.
-You got too greedy and were caught.
-comitting a potential scandal
+Machine:[1] says no
 Machine:[26] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You got too greedy and were caught.
-comitting a potential scandal
-Machine:[51] presenting to comittee
-Machine:[1] presenting to comittee
+Machine:[76] says no
+Machine:[1] presenting to committee
 Machine:[51] gathering support
+Machine:[1] says yes
+Machine:[26] presenting to committee
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[1] says no
 Machine:[1] gathering support
-Machine:[51] presenting to comittee
-Machine:[26] presenting to comittee
-Machine:[76] presenting to comittee
+Machine:[76] says no
+Machine:[51] presenting to committee
 Machine:[26] gathering support
-Machine:[76] gathering support
-Machine:[51] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
+Machine:[51] says yes
+Machine:[26] presenting to committee
+Machine:[1] bribing a colleague
 You got too greedy and were caught.
-Machine:[1] presenting to comittee
+Machine:[51] gathering support
+Machine:[26] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says yes
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[1] gathering support
+Machine:[76] says no
+Machine:[51] presenting to committee
+Machine:[76] presenting to committee
+Machine:[1] presenting to committee
+Machine:[26] presenting to committee
+Machine:[26] gathering support
+Machine:[1] says yes
+Machine:[76] gathering support
+Machine:[51] says yes
+Machine:[51] gathering support
+Machine:[26] says yes
+Machine:[1] gathering support
+Machine:[51] says yes
+Machine:[26] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[1] presenting to committee
+Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[76] presenting to committee
+Machine:[51] presenting to committee
+Machine:[26] gathering support
+Machine:[76] says no
+Machine:[26] presenting to committee
+Machine:[51] gathering support
+Machine:[26] says yes
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[51] presenting to committee
+Machine:[1] presenting to committee
+Machine:[51] gathering support
+Machine:[26] says yes
+Machine:[76] presenting to committee
+Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[26] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[51] presenting to committee
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[1] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[26] presenting to committee
+Machine:[51] gathering support
+Machine:[1] says yes
+Machine:[76] presenting to committee
+Machine:[1] presenting to committee
+Machine:[51] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[26] gathering support
+Machine:[1] says yes
+Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[51] gathering support
+Machine:[76] says no
+Machine:[76] presenting to committee
+Machine:[26] presenting to committee
+Machine:[51] presenting to committee
+Machine:[1] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[51] gathering support
+Machine:[26] says yes
+Machine:[26] gathering support
+Machine:[1] says yes
+Machine:[1] gathering support
+Machine:[51] says yes
+Machine:[76] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[76] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[51] presenting to committee
+Machine:[1] presenting to committee
+Machine:[26] bribing a colleague
+You got too greedy and were caught.
+Machine:[26] gathering support
+Machine:[1] says yes
+Machine:[1] gathering support
+Machine:[51] says yes
+Machine:[51] gathering support
+Machine:[76] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[1] presenting to committee
+Machine:[26] presenting to committee
 Machine:[51] that is all folks
-Transition(from: NormalState(sellG#54) to: EndState(endF#75))
+Transition(from: Selling(sellG#54) to: EndState(endF#75))
 1
 14
-0.8
 1
-0.0
+0
+0.1
+13
+2
 that's all folks!
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[26] presenting to comittee
-Machine:[76] presenting to comittee
 Machine:[26] gathering support
-Machine:[76] gathering support
-Machine:[1] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[26] presenting to comittee
+Machine:[76] says no
 Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[76] presenting to committee
+Machine:[26] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[76] gathering support
+Machine:[26] says no
 Machine:[26] gathering support
-Machine:[1] presenting to comittee
+Machine:[1] says yes
+Machine:[1] presenting to committee
+Machine:[76] presenting to committee
 Machine:[1] gathering support
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
+Machine:[76] says no
+Machine:[26] presenting to committee
+Machine:[26] gathering support
+Machine:[1] says yes
 Machine:[76] gathering support
-Machine:[26] that is all folks
-Transition(from: NormalState(sellG#29) to: EndState(endF#50))
-1
-14
-0.9
-4
-0.0
-that's all folks!
-Machine:[76] presenting to comittee
-Machine:[1] presenting to comittee
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
+Machine:[26] says yes
+Machine:[1] presenting to committee
 Machine:[1] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You got too greedy and were caught.
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] presenting to comittee
-Machine:[76] presenting to comittee
-Machine:[1] gathering support
+Machine:[26] says yes
+Machine:[26] presenting to committee
+Machine:[76] presenting to committee
+Machine:[26] gathering support
+Machine:[51] says yes
 Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-Machine:[1] presenting to comittee
-Machine:[1] gathering support
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You got too greedy and were caught.
-You got too greedy and were caught.
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] presenting to comittee
-Machine:[1] gathering support
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You got too greedy and were caught.
-Machine:[76] gathering support
-Machine:[76] presenting to comittee
-Machine:[1] presenting to comittee
-Machine:[1] gathering support
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] presenting to comittee
-Machine:[1] gathering support
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] gathering support
-Machine:[1] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] gathering support
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] gathering support
-Machine:[1] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[1] gathering support
-Machine:[76] presenting to comittee
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] presenting to comittee
+Machine:[51] says no
 Machine:[1] that is all folks
-Transition(from: NormalState(sellG#4) to: EndState(endF#25))
+Transition(from: Selling(sellG#4) to: EndState(endF#25))
 1
 15
-0.6000000000000001
-4
-0.0
+0.9
+1
+0.416227766016838
+6
+2.653566899707641
 that's all folks!
-Machine:[76] gathering support
+Machine:[76] bribing a colleague
 You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[26] bribing a colleague
 You got too greedy and were caught.
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-Machine:[76] presenting to comittee
-Machine:[76] gathering support
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
-You bribed a colleage for their vote. They are just as slimy as you.
-comitting a potential scandal
+Machine:[26] phone tapped by the FBI
 You got too greedy and were caught.
-Machine:[76] presenting to comittee
+Machine:[26] gathering support
+Machine:[76] says yes
+Machine:[76] presenting to committee
 Machine:[76] gathering support
-Machine:[76] that is all folks
-Transition(from: NormalState(sellG#79) to: EndState(endF#100))
-0
-16
+Machine:[51] says no
+Machine:[26] presenting to committee
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[26] bribing a colleague
+You got too greedy and were caught.
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[26] presenting to committee
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[26] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[26] gathering support
+Machine:[51] says yes
+Machine:[26] that is all folks
+Transition(from: Selling(sellG#29) to: EndState(endF#50))
+1
+14
 0.5000000000000001
-0
-0
+1
+0.416227766016838
+8
+1.303863172198817
 that's all folks!
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[76] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[51] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says yes
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[76] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[76] presenting to committee
+Machine:[76] gathering support
+Machine:[51] says no
+Machine:[76] presenting to committee
 
 ____________________________________________________________
 
 Terminated at tick 101
-Final patience 29
+Final patience 50
