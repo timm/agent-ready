@@ -78,6 +78,9 @@ polled: aPoller
 		].
 	"Trust factor"
 	openMindedness := openMindedness + ((aPoller trust)*0.15).
+
+	"Factor in current level of support"
+	openMindedness := openMindedness + ((aPoller billSupport)*0.15).
 	
 	(App random next < openMindedness)
 		ifTrue: [
