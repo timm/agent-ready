@@ -355,7 +355,7 @@ that's all folks!
 Machine:[351] gathering support
 Machine:[1] says yes
 Machine:[326] gathering support
-Machine:[476] says no
+Machine:[476] says yes
 Machine:[401] gathering support
 Machine:[451] says no
 Machine:[476] presenting to the floor
@@ -390,7 +390,7 @@ Machine:[26] In attendance for committee vote.
 Machine:[51] In attendance for committee vote.
 Machine:[426] In attendance for committee vote.
 Machine:[26] says yes
-Machine:[51] says no
+Machine:[51] says yes
 Machine:[426] says yes
 The bill passes the committee.
 Machine:[301] gathering support
@@ -462,13 +462,13 @@ The bill failed to pass the committee.
 Machine:[26] gathering support
 Machine:[476] says no
 Machine:[301] gathering support
-Machine:[276] says no
+Machine:[276] says yes
 Machine:[101] gathering support
 Machine:[1] says yes
 Machine:[326] presenting to committee
 Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
+Machine:[251] says yes
+The bill passes the committee.
 Machine:[276] gathering support
 Machine:[401] says yes
 Machine:[426] gathering support
@@ -487,7 +487,7 @@ Machine:[301] In attendance for committee vote.
 Machine:[1] In attendance for committee vote.
 Machine:[151] In attendance for committee vote.
 Machine:[301] says yes
-Machine:[1] says no
+Machine:[1] says yes
 Machine:[151] says yes
 The bill passes the committee.
 Machine:[76] presenting to the floor
@@ -538,33 +538,67 @@ Machine:[426] gathering support
 Machine:[126] says no
 Machine:[301] gathering support
 Machine:[376] says no
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
 Machine:[351] presenting to the floor
 Machine:[76] gathering support
-Machine:[401] says yes
+Machine:[376] says no
 Machine:[101] presenting to the floor
 Machine:[476] gathering support
-Machine:[376] says yes
-Machine:[101] gathering support
-Machine:[176] says yes
-Machine:[476] presenting to the floor
+Machine:[201] says no
+Machine:[126] gathering support
+Machine:[76] says no
+Machine:[376] gathering support
+Machine:[76] says no
 Machine:[351] gathering support
 Machine:[126] says yes
-Machine:[201] gathering support
-Machine:[351] says no
-Machine:[326] gathering support
-Machine:[101] says yes
-Machine:[376] gathering support
+Machine:[401] gathering support
 Machine:[326] says no
+Machine:[326] presenting to the floor
+Machine:[201] gathering support
+Machine:[476] says no
+Machine:[276] presenting to committee
+Machine:[201] In attendance for committee vote.
+Machine:[451] In attendance for committee vote.
+Machine:[201] says yes
+Machine:[451] says no
+The bill failed to pass the committee.
 Machine:[301] presenting to the floor
 Machine:[76] presenting to the floor
-Machine:[401] gathering support
+Machine:[101] gathering support
+Machine:[76] says no
+Machine:[476] presenting to the floor
+Machine:[351] bribing a colleague
+You got too greedy and were caught.
+Machine:[26] presenting to committee
+Machine:[126] In attendance for committee vote.
+Machine:[176] In attendance for committee vote.
+Machine:[276] In attendance for committee vote.
+Machine:[126] says no
 Machine:[176] says yes
-Machine:[126] gathering support
-Machine:[101] says yes
+Machine:[276] says yes
+The bill passes the committee.
+Machine:[401] bribing a colleague
+You got too greedy and were caught.
+Machine:[301] gathering support
+Machine:[76] says yes
+Machine:[201] presenting to committee
+The bill failed to pass the committee.
+Machine:[426] presenting to the floor
+Machine:[76] gathering support
+Machine:[476] says no
+Machine:[376] presenting to the floor
+Machine:[101] presenting to the floor
+Machine:[326] gathering support
+Machine:[401] says no
+Machine:[276] gathering support
+Machine:[1] says yes
+Machine:[351] gathering support
+Machine:[26] says no
+Machine:[101] gathering support
+Machine:[326] says yes
+Machine:[376] gathering support
+Machine:[76] says yes
+Machine:[201] gathering support
+Machine:[476] says no
 Machine:[276] that is all folks
 Transition(from: Selling(sellG#279) to: EndState(endF#300))
 2
@@ -573,74 +607,23 @@ Transition(from: Selling(sellG#279) to: EndState(endF#300))
 1
 0.416227766016838
 10
-1.143933374647588
+1.193933374647588
 that's all folks!
-Machine:[26] bribing a colleague
-You got too greedy and were caught.
-Machine:[476] gathering support
-Machine:[76] says no
-Machine:[76] gathering support
-Machine:[476] says no
-Machine:[351] bribing a colleague
-You got too greedy and were caught.
-Machine:[401] that is all folks
-Transition(from: Selling(sellG#404) to: EndState(endF#425))
-2
-5
-0.9
-0
-0.1
-9
-0.2
-that's all folks!
-Machine:[301] gathering support
-Machine:[1] says no
-Machine:[376] presenting to the floor
 Machine:[26] gathering support
-Machine:[301] says yes
-Machine:[126] presenting to the floor
-Machine:[201] presenting to committee
-The bill failed to pass the committee.
-Machine:[426] presenting to the floor
+Machine:[426] says yes
 Machine:[426] gathering support
-Machine:[26] says yes
-Machine:[301] bribing a colleague
-You got too greedy and were caught.
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
-Machine:[376] gathering support
 Machine:[101] says yes
-Machine:[76] that is all folks
-Transition(from: Selling(sellG#79) to: EndState(endF#100))
-0
-16
-0.9
-0
-0.1
-10
-0.1
-that's all folks!
-Machine:[101] presenting to the floor
-Machine:[126] gathering support
-Machine:[376] says yes
-Machine:[26] presenting to committee
-Machine:[176] In attendance for committee vote.
-Machine:[126] In attendance for committee vote.
-Machine:[276] In attendance for committee vote.
-Machine:[176] says no
-Machine:[126] says no
-Machine:[276] says no
-The bill failed to pass the committee.
-Machine:[351] gathering support
-Machine:[301] says no
-Machine:[476] presenting to the floor
-Machine:[201] gathering support
-Machine:[176] says no
-Machine:[326] gathering support
-Machine:[301] says yes
-Machine:[426] presenting to the floor
+Machine:[476] gathering support
+Machine:[226] says yes
+Machine:[401] gathering support
+Machine:[451] says yes
+Machine:[126] presenting to the floor
+Machine:[326] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[301] presenting to the floor
+Machine:[26] presenting to the floor
+Machine:[101] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
 Machine:[201] that is all folks
 Transition(from: Selling(sellG#204) to: EndState(endF#225))
 0
@@ -651,82 +634,52 @@ Transition(from: Selling(sellG#204) to: EndState(endF#225))
 4
 0
 that's all folks!
+Machine:[426] presenting to the floor
+Machine:[301] gathering support
+Machine:[376] says no
 Machine:[351] presenting to the floor
-Machine:[101] gathering support
-Machine:[1] says no
-Machine:[26] gathering support
-Machine:[426] says yes
+Machine:[326] gathering support
+Machine:[26] says yes
+Machine:[376] that is all folks
+Transition(from: Selling(sellG#379) to: EndState(endF#400))
+2
+7
+1
+1
+0.416227766016838
+2
+0.2501716042380053
+that's all folks!
+Machine:[126] gathering support
+Machine:[26] says no
+Machine:[476] presenting to the floor
+Machine:[76] gathering support
+Machine:[451] says yes
+Machine:[426] gathering support
+Machine:[476] says no
 Machine:[126] presenting to the floor
 Machine:[476] gathering support
-Machine:[201] says no
-Machine:[301] gathering support
-Machine:[476] says no
-Machine:[376] presenting to the floor
-Machine:[26] that is all folks
-Transition(from: Selling(sellG#29) to: EndState(endF#50))
-1
-14
-0.9
-0
-0.1
-8
-0.1
-that's all folks!
-Machine:[426] gathering support
-Machine:[326] says yes
-Machine:[351] gathering support
-Machine:[26] says no
-Machine:[301] presenting to the floor
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
-Machine:[126] gathering support
-Machine:[276] says yes
-Machine:[101] that is all folks
-Transition(from: Selling(sellG#104) to: EndState(endF#125))
-2
-5
-1
-0
-0.1
-2
-0.25
-that's all folks!
-Machine:[476] that is all folks
-Transition(from: Selling(sellG#479) to: EndState(endF#500))
-2
-2
-1
-0
-0.1
-8
-0.1
-that's all folks!
-Machine:[376] gathering support
-Machine:[476] says yes
-Machine:[351] presenting to the floor
-Machine:[301] gathering support
-Machine:[451] says yes
-Machine:[426] presenting to the floor
-Machine:[326] gathering support
-Machine:[301] says no
-Machine:[426] gathering support
+Machine:[326] says no
+Machine:[26] gathering support
 Machine:[201] says yes
+Machine:[101] gathering support
+Machine:[126] says yes
 Machine:[351] gathering support
-Machine:[301] says no
-Machine:[126] presenting to the floor
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
 Machine:[251] says no
-The bill failed to pass the committee.
-Machine:[126] gathering support
+Machine:[301] bribing a colleague
+You got too greedy and were caught.
+Machine:[401] presenting to the floor
+Machine:[101] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[26] bribing a colleague
+You got too greedy and were caught.
+Machine:[301] gathering support
+Machine:[51] says no
+Machine:[326] presenting to the floor
+Machine:[426] bribing a colleague
+You got too greedy and were caught.
+Machine:[401] gathering support
 Machine:[151] says yes
-Machine:[326] gathering support
-Machine:[251] says no
-Machine:[426] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
 Machine:[351] that is all folks
 Transition(from: Selling(sellG#354) to: EndState(endF#375))
 2
@@ -737,104 +690,219 @@ Transition(from: Selling(sellG#354) to: EndState(endF#375))
 15
 0
 that's all folks!
-Machine:[301] gathering support
-Machine:[276] says yes
-Machine:[426] gathering support
-Machine:[251] says no
-Machine:[126] presenting to the floor
-Machine:[376] gathering support
-Machine:[76] says no
-Machine:[376] presenting to the floor
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
-Machine:[426] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[301] presenting to the floor
 Machine:[126] gathering support
-Machine:[151] says yes
-Machine:[376] gathering support
-Machine:[276] says yes
-Machine:[326] gathering support
-Machine:[351] says no
-Machine:[426] gathering support
-Machine:[376] says no
-Machine:[301] gathering support
-Machine:[151] says yes
-Machine:[301] presenting to the floor
-Machine:[326] bribing a colleague
+Machine:[401] says yes
+Machine:[76] gathering support
+Machine:[26] says no
+Machine:[401] bribing a colleague
 You got too greedy and were caught.
-Machine:[426] bribing a colleague
-You got too greedy and were caught.
-Machine:[126] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[326] gathering support
-Machine:[26] says yes
-Machine:[126] gathering support
-Machine:[451] says yes
-Machine:[301] gathering support
-Machine:[401] says no
 Machine:[426] gathering support
-Machine:[151] says yes
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
+Machine:[126] says no
 Machine:[126] bribing a colleague
 You got too greedy and were caught.
-Machine:[376] gathering support
-Machine:[176] says yes
-Machine:[426] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[126] gathering support
-Machine:[251] says no
-Machine:[301] gathering support
-Machine:[451] says yes
 Machine:[326] gathering support
+Machine:[301] says no
+Machine:[301] that is all folks
+Transition(from: Selling(sellG#304) to: EndState(endF#325))
+0
+15
+0.9
+0
+0.1
+2
+0
+that's all folks!
+Machine:[26] gathering support
 Machine:[101] says no
-Machine:[426] gathering support
+Machine:[476] presenting to the floor
+Machine:[101] gathering support
+Machine:[201] says no
+Machine:[26] presenting to the floor
+Machine:[476] gathering support
 Machine:[326] says yes
-Machine:[376] presenting to the floor
-Machine:[126] presenting to the floor
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
-Machine:[426] bribing a colleague
-You got too greedy and were caught.
-Machine:[426] gathering support
-Machine:[401] says no
-Machine:[376] gathering support
-Machine:[151] says yes
-Machine:[301] presenting to the floor
+Machine:[326] presenting to the floor
+Machine:[101] presenting to the floor
 Machine:[126] gathering support
-Machine:[251] says yes
-Machine:[326] gathering support
-Machine:[426] says yes
-Machine:[126] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[301] gathering support
-Machine:[201] says yes
+Machine:[201] says no
 Machine:[426] presenting to the floor
-Machine:[326] presenting to committee
-Machine:[251] In attendance for committee vote.
-Machine:[251] says no
-The bill failed to pass the committee.
+Machine:[76] presenting to the floor
+Machine:[401] gathering support
+Machine:[101] says yes
+Machine:[76] gathering support
+Machine:[151] says no
+Machine:[476] presenting to the floor
+Machine:[101] gathering support
+Machine:[401] says yes
+Machine:[426] gathering support
+Machine:[151] says no
 Machine:[326] gathering support
-Machine:[176] says no
+Machine:[51] says yes
+Machine:[126] presenting to the floor
+Machine:[26] gathering support
+Machine:[301] says yes
+Machine:[401] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[426] presenting to the floor
+Machine:[126] gathering support
+Machine:[376] says yes
+Machine:[26] presenting to the floor
+Machine:[401] gathering support
+Machine:[376] says yes
+Machine:[476] gathering support
+Machine:[301] says no
+Machine:[101] that is all folks
+Transition(from: Selling(sellG#104) to: EndState(endF#125))
+2
+5
+1
+1
+0.416227766016838
+2
+0.354051279155135
+that's all folks!
+Machine:[76] gathering support
+Machine:[351] says no
+Machine:[326] presenting to the floor
 Machine:[426] gathering support
 Machine:[201] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[126] gathering support
-Machine:[326] says no
-Machine:[376] gathering support
-Machine:[401] says yes
-Machine:[301] gathering support
-Machine:[251] says yes
 Machine:[126] presenting to the floor
+Machine:[26] gathering support
+Machine:[151] says no
+Machine:[476] that is all folks
+Transition(from: Selling(sellG#479) to: EndState(endF#500))
+2
+2
+1
+0
+0.1
+8
+0.15
+that's all folks!
+Machine:[76] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[126] gathering support
+Machine:[201] says no
+Machine:[401] presenting to the floor
+Machine:[326] gathering support
+Machine:[126] says no
+Machine:[26] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[126] that is all folks
+Transition(from: Selling(sellG#129) to: EndState(endF#150))
+2
+8
+0.9
+0
+0.1
+14
+0.05
+that's all folks!
+Machine:[401] gathering support
+Machine:[351] says yes
+Machine:[76] gathering support
+Machine:[1] says no
+Machine:[26] gathering support
+Machine:[176] says yes
 Machine:[426] presenting to the floor
+Machine:[326] presenting to the floor
+Machine:[426] gathering support
+Machine:[226] says yes
+Machine:[26] presenting to the floor
+Machine:[326] gathering support
+Machine:[151] says yes
+Machine:[76] presenting to the floor
+Machine:[76] gathering support
+Machine:[451] says yes
+Machine:[26] gathering support
+Machine:[76] says yes
+Machine:[401] presenting to the floor
+Machine:[426] presenting to the floor
+Machine:[326] presenting to the floor
+Machine:[76] bribing a colleague
+You got too greedy and were caught.
+Machine:[401] gathering support
+Machine:[51] says no
+Machine:[26] presenting to the floor
+Machine:[426] gathering support
+Machine:[451] says yes
+Machine:[26] gathering support
+Machine:[326] says yes
+Machine:[326] gathering support
+Machine:[426] says yes
+Machine:[401] presenting to the floor
+Machine:[76] gathering support
+Machine:[301] says yes
+Machine:[401] gathering support
+Machine:[301] says no
+Machine:[426] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[326] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[401] presenting to the floor
+Machine:[326] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[326] gathering support
+Machine:[426] says yes
+Machine:[76] gathering support
+Machine:[201] says yes
+Machine:[26] presenting to the floor
+Machine:[426] gathering support
+Machine:[76] says yes
+Machine:[26] gathering support
+Machine:[376] says yes
+Machine:[401] gathering support
+Machine:[201] says no
+Machine:[326] presenting to the floor
+Machine:[426] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[401] presenting to the floor
+Machine:[326] gathering support
+Machine:[251] says no
+Machine:[76] gathering support
+Machine:[326] says no
+Machine:[426] gathering support
+Machine:[151] says no
+Machine:[26] presenting to the floor
+Machine:[26] gathering support
+Machine:[176] says no
+Machine:[326] presenting to the floor
+Machine:[76] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[401] gathering support
+Machine:[226] says no
+Machine:[326] gathering support
+Machine:[1] says yes
+Machine:[426] presenting to the floor
+Machine:[76] gathering support
+Machine:[376] says no
+Machine:[401] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[426] gathering support
+Machine:[76] says yes
+Machine:[326] presenting to the floor
+Machine:[26] presenting to the floor
+Machine:[426] presenting to the floor
+Machine:[326] gathering support
+Machine:[401] says no
+Machine:[76] gathering support
+Machine:[326] says no
+Machine:[401] gathering support
+Machine:[351] says yes
+Machine:[26] gathering support
+Machine:[276] says no
+Machine:[401] presenting to the floor
+Machine:[26] that is all folks
+Transition(from: Selling(sellG#29) to: EndState(endF#50))
+1
+14
+0.9
+1
+0.416227766016838
+8
+0.3194848811334055
+that's all folks!
+Machine:[426] gathering support
+Machine:[226] says yes
 Machine:[326] that is all folks
 Transition(from: Selling(sellG#329) to: EndState(endF#350))
 1
@@ -845,249 +913,135 @@ Transition(from: Selling(sellG#329) to: EndState(endF#350))
 6
 0.1
 that's all folks!
+Machine:[426] presenting to the floor
+Machine:[76] presenting to the floor
+Machine:[401] gathering support
+Machine:[76] says no
 Machine:[426] gathering support
-Machine:[51] says yes
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[126] gathering support
-Machine:[351] says yes
-Machine:[376] gathering support
-Machine:[451] says yes
-Machine:[301] gathering support
-Machine:[76] says yes
-Machine:[126] presenting to the floor
+Machine:[1] says yes
+Machine:[76] gathering support
+Machine:[376] says no
+Machine:[401] presenting to the floor
+Machine:[426] presenting to the floor
+Machine:[76] that is all folks
+Transition(from: Selling(sellG#79) to: EndState(endF#100))
+0
+16
+0.8
+1
+0.416227766016838
+10
+0.7494560199517991
+that's all folks!
+Machine:[401] gathering support
+Machine:[126] says yes
+Machine:[426] gathering support
+Machine:[101] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[326] says yes
+Machine:[401] presenting to the floor
+Machine:[401] gathering support
+Machine:[26] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[201] says no
+Machine:[401] presenting to the floor
+Machine:[401] gathering support
+Machine:[301] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[151] says no
+Machine:[401] presenting to the floor
+Machine:[401] gathering support
+Machine:[426] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[376] says no
+Machine:[401] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[401] gathering support
+Machine:[226] says no
 Machine:[426] bribing a colleague
 You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[401] that is all folks
+Transition(from: Selling(sellG#404) to: EndState(endF#425))
+2
+5
+0.7000000000000001
+1
+0.416227766016838
+9
+0.8214534213725984
+that's all folks!
+Machine:[426] gathering support
+Machine:[476] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[451] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[151] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[26] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[276] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[26] says yes
+Machine:[426] bribing a colleague
+You got too greedy and were caught.
+Machine:[426] gathering support
+Machine:[351] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[451] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[451] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[51] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[26] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[176] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[251] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[1] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[201] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[401] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[276] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[251] says yes
+Machine:[426] bribing a colleague
+You got too greedy and were caught.
 Machine:[426] phone tapped by the FBI
 You got too greedy and were caught.
 Machine:[426] gathering support
-Machine:[151] says no
-Machine:[126] gathering support
-Machine:[376] says yes
-Machine:[376] presenting to the floor
-Machine:[126] bribing a colleague
-You got too greedy and were caught.
-Machine:[301] presenting to the floor
-Machine:[426] that is all folks
-Transition(from: Selling(sellG#429) to: EndState(endF#450))
-1
-14
-0.6000000000000001
-0
-0.1
-7
-0
-that's all folks!
-Machine:[126] phone tapped by the FBI
-You got too greedy and were caught.
-Machine:[126] gathering support
-Machine:[26] says no
-Machine:[301] gathering support
-Machine:[426] says no
-Machine:[376] gathering support
-Machine:[276] says yes
-Machine:[376] presenting to the floor
-Machine:[126] presenting to the floor
-Machine:[126] gathering support
-Machine:[326] says no
-Machine:[376] gathering support
-Machine:[101] says yes
-Machine:[301] presenting to the floor
-Machine:[126] presenting to the floor
-Machine:[301] gathering support
-Machine:[51] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[126] gathering support
-Machine:[451] says yes
-Machine:[376] gathering support
-Machine:[401] says yes
-Machine:[126] presenting to the floor
-Machine:[301] gathering support
-Machine:[176] says yes
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[126] gathering support
-Machine:[326] says no
-Machine:[126] presenting to the floor
-Machine:[376] gathering support
-Machine:[76] says no
-Machine:[301] gathering support
-Machine:[251] says yes
-Machine:[376] bribing a colleague
-You got too greedy and were caught.
-Machine:[126] gathering support
-Machine:[476] says yes
-Machine:[301] presenting to the floor
-Machine:[126] that is all folks
-Transition(from: Selling(sellG#129) to: EndState(endF#150))
-2
-8
-0.7000000000000001
-0
-0.1
-14
-0.1
-that's all folks!
-Machine:[376] gathering support
-Machine:[226] says no
-Machine:[301] gathering support
-Machine:[176] says no
-Machine:[301] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[426] says no
-Machine:[376] gathering support
-Machine:[426] says no
-Machine:[376] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[126] says yes
-Machine:[301] gathering support
-Machine:[201] says yes
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[26] says yes
-Machine:[376] gathering support
-Machine:[176] says yes
-Machine:[376] bribing a colleague
-You got too greedy and were caught.
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
+Machine:[476] says no
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
 Machine:[301] says yes
-Machine:[301] gathering support
-Machine:[126] says yes
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[226] says yes
-Machine:[376] gathering support
-Machine:[251] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[151] says no
-Machine:[376] gathering support
-Machine:[426] says yes
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[76] says yes
-Machine:[376] gathering support
-Machine:[26] says yes
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[226] says no
-Machine:[376] gathering support
-Machine:[51] says no
-Machine:[376] presenting to the floor
-Machine:[376] gathering support
-Machine:[76] says no
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[251] says yes
-Machine:[376] bribing a colleague
-You got too greedy and were caught.
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[476] says yes
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[251] says yes
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[301] says yes
-Machine:[301] gathering support
-Machine:[276] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[126] says yes
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[26] says no
-Machine:[376] gathering support
-Machine:[251] says no
-Machine:[376] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[326] says no
-Machine:[376] gathering support
-Machine:[301] says no
-Machine:[301] bribing a colleague
-You got too greedy and were caught.
-Machine:[376] presenting to the floor
-Machine:[376] gathering support
-Machine:[301] says yes
-Machine:[301] phone tapped by the FBI
-You got too greedy and were caught.
-Machine:[301] gathering support
-Machine:[426] says no
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[401] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[51] says yes
-Machine:[301] gathering support
-Machine:[276] says yes
-Machine:[376] presenting to the floor
-Machine:[376] gathering support
-Machine:[151] says yes
-Machine:[376] bribing a colleague
-You got too greedy and were caught.
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[226] says no
-Machine:[376] phone tapped by the FBI
-You got too greedy and were caught.
-Machine:[376] gathering support
-Machine:[326] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[1] says no
-Machine:[301] gathering support
-Machine:[101] says no
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[51] says no
-Machine:[376] gathering support
-Machine:[226] says no
-Machine:[301] presenting to the floor
-Machine:[376] presenting to the floor
-Machine:[301] gathering support
-Machine:[76] says yes
-Machine:[376] gathering support
-Machine:[151] says yes
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[301] gathering support
-Machine:[401] says no
-Machine:[376] gathering support
-Machine:[351] says yes
-Machine:[301] presenting to the floor
-Machine:[376] bribing a colleague
-You bribed a colleage for their vote. They are just as slimy as you.
-Machine:[376] gathering support
-Machine:[26] says no
-Machine:[301] gathering support
-Machine:[51] says no
-Machine:[376] presenting to the floor
-Machine:[301] presenting to the floor
-Machine:[376] gathering support
-Machine:[1] says no
-Machine:[301] gathering support
-Machine:[376] says yes
+Machine:[426] presenting to the floor
+Machine:[426] gathering support
+Machine:[326] says yes
 
 ____________________________________________________________
 
 Terminated at tick 101
-Final patience 50
+Final patience 49
