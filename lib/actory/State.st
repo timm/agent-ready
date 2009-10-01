@@ -172,7 +172,9 @@ onEntry
 			The factory machines contents do: [:machine |
 				(machine committee=The machine billCommittee)
 					ifTrue:[
-						vote:=machine polled: (The machine).
+						(machine id = The machine id)
+							ifTrue:[ vote:=true.]
+							ifFalse:[vote:=machine polled: (The machine).].
 						(vote) ifTrue: [support:= support + ((1/committeeMembers) asFloat).].
 					].
 			].
@@ -183,6 +185,30 @@ onEntry
 					The machine billPassed: 1.
 					The machine billSupport: 0.]
 				ifFalse: [
-					'The bill failed to pass the committee.' oo].
+					'The bill failed to pass the committee.' oo.
+					"Add a boost to support for the second time around"
+					The machine billSupport: (The machine billSupport)+(App random next).].
+		]
+		"Full senate vote"
+		ifFalse:[
+			"Has it been presented more than twice today?"
+			(The machine billProposed < 2)
+				ifTrue:[
+					The factory machines contents do: [:machine |
+						(machine id = The machine id)
+							ifTrue:[vote:=true.]
+							ifFalse:[vote:=machine polled: (The machine).].
+						(vote) ifTrue: [support:=support+((1/senators) asFloat).].
+					].
+					(support >= (3/5 asFloat))
+						ifTrue:[
+							'The bill passes in the senate.' oo.
+							The machine billPassed: 2.]
+						ifFalse:[
+							'The bill failed to pass in the senate.' oo.
+							"Add a boost for the next time around."
+							The machine billSupport: (The machine billSupport)+(App random next).
+							The machine billProposed: (The machine billProposed)+1.].
+				].
 		]. 
 !!

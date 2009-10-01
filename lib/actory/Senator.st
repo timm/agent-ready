@@ -8,15 +8,26 @@ worksIn: factory
 
 	"Committee Phase"
 	go: #start   to: #sellG;
-	go: #sellG    to: #committeeV 	if: [(The machine billPassed)=0]
-					then:  [The machine talks: 'presenting to committee'];
-	go: #committeeV to: #sellG;
+	go: #sellG    to: #committee 	if: [(The machine billPassed)=0]
+					then:  [The machine talks: 'presenting to committee.'];
+	go: #sellG	to: #committeeVoteV	if:[(The machine billPassed)=0]
+					then: [The machine talks: 'calling for a committee vote.'];
+	go: #committee to: #sellG;
+	go: #committeeVoteV to: #sellG;
       
 	"Floor phase"
-	go: #sellG    to: #present	if: [(The machine billPassed)=1]
-					then: [The machine talks: 'presenting to the floor'];
+	go: #sellG    to: #present	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
+					then: [The machine talks: 'presenting to the floor.'];
 	go: #present to: #sellG;
-       
+	go: #present to: #floorV;
+	go: #sellG	to: #floorV	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
+					then: [The machine talks: 'calling for a vote.'];
+	go: #floorV	to: #presidentF	if:[(The machine billPassed)=2]
+					then: [The machine talks: 'sending the bill to the president.'];       
+	go: #floorV 	to: #sellG;
+	go: #sellG	to: #presidentF if:[(The machine billPassed)=2]
+					then: [The machine talks: 'sending the bill to the president.'];
+
 	"Scandal"
 	go: #sellG to: #scandalS	if: [App random next > 0.75]
 					then: [The machine talks: 'bribing a colleague'];
@@ -46,6 +57,7 @@ init
     billCommittee := ((App random next)*16) rounded.
     billPassed := 0.
     billSupport := 0.
+    billProposed :=0.
     trust :=1.
     party := ((App random next)*2) rounded.
 !!
@@ -151,6 +163,12 @@ trust
 !
 trust: t
 	trust:= t.
+!
+billProposed: p
+	billProposed := p
+!
+billProposed
+	^billProposed
 !!
 "============================================"
 ! Senator methodsFor: 'printing' !
