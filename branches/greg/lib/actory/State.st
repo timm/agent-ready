@@ -8,6 +8,8 @@ nameToClass: aSymbol
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
 	aSymbol s ~ 'S$'    ifTrue: [^Scandal].
+	aSymbol s ~ 'G$'	ifTrue: [^Selling].
+	aSymbol s ~ 'V$'	ifTrue: [^Voting].
 	^NormalState
 !!
 
@@ -113,7 +115,74 @@ onExit
 !!
 
 !Scandal methods !
+onEntry	
+	The machine naughty.
+!!
+
+!Selling methods!
 onEntry
-	
-       'comitting a potential scandal' oo.
+	|vote senators rand1 position count|
+	The machine talks:'gathering support'.
+	senators:= ((The factory) machines contents) size.
+	count:=1.
+
+	The factory machines contents do:[:machine |
+		(machine id=(The machine id))
+			ifTrue:[position:=count].
+		count:=count+1.].
+
+	rand1:=(((App random next)*senators) rounded).
+	(rand1=0) ifTrue: [rand1:=1].
+	(rand1=position) 
+		ifTrue: [ (rand1=1)
+				ifTrue:[rand1:=rand1+1]
+				ifFalse:[rand1:=rand1-1].].
+
+	vote := (((The factory) machines contents at: rand1) polled: The machine).
+
+	(vote)
+		ifTrue:[ 
+			The machine billSupport: (((The machine billSupport)+(1/senators)) asFloat).]. 
+!
+onStay
+	self onEntry.
+!!
+
+!Voting methods!
+onEntry
+	|vote rand1 senators position count committeeMembers support|
+	senators:= ((The factory) machines contents) size.
+	count:=1.
+	committeeMembers:=0.
+	support:=0.
+
+	The factory machines contents do:[:machine |
+		(machine id=(The machine id))
+			ifTrue:[position:=count].
+		count:=count+1.].
+
+	"Is this a comittee vote or a full senate vote?"
+	(The machine billPassed=0)
+		ifTrue:[
+			The factory machines contents do: [:machine |
+				(machine committee = The machine billCommittee)
+					ifTrue:[committeeMembers:=committeeMembers+1.
+						machine talks:'In attendance for committee vote.'].
+			].
+			The factory machines contents do: [:machine |
+				(machine committee=The machine billCommittee)
+					ifTrue:[
+						vote:=machine polled: (The machine).
+						(vote) ifTrue: [support:= support + ((1/committeeMembers) asFloat).].
+					].
+			].
+
+			(support >= (3/5 asFloat))
+				ifTrue: [
+					'The bill passes the committee.' oo.
+					The machine billPassed: 1.
+					The machine billSupport: 0.]
+				ifFalse: [
+					'The bill failed to pass the committee.' oo].
+		]. 
 !!

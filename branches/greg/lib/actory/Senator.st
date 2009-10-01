@@ -6,33 +6,35 @@ worksIn: factory
     factory 
        machine: (self new: 'senator');
 
-	"Comittee Phase"
-	go: #start   to: #sellG    then:  [The machine talks: 'gathering support'];
-	go: #sellG    to: #comittee 	if: [(The machine billPassed)=0]
-					then:  [The machine talks: 'presenting to comittee'];
-	go: #comittee to: #sellG	then: [The machine talks: 'gathering support'];
+	"Committee Phase"
+	go: #start   to: #sellG;
+	go: #sellG    to: #committeeV 	if: [(The machine billPassed)=0]
+					then:  [The machine talks: 'presenting to committee'];
+	go: #committeeV to: #sellG;
       
 	"Floor phase"
 	go: #sellG    to: #present	if: [(The machine billPassed)=1]
 					then: [The machine talks: 'presenting to the floor'];
-	go: #present to: #sellG then: [The machine talks: 'gathering support'];
+	go: #present to: #sellG;
        
 	"Scandal"
-	go: #sellG to: #scandalS	then:  [The machine naughty];
+	go: #sellG to: #scandalS	if: [App random next > 0.75]
+					then: [The machine talks: 'bribing a colleague'];
        	go: #scandalS to: #sellG    then:  [((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
-						ifTrue:[The machine caught.]];
+						ifTrue:[The machine talks:'phone tapped by the FBI'.
+							The machine caught.]];
 	"Other"     
   	go: #sellG     to: #endF   if:    [App random next > 0.9] 
                                  then:  [The machine 
                                             talks: 'that is all folks'.
                                          The yourself oo.
 					 The machine party oo.
-					 The machine comittee oo.
+					 The machine committee oo.
 					The machine trust oo.
                                          The machine scandals oo.
                                          The machine caughtLikelihood oo.
-					The machine billComittee.
-					The machine billSupport].
+					The machine billCommittee oo.
+					The machine billSupport oo].
 !!
 
 "============================================"
@@ -40,8 +42,8 @@ worksIn: factory
 init
     scandals := 0.
     caughtLikelihood := 0.1.
-    comittee := ((App random next)*16) rounded. 
-    billComittee := ((App random next)*16) rounded.
+    committee := ((App random next)*16) rounded. 
+    billCommittee := ((App random next)*16) rounded.
     billPassed := 0.
     billSupport := 0.
     trust :=1.
@@ -50,6 +52,42 @@ init
 
 "============================================"
 ! Senator methodsFor: 'operations' !
+polled: aPoller
+	|openMindedness vote|
+	openMindedness:=0.5.
+
+	"Are they in the same political party?"
+	(party=(aPoller party))
+		ifTrue: [
+			openMindedness := openMindedness + 0.33.]
+		ifFalse: [
+			openMindedness := openMindedness - 0.33.].
+	"Are they on the same committee?"
+	(committee=(aPoller committee))
+		ifTrue: [
+			openMindedness := openMindedness + 0.15.].
+
+	"Is the bill relevant to their committee?"
+	(committee=(aPoller billCommittee))
+		ifTrue: [
+			(party=(aPoller party))
+				ifTrue: [
+					openMindedness:= openMindedness +0.15.]
+				ifFalse: [
+					openMindedness:= openMindedness -0.15.].
+		].
+	"Trust factor"
+	openMindedness := openMindedness + ((aPoller trust)*0.15).
+	
+	(App random next < openMindedness)
+		ifTrue: [
+			self talks:'says yes'.
+			vote:=true.]
+		ifFalse: [
+			self talks:'says no'.
+			vote:=false.].
+	^vote.
+!
 naughty
     |prob1 prob2|
     scandals := scandals+1.
@@ -65,7 +103,7 @@ naughty
 !
 caught
     scandals :=0.
-    caughtLikelihood :=0.
+    caughtLikelihood :=0.1.
     trust := (trust-0.1).
     billSupport :=0.
     'You got too greedy and were caught.' oo.
@@ -84,11 +122,11 @@ caughtLikelihood
 caughtLikelihood: c
     caughtLikelihood := c
 !
-comittee
-    ^comittee
+committee
+    ^committee
 !
-billComittee
-    ^billComittee
+billCommittee
+    ^billCommittee
 !
 billSupport: s
 	billSupport := s
