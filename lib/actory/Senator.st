@@ -26,26 +26,15 @@ worksIn: factory
 					then: [The machine talks: 'sending the bill to the president.'];       
 	go: #floorV 	to: #sellG;
 	go: #sellG	to: #presidentF if:[(The machine billPassed)=2]
-					then: [The machine talks: 'sending the bill to the president.'];
+					then: [The machine talks: 'sending the bill to the president.'.];
 
 	"Scandal"
 	go: #sellG to: #scandalS	if: [App random next > 0.75]
 					then: [The machine talks: 'bribing a colleague'];
        	go: #scandalS to: #sellG    then:  [((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
 						ifTrue:[The machine talks:'phone tapped by the FBI'.
-							The machine caught.]];
-	"Other"     
-  	go: #sellG     to: #endF   if:    [App random next > 0.9] 
-                                 then:  [The machine 
-                                            talks: 'that is all folks'.
-                                         The yourself oo.
-					 The machine party oo.
-					 The machine committee oo.
-					The machine trust oo.
-                                         The machine scandals oo.
-                                         The machine caughtLikelihood oo.
-					The machine billCommittee oo.
-					The machine billSupport oo].
+							The machine caught.]].
+	"Filibuster"
 !!
 
 "============================================"

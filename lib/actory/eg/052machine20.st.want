@@ -1,0 +1,2143 @@
+
+---| 052machine20.st |-----------------------------------------
+
+The president is on the floor.
+This session is being recorded.
+Machine:[46] gathering support
+Machine:[347] says no
+Machine:[89] gathering support
+Machine:[519] says no
+Machine:[132] gathering support
+Machine:[390] says yes
+Machine:[175] gathering support
+Machine:[562] says no
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[261] gathering support
+Machine:[46] says no
+Machine:[304] gathering support
+Machine:[562] says no
+Machine:[347] gathering support
+Machine:[89] says yes
+Machine:[390] gathering support
+Machine:[261] says yes
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[476] gathering support
+Machine:[433] says no
+Machine:[519] gathering support
+Machine:[648] says yes
+Machine:[562] gathering support
+Machine:[175] says no
+Machine:[605] gathering support
+Machine:[89] says yes
+Machine:[648] gathering support
+Machine:[519] says yes
+Machine:[691] gathering support
+Machine:[734] says yes
+Machine:[734] gathering support
+Machine:[132] says yes
+Machine:[777] gathering support
+Machine:[562] says yes
+Machine:[820] gathering support
+Machine:[691] says no
+Machine:[46] calling for a committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] says yes
+Machine:[132] says no
+The bill failed to pass the committee.
+Machine:[347] calling for a committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[648] says yes
+Machine:[519] says yes
+Machine:[175] says yes
+The bill passes the committee.
+Machine:[691] calling for a committee vote.
+Machine:[605] In attendance for committee vote.
+Machine:[605] says yes
+The bill passes the committee.
+Machine:[218] calling for a committee vote.
+Machine:[433] In attendance for committee vote.
+Machine:[433] says no
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[132] says no
+Machine:[476] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says yes
+The bill passes the committee.
+Machine:[820] calling for a committee vote.
+Machine:[89] In attendance for committee vote.
+Machine:[89] says no
+The bill failed to pass the committee.
+Machine:[648] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[390] calling for a committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] says no
+Machine:[132] says yes
+The bill failed to pass the committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[304] calling for a committee vote.
+Machine:[605] In attendance for committee vote.
+Machine:[605] says yes
+The bill passes the committee.
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[175] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[261] calling for a committee vote.
+Machine:[433] In attendance for committee vote.
+Machine:[433] says yes
+The bill passes the committee.
+Machine:[777] calling for a committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[648] says yes
+Machine:[519] says no
+Machine:[175] says no
+The bill failed to pass the committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[605] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says yes
+The bill passes the committee.
+Machine:[734] calling for a committee vote.
+Machine:[347] In attendance for committee vote.
+Machine:[347] says yes
+The bill passes the committee.
+Machine:[347] gathering support
+Machine:[390] says yes
+Machine:[390] gathering support
+Machine:[175] says yes
+Machine:[46] gathering support
+Machine:[3] says yes
+Machine:[261] gathering support
+Machine:[347] says no
+Machine:[433] gathering support
+Machine:[562] says yes
+Machine:[519] gathering support
+Machine:[175] says yes
+Machine:[648] gathering support
+Machine:[605] says yes
+Machine:[476] gathering support
+Machine:[175] says no
+Machine:[175] gathering support
+Machine:[820] says yes
+Machine:[734] gathering support
+Machine:[46] says no
+Machine:[562] gathering support
+Machine:[89] says no
+Machine:[218] gathering support
+Machine:[519] says no
+Machine:[820] gathering support
+Machine:[132] says yes
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[3] calling for a committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] says yes
+Machine:[132] says no
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[519] says yes
+Machine:[89] gathering support
+Machine:[261] says no
+Machine:[605] gathering support
+Machine:[347] says yes
+Machine:[691] gathering support
+Machine:[820] says yes
+Machine:[304] gathering support
+Machine:[691] says no
+Machine:[433] bribing a colleague
+You got too greedy and were caught.
+Machine:[304] presenting to the floor.
+Machine:[132] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[734] presenting to the floor.
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[605] presenting to the floor.
+Machine:[390] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[3] gathering support
+Machine:[691] says yes
+Machine:[519] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[691] presenting to the floor.
+Machine:[261] presenting to the floor.
+Machine:[46] calling for a committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] says yes
+Machine:[476] says yes
+The bill passes the committee.
+Machine:[777] presenting to committee.
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] presenting to committee.
+Machine:[648] bribing a colleague
+You got too greedy and were caught.
+Machine:[476] presenting to the floor.
+Machine:[347] presenting to the floor.
+Machine:[820] presenting to committee.
+Machine:[820] says no
+Machine:[347] says no
+Machine:[89] says yes
+Machine:[433] says yes
+Machine:[175] says no
+Machine:[734] says yes
+Machine:[261] says no
+Machine:[3] says yes
+Machine:[390] says yes
+Machine:[777] says no
+Machine:[519] says no
+Machine:[562] says no
+Machine:[132] says no
+Machine:[218] says yes
+Machine:[476] says yes
+Machine:[605] says no
+Machine:[46] says yes
+Machine:[648] says yes
+Machine:[304] says yes
+The bill failed to pass in the senate.
+Machine:[820] says yes
+Machine:[691] says no
+Machine:[89] says no
+Machine:[433] says yes
+Machine:[175] says yes
+Machine:[734] says yes
+Machine:[261] says yes
+Machine:[3] says no
+Machine:[390] says yes
+Machine:[777] says no
+Machine:[519] says yes
+Machine:[562] says yes
+Machine:[132] says yes
+Machine:[218] says no
+Machine:[476] says no
+Machine:[605] says yes
+Machine:[46] says no
+Machine:[648] says yes
+Machine:[304] says yes
+The bill passes in the senate.
+Machine:[89] gathering support
+Machine:[347] says no
+Machine:[433] gathering support
+Machine:[304] says yes
+Machine:[175] presenting to committee.
+Machine:[820] says yes
+Machine:[691] says yes
+Machine:[347] says yes
+Machine:[89] says no
+Machine:[433] says yes
+Machine:[175] says yes
+Machine:[261] says yes
+Machine:[3] says no
+Machine:[390] says yes
+Machine:[777] says yes
+Machine:[519] says yes
+Machine:[562] says yes
+Machine:[132] says yes
+Machine:[218] says yes
+Machine:[476] says no
+Machine:[605] says yes
+Machine:[46] says no
+Machine:[648] says yes
+Machine:[304] says yes
+The bill passes in the senate.
+Machine:[820] says no
+Machine:[691] says no
+Machine:[347] says yes
+Machine:[89] says yes
+Machine:[433] says yes
+Machine:[175] says yes
+Machine:[734] says yes
+Machine:[3] says no
+Machine:[390] says yes
+Machine:[777] says no
+Machine:[519] says yes
+Machine:[562] says yes
+Machine:[132] says yes
+Machine:[218] says no
+Machine:[476] says no
+Machine:[605] says yes
+Machine:[46] says no
+Machine:[648] says yes
+Machine:[304] says yes
+The bill passes in the senate.
+Machine:[3] calling for a committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] says no
+Machine:[476] says yes
+The bill failed to pass the committee.
+Machine:[390] gathering support
+Machine:[347] says yes
+Machine:[777] gathering support
+Machine:[433] says yes
+Machine:[519] gathering support
+Machine:[347] says yes
+Machine:[562] gathering support
+Machine:[261] says no
+Machine:[132] gathering support
+Machine:[3] says yes
+Machine:[218] gathering support
+Machine:[691] says yes
+Machine:[820] says yes
+Machine:[691] says yes
+Machine:[347] says no
+Machine:[89] says yes
+Machine:[433] says no
+Machine:[175] says no
+Machine:[734] says no
+Machine:[261] says yes
+Machine:[3] says yes
+Machine:[390] says no
+Machine:[777] says no
+Machine:[519] says no
+Machine:[562] says yes
+Machine:[132] says no
+Machine:[218] says yes
+Machine:[605] says no
+Machine:[46] says yes
+Machine:[648] says yes
+Machine:[304] says yes
+The bill failed to pass in the senate.
+Machine:[820] says yes
+Machine:[691] says yes
+Machine:[347] says yes
+Machine:[89] says no
+Machine:[433] says yes
+Machine:[175] says yes
+Machine:[734] says yes
+Machine:[261] says yes
+Machine:[3] says no
+Machine:[390] says yes
+Machine:[777] says no
+Machine:[519] says yes
+Machine:[562] says yes
+Machine:[132] says yes
+Machine:[218] says no
+Machine:[476] says yes
+Machine:[46] says yes
+Machine:[648] says yes
+Machine:[304] says yes
+The bill passes in the senate.
+Machine:[46] gathering support
+Machine:[347] says no
+Machine:[648] gathering support
+Machine:[347] says yes
+Machine:[820] says yes
+Machine:[691] says no
+Machine:[347] says yes
+Machine:[89] says yes
+Machine:[433] says yes
+Machine:[175] says yes
+Machine:[734] says yes
+Machine:[261] says yes
+Machine:[3] says no
+Machine:[390] says yes
+Machine:[777] says yes
+Machine:[519] says yes
+Machine:[562] says no
+Machine:[132] says yes
+Machine:[218] says yes
+Machine:[476] says yes
+Machine:[605] says yes
+Machine:[46] says no
+Machine:[648] says yes
+The bill passes in the senate.
+Machine:[390] presenting to committee.
+Machine:[89] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[175] gathering support
+Machine:[261] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[347] gathering support
+Machine:[605] says no
+Machine:[218] presenting to committee.
+Machine:[433] presenting to committee.
+Machine:[3] gathering support
+Machine:[347] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[304] gathering support
+Machine:[777] says no
+Machine:[46] calling for a vote.
+Machine:[390] says yes
+Machine:[89] says yes
+Machine:[175] says no
+Machine:[519] says no
+Machine:[347] says no
+Machine:[218] says yes
+Machine:[433] says yes
+Machine:[3] says yes
+Machine:[132] says no
+Machine:[562] says no
+Machine:[304] says no
+Machine:[820] says no
+Machine:[691] says yes
+Machine:[648] says yes
+Machine:[261] says no
+Machine:[777] says no
+Machine:[734] says no
+Machine:[605] says yes
+Machine:[476] says yes
+The bill failed to pass in the senate.
+Machine:[820] gathering support
+Machine:[347] says yes
+Machine:[691] gathering support
+Machine:[89] says yes
+Machine:[648] presenting to committee.
+Machine:[261] gathering support
+Machine:[433] says yes
+Machine:[777] calling for a committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[175] says no
+Machine:[519] says no
+Machine:[648] says no
+The bill failed to pass the committee.
+Machine:[734] gathering support
+Machine:[820] says yes
+Machine:[605] gathering support
+Machine:[304] says yes
+Machine:[476] gathering support
+Machine:[261] says no
+Machine:[304] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[304] leaving for the day.
+Machine:[89] gathering support
+Machine:[132] says yes
+Machine:[347] sending the bill to the president.
+President:[1] says no 
+The bill is vetoed. Try again tomorrow.
+Machine:[347] leaving for the day.
+Machine:[46] gathering support
+Machine:[390] says no
+Machine:[261] sending the bill to the president.
+President:[1] says no 
+The bill is vetoed. Try again tomorrow.
+Machine:[261] leaving for the day.
+Machine:[519] gathering support
+Machine:[304] says yes
+Machine:[132] gathering support
+Machine:[734] says yes
+Machine:[175] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[605] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[605] leaving for the day.
+Machine:[3] presenting to committee.
+Machine:[433] gathering support
+Machine:[562] says no
+Machine:[734] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[734] leaving for the day.
+Machine:[777] gathering support
+Machine:[562] says yes
+Machine:[820] calling for a committee vote.
+Machine:[89] In attendance for committee vote.
+Machine:[89] says no
+The bill failed to pass the committee.
+Machine:[562] gathering support
+Machine:[691] says no
+Machine:[476] calling for a vote.
+Machine:[304] says yes
+Machine:[89] says yes
+Machine:[347] says no
+Machine:[46] says yes
+Machine:[261] says no
+Machine:[519] says yes
+Machine:[132] says no
+Machine:[175] says no
+Machine:[605] says no
+Machine:[3] says yes
+Machine:[433] says no
+Machine:[734] says no
+Machine:[777] says yes
+Machine:[820] says yes
+Machine:[562] says no
+Machine:[218] says yes
+Machine:[691] says yes
+Machine:[390] says no
+Machine:[648] says yes
+The bill failed to pass in the senate.
+Machine:[218] gathering support
+Machine:[734] says yes
+Machine:[691] calling for a vote.
+Machine:[304] says no
+Machine:[89] says yes
+Machine:[347] says yes
+Machine:[46] says yes
+Machine:[261] says yes
+Machine:[519] says no
+Machine:[132] says yes
+Machine:[175] says yes
+Machine:[605] says no
+Machine:[3] says yes
+Machine:[433] says no
+Machine:[734] says no
+Machine:[777] says yes
+Machine:[820] says yes
+Machine:[562] says yes
+Machine:[476] says yes
+Machine:[218] says yes
+Machine:[390] says no
+Machine:[648] says no
+The bill passes in the senate.
+Machine:[390] gathering support
+Machine:[476] says no
+Machine:[648] gathering support
+Machine:[433] says yes
+Machine:[390] calling for a committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] says yes
+Machine:[476] says no
+The bill failed to pass the committee.
+Machine:[46] presenting to the floor.
+Machine:[820] gathering support
+Machine:[175] says yes
+Machine:[562] presenting to committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[691] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[691] leaving for the day.
+Machine:[519] presenting to committee.
+Machine:[132] presenting to committee.
+Machine:[175] gathering support
+Machine:[132] says yes
+Machine:[476] gathering support
+Machine:[691] says yes
+Machine:[648] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] gathering support
+Machine:[562] says yes
+Machine:[820] calling for a committee vote.
+Machine:[89] In attendance for committee vote.
+Machine:[89] says no
+The bill failed to pass the committee.
+Machine:[820] says yes
+Machine:[734] says no
+Machine:[433] says no
+Machine:[648] says no
+Machine:[175] says yes
+Machine:[562] says no
+Machine:[777] says yes
+Machine:[261] says no
+Machine:[304] says yes
+Machine:[132] says no
+Machine:[390] says yes
+Machine:[218] says yes
+Machine:[691] says yes
+Machine:[347] says yes
+Machine:[476] says yes
+Machine:[3] says yes
+Machine:[605] says yes
+Machine:[519] says no
+Machine:[89] says yes
+The bill passes in the senate.
+Machine:[433] gathering support
+Machine:[820] says yes
+Machine:[648] gathering support
+Machine:[734] says yes
+Machine:[175] presenting to committee.
+Machine:[562] gathering support
+Machine:[3] says yes
+Machine:[777] presenting to committee.
+Machine:[132] gathering support
+Machine:[304] says yes
+Machine:[390] gathering support
+Machine:[734] says yes
+Machine:[218] gathering support
+Machine:[46] says yes
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] gathering support
+Machine:[820] says yes
+Machine:[89] gathering support
+Machine:[562] says no
+Machine:[476] gathering support
+Machine:[3] says yes
+Machine:[46] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[46] leaving for the day.
+Machine:[175] gathering support
+Machine:[777] says yes
+Machine:[777] gathering support
+Machine:[476] says yes
+Machine:[820] gathering support
+Machine:[347] says yes
+Machine:[648] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[519] says yes
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[89] presenting to committee.
+Machine:[519] presenting to committee.
+Machine:[390] presenting to committee.
+Machine:[433] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[218] calling for a committee vote.
+Machine:[433] In attendance for committee vote.
+Machine:[433] says no
+The bill failed to pass the committee.
+Machine:[648] gathering support
+Machine:[476] says no
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] calling for a committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[648] says yes
+Machine:[175] says no
+Machine:[519] says no
+The bill failed to pass the committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[390] says yes
+Machine:[820] presenting to committee.
+Machine:[175] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[605] says no
+Machine:[519] gathering support
+Machine:[46] says no
+Machine:[390] gathering support
+Machine:[605] says yes
+Machine:[562] gathering support
+Machine:[132] says yes
+Machine:[218] gathering support
+Machine:[519] says no
+Machine:[89] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[347] says yes
+Machine:[3] gathering support
+Machine:[132] says no
+Machine:[562] presenting to committee.
+Machine:[175] gathering support
+Machine:[734] says yes
+Machine:[648] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[820] gathering support
+Machine:[562] says yes
+Machine:[433] presenting to committee.
+Machine:[390] calling for a committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] says yes
+Machine:[476] says no
+The bill failed to pass the committee.
+Machine:[218] calling for a committee vote.
+Machine:[433] In attendance for committee vote.
+Machine:[433] says no
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[46] says yes
+Machine:[519] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] presenting to committee.
+Machine:[89] gathering support
+Machine:[820] says yes
+Machine:[132] presenting to committee.
+Machine:[648] gathering support
+Machine:[476] says yes
+Machine:[562] gathering support
+Machine:[132] says no
+Machine:[820] presenting to committee.
+Machine:[390] gathering support
+Machine:[3] says no
+Machine:[777] presenting to committee.
+Machine:[519] gathering support
+Machine:[605] says yes
+Machine:[175] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[46] says no
+Machine:[218] gathering support
+Machine:[46] says yes
+Machine:[3] gathering support
+Machine:[476] says yes
+Machine:[820] gathering support
+Machine:[347] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[261] says yes
+Machine:[390] calling for a committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] says yes
+Machine:[476] says yes
+The bill passes the committee.
+Machine:[218] presenting to committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[734] says yes
+Machine:[648] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[175] gathering support
+Machine:[648] says yes
+Machine:[433] bribing a colleague
+You got too greedy and were caught.
+Machine:[820] calling for a committee vote.
+Machine:[89] In attendance for committee vote.
+Machine:[89] says yes
+The bill passes the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] presenting to committee.
+Machine:[433] gathering support
+Machine:[218] says no
+Machine:[562] gathering support
+Machine:[132] says yes
+Machine:[390] gathering support
+Machine:[3] says no
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[3] calling for a committee vote.
+Machine:[476] In attendance for committee vote.
+Machine:[132] In attendance for committee vote.
+Machine:[476] says yes
+Machine:[132] says yes
+The bill passes the committee.
+Machine:[519] gathering support
+Machine:[261] says yes
+Machine:[777] calling for a committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[519] says no
+Machine:[175] says no
+Machine:[648] says yes
+The bill failed to pass the committee.
+Machine:[175] presenting to committee.
+Machine:[648] gathering support
+Machine:[476] says yes
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[390] presenting to the floor.
+Machine:[89] presenting to committee.
+Machine:[175] gathering support
+Machine:[605] says yes
+Machine:[476] gathering support
+Machine:[175] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[519] says no
+Machine:[648] presenting to committee.
+Machine:[777] gathering support
+Machine:[648] says yes
+Machine:[820] gathering support
+Machine:[175] says yes
+Machine:[562] presenting to committee.
+Machine:[132] gathering support
+Machine:[433] says yes
+Machine:[562] gathering support
+Machine:[820] says no
+Machine:[3] calling for a vote.
+Machine:[347] says no
+Machine:[304] says no
+Machine:[734] says no
+Machine:[562] says no
+Machine:[433] says yes
+Machine:[691] says no
+Machine:[777] says no
+Machine:[648] says no
+Machine:[519] says yes
+Machine:[89] says yes
+Machine:[46] says yes
+Machine:[132] says yes
+Machine:[820] says yes
+Machine:[476] says yes
+Machine:[218] says yes
+Machine:[175] says no
+Machine:[261] says no
+Machine:[390] says no
+Machine:[605] says yes
+The bill failed to pass in the senate.
+Machine:[433] gathering support
+Machine:[218] says no
+Machine:[777] calling for a committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[648] says no
+Machine:[519] says yes
+Machine:[175] says no
+The bill failed to pass the committee.
+Machine:[648] gathering support
+Machine:[218] says no
+Machine:[519] gathering support
+Machine:[390] says yes
+Machine:[89] gathering support
+Machine:[304] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[820] presenting to the floor.
+Machine:[218] calling for a committee vote.
+Machine:[433] In attendance for committee vote.
+Machine:[433] says yes
+The bill passes the committee.
+Machine:[175] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says yes
+The bill passes the committee.
+Machine:[347] says yes
+Machine:[304] says no
+Machine:[734] says yes
+Machine:[562] says no
+Machine:[3] says no
+Machine:[433] says yes
+Machine:[691] says no
+Machine:[777] says no
+Machine:[648] says yes
+Machine:[519] says yes
+Machine:[89] says no
+Machine:[46] says no
+Machine:[132] says yes
+Machine:[820] says yes
+Machine:[476] says no
+Machine:[218] says no
+Machine:[175] says yes
+Machine:[261] says yes
+Machine:[605] says yes
+The bill failed to pass in the senate.
+Machine:[218] gathering support
+Machine:[648] says no
+Machine:[777] gathering support
+Machine:[46] says no
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] presenting to committee.
+Machine:[132] gathering support
+Machine:[777] says no
+Machine:[390] gathering support
+Machine:[476] says no
+Machine:[519] presenting to committee.
+Machine:[175] gathering support
+Machine:[3] says yes
+Machine:[3] gathering support
+Machine:[562] says no
+Machine:[218] says no
+Machine:[46] says no
+Machine:[777] says no
+Machine:[433] says yes
+Machine:[304] says yes
+Machine:[691] says no
+Machine:[605] says yes
+Machine:[476] says no
+Machine:[89] says no
+Machine:[562] says no
+Machine:[132] says yes
+Machine:[390] says yes
+Machine:[347] says yes
+Machine:[261] says yes
+Machine:[519] says yes
+Machine:[734] says yes
+Machine:[175] says yes
+Machine:[3] says no
+Machine:[648] says yes
+The bill passes in the senate.
+Machine:[648] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says no
+The bill failed to pass the committee.
+Machine:[218] calling for a vote.
+Machine:[261] says no
+Machine:[605] says yes
+Machine:[304] says no
+Machine:[390] says yes
+Machine:[820] says no
+Machine:[519] says yes
+Machine:[132] says yes
+Machine:[347] says no
+Machine:[691] says yes
+Machine:[562] says yes
+Machine:[3] says yes
+Machine:[777] says no
+Machine:[734] says no
+Machine:[175] says no
+Machine:[433] says no
+Machine:[46] says yes
+Machine:[648] says no
+Machine:[476] says yes
+Machine:[89] says yes
+The bill failed to pass in the senate.
+Machine:[390] calling for a vote.
+Machine:[218] says yes
+Machine:[261] says yes
+Machine:[605] says yes
+Machine:[304] says yes
+Machine:[820] says yes
+Machine:[519] says yes
+Machine:[132] says yes
+Machine:[347] says yes
+Machine:[691] says yes
+Machine:[562] says no
+Machine:[3] says no
+Machine:[777] says no
+Machine:[734] says yes
+Machine:[175] says yes
+Machine:[433] says yes
+Machine:[46] says no
+Machine:[648] says yes
+Machine:[476] says no
+Machine:[89] says no
+The bill passes in the senate.
+Machine:[820] gathering support
+Machine:[648] says yes
+Machine:[519] gathering support
+Machine:[648] says yes
+Machine:[132] bribing a colleague
+You got too greedy and were caught.
+Machine:[562] gathering support
+Machine:[433] says yes
+Machine:[3] presenting to the floor.
+Machine:[777] presenting to committee.
+Machine:[175] calling for a vote.
+Machine:[218] says no
+Machine:[261] says yes
+Machine:[605] says yes
+Machine:[304] says yes
+Machine:[390] says yes
+Machine:[820] says yes
+Machine:[519] says yes
+Machine:[132] says yes
+Machine:[347] says yes
+Machine:[691] says no
+Machine:[562] says no
+Machine:[3] says no
+Machine:[777] says yes
+Machine:[734] says yes
+Machine:[433] says yes
+Machine:[46] says yes
+Machine:[648] says yes
+Machine:[476] says no
+Machine:[89] says no
+The bill passes in the senate.
+Machine:[433] gathering support
+Machine:[132] says yes
+Machine:[648] gathering support
+Machine:[261] says yes
+Machine:[89] gathering support
+Machine:[46] says yes
+Machine:[175] gathering support
+Machine:[519] says yes
+Machine:[132] gathering support
+Machine:[476] says yes
+Machine:[390] sending the bill to the president.
+President:[1] says no 
+The bill is vetoed. Try again tomorrow.
+Machine:[390] leaving for the day.
+Machine:[648] presenting to committee.
+Machine:[820] sending the bill to the president.
+President:[1] says no 
+The bill is vetoed. Try again tomorrow.
+Machine:[820] leaving for the day.
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[433] presenting to committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] presenting to committee.
+Machine:[476] says yes
+Machine:[691] says yes
+Machine:[175] says no
+Machine:[132] says yes
+Machine:[734] says no
+Machine:[390] says no
+Machine:[46] says yes
+Machine:[347] says yes
+Machine:[261] says yes
+Machine:[605] says yes
+Machine:[648] says no
+Machine:[820] says no
+Machine:[218] says yes
+Machine:[562] says no
+Machine:[433] says no
+Machine:[89] says yes
+Machine:[519] says no
+Machine:[304] says yes
+Machine:[777] says no
+The bill failed to pass in the senate.
+Machine:[777] gathering support
+Machine:[734] says yes
+Machine:[519] gathering support
+Machine:[476] says yes
+Machine:[3] gathering support
+Machine:[777] says no
+Machine:[562] gathering support
+Machine:[519] says yes
+Machine:[175] sending the bill to the president.
+President:[1] says yes 
+The bill passes.
+Machine:[175] leaving for the day.
+Machine:[777] presenting to committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[648] gathering support
+Machine:[734] says yes
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[433] gathering support
+Machine:[175] says yes
+Machine:[132] gathering support
+Machine:[519] says yes
+Machine:[562] presenting to committee.
+Machine:[648] presenting to committee.
+Machine:[89] presenting to committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] gathering support
+Machine:[390] says yes
+Machine:[777] gathering support
+Machine:[562] says yes
+Machine:[433] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] presenting to committee.
+Machine:[648] gathering support
+Machine:[777] says no
+Machine:[777] calling for a committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[648] says no
+Machine:[175] says no
+Machine:[519] says yes
+The bill failed to pass the committee.
+Machine:[562] gathering support
+Machine:[390] says no
+Machine:[89] gathering support
+Machine:[777] says yes
+Machine:[519] gathering support
+Machine:[648] says yes
+Machine:[218] presenting to the floor.
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[433] gathering support
+Machine:[3] says yes
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says no
+The bill failed to pass the committee.
+Machine:[433] presenting to committee.
+Machine:[519] presenting to committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] says yes
+Machine:[691] says yes
+Machine:[734] says no
+Machine:[304] says no
+Machine:[261] says no
+Machine:[433] says yes
+Machine:[347] says yes
+Machine:[820] says no
+Machine:[519] says no
+Machine:[89] says yes
+Machine:[3] says yes
+Machine:[46] says yes
+Machine:[132] says no
+Machine:[777] says no
+Machine:[175] says no
+Machine:[605] says no
+Machine:[648] says no
+Machine:[476] says yes
+Machine:[390] says yes
+The bill failed to pass in the senate.
+Machine:[3] gathering support
+Machine:[777] says no
+Machine:[132] gathering support
+Machine:[46] says yes
+Machine:[777] gathering support
+Machine:[89] says no
+Machine:[648] calling for a committee vote.
+Machine:[218] In attendance for committee vote.
+Machine:[218] says yes
+The bill passes the committee.
+Machine:[433] gathering support
+Machine:[777] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] gathering support
+Machine:[218] says yes
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[648] gathering support
+Machine:[46] says no
+Machine:[562] gathering support
+Machine:[691] says yes
+Machine:[89] gathering support
+Machine:[734] says yes
+Machine:[777] calling for a committee vote.
+Machine:[519] In attendance for committee vote.
+Machine:[648] In attendance for committee vote.
+Machine:[175] In attendance for committee vote.
+Machine:[519] says yes
+Machine:[648] says yes
+Machine:[175] says no
+The bill passes the committee.
+Machine:[562] calling for a committee vote.
+Machine:[691] In attendance for committee vote.
+Machine:[691] says yes
+The bill passes the committee.
+Machine:[89] presenting to committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[175] says no
+Machine:[132] gathering support
+Machine:[562] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[648] bribing a colleague
+You got too greedy and were caught.
+Machine:[562] gathering support
+Machine:[476] says no
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] calling for a vote.
+Machine:[562] says yes
+Machine:[175] says yes
+Machine:[390] says no
+Machine:[605] says no
+Machine:[3] says yes
+Machine:[347] says no
+Machine:[261] says no
+Machine:[218] says no
+Machine:[691] says no
+Machine:[433] says no
+Machine:[648] says no
+Machine:[734] says yes
+Machine:[132] says no
+Machine:[476] says no
+Machine:[46] says no
+Machine:[519] says no
+Machine:[89] says yes
+Machine:[820] says no
+Machine:[304] says no
+The bill failed to pass in the senate.
+Machine:[433] gathering support
+Machine:[218] says no
+Machine:[648] gathering support
+Machine:[89] says no
+Machine:[132] presenting to committee.
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] gathering support
+Machine:[605] says yes
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[648] presenting to the floor.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[3] says no
+Machine:[3] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[3] gathering support
+Machine:[777] says no
+Machine:[519] presenting to committee.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[218] says yes
+Machine:[476] gathering support
+Machine:[519] says no
+Machine:[734] says yes
+Machine:[777] says no
+Machine:[175] says yes
+Machine:[304] says yes
+Machine:[390] says yes
+Machine:[820] says yes
+Machine:[562] says yes
+Machine:[46] says no
+Machine:[476] says yes
+Machine:[218] says no
+Machine:[3] says no
+Machine:[132] says yes
+Machine:[261] says yes
+Machine:[347] says yes
+Machine:[89] says yes
+Machine:[433] says yes
+Machine:[691] says yes
+Machine:[519] says yes
+Machine:[605] says yes
+The bill passes in the senate.
+Machine:[777] presenting to the floor.
+Machine:[562] gathering support
+Machine:[218] says no
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[562] says yes
+Machine:[433] gathering support
+Machine:[89] says yes
+Machine:[519] gathering support
+Machine:[132] says yes
+Machine:[648] gathering support
+Machine:[820] says yes
+Machine:[89] presenting to committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] presenting to committee.
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[562] presenting to the floor.
+Machine:[175] says no
+Machine:[304] says yes
+Machine:[820] says no
+Machine:[648] says no
+Machine:[89] says no
+Machine:[476] says no
+Machine:[46] says yes
+Machine:[433] says yes
+Machine:[3] says yes
+Machine:[562] says yes
+Machine:[390] says yes
+Machine:[605] says no
+Machine:[218] says no
+Machine:[132] says no
+Machine:[519] says no
+Machine:[261] says no
+Machine:[347] says no
+Machine:[734] says yes
+Machine:[691] says yes
+The bill failed to pass in the senate.
+Machine:[132] gathering support
+Machine:[390] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[347] says yes
+Machine:[777] gathering support
+Machine:[476] says yes
+Machine:[3] says yes
+Machine:[777] says yes
+Machine:[820] says no
+Machine:[304] says no
+Machine:[347] says no
+Machine:[734] says no
+Machine:[89] says yes
+Machine:[605] says no
+Machine:[218] says no
+Machine:[519] says no
+Machine:[476] says no
+Machine:[390] says no
+Machine:[433] says no
+Machine:[261] says no
+Machine:[46] says no
+Machine:[132] says yes
+Machine:[175] says no
+Machine:[648] says yes
+Machine:[691] says no
+The bill failed to pass in the senate.
+Machine:[89] gathering support
+Machine:[390] says yes
+Machine:[519] gathering support
+Machine:[218] says yes
+Machine:[476] gathering support
+Machine:[433] says no
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[132] presenting to committee.
+Machine:[648] sending the bill to the president.
+President:[1] says no 
+The bill is vetoed. Try again tomorrow.
+Machine:[648] leaving for the day.
+Machine:[132] gathering support
+Machine:[304] says yes
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] presenting to committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] gathering support
+Machine:[3] says yes
+Machine:[132] presenting to committee.
+Machine:[218] gathering support
+Machine:[605] says no
+Machine:[89] gathering support
+Machine:[390] says yes
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[562] calling for a vote.
+Machine:[777] says yes
+Machine:[648] says no
+Machine:[691] says no
+Machine:[261] says no
+Machine:[390] says yes
+Machine:[347] says yes
+Machine:[132] says no
+Machine:[820] says no
+Machine:[46] says no
+Machine:[218] says no
+Machine:[175] says no
+Machine:[89] says no
+Machine:[3] says yes
+Machine:[304] says yes
+Machine:[734] says yes
+Machine:[476] says no
+Machine:[605] says no
+Machine:[433] says no
+Machine:[519] says no
+The bill failed to pass in the senate.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] presenting to committee.
+Machine:[519] gathering support
+Machine:[820] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[175] says yes
+Machine:[476] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[476] gathering support
+Machine:[304] says no
+Machine:[3] gathering support
+Machine:[390] says no
+Machine:[89] presenting to committee.
+Machine:[562] gathering support
+Machine:[605] says no
+Machine:[132] gathering support
+Machine:[476] says yes
+Machine:[89] gathering support
+Machine:[175] says yes
+Machine:[519] gathering support
+Machine:[89] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[691] says no
+Machine:[89] presenting to committee.
+Machine:[433] gathering support
+Machine:[46] says yes
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] gathering support
+Machine:[304] says yes
+Machine:[562] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] gathering support
+Machine:[820] says yes
+Machine:[433] presenting to committee.
+Machine:[476] gathering support
+Machine:[433] says yes
+Machine:[89] gathering support
+Machine:[648] says yes
+Machine:[132] presenting to committee.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] presenting to committee.
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[777] gathering support
+Machine:[218] says no
+Machine:[132] gathering support
+Machine:[46] says yes
+Machine:[562] gathering support
+Machine:[218] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[46] says yes
+Machine:[519] gathering support
+Machine:[691] says yes
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[218] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[218] gathering support
+Machine:[304] says yes
+Machine:[132] gathering support
+Machine:[820] says yes
+Machine:[476] gathering support
+Machine:[89] says yes
+Machine:[433] gathering support
+Machine:[734] says yes
+Machine:[89] presenting to committee.
+Machine:[519] presenting to committee.
+Machine:[519] gathering support
+Machine:[433] says yes
+Machine:[132] presenting to committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[734] says yes
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[347] says yes
+Machine:[433] presenting to committee.
+Machine:[519] gathering support
+Machine:[648] says yes
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[347] says yes
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[562] gathering support
+Machine:[261] says yes
+Machine:[519] presenting to committee.
+Machine:[476] gathering support
+Machine:[89] says yes
+Machine:[89] presenting to committee.
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] presenting to committee.
+Machine:[562] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] gathering support
+Machine:[648] says yes
+Machine:[519] gathering support
+Machine:[46] says yes
+Machine:[777] gathering support
+Machine:[89] says no
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[3] says yes
+Machine:[132] gathering support
+Machine:[476] says yes
+Machine:[562] gathering support
+Machine:[648] says no
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[519] gathering support
+Machine:[3] says yes
+Machine:[132] presenting to committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[3] says yes
+Machine:[519] presenting to committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] gathering support
+Machine:[304] says yes
+Machine:[519] gathering support
+Machine:[347] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[218] says yes
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[562] gathering support
+Machine:[820] says yes
+Machine:[476] gathering support
+Machine:[175] says yes
+Machine:[132] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] presenting to committee.
+Machine:[777] gathering support
+Machine:[476] says yes
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[433] says no
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] gathering support
+Machine:[89] says no
+Machine:[433] gathering support
+Machine:[820] says yes
+Machine:[433] presenting to committee.
+Machine:[476] gathering support
+Machine:[132] says no
+Machine:[89] gathering support
+Machine:[820] says yes
+Machine:[132] presenting to committee.
+Machine:[218] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[519] gathering support
+Machine:[691] says yes
+Machine:[433] gathering support
+Machine:[820] says yes
+Machine:[132] gathering support
+Machine:[648] says yes
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] presenting to committee.
+Machine:[562] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] gathering support
+Machine:[648] says no
+Machine:[89] gathering support
+Machine:[734] says yes
+Machine:[519] gathering support
+Machine:[3] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] gathering support
+Machine:[734] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] gathering support
+Machine:[218] says no
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] presenting to committee.
+Machine:[218] gathering support
+Machine:[132] says no
+Machine:[519] gathering support
+Machine:[218] says yes
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[433] gathering support
+Machine:[175] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] presenting to committee.
+Machine:[3] gathering support
+Machine:[347] says no
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] presenting to committee.
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[433] gathering support
+Machine:[261] says yes
+Machine:[519] gathering support
+Machine:[691] says yes
+Machine:[89] gathering support
+Machine:[605] says yes
+Machine:[562] gathering support
+Machine:[261] says no
+Machine:[132] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] presenting to committee.
+Machine:[132] gathering support
+Machine:[89] says yes
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] gathering support
+Machine:[820] says no
+Machine:[777] gathering support
+Machine:[89] says no
+Machine:[519] gathering support
+Machine:[304] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[519] says no
+Machine:[433] gathering support
+Machine:[820] says yes
+Machine:[476] gathering support
+Machine:[89] says yes
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[777] says yes
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] presenting to committee.
+Machine:[132] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] gathering support
+Machine:[46] says yes
+Machine:[519] gathering support
+Machine:[46] says yes
+Machine:[218] gathering support
+Machine:[132] says no
+Machine:[562] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[777] gathering support
+Machine:[261] says yes
+Machine:[89] gathering support
+Machine:[304] says no
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] presenting to committee.
+Machine:[132] gathering support
+Machine:[777] says no
+Machine:[562] gathering support
+Machine:[132] says no
+Machine:[519] presenting to committee.
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] gathering support
+Machine:[218] says yes
+Machine:[433] gathering support
+Machine:[691] says no
+Machine:[777] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[3] gathering support
+Machine:[605] says no
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[433] presenting to committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[777] gathering support
+Machine:[175] says no
+Machine:[132] presenting to committee.
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[218] gathering support
+Machine:[734] says no
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[218] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[46] says yes
+Machine:[89] presenting to committee.
+Machine:[519] gathering support
+Machine:[261] says yes
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] gathering support
+Machine:[648] says yes
+Machine:[476] gathering support
+Machine:[347] says no
+Machine:[132] presenting to committee.
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] presenting to committee.
+Machine:[433] gathering support
+Machine:[476] says no
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] gathering support
+Machine:[519] says no
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] gathering support
+Machine:[218] says yes
+Machine:[218] gathering support
+Machine:[519] says no
+Machine:[3] gathering support
+Machine:[691] says yes
+Machine:[433] gathering support
+Machine:[261] says yes
+Machine:[519] presenting to committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[433] bribing a colleague
+You got too greedy and were caught.
+Machine:[476] gathering support
+Machine:[218] says yes
+Machine:[132] gathering support
+Machine:[304] says yes
+Machine:[519] gathering support
+Machine:[304] says yes
+Machine:[89] presenting to committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[519] says yes
+Machine:[89] gathering support
+Machine:[347] says no
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[132] gathering support
+Machine:[734] says yes
+Machine:[89] presenting to committee.
+Machine:[433] presenting to committee.
+Machine:[519] gathering support
+Machine:[347] says yes
+Machine:[777] gathering support
+Machine:[218] says no
+Machine:[562] gathering support
+Machine:[605] says no
+Machine:[218] gathering support
+Machine:[820] says no
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[132] says no
+Machine:[132] presenting to committee.
+Machine:[519] presenting to committee.
+Machine:[433] gathering support
+Machine:[390] says yes
+Machine:[519] gathering support
+Machine:[390] says yes
+Machine:[3] gathering support
+Machine:[89] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[820] says yes
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] gathering support
+Machine:[347] says yes
+Machine:[562] gathering support
+Machine:[304] says yes
+Machine:[89] gathering support
+Machine:[605] says no
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] presenting to committee.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[562] says yes
+Machine:[433] presenting to committee.
+Machine:[519] gathering support
+Machine:[648] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] gathering support
+Machine:[261] says no
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] gathering support
+Machine:[304] says no
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] gathering support
+Machine:[175] says no
+Machine:[433] gathering support
+Machine:[820] says yes
+Machine:[132] presenting to committee.
+Machine:[132] gathering support
+Machine:[519] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[3] gathering support
+Machine:[605] says no
+Machine:[218] gathering support
+Machine:[175] says no
+Machine:[519] gathering support
+Machine:[347] says yes
+Machine:[132] presenting to committee.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] presenting to committee.
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[433] gathering support
+Machine:[390] says yes
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] gathering support
+Machine:[175] says no
+Machine:[218] gathering support
+Machine:[3] says yes
+Machine:[89] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[476] gathering support
+Machine:[218] says yes
+Machine:[3] gathering support
+Machine:[605] says no
+Machine:[777] gathering support
+Machine:[820] says yes
+Machine:[433] presenting to committee.
+Machine:[519] gathering support
+Machine:[347] says yes
+Machine:[132] gathering support
+Machine:[605] says yes
+Machine:[519] presenting to committee.
+Machine:[89] gathering support
+Machine:[261] says no
+Machine:[433] gathering support
+Machine:[3] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[605] says yes
+Machine:[433] presenting to committee.
+Machine:[476] gathering support
+Machine:[390] says no
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] gathering support
+Machine:[562] says yes
+Machine:[89] gathering support
+Machine:[175] says yes
+Machine:[132] presenting to committee.
+Machine:[433] gathering support
+Machine:[132] says yes
+Machine:[519] bribing a colleague
+You got too greedy and were caught.
+Machine:[218] gathering support
+Machine:[691] says no
+Machine:[777] gathering support
+Machine:[89] says no
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[89] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] gathering support
+Machine:[3] says no
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[562] bribing a colleague
+You got too greedy and were caught.
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[261] says no
+Machine:[433] gathering support
+Machine:[691] says yes
+Machine:[562] gathering support
+Machine:[734] says no
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[519] gathering support
+Machine:[476] says no
+Machine:[89] presenting to committee.
+Machine:[132] gathering support
+Machine:[304] says yes
+Machine:[433] gathering support
+Machine:[175] says yes
+Machine:[218] gathering support
+Machine:[777] says no
+Machine:[89] gathering support
+Machine:[562] says no
+Machine:[476] gathering support
+Machine:[347] says yes
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[648] says no
+Machine:[519] presenting to committee.
+Machine:[519] gathering support
+Machine:[261] says yes
+Machine:[132] gathering support
+Machine:[691] says no
+Machine:[89] presenting to committee.
+Machine:[562] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[433] presenting to committee.
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[3] says yes
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[562] gathering support
+Machine:[648] says no
+Machine:[132] presenting to committee.
+Machine:[433] gathering support
+Machine:[304] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[3] gathering support
+Machine:[777] says no
+Machine:[218] gathering support
+Machine:[46] says yes
+Machine:[519] gathering support
+Machine:[476] says no
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] gathering support
+Machine:[476] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] presenting to committee.
+Machine:[519] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[433] gathering support
+Machine:[89] says no
+Machine:[777] phone tapped by the FBI
+You got too greedy and were caught.
+Machine:[777] gathering support
+Machine:[132] says no
+Machine:[132] gathering support
+Machine:[648] says yes
+Machine:[89] presenting to committee.
+Machine:[519] gathering support
+Machine:[304] says yes
+Machine:[433] presenting to committee.
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] gathering support
+Machine:[476] says no
+Machine:[433] gathering support
+Machine:[734] says yes
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[218] gathering support
+Machine:[132] says no
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[777] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[433] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[777] says yes
+Machine:[519] gathering support
+Machine:[46] says no
+Machine:[3] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[3] gathering support
+Machine:[433] says no
+Machine:[433] gathering support
+Machine:[605] says yes
+Machine:[132] presenting to committee.
+Machine:[519] presenting to committee.
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[476] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] gathering support
+Machine:[175] says yes
+Machine:[519] gathering support
+Machine:[433] says yes
+Machine:[777] gathering support
+Machine:[605] says no
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] presenting to committee.
+Machine:[476] gathering support
+Machine:[89] says yes
+Machine:[433] gathering support
+Machine:[562] says no
+Machine:[519] bribing a colleague
+You got too greedy and were caught.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[476] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[3] bribing a colleague
+You got too greedy and were caught.
+Machine:[89] gathering support
+Machine:[691] says yes
+Machine:[519] gathering support
+Machine:[562] says no
+Machine:[433] presenting to committee.
+Machine:[476] gathering support
+Machine:[132] says no
+Machine:[3] gathering support
+Machine:[562] says no
+Machine:[132] gathering support
+Machine:[605] says yes
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[519] says no
+Machine:[519] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[132] presenting to committee.
+Machine:[218] bribing a colleague
+You got too greedy and were caught.
+Machine:[777] bribing a colleague
+You got too greedy and were caught.
+Machine:[433] gathering support
+Machine:[89] says no
+Machine:[89] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[777] gathering support
+Machine:[605] says no
+Machine:[132] gathering support
+Machine:[777] says yes
+Machine:[433] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[519] gathering support
+Machine:[261] says yes
+Machine:[218] gathering support
+Machine:[562] says no
+Machine:[218] bribing a colleague
+You bribed a colleage for their vote. They are just as slimy as you.
+Machine:[433] gathering support
+Machine:[390] says yes
+Machine:[519] presenting to committee.
+Machine:[132] calling for a committee vote.
+The bill failed to pass the committee.
+Machine:[89] gathering support
+Machine:[476] says yes
+
+____________________________________________________________
+
+Terminated at tick 101
+Final patience 50

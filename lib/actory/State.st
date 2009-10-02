@@ -100,7 +100,13 @@ stopped
 	^true
 !
 onEntry
-	'that''s all folks!' oo
+	|vote|
+	vote:=The factory oracle polled: The machine.
+	(vote)
+		ifTrue:[' ' oo. 'The bill passes.' oo.]
+		ifFalse:[' ' oo. 'The bill is vetoed. Try again tomorrow.' oo.].
+
+	The machine talks:'leaving for the day.'.
 !!
 
 ! Happy methods !
