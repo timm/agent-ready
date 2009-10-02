@@ -46,8 +46,17 @@ newMachine: name
 !
 transition: trans
 	current add: trans
+!
+oracle: machine
+	current := machine.
+	oracle := machine.
+	machine factory: self.
+!
+historian: machine
+	current := machine.
+	historian := machine.
+	machine factory: self.
 !!
-
 "==============================================="
 ! Factory methodsFor: 'printing' !
 printOn: aStream
@@ -65,6 +74,12 @@ do: aBlock
 ! Factory methodsFor: 'accessing' !
 machines
 	^machines
+!
+oracle
+	^oracle
+!
+historian
+	^historian
 !!
 
 "==============================================="
