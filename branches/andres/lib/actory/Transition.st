@@ -28,6 +28,7 @@ ready
 	^if value.
 !
 start
+	The := self.
 	state onEntry
 !
 staysAt: here

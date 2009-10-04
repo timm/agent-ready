@@ -7,6 +7,8 @@ nameToClass: aSymbol
 	aSymbol s ~ 'L$' ifTrue: [^LoopState].
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
+	aSymbol s ~ 'M$' ifTrue: [^Moving].
+	aSymbol s ~ 'S$' ifTrue: [^Seated].
 	^NormalState
 !!
 
@@ -109,4 +111,30 @@ onStay
 !
 onExit
 	'the fun stops here' oo.
+!!
+
+! Seated methods !
+onEntry
+	'Seating here' noo.
+!
+
+onStay
+	'Still here' noo.
+!
+
+onExit
+	'Time to stand up?' noo.
+!!
+
+! Moving methods !
+onEntry
+	'Ok. I''ll walk now' noo.
+!
+
+onStay
+	'Still moving' noo.
+!
+
+onExit
+	'Can I stay here please?' noo.
 !!
