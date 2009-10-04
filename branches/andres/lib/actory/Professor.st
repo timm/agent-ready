@@ -4,8 +4,7 @@ new: name
 !
 
 worksIn: factory
-	 factory
-		machine: (self new: 'Tenior');
+	 factory machine: (self new: 'Tenior');
 		go: #start   to: #run	then: [The machine
 		    	     	 	      	  eats;
 		    	       	   		  talks: 'I just woke up.'];
