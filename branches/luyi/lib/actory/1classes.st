@@ -22,9 +22,10 @@
 #KillJoy     isa: Machine with: 'happiness'.
 
 
-#CourseFactory isa: Factory.
-#Course        isa: Machine.
+#CourseFactory isa: Factory. 
+#Course        isa: Machine with: 'trans'.
 #LifeEvent     isa: Machine.
+#CourseEvent   isa: App with: 'balance'.
 Smalltalk at: #The put: nil. "one global"
 
 !
