@@ -11,6 +11,7 @@ worksIn: factory
 ! President methodsFor: 'creation' !
 init
     party := ((App random next)*2) rounded.
+    success:=0.
 !!
 
 "============================================"
@@ -41,10 +42,22 @@ polled: aPoller
 			vote:=false.].
 	^vote.
 !
+score
+	|senators|
+	senators:= The factory machines contents size.
+	
+	^((success/senators) asFloat)
+!!
 "============================================"
 ! President methodsFor: 'accessing'!
 party
 	^party
+!
+success: s
+	success:=s.
+!
+success
+	^success
 !!
 "============================================"
 ! President methodsFor: 'printing' !

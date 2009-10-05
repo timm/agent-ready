@@ -13,8 +13,8 @@
 #Factory     isa: App with: 'machines name current oracle historian'.
 #Machine     isa: App with: 'container name id current start states transitions'.
 #Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed committee party trust scandals caughtLikelihood'.
-#President	isa: Machine with:'party'.
-#Historian	isa: Machine with:'log'.
+#President	isa: Machine with:'party success'.
+#Historian	isa: Machine with:'log score'.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container      id state if then next') public; inits.
 #ErrorState  isa: State.
@@ -25,6 +25,7 @@
 #Voting	     isa: NormalState.
 #Scandal     isa: NormalState.
 #Selling     isa: NormalState.
+#Presenting  isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
 Smalltalk at: #The put: nil. "one global"
