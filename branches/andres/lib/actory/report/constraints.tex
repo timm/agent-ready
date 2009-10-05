@@ -1,0 +1,8 @@
+\section{Our DDP Model Constraints}
+In this section we summarize the factors that compose DDP models and the values they can take in our random generator. We start by the three main factors that set the size of the model: requirements (or objectives), risks, and mitigations. The number of requirements, risks and mitigations vary from project to project. Small subsystems may have only few number of these factors, while a complete spacecraft software project may have hundreds of these factors. For the purposes of generating small to medium size random models we establish the number of requirements \textit{(O\_COUNT)}, risks \textit{(R\_COUNT)}, and mitigations \textit{(M\_COUNT)} to be integers ranging from 1 to 200.
+\bi
+\item O\_COUNT: [1..200]
+\item R\_COUNT: [1..200]
+\item M\_COUNT: [1..200]
+\ei
+For each mitigation we
