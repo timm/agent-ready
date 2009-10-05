@@ -1,0 +1,306 @@
+\section{Source Code}
+The following is the complete listing of the code.
+\begin{tiny}
+\begin{verbatim}
+#!/bin/bash
+
+declare -a mCost
+declare -a oWeight
+declare -a rAPL
+declare -a roImpactR
+declare -a roImpactO
+declare -a roImpactV
+declare -a mrEffectM
+declare -a mrEffectR
+declare -a mrEffectV
+declare -a rAggImpV
+declare -a minVal
+declare -a rAggImpT
+declare -a mrEP
+declare -a oARP
+
+RANDOM=$$$(date +%s)
+
+MCOUNT=5
+OCOUNT=4
+RCOUNT=3
+PHASES=5
+
+### FUNCTION: HELP ###
+usage()
+{
+cat << EOF
+usage: $0 [OPTIONS]
+
+This script randomly generates ddp instances according \
+to the arguments specified.
+
+OPTIONS:
+   -h      Show this message
+   -m      number of mitigations
+   -o      number of objectives
+   -r      number of requirements
+EOF
+}
+
+
+### ARGUMENT HANDLING ###
+while getopts  "hm:o:r:" OPTION
+do
+    case $OPTION in
+	m) MCOUNT=$OPTARG;;
+	o) OCOUNT=$OPTARG;;
+	r) RCOUNT=$OPTARG;;
+	h) usage; exit;;
+	?) usage; exit;;
+    esac
+done
+
+#### FILE HEADER AND FOOTER
+headSU="#include \"model.h\"\n\n#define M_COUNT $MCOUNT\n
+        #define O_COUNT $OCOUNT\n#define R_COUNT $RCOUNT\n\n"
+struct="struct ddpStruct{\n\tfloat oWeight[O_COUNT+1];\n
+        \tfloat oAttainment[O_COUNT+1];\n
+        \tfloat oAtRiskProp[O_COUNT+1];\n
+        \tfloat rAPL[R_COUNT+1];\n
+        \tfloat rAggrevatedImpact[R_COUNT+1];\n
+        \tfloat rLikelihood[R_COUNT+1];\n
+        \tfloat mCost[M_COUNT+1];\n
+        \tfloat roImpact[R_COUNT+1][O_COUNT+1];\n
+        \tfloat mrEffect[M_COUNT+1][R_COUNT+1];\n};
+        \n\nddpStruct *ddpData;\n\nvoid setupModel(void)\n{\n
+        \tddpData = (ddpStruct *) malloc(sizeof(ddpStruct));"
+headM="}\n\nvoid model(float *cost, float *att, float m[])\n{\n
+        \tfloat costTotal, attTotal;\n"
+tail="\n\t*cost = costTotal;\n\t*att = attTotal;\n}\n"
+
+
+genRandInt(){
+    min=$1
+    max=$2
+    val=$[ ( ($RANDOM % ( ($max+1) - $min ) ) + $min ) ]
+    echo $val
+}
+
+genRandFloat(){
+    min=$1
+    max=$2
+    factor=100
+    min=$[ ( $min * $factor ) ]
+    max=$[ ( $max * $factor ) ]
+    val=$( genRandInt $min $max )
+    echo "scale=3; $val / $factor" | bc
+}
+
+genArrays(){
+
+    for (( i=1; i<=$MCOUNT; i++ )){
+	val=$( genRandInt 0 32000 )
+	mCost[$i]=$val
+    }
+
+    for (( i=1; i<=$OCOUNT; i++ )){
+	val=$( genRandInt 1 100 )
+	oWeight[$i]=$val
+    }
+    
+    roImpactSize=0
+    for (( i=1; i<=$RCOUNT; i++ )){
+	rAPL[$i]=1
+	rAggImpV[$i]=1
+	for (( j=1; j<=$OCOUNT; j++ )){
+	    happens=$( genRandInt 0 1 )
+	    if [ $happens -eq 0 ]; then
+		val=$( genRandFloat 0 1 )
+		val=$( printf %1.1f $val )
+		roImpactSize=$[ ( $roImpactSize + 1 ) ]
+		roImpactR[$roImpactSize]=$i
+		roImpactO[$roImpactSize]=$j
+		roImpactV[$roImpactSize]=$val
+		oARP[$j]="${oARP[$j]} + (ddpData->rLikelihood[$i] *
+		          ddpData->rAggrevatedImpact[$i] *
+		          ddpData->roImpact[$i][$j]) "
+	    fi
+	}
+    }
+
+    currPhase=1
+    minValSize=0
+    mrEffectSize=0
+    for (( i=1; i<=$MCOUNT; i++ )){
+	for (( j=1; j<=$RCOUNT; j++ )){
+	    happens=$( genRandInt 0 1 )
+	    if [ $happens -eq 0 ]; then
+		val=$( genRandFloat 0 1 )
+		negative=$( genRandInt 0 20 )
+		if [ $negative -gt 19 ]; then
+		    val=$( echo "scale=2; $val * -1" | bc )
+		    aggravated=$( genRandInt 0 4 )
+		    if [ $aggravated -gt 3 ]; then
+			val=$( echo "scale=2; $val - 1" | bc )
+			rAggImpT[$j]="${rAggImpT[$j]} * (1 - m[$i] *
+			              (1 + ddpData->mrEffect[$i][$j]))"
+		    else
+			minValSize=$[ ( $minValSize + 1 ) ]
+			minVal[$minValSize]="ddpData->rLikelihood[$j]=
+			                     minValue(1, (ddpData->rLikelihood[$j] -
+			                     m[$j] * ddpData->mrEffect[$i][$j]));"
+		    fi
+		else
+		    ### SPLIT array in phases
+		    incPhase=$( genRandInt 0 4 )
+		    if [ $incPhase -gt 3 ]; then
+			currPhase=$[ ( $currPhase + 1 ) ]
+		    fi
+		    case $currPhase in
+			1) mrEP1[$j]="${mrEP1[$j]} *
+			              (1 - m[$i] * 
+			              ddpData->mrEffect[$i][$j])";;
+			2) mrEP2[$j]="${mrEP2[$j]} *
+			              (1 - m[$i] *
+			              ddpData->mrEffect[$i][$j])";;
+			3) mrEP3[$j]="${mrEP3[$j]} *
+			              (1 - m[$i] *
+			              ddpData->mrEffect[$i][$j])";;
+			4) mrEP4[$j]="${mrEP4[$j]} *
+			              (1 - m[$i] *
+			              ddpData->mrEffect[$i][$j])";;
+			?) mrEP5[$j]="${mrEP5[$j]} *
+			              (1 - m[$i] *
+			              ddpData->mrEffect[$i][$j])";;
+		    esac
+		fi
+		val=$( printf %1.2f $val )
+		mrEffectSize=$[ ( $mrEffectSize + 1 ) ]
+		mrEffectM[$mrEffectSize]=$i
+		mrEffectR[$mrEffectSize]=$j
+		mrEffectV[$mrEffectSize]=$val
+	    fi
+	}
+    }
+}
+
+printFile(){
+    genArrays
+
+    echo -e $headSU
+    echo -e $struct
+
+    for (( i=1; i<=$MCOUNT; i++ )){
+	echo -e "\tddpData->mCost[$i]= ${mCost[$i]};"
+    }
+    for (( i=1; i<=$RCOUNT; i++ )){
+	echo -e "\tddpData->rAPL[$i]= ${rAPL[$i]};"
+    }
+    for (( i=1; i<=$OCOUNT; i++ )){
+	echo -e "\tddpData->oWeight[$i]= ${oWeight[$i]};"
+    }
+    for (( i=1; i<=$roImpactSize; i++ )){
+	echo -e "\tddpData->roImpact[${roImpactR[$i]}]
+	        [${roImpactO[$i]}]= ${roImpactV[$i]};"
+    }
+    for (( i=1; i<=$mrEffectSize; i++ )){
+	echo -e "\tddpData->mrEffect[${mrEffectM[$i]}]
+	        [${mrEffectR[$i]}]= ${mrEffectV[$i]};"
+    }
+
+    echo -e $headM
+
+## PRINT rAggrevatedImpact initialization
+    for (( i=1; i<=$RCOUNT; i++ )){
+	echo -e "\tddpData->rAggrevatedImpact[$i] =
+	         ${rAggImpV[$i]};"
+    }
+
+## PRINT rLikelihood initialization
+    for (( i=1; i<=$RCOUNT; i++ )){
+	echo -e "\tddpData->rLikelihood[$i] = ddpData->rAPL[$i];"
+    }
+
+## PRINT rAggrevatedImpact when mrEffect [-1..0]
+    for (( i=1; i<=$minValSize; i++ )){
+	echo -e "\t${minVal[$i]}"
+    }
+
+## PRINT rAggrevatedImpact when mrEffect < -1
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${rAggImpT[$i]}" ]; then
+	    echo -e "\tddpData->rAggrevatedImpact[$i] =
+	             ddpData->rAggrevatedImpact[$i] ${rAggImpT[$i]};"
+	fi
+    }
+
+## PRINT rLikelihood when mrEffect [0..1]
+# First, split the likelihoods into PHASES
+    echo -e "\n\t/* Mitigations Effects on Risk likelihoods */\n
+             \t/*Phase I mitigation effects*/"
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${mrEP1[$i]}" ]; then
+	    echo -e "\tddpData->rLikelihood[$i] =
+	             ddpData->rLikelihood[$i] ${mrEP1[$i]};"
+	fi
+    }
+    echo -e "\t/* Phase II mitigation effects*/"
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${mrEP2[$i]}" ]; then
+	    echo -e "\tddpData->rLikelihood[$i] =
+	             ddpData->rLikelihood[$i] ${mrEP2[$i]};"
+	fi
+    }
+    echo -e "\t/* Phase III mitigation effects*/"
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${mrEP3[$i]}" ]; then
+	    echo -e "\tddpData->rLikelihood[$i] =
+	             ddpData->rLikelihood[$i] ${mrEP3[$i]};"
+	fi
+    }
+    echo -e "\t/* Phase IV mitigation effects*/"
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${mrEP4[$i]}" ]; then
+	    echo -e "\tddpData->rLikelihood[$i] =
+	             ddpData->rLikelihood[$i] ${mrEP4[$i]};"
+	fi
+    }
+    echo -e "\t/* Phase V mitigation effects*/"
+    for (( i=1; i<=$RCOUNT; i++ )){
+	if [ -n "${mrEP5[$i]}" ]; then
+	    echo -e "\tddpData->rLikelihood[$i] =
+	             ddpData->rLikelihood[$i] ${mrEP5[$i]};"
+	fi
+    }
+
+## PRINT oAtRiskProp
+    echo -e "\n\t/* Risk impacts on objective
+             attainment proportions */"
+    for (( i=1; i<=$OCOUNT; i++ )){
+	if [ -n "${oARP[$i]}" ]; then
+	    echo -e "\tddpData->oAtRiskProp[$i] = 0${oARP[$i]};"
+	fi
+    }
+
+## PRINT oAttainment
+    echo -e "\n\t/* Objective Attainments */"
+    for (( i=1; i<=$OCOUNT; i++ )){
+	echo -e "\tddpData->oAttainment[$i] =
+	         ddpData->oWeight[$i] *
+	         (1 - minValue(1, ddpData->oAtRiskProp[$i]));"
+    }
+
+## PRINT attTotal
+    for (( i=1; i<=$OCOUNT; i++ )){
+	attTotal="$attTotal + ddpData->oAttainment[$i]"
+    }
+    echo -e "\tattTotal = 0$attTotal;"
+
+## PRINT costTotal
+    for (( i=1; i<=$MCOUNT; i++ )){
+	costTotal="$costTotal + m[$i] * ddpData->mCost[$i]"
+    }
+    echo -e "\tcostTotal = 0$costTotal;"
+
+    echo -e $tail
+}
+printFile
+
+\end{verbatim}
+\end{tiny}
