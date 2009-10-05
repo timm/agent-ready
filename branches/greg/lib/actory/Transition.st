@@ -28,6 +28,7 @@ ready
 	^if value.
 !
 start
+	The:=self.
 	state onEntry
 !
 staysAt: here
@@ -42,6 +43,12 @@ machine
 !
 factory
 	^container factory
+!
+historian
+	^container factory historian
+!
+oracle
+	^container factory oracle
 !!
 
 "========================================"

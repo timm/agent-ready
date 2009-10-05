@@ -7,31 +7,40 @@ worksIn: factory
        machine: (self new: 'senator');
 
 	"Committee Phase"
-	go: #start   to: #sellG;
-	go: #sellG    to: #committee 	if: [(The machine billPassed)=0]
-					then:  [The machine talks: 'presenting to committee.'];
+	go: #start   to: #sellG	then:[The historian record:'one'];
+	go: #sellG    to: #committeeP 	if: [(The machine billPassed)=0]
+					then:  [The historian record:'two'.
+						The machine talks: 'presenting to committee.'];
 	go: #sellG	to: #committeeVoteV	if:[(The machine billPassed)=0]
-					then: [The machine talks: 'calling for a committee vote.'];
-	go: #committee to: #sellG;
-	go: #committeeVoteV to: #sellG;
+					then: [The historian record:'three'.
+						The machine talks: 'calling for a committee vote.'];
+	go: #committeeP to: #sellG	then: [The historian record:'one'];
+	go: #committeeP to: #committeeVoteV	then:[The historian record:'three'];
+	go: #committeeVoteV to: #sellG	then:[The historian record:'one'];	
       
 	"Floor phase"
-	go: #sellG    to: #present	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
-					then: [The machine talks: 'presenting to the floor.'];
-	go: #present to: #sellG;
-	go: #present to: #floorV;
+	go: #sellG    to: #presentP	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
+					then: [The historian record:'four'.
+						The machine talks: 'presenting to the floor.'];
+	go: #presentP to: #sellG	then:[The historian record:'one'];
+	go: #presentP to: #floorV	then:[The historian record:'five'];
 	go: #sellG	to: #floorV	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
-					then: [The machine talks: 'calling for a vote.'];
+					then: [The historian record:'five'.
+						The machine talks: 'calling for a vote.'];
 	go: #floorV	to: #presidentF	if:[(The machine billPassed)=2]
-					then: [The machine talks: 'sending the bill to the president.'];       
-	go: #floorV 	to: #sellG;
+					then: [The historian record:'seven'.
+						The machine talks: 'sending the bill to the president.'];       
+	go: #floorV 	to: #sellG	then:[The historian record:'one'];
 	go: #sellG	to: #presidentF if:[(The machine billPassed)=2]
-					then: [The machine talks: 'sending the bill to the president.'.];
+					then: [The historian record:'seven'.
+						The machine talks: 'sending the bill to the president.'.];
 
 	"Scandal"
 	go: #sellG to: #scandalS	if: [App random next > 0.75]
-					then: [The machine talks: 'bribing a colleague'];
-       	go: #scandalS to: #sellG    then:  [((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
+					then: [The historian record:'six'.
+						The machine talks: 'bribing a colleague'];
+       	go: #scandalS to: #sellG    then:  [The historian record:'one'.
+						((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
 						ifTrue:[The machine talks:'phone tapped by the FBI'.
 							The machine caught.]].
 	"Filibuster"

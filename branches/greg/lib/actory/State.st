@@ -10,6 +10,7 @@ nameToClass: aSymbol
 	aSymbol s ~ 'S$'    ifTrue: [^Scandal].
 	aSymbol s ~ 'G$'	ifTrue: [^Selling].
 	aSymbol s ~ 'V$'	ifTrue: [^Voting].
+	aSymbol s ~ 'P$'	ifTrue: [^Presenting].
 	^NormalState
 !!
 
@@ -101,9 +102,11 @@ stopped
 !
 onEntry
 	|vote|
-	vote:=The factory oracle polled: The machine.
+	vote:=The oracle polled: The machine.
 	(vote)
-		ifTrue:[' ' oo. 'The bill passes.' oo.]
+		ifTrue:[
+			' ' oo. 'The bill passes.' oo.
+			The oracle success: (The oracle success)+1.]
 		ifFalse:[' ' oo. 'The bill is vetoed. Try again tomorrow.' oo.].
 
 	The machine talks:'leaving for the day.'.
@@ -153,7 +156,6 @@ onEntry
 onStay
 	self onEntry.
 !!
-
 !Voting methods!
 onEntry
 	|vote rand1 senators position count committeeMembers support|
@@ -218,3 +220,28 @@ onEntry
 				].
 		]. 
 !!
+! Presenting methods !
+onEntry
+	|prob1 support|
+	The machine talks: 'gives a rousing speech.'.
+	prob1:= App random next.
+	support:= (App random next)/2 asFloat.
+	(prob1 > 0.33)
+		ifTrue:[The machine billSupport: (The machine billSupport)+support. 
+			'The audience approves and applauds.' oo]
+		ifFalse:[The machine billSupport: (The machine billSupport)-support.
+			'The senators seem to not like your proposal.' oo].
+		
+!
+onStay
+	|prob1 support|
+	The machine talks: 'continues to speak in a desperate attempt to garner support.'.
+	prob1:= App random next.
+	support:= (App random next)/2 asFloat.
+	(prob1 > 0.66)
+		ifTrue:[The machine billSupport: (The machine billSupport)+support.
+			'You have the audience in the palm of your hand.' oo]
+		ifFalse:[The machine billSupport: (The machine billSupport)-support.
+			'The audience is not interested. Get out of there and preserve your dignity.' oo].
+!!
+

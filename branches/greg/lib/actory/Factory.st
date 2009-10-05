@@ -91,6 +91,7 @@ report
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
+	The historian report.
 !
 run
 	self reset; start; walk; report.
