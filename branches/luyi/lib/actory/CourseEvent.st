@@ -7,28 +7,29 @@ new: name
 !CourseEvent methodsFor: 'creation'!
 init: aString 
 	name := aString.
-	Patience := 100.
+	patience := 100.
 	ss1 := StudentState new.
 	guard := Guard new.
 	sideEffect := SideEffect new.
-	self run.	
+	guardSideEffect := GuardSideEffect new.
 !!
 "=============================================="
 !CourseEvent methodsFor: 'timer'!
 run
-	self run: (guard rand) effect: (sideEffect rand).
+	self run: (guard Rand) effect: (sideEffect Rand).
 !
 run: aGuardSideEffect
-	|pGuard pSide| 
-	pGuard := aGuardSideEffect at:1.
-	pSide  := aGuardSideEffect at:2.
+	|pGuardSide pGuard pSide|
+	pGuardSide := guardSideEffect Rand.
+	pGuard := pGuardSide at:1.
+	pSide  := pGuardSide at:2.
  	self run: pGuard effect: pSide. 
 !
 run: aGuard effect: aSideEffect
 	|timer index|
-	timer := Delay forSecond: ((Random new) next) * 5.
+	timer := Delay forSeconds: (((Random next) * 5) rounded).
 	index := 0.
-        [(self course) patience >0]
+        [(patience >0) & (index < 1)]
 		whileTrue: [timer wait.
 			    index := index + 1.
 			    self generateTran: aGuard then: aSideEffect.  
@@ -41,17 +42,54 @@ generateTran: guard then: sideEffect
 	|newTransition|
 	(ss1 states size >0)
 		ifTrue: [
-		newTransition := 
+		course add: 
 		 (Transition new
 			 state: ss1 RandState;
 			 if: guard;
 			 then: sideEffect;
-			 next: ss1 RandState)
+			 next: ss1 RandState).
 			]
-	course add: newTransition.
+		ifFalse: [^false.]
 !
 course: aCourse
 	course := aCourse.
+!
+setStudentState: aStudentState
+	ss1 := aStudentState.
+!
+setGuard: aGuard
+	guard := aGuard.
+! 
+setSideEffect: aSideEffect
+	sideEffect := aSideEffect.
+!
+setGuardSideEffect: aGuardSideEffect
+	guardSideEffect := aGuardSideEffect.
+!
+getStudentState
+	^ss1
+!
+getGuard
+	^guard.
+!
+getSideEffect
+	^sideEffect.
+!
+getGuardSideEffect
+	^guardSideEffect.
+!
+patience
+	^patience.
+!
+exam
+	patience sqrt.
+!
+gradepublish: aGrade
+	|grade|
+	(aGrade >0)| (aGrade <80)
+		ifTrue: [ patience := patience * (aGrade/100)].
+	(aGrade >80) |(aGrade <100)
+		ifTrue: [ patience := patience * (2- aGrade/100)].
 !
 course 
  	^course.

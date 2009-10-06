@@ -4,8 +4,10 @@ new
 !!
 
 !GuardSideEffect methodsFor: 'creation'!
-init:
-	gseset := Dictionary new. 
+init
+	|parray|
+	gsesets := Dictionary new. 
+	self guard: true effect: true.
 !!
 !GuardSideEffect methodsFor: 'storing'!
 guardeffect
@@ -16,12 +18,12 @@ guard: aGuard effect: aSideEffect
 	gsepair := Array new: 2.
 	gsepair at: 1 put: aGuard.
 	gsepair at: 2 put: aSideEffect.
-	gseset at: (gseset size) put: gsepair.
+	gsesets at: (gsesets size) put: gsepair.
 !!
 !GuardSideEffect methodsFor: 'accessing'!
 Rand
         |index|
-        index := (Random next * ((gseset size) -1)) rounded.
-        ^(gseset at: index).
+        index := (Random next * ((gsesets size) -1)) rounded.
+        ^(gsesets at: index).
 
-!
+!!
