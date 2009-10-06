@@ -9,20 +9,24 @@ init: aString
 	name := aString.
 	Patience := 100.
 	ss1 := StudentState new.
+	guard := Guard new.
+	sideEffect := SideEffect new.
 	self run.	
 !!
 "=============================================="
 !CourseEvent methodsFor: 'timer'!
 run
+	self run: (guard rand) effect: (sideEffect rand).
+!
+run: aGuard effect: aSideEffect
 	|timer index|
 	timer := Delay forSecond: ((Random new) next) * 5.
 	index := 0.
-        (Patience >0)
+        [(self course) patience >0]
 		whileTrue: [timer wait.
 			    index := index + 1.
-			    generateTran: Guard Rand then: [The machine talk: index] .
-			    ]
-		
+			    self generateTran: aGuard then: aSideEffect.  
+			    ].
 !!
 
 "============================================="
@@ -38,7 +42,13 @@ generateTran: guard then: sideEffect
 			 then: sideEffect;
 			 next: ss1 RandState)
 			]
-	The machine add newTransition.
+	course add: newTransition.
+!
+course: aCourse
+	course := aCourse.
+!
+course 
+ 	^course.
 !
 talks: x
 	('Machine:[', id s , ']', x s) o

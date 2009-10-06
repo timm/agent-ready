@@ -1,9 +1,16 @@
 !Guard class methodsFor: 'creation'!
 new
- 	^super new.
+ 	^super new init.
+!!
+!Guard methodsFor: 'accessing'!
+init
+	guards := Dictionary new. 
 !
 Rand  
-	((Random next) > 0.5)
-		ifTrue:  [^True.]
-		ifFalse: [^False.]
+	|index|
+	index := (Random next * ((guards size) -1)) rounded.
+	^(guards at: index).
+!
+add: aGuard
+	guards at: (guards size) put: aGuard.
 !!

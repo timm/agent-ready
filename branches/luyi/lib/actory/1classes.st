@@ -23,12 +23,14 @@
 
 
 #CourseFactory isa: Factory. 
-#Course        isa: Machine with: 'trans'.
+#Course        isa: Machine with: 'trans selfEvents patience'.
 #LifeEvent     isa: Machine.
-#CourseEvent   isa: App with: 'name Patience ss1 id'.
+#CourseEvent   isa: App with: 'name Patience ss1 id course guard sideEffect'.
 #Student       isa: Machine. 
 #StudentState  isa: App with: 'states'. 
+#Guard         isa: App with: 'guards'.
 #SideEffect    isa: App with: 'effects'.
+
 Smalltalk at: #The put: nil. "one global"
 
 !
