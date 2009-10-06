@@ -5,10 +5,11 @@ new
 !Guard methodsFor: 'accessing'!
 init
 	guards := Dictionary new. 
+	guards at: 0 put: true.
 !
 Rand  
 	|index|
-	index := (Random next * ((guards size) -1)) rounded.
+	index := (Random next * ((guards size)-1)) rounded.
 	^(guards at: index).
 !
 add: aGuard

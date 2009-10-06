@@ -1,25 +1,22 @@
 ! Course class methodsFor: 'creation'!
 new: name
-	|r|
-	r:= super new: name.
-	self init.
-	^r.
+	 ^(super new: name) init.
+	
 !!
 
 "======================================"
 ! Course methodsFor: 'creation'!
 init
 	trans := super transitions.
-	selfEvents := CourseEvent new.
+	selfEvents := CourseEvent new: (self name).
 	selfEvents course: self.
-	patience := 100.
+	patience := selfEvents patience. 
 !!
 "======================"
 ! Course methodsFor: 'storing'!
 worksIn: factory
 	factory machine: self.
 	self factory: factory.
-	self checkandrun.
 !
 add: aTransition
 	super add: aTransition.
@@ -32,4 +29,7 @@ check
 !
 patience
 	^patience.
+!
+getSelfEvents
+	^selfEvents.
 !!		
