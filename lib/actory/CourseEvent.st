@@ -18,6 +18,12 @@ init: aString
 run
 	self run: (guard rand) effect: (sideEffect rand).
 !
+run: aGuardSideEffect
+	|pGuard pSide| 
+	pGuard := aGuardSideEffect at:1.
+	pSide  := aGuardSideEffect at:2.
+ 	self run: pGuard effect: pSide. 
+!
 run: aGuard effect: aSideEffect
 	|timer index|
 	timer := Delay forSecond: ((Random new) next) * 5.
