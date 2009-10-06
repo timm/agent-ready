@@ -9,7 +9,10 @@ new: name
 "======================================"
 ! Course methodsFor: 'creation'!
 init
-	trans := Dictionary new.
+	trans := super transitions.
+	selfEvents := CourseEvent new.
+	selfEvents course: self.
+	patience := 100.
 !!
 "======================"
 ! Course methodsFor: 'storing'!
@@ -17,16 +20,16 @@ worksIn: factory
 	factory machine: self.
 	self factory: factory.
 	self checkandrun.
+!
+add: aTransition
+	super add: aTransition.
 !!
 "========================================"
 ! Course methodsFor: 'accessing'!
-checkandrun
-	trans size == 0
-		ifTrue:  ['no course at all' o.]
-		ifFlase: [self addtran.]. 
+check
+	(trans size == 0)
+		ifTrue:  ['no courseEvent at all' o.]
 !
-addtran
-	1 to: (trans size) do: [:i|
-		trans at: i oo.]
-!!
-		
+patience
+	^patience.
+!!		
