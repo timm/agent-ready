@@ -1,11 +1,12 @@
 !CourseEvent class methodsFor: 'creation'!
-new: name
+new: aName
 	
-	^(super new: name) init.
+	^(super new) init: aName.
 !!
 "=============================================="
 !CourseEvent methodsFor: 'creation'!
-init 
+init: aName
+	name := aName.
 	patience := 100.
 	ss1 := StudentState new.
 	guard := Guard new.
