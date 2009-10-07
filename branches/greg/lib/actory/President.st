@@ -10,8 +10,8 @@ worksIn: factory
 "============================================"
 ! President methodsFor: 'creation' !
 init
-    party := ((App random next)*2) rounded.
-    success:=0.
+	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
+    	success:=0.
 !!
 
 "============================================"

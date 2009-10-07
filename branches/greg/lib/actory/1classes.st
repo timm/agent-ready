@@ -10,9 +10,9 @@
              shares: 'Clock Rand Asynchronousp Patience Trace Ids TooManyLoops' .
 
 #Stagger     isa: App with: 'contents pointer'.
-#Factory     isa: App with: 'machines name current oracle historian'.
+#Factory     isa: App with: 'machines name current oracle historian suspended suspendee pressure'.
 #Machine     isa: App with: 'container name id current start states transitions'.
-#Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed committee party trust scandals caughtLikelihood'.
+#Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed cloture committee party trust scandals caughtLikelihood'.
 #President	isa: Machine with:'party success'.
 #Historian	isa: Machine with:'log score'.
 (#State      isa: App with: 'container name id visits froms tos') public.
@@ -26,6 +26,8 @@
 #Scandal     isa: NormalState.
 #Selling     isa: NormalState.
 #Presenting  isa: NormalState.
+#Suspended   isa: NormalState.
+#Investigating isa:NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
 Smalltalk at: #The put: nil. "one global"

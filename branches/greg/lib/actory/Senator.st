@@ -6,44 +6,90 @@ worksIn: factory
     factory 
        machine: (self new: 'senator');
 
-	"Committee Phase"
 	go: #start   to: #sellG	then:[The historian record:'one'];
-	go: #sellG    to: #committeeP 	if: [(The machine billPassed)=0]
-					then:  [The historian record:'two'.
-						The machine talks: 'presenting to committee.'];
-	go: #sellG	to: #committeeVoteV	if:[(The machine billPassed)=0]
-					then: [The historian record:'three'.
-						The machine talks: 'calling for a committee vote.'];
-	go: #committeeP to: #sellG	then: [The historian record:'one'];
-	go: #committeeP to: #committeeVoteV	then:[The historian record:'three'];
-	go: #committeeVoteV to: #sellG	then:[The historian record:'one'];	
-      
-	"Floor phase"
-	go: #sellG    to: #presentP	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
-					then: [The historian record:'four'.
-						The machine talks: 'presenting to the floor.'];
-	go: #presentP to: #sellG	then:[The historian record:'one'];
-	go: #presentP to: #floorV	then:[The historian record:'five'];
-	go: #sellG	to: #floorV	if: [((The machine billPassed)=1) and: [(The machine billProposed)<2]]
-					then: [The historian record:'five'.
-						The machine talks: 'calling for a vote.'];
-	go: #floorV	to: #presidentF	if:[(The machine billPassed)=2]
-					then: [The historian record:'seven'.
-						The machine talks: 'sending the bill to the president.'];       
-	go: #floorV 	to: #sellG	then:[The historian record:'one'];
-	go: #sellG	to: #presidentF if:[(The machine billPassed)=2]
-					then: [The historian record:'seven'.
-						The machine talks: 'sending the bill to the president.'.];
 
 	"Scandal"
-	go: #sellG to: #scandalS	if: [App random next > 0.75]
+	go: #sellG to: #scandalS	if: [(The factory suspended=false) and:[App random next > 0.75]]
 					then: [The historian record:'six'.
 						The machine talks: 'bribing a colleague'];
-       	go: #scandalS to: #sellG    then:  [The historian record:'one'.
+       	go: #scandalS  to: #suspendedH   if:[The factory suspended]
+					then: [The historian record:'eight'.
+						The machine talks: 'suspended for a filibuster'];
+	go: #scandalS to: #sellG    	if:[The factory suspended=false]
+					then:  [The historian record:'one'.
 						((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
 						ifTrue:[The machine talks:'phone tapped by the FBI'.
-							The machine caught.]].
+							The machine caught.]];
+
+	"Investigation"
+	go:#sellG	to:#investigateI	if:[(The factory suspended=false) and: [App random next > 0.75]]
+						then: [The historian record:'nine'];
+	go:#investigateI	to:#sellG	if:[The factory suspended=false]
+						then: [The historian record:'one'];
+	go:#investigateI  	to: #suspendedH if:[The factory suspended=true]
+						then: [The historian record:'eight'.
+							The machine talks: 'suspended for a filibuster'];
+
+	"Committee Phase"
+	go: #sellG   to: #suspendedH  	if:[The factory suspended]
+					then: [The historian record:'eight'.
+						The machine talks: 'suspended for a filibuster'];
+	go: #sellG    to: #committeeP 	if: [(The factory suspended=false) and:[The machine billPassed=0]]
+					then:  [The historian record:'two'.
+						The machine talks: 'presenting to committee.'];
+	go: #sellG	to: #committeeVoteV	if:[(The factory suspended=false) and:[The machine billPassed=0]]
+						then: [The historian record:'three'.
+							The machine talks: 'calling for a committee vote.'];
+	go: #committeeP to: #sellG	if:[The factory suspended=false]
+					then: [The historian record:'one'];
+	go: #committeeP to: #committeeVoteV	if:[The factory suspended=false]
+						then:[The historian record:'three'];
+	go: #committeeP  to: #suspendedH  	if:[The factory suspended]
+						then: [The historian record:'eight'.
+							The machine talks: 'suspended for a filibuster'];
+	go: #committeeVoteV to: #sellG	if:[The factory suspended=false]
+					then:[The historian record:'one'];	
+      
+	go: #comitteeVoteV  to: #suspendedH  	if:[The factory suspended]
+						then: [The historian record:'eight'.
+							The machine talks: 'suspended for a filibuster'];
+
+	"Floor phase"
+	go: #sellG    to: #presentP	if: [(The factory suspended=false) and:[
+						(The machine billPassed=1) and: [The machine billProposed<2]]]
+					then: [The historian record:'four'.
+						The machine talks: 'presenting to the floor.'];
+	go: #presentP to: #sellG	if:[The factory suspended=false]
+					then:[The historian record:'one'];
+	go: #presentP to: #floorV	if:[The factory suspended=false]
+					then:[The historian record:'five'];
+	go: #presentP to: #suspendedH   if:[The factory suspended]
+					then: [The historian record:'eight'.
+						The machine talks: 'suspended for a filibuster'];
+	go: #sellG	to: #floorV	if: [(The factory suspended=false) and:[
+						(The machine billPassed=1) and: [The machine billProposed<2]]]
+					then: [The historian record:'five'.
+						The machine talks: 'calling for a vote.'];
+	go: #floorV	to: #presidentF	if:[(The factory suspended=false) and:[The machine billPassed=2]]
+					then: [The historian record:'ten'.
+						The machine talks: 'sending the bill to the president.'];       
+	go: #floorV 	to: #sellG	if:[The factory suspended=false]
+					then:[The historian record:'one'];
+	go: #floorV  	to: #suspendedH if:[The factory suspended]
+					then: [The historian record:'eight'.
+						The machine talks: 'suspended for a filibuster'];
+	go: #sellG	to: #presidentF if:[(The factory suspended=false) and:[The machine billPassed=2]]
+					then: [The historian record:'ten'.
+						The machine talks: 'sending the bill to the president.'.];
 	"Filibuster"
+	go:#sellG	to:#filibuster	if: [(The factory suspended=false) and: [The historian dominance]]
+					then: [The historian record:'seven'.
+						The machine talks: 'calling for a filibuster'];
+	go:#filibuster  to: #suspendedH  if:[The factory suspended=true]
+					then: [The historian record:'eight'.
+						The machine talks: 'suspended for a filibuster'];
+	go:#suspendedH	to:#sellG	if: [The factory suspended=false]
+					then: [The historian record:'one'.].
 !!
 
 "============================================"
@@ -57,7 +103,8 @@ init
     billSupport := 0.
     billProposed :=0.
     trust :=1.
-    party := ((App random next)*2) rounded.
+	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
+    cloture:=0.
 !!
 
 "============================================"
@@ -167,6 +214,12 @@ billProposed: p
 !
 billProposed
 	^billProposed
+!
+cloture: c
+	cloture:=c.
+!
+cloture
+	^cloture
 !!
 "============================================"
 ! Senator methodsFor: 'printing' !

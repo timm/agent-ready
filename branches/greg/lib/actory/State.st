@@ -11,6 +11,8 @@ nameToClass: aSymbol
 	aSymbol s ~ 'G$'	ifTrue: [^Selling].
 	aSymbol s ~ 'V$'	ifTrue: [^Voting].
 	aSymbol s ~ 'P$'	ifTrue: [^Presenting].
+	aSymbol s ~ 'H$'	ifTrue: [^Suspended].
+	aSymbol s ~ 'I$'	ifTrue: [^Investigating].
 	^NormalState
 !!
 
@@ -121,6 +123,16 @@ onStay
 !
 onExit
 	'the fun stops here' oo.
+!!
+
+!Investigating methods !
+onEntry
+	|target|
+	target:= The factory machines contents at: ((App random next*The factory machines contents size+1) rounded).
+	(target caughtLikelihood > 0.75)
+		ifTrue:[ 'They exposed a dirty senator' oo.
+			target caught]
+		ifFalse:[ 'They failed to catch anybody.' oo].
 !!
 
 !Scandal methods !
@@ -244,4 +256,35 @@ onStay
 		ifFalse:[The machine billSupport: (The machine billSupport)-support.
 			'The audience is not interested. Get out of there and preserve your dignity.' oo].
 !!
+! Suspended methods !
+onEntry
+	|closed|
+	closed:=0.
+	(The machine cloture = 0) ifTrue:[
+		(The machine party = The factory suspendee)
+			ifTrue:[ 
+				(App random next + The factory pressure < 0.9)
+					ifFalse: [The machine cloture:1.
+							The machine talks:'votes for cloture.']				
+			]	
+			ifFalse:[ The machine cloture:1.
+					The machine talks:'votes for cloture.'].
+		
+	].
 
+	The factory pressure: The factory pressure + (The factory pressure sqrt).
+	The factory machines contents do: [:machine |
+		(machine cloture=1) ifTrue:[closed:=closed+1].
+	].
+	(closed > 59) 
+		ifTrue:[The factory suspended:false.
+			The factory machines contents do: [:machine|
+				machine cloture:0.].
+		].
+!
+onStay
+	self onEntry.
+!
+onExit
+	The factory pressure:0.01.
+!!

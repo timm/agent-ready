@@ -11,7 +11,9 @@ new: nameString
   
 init: aString 
 	machines := Stagger new.
-	name := aString
+	name := aString.
+	suspended:=false.
+	pressure:=0.01.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -56,6 +58,15 @@ historian: machine
 	current := machine.
 	historian := machine.
 	machine factory: self.
+!
+suspended: s
+	suspended:=s.
+!
+suspendee: s
+	suspendee:=s.
+!
+pressure: p
+	pressure:=p.
 !!
 "==============================================="
 ! Factory methodsFor: 'printing' !
@@ -80,6 +91,15 @@ oracle
 !
 historian
 	^historian
+!
+suspended
+	^suspended
+!
+suspendee
+	^suspendee
+!
+pressure
+	^pressure
 !!
 
 "==============================================="
