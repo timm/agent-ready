@@ -2,15 +2,18 @@
 new: name
 	 ^(super new: name) init.
 	
+
 !!
 
 "======================================"
 ! Course methodsFor: 'creation'!
 init
 	trans := super transitions.
+	prerequisite := Dictionary new. 
 	selfEvents := CourseEvent new: (self name).
 	selfEvents course: self.
 	patience := selfEvents patience. 
+	students := Dictionary new.
 !!
 "======================"
 ! Course methodsFor: 'storing'!
@@ -30,6 +33,18 @@ check
 patience
 	^patience.
 !
+setPatience: aPatience
+	selfEvents setPatience: aPatience. 
+!
 getSelfEvents
 	^selfEvents.
+!
+getPrerequisite
+	^prerequisite.
+!
+require: aName
+	prerequisite at: aName put: aName.
+!
+assignStudent: aStudent
+	students at: (aStudent name) put: aStudent.
 !!		

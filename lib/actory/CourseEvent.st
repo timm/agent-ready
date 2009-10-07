@@ -1,12 +1,11 @@
 !CourseEvent class methodsFor: 'creation'!
 new: name
 	
-	^(super new) init: name.
+	^(super new: name) init.
 !!
 "=============================================="
 !CourseEvent methodsFor: 'creation'!
-init: aString 
-	name := aString.
+init 
 	patience := 100.
 	ss1 := StudentState new.
 	guard := Guard new.
@@ -80,6 +79,9 @@ getGuardSideEffect
 !
 patience
 	^patience.
+!
+setPatience: aPatience
+	patience := aPatience.
 !
 exam
 	patience sqrt.
