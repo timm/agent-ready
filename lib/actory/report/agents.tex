@@ -1,250 +1,36 @@
-\section{Instance Generator} 
+\section{Actory} 
 
-We developed our instance generator using (almost) pure bash shell scripting,
-simplifying the source code but limiting performance and constraining the values
-ranges for certain model parameters. In this section we summarize the factors
-that compose DDP models and the values they can take in our random generator.
+The actory device
+Factories, machines, states, guards transitions, side-effects, learning.
 
-We start by seting the three main factors that set the size of the model: 
-requirements (or
-objectives), risks, and mitigations. The number of requirements, risks and
-mitigations vary from project to project. Small subsystems may have only few
-number of these factors, while a complete spacecraft software project may have
-hundreds. For the purposes of generating small to medium size
-random models we establish the number of requirements \textit{(O\_COUNT)}, risks
-\textit{(R\_COUNT)}, and mitigations \textit{(M\_COUNT)} to be integers ranging
-from 1 to 200. We allow the user to specify these numbers from the command line.
+\subsection{Stagger: randomizing agent behavior}
 
-\begin{footnotesize}
-\begin{eqnarray*}
-O\_COUNT: USER\_DEFINED[1..200]\\
-R\_COUNT: USER\_DEFINED[1..200]\\
-M\_COUNT: USER\_DEFINED[1..200] 
-\end{eqnarray*}
-\end{footnotesize}
+\subsection{Sensor Placing Modeling}
 
-The next step in the construction of the "model.h" file, which contains the model,
-is the definition of the DDP data structure. Since this step is immutable, that is
-the DDP data structure does not change, so all we do is print the c code for the
-structure, allocate memory to hold the structure, and begin to form the model setup
-"SetupModel()" function with an array
-of mitigation costs "\textit{ddpData->mCost}".
-  
-For each mitigation we randomly assign a cost ranging from 0 to 32767 (signed
-16-bit integer). We do this by creating an array of size MCOUNT, looping through
-it sequentially and assigning a random value from the \$RANDOM variable.
-
-\begin{footnotesize}\begin{eqnarray*}
-mCost[M_1]&=&RANDOM[0..32767]\\
-mCost[M_2]&=&RANDOM[0..32767]\\
-\vdots & & \vdots \\
-mCost[M_{M\_COUNT}]&=&RANDOM[0..32767] 
-\end{eqnarray*}\end{footnotesize}
-
-The limited range for cost is the first constraint imposed by bash but it has a
-limited impact on the model as this variable can be measured in dolars, thousands
-of dollars, millions of dollars, etc.
-
-We assign an a-priori likelihood (\textit{ddpData->rAPL[x]}) of 1 to each one of the
-identified risks
-as another initialization step in "SetupModel()." Again, a one-dimensional
-array is used for this purpose.
-
-\begin{footnotesize}\begin{eqnarray*}
-rAPL[R_1] &=& 1 \\
-rAPL[R_2] &=& 1 \\
-\vdots & & \vdots \\
-rAPL[R_{R\_COUNT}] &=& 1
-\end{eqnarray*}\end{footnotesize}
-
-For each one of the risks we assign weights (oWeight) ranging from 0 to 100
-(inclusive) at random.
-
-\begin{footnotesize}\begin{eqnarray*}
-oWeight[O_1] &=& RANDOM[0..100] \\
-oWeight[O_2] &=& RANDOM[0..100] \\
-\vdots & & \vdots \\
-oWeight[O_{O\_COUNT}] &=& RANDOM[0..100]
-\end{eqnarray*}\end{footnotesize}
-
-In terms of the relationships between the factors, not every factor in the
-relationship is related to every other factor. For instance, not all risks have
-an impact on all requirements, therefore the risks and their impact-related
-requirements (roImpact[R][O]) are chosen at random with a 50\% chance that a
-risk impacts a requirement. For all the selected roImpact relationships a
-decimal value from 0 to 1 is randomly assigned. Here it is the pseudo-code for
-this selection:
-
+\subsection{Building.st}
+Explain the building agent
 \begin{footnotesize}
 \begin{verbatim}
-for i in 1..R_COUNT 
-{
-  for j in 1..O_COUNT
-  {
-    hasimpact = RANDOM[true,false]
-    if hasImpact is true
-    {
-      roImpact[i][j] = RANDOM[0,1]
-    }
-  }
-}
+Code goes here
 \end{verbatim}
 \end{footnotesize}
 
-A similar approach is used for the effect mitigations have on risks. Not all
-mitigations can reduce all risks and therefore our generator randomly selects
-the factors involved in this relationship at a 50\% probability. Furthermore,
-the mrEffect relationship typically takes values in the range [0,1] but
-sometimes the effect of a mitigation can be detrimental to a risk. in other
-words, trying to prevent a risk from happening might increase the chance of
-another risk. In those special cases the mrEffect can be negative. Even in more
-special circumstances, the mrEffect can take a value lesser than -1. In these
-cases the mitigation involved not only increases the likelihood of the given
-risk, but it actually increases the impact that risk has on requirements. Given
-the special circumstances where mrEffect takes such values, our generator
-selects a decimal value from 0 to 1 at random and at 5\% probability it
-multiplies it by -1, effectively making it a negatve number from 0 to 1. As a
-third step, at a 25\% probability it substracts 1 from the negative value making
-it an aggravated risk (rAggrevated). The following is the pseudo-code for this
-step.
 
+\subsubsection{Professor.st}
+Explain the professor agent
 \begin{footnotesize}
 \begin{verbatim}
-for i in 1..M_COUNT
-{
-  for j in 1..R_COUNT
-  {
-    hasImpact = RANDOM[true,false,0.5]
-    if hasImpact
-    {
-      mrEffect[i][j] = RANDOM[0,1]
-      isNegative = RANDOM[true,false,0.05]
-      if isNegative
-      {
-      	mrEffect[i][j] = mrEffect[i][j] * (-1)
-      	isGrave = RANDOM[true,false,0.25]
-      	if isGrave
-      	{
-      	  mrEffect[i][j] = mrEffect[i][j] - 1
-        }
-      }
-    }
-  }
-}
+Code goes here
 \end{verbatim}
 \end{footnotesize}
 
-As explained above, at this point is when the model becomes complex. We start
-generating the array of risk likelihoods where, depending 
-on the value mrEffect[$M_i$][$R_j$] takes, it may affect the requirements attainment
-(\textit{oAttainment[$O_k$]}) by creating a risk aggravated impact
-(\textit{rAggrevatedImpact[$R_i$]}) or by reducing the risk
-likelihood as follows:
 
-\begin{footnotesize}\bi
-\item \textbf{If} $mrEffect[M_i][R_j] < -1$ \textbf{then} $rAggrevatedImpact[R_j]$
-is increased by multiplying its current value by $(1-m[M_i]*1+mrEffect[M_i][R_j])$
-for each mitigation $M_i$ for which mrEffect is less than -1.
-\item \textbf{If} $mrEffect[M_i][R_j]$ between $(-1,0)$ \textbf{then} $rLikelihood[R_j]$
-is initialized is increased to the value of the currrent risk
-likelihood plus the magnitude of the effect. In short, \\ $rLikelihood[R_j] = Minimum(
-rlikelihood[R_j] - m[M_i] * mrEffect[M_i][R_j])$. Note that the "-" sign becomes
-an addition because the mrEffect is negative in this case. Also note that the maximum
-rLikelihood is enforced to be 1 by the "Minimum" function.
-\item \textbf{For all} $mrEffect[M_i][R_j]$ \textbf{then} $rLikelihood[R_j]$ is
-set to the product of it's current value by the sequential factors of 
-$(1-m[M_i]* mrEffect[M_i][R_j])$ where $M_i$ represents the mitigations that
-have an effect on the given risk $R_j$, and $m[M_i]$ represents the selection of
-the mitigation $M_i$ such that if it is equal to 1 when the mitigation has been
-selected for implementation or it is equal to 0 when it is not selected. In short,
-$rLikelihood[R_j]= rAPL[R_j]*\prod(1- mrEffect[M_i][R_j])$ for all selected 
-mitigations $M_i$ that have an effect on risk $R_j$.
-\ei\end{footnotesize}
-
-The array "mrEffect" is printed inside the "SetupModel()" function and the
-function ends.
-The other two arrays generated, namely rLikelihood and rAggrevatedImpact,
-are stored in memory and prin\-ted out inside the "model(float m[])" function after 
-aggravated impacts are initialized to 1 and likelihoods to the 
-risk a-priori likelihoods (rAPL) assigned in the setup funtion. The "model(float m[])"
-function therefore is printed in the following order:
-
-\begin{footnotesize}\bi
-\item Risk aggravated impacts initialized to 1
-\item Risk likelihoods initialized to a-priori likelihoods
-\item Risk aggravated impacts from the rAggrevatedImpact array
-generated during setup
-\item Risk likelihoods from the rLikelihood array generated
-during setup
-\ei\end{footnotesize}
-
-Here it is the pseudo code for printing this first portion of the
-model function:
- 
+\subsubsection{Floor.st}
+Explain the Floor agent
 \begin{footnotesize}
 \begin{verbatim}
-print model funtion header
-for REQ in requirements
-{
-  print "rAggrevatedImpact[REQ] = 1"
-}
-for REQ in requirements
-{
-  print "rLikelihood[REQ] = rAPL[REQ]"
-}
+Code goes here
 \end{verbatim}
 \end{footnotesize}
 
-The remaining portion of the model funtion consists of printing impacts of
-risks on requirements attainment proportions (oAtRiskProp[REQ]) and
-requirements attainment (oAttainment[REQ]) for each requirement,
-the total mitigation cost (costTotal), and the total
-requirements attainment (attTotal). 
-
-The impacts of risks on requirement attainment proportion is a per 
-requirement calculation where
-the product of the risk likelihood, aggravated impact, and the impact
-of each risks is added. In short,
-\begin{eqnarray*}
-oAtRiskProp[O_i]&=&\sum(rlikelihood[R_j] * \\
-& &rAggrevatedImpact[R_j] * \\
-& &roImpact[R_j][O_i]);
-\end{eqnarray*}
-for all risks $R_j$ that
-have an impact on requirement $O_i$.
-
-The requirement attainment for each requirement is then calculated as the
-requirement priority (oWeight) for the given requirement times the inverse proportion
-of the impact of risks on the attainment for the given requirement (roAtriskProp).
-In short,
-\begin{eqnarray*}
-oAttainment[O_i]&=&oWeight[O_i]*\\
-& &(1-Minimum(1, oAtRiskProp[O_i])
-\end{eqnarray*}
-
-The total attainment is printed next and it is the result of adding the requirement
-attainment for each requirement:
-
-\begin{footnotesize}
-\bi
-\item[]
-\textbf{For each} REQ in requirements \textbf{Do} \\
-\{ \\
-\mbox{\ \ \ \ } attTotal $=\sum($ oAttainment$[REQ])$ \\
-\}
-\ei
-\end{footnotesize}
-
-Lastly, the total cost is calculated by adding the costs of the implemented
-mitigations. This is achieved by the following pseudo-code:
-
-\begin{footnotesize}
-\bi
-\item[]
-\textbf{For each} MIT in mitigations \textbf{Do} \\
-\{ \\
-\mbox{\ \ \ \ } costTotal $=\sum(m[MIT] *$ mCost$[MIT])$ \\
-\}
-\ei
-\end{footnotesize}
 
