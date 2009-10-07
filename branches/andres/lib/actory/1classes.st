@@ -24,7 +24,7 @@
 #Seated	     isa: NormalState.
 #Moving	     isa: LoopState.
 
-#Building    isa: Factory with: 'floors log'.
+#Building    isa: Factory with: 'floors logs sensors'.
 #Professor   isa: Machine with: 'hunger exhaustion taught'.
 #Floor	     isa: Machine with: 'rooms sensors interferenceSources'.
 #Sensor	     isa: Machine with: 'range batteryLife detectionAccuracy placement'.

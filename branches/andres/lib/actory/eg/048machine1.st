@@ -1,7 +1,7 @@
 |f|
 App reset; asynchronousOff.
-f := Factory new: 'staff'.
+f := Building new: 'csee'.
 Professor worksIn: f.
-"KillJoy worksIn: f."
+Professor worksIn: f.
 f run.
 !
