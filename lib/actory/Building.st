@@ -12,30 +12,32 @@ new: nameString
 init: aString
       logs := Dictionary new.
       sensors := Dictionary new.
-      sensor: 'entrance' at: 'Ground'.
       floors := 0.
       ^super init: aString
 !!
 
 "------------------------------"
 !Building methodsFor: 'storing' !
-professor: name
+
+log: nameString to: nameSensor
+	logs at: nameString put: nameSensor.
+!
+
+logOut: nameString
+	logs removeKey: nameString.
+!
+
+professorIn: nameString
+	   log: nameString to: 'entrance'.
 	   super machine: name.
-	   logIn: name at: 'entrance'.
 !
 
-sensor: name at: floor
-	super machine name.
-	logs at: name put: floor.
-!
-
-logIn: professor at: sensor
-	logs at: professor put: sensor.
-!
-
-logOut: professor
-	logs removeKey: professor
+sensorPlaced: aStringID at: floorID
+	log: aStringID to: floorID.
+	super machine aStringID.
 !!
+
+
 
 
 "-----------------------------"
@@ -45,4 +47,8 @@ logs
 !
 sensors
 	^sensors
+!
+
+floors
+	^floors
 !!

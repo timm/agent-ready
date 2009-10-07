@@ -1,0 +1,76 @@
+
+---| 048machine1.st |-----------------------------------------
+
+Initial values are: hunger=9 exhaustion=4taught=6
+Initial values are: hunger=8 exhaustion=5taught=6
+Machine:[29] I just woke up.
+Machine:[29] going to teach.
+Machine:[1] I just woke up.
+Machine:[1] going to teach.
+Machine:[29] teaching.
+Machine:[1] teaching.
+Machine:[29] teaching.
+Machine:[1] teaching.
+Machine:[29] teaching.
+Machine:[1] teaching.
+Machine:[29] See you next week.
+Machine:[1] See you next week.
+Machine:[29] Going to sleep
+Transition(from: NormalState(run#32) to: EndState(endF#56))
+NormalState(run#32)
+EndState(endF#56)
+(Professor#29 'Professor' with 4 groups)
+a Building'csee'
+that's all folks!
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] I am hungry, gotta eat.
+Machine:[1] I am full and ready
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] I am hungry, gotta eat.
+Machine:[1] I am full and ready
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] going to teach.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] teaching.
+Machine:[1] See you next week.
+Machine:[1] Going to sleep
+Transition(from: NormalState(run#4) to: EndState(endF#28))
+NormalState(run#4)
+EndState(endF#28)
+(Professor#1 'Professor' with 4 groups)
+a Building'csee'
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 101
+Final patience 22
