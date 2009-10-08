@@ -9,7 +9,7 @@ worksIn: factory
 	go: #start   to: #sellG	then:[The historian record:'one'];
 
 	"Scandal"
-	go: #sellG to: #scandalS	if: [(The factory suspended=false) and:[App random next > 0.75]]
+	go: #sellG to: #scandalS	if: [(The factory suspended=false) and:[App random next > 0.65]]
 					then: [The historian record:'six'.
 						The machine talks: 'bribing a colleague'];
        	go: #scandalS  to: #suspendedH   if:[The factory suspended]
@@ -150,14 +150,11 @@ polled: aPoller
 	^vote.
 !
 naughty
-    |prob1 prob2|
     scandals := scandals+1.
     caughtLikelihood := caughtLikelihood sqrt.
-    prob1 := (App random next).
-    (prob1>caughtLikelihood)
+    (App random next > caughtLikelihood)
 	ifTrue: [
-		prob2:= (App random next).
-		billSupport := billSupport+prob2.
+		billSupport := billSupport sqrt.
 		App say: 'You bribed a colleage for their vote. They are just as slimy as you.']
 	ifFalse: [
 		self caught].
