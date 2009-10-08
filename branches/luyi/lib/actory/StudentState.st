@@ -6,10 +6,10 @@ new
 !StudentState methodsFor: 'creation'!
 init
 	states := Dictionary new. 
-	states at: 0 put: 'startCourse'.
-	states at: 1 put: 'courseEndF'.
-	states at: 2 put: 'courseworkL'.
-	states at: 3 put: 'CourseHaHa'.
+	states at: 0 put: #start.
+	states at: 1 put: #courseEndF.
+	states at: 2 put: #courseworkL.
+	states at: 3 put: #CourseHaHa.
 !!
 "=========================================="
 !StudentState methodsFor: 'storing'!
@@ -23,4 +23,7 @@ RandState
 	|index|
 	index := (Random next * ((states size)-1)) rounded.
 	^State from: (states at: index).
+!
+startState
+	^State from: (states at: 0).
 !!

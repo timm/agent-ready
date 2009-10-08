@@ -7,7 +7,7 @@ new
 init
 	|parray|
 	gsesets := Dictionary new. 
-	self guard: true effect: true.
+	self guard: [true] effect: [true].
 !!
 !GuardSideEffect methodsFor: 'storing'!
 guardeffect

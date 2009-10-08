@@ -24,7 +24,7 @@
 
 #CourseFactory isa: Factory. 
 #Course        isa: Machine with: 'trans selfEvents patience prerequisite students'.
-#LifeEvent     isa: Machine with: 'patience ss1 id student guard sideEffect guardSideEffect exam'.
+#LifeEvent     isa: App with: 'name patience ss1 id student guard sideEffect guardSideEffect '.
 #CourseEvent   isa: App with:  'name patience ss1 id course guard sideEffect guardSideEffect'.
 #Student       isa: Machine with: 'courses happiness lifeEvent'.
 #StudentState  isa: App with: 'states'. 

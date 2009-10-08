@@ -5,7 +5,7 @@ new
 !Guard methodsFor: 'accessing'!
 init
 	guards := Dictionary new. 
-	guards at: 0 put: true.
+	guards at: 0 put: [true].
 !
 Rand  
 	|index|

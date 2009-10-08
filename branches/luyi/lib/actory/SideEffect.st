@@ -6,7 +6,7 @@ new
 ! SideEffect methodsFor: 'creation'!
 init
 	effects := Dictionary new. 
-	effects at: 0 put: true.
+	effects at: 0 put: [true].
 !
 Rand
 	^effects at: (((effects size)-1) * (Random next)) rounded.

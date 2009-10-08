@@ -45,9 +45,12 @@ getPrerequisite
 require: aName
 	prerequisite at: aName put: aName.
 !
+exam
+	selfEvents exam.
+!
+gradepublish: aNumber
+	selfEvents gradepublish: aNumber.
+!
 assignStudent: aStudent
 	students at: (aStudent name) put: aStudent.
-!
-walksIn: aFactory
-	aFactory machine: self.
 !!		
