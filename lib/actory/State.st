@@ -107,9 +107,12 @@ onEntry
 	vote:=The oracle polled: The machine.
 	(vote)
 		ifTrue:[
-			' ' oo. 'The bill passes.' oo.
-			The oracle success: (The oracle success)+1.]
-		ifFalse:[' ' oo. 'The bill is vetoed. Try again tomorrow.' oo.].
+			App say: 'The bill passes.'.
+			(The machine party =0)
+				ifTrue:[The oracle dsuccess: (The oracle dsuccess)+1]
+				ifFalse:[The oracle rsuccess: (The oracle rsuccess)+1]
+		]
+		ifFalse:[App say: 'The bill is vetoed. Try again tomorrow.'].
 
 	The machine talks:'leaving for the day.'.
 !!
@@ -128,11 +131,14 @@ onExit
 !Investigating methods !
 onEntry
 	|target|
-	target:= The factory machines contents at: ((App random next*The factory machines contents size+1) rounded).
+	target:= ((App random next*The factory machines contents size) rounded).
+	(target = 0) ifTrue:[target:=1].	
+	target:= The factory machines contents at: target.
+
 	(target caughtLikelihood > 0.75)
-		ifTrue:[ 'They exposed a dirty senator' oo.
+		ifTrue:[ App say: 'They exposed a dirty senator'.
 			target caught]
-		ifFalse:[ 'They failed to catch anybody.' oo].
+		ifFalse:[ App say: 'They failed to catch anybody.'].
 !!
 
 !Scandal methods !
@@ -201,11 +207,11 @@ onEntry
 
 			(support >= (3/5 asFloat))
 				ifTrue: [
-					'The bill passes the committee.' oo.
+					App say: 'The bill passes the committee.'.
 					The machine billPassed: 1.
 					The machine billSupport: 0.]
 				ifFalse: [
-					'The bill failed to pass the committee.' oo.
+					App say: 'The bill failed to pass the committee.'.
 					"Add a boost to support for the second time around"
 					The machine billSupport: (The machine billSupport)+(App random next).].
 		]
@@ -222,10 +228,10 @@ onEntry
 					].
 					(support >= (3/5 asFloat))
 						ifTrue:[
-							'The bill passes in the senate.' oo.
+							App say: 'The bill passes in the senate.'.
 							The machine billPassed: 2.]
 						ifFalse:[
-							'The bill failed to pass in the senate.' oo.
+							App say:'The bill failed to pass in the senate.'.
 							"Add a boost for the next time around."
 							The machine billSupport: (The machine billSupport)+(App random next).
 							The machine billProposed: (The machine billProposed)+1.].
@@ -239,10 +245,10 @@ onEntry
 	prob1:= App random next.
 	support:= (App random next)/2 asFloat.
 	(prob1 > 0.33)
-		ifTrue:[The machine billSupport: (The machine billSupport)+support. 
-			'The audience approves and applauds.' oo]
-		ifFalse:[The machine billSupport: (The machine billSupport)-support.
-			'The senators seem to not like your proposal.' oo].
+		ifTrue:[The machine billSupport: The machine billSupport sqrt. 
+			App say:'The audience approves and applauds.']
+		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:2).
+			App say:'The senators seem to not like your proposal.'].
 		
 !
 onStay
@@ -251,10 +257,10 @@ onStay
 	prob1:= App random next.
 	support:= (App random next)/2 asFloat.
 	(prob1 > 0.66)
-		ifTrue:[The machine billSupport: (The machine billSupport)+support.
-			'You have the audience in the palm of your hand.' oo]
-		ifFalse:[The machine billSupport: (The machine billSupport)-support.
-			'The audience is not interested. Get out of there and preserve your dignity.' oo].
+		ifTrue:[The machine billSupport: The machine billSupport sqrt.
+			App say:'You have the audience in the palm of your hand.']
+		ifFalse:[The machine billSupport: (The machine billSupport) raisedTo:2.
+			App say:'The audience is not interested. Get out of there and preserve your dignity.'].
 !!
 ! Suspended methods !
 onEntry
@@ -272,7 +278,7 @@ onEntry
 		
 	].
 
-	The factory pressure: The factory pressure + (The factory pressure sqrt).
+	The factory pressure: The factory pressure sqrt.
 	The factory machines contents do: [:machine |
 		(machine cloture=1) ifTrue:[closed:=closed+1].
 	].
@@ -286,5 +292,5 @@ onStay
 	self onEntry.
 !
 onExit
-	The factory pressure:0.01.
+	The factory pressure:0.1.
 !!
