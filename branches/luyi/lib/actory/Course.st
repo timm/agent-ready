@@ -47,4 +47,7 @@ require: aName
 !
 assignStudent: aStudent
 	students at: (aStudent name) put: aStudent.
+!
+walksIn: aFactory
+	aFactory machine: self.
 !!		
