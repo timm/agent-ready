@@ -46,7 +46,7 @@ generateTran: guard then: sideEffect
 			ifFalse:[
 			course add: 
 		 	(Transition new
-				 state: ss1 RandState;
+				state: ss1 RandState;
 			 	if: guard;
 			 	then: sideEffect;
 			 	next: ss1 RandState).
@@ -58,6 +58,15 @@ generateTran: guard then: sideEffect
 !
 course: aCourse
 	course := aCourse.
+	(course isNil)
+                ifFalse:[
+                course add:
+                (Transition new
+                                state: ss1 startState;
+                                if: (guard Rand);
+                                then: (sideEffect Rand);
+                                next: ss1 RandState).].
+
 !
 setStudentState: aStudentState
 	ss1 := aStudentState.

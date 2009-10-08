@@ -1,6 +1,6 @@
 !Student class methodsFor: 'creation'!
 new: name
-	^super new: name init. 
+	^(super new: name) init. 
 !!
 !Student methodsFor: 'creation'!
 init
@@ -22,12 +22,24 @@ lookup: aString
 			].
 			
 !
+worksIn: aFactory
+	aFactory machine: self.
+	self factory: aFactory.
+	(courses size = 0)
+		ifFalse:
+		[ 0 to: ((courses size)-1) do:[:i|
+			(courses at: i) worksIn: aFactory.]
+		]
+			
+!
 take: aCourse 
 	(self lookup: (aCourse name))
 	ifFalse:[
 		courses at: (courses size) put: aCourse.
 		aCourse assignStudent: self.
 		self check: aCourse.	
+		(self factory isNil)
+			ifFalse: [aCourse worksIn: (self factory).]
 		].
 !
 check: aCourse
@@ -44,4 +56,19 @@ check: aCourse
 				[happiness := happiness - 10.]
 			]
 		]
+!
+football
+	lifeEvent football.
+!
+lottory: aNumber
+	lifeEvent lottory: aNumber.
+!
+happiness
+	^happiness.
+!
+happiness: aNumber
+	happiness := aNumber.
+!
+getLifeEvent
+	^lifeEvent.
 !!

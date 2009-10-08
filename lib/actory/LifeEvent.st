@@ -1,11 +1,12 @@
 !LifeEvent class methodsFor: 'creation'!
-new: name
+new: aName
 	
-	^(super new: name) init.
+	^(super new) init: aName.
 !!
 "=============================================="
 !LifeEvent methodsFor: 'creation'!
-init 
+init: aName
+	name := aName.
 	patience := 100.
 	ss1 := StudentState new.
 	guard := Guard new.
@@ -41,17 +42,31 @@ generateTran: guard then: sideEffect
 	|newTransition|
 	(ss1 states size >0)
 		ifTrue: [
-		student add: 
-		 (Transition new
-			 state: ss1 RandState;
-			 if: guard;
-			 then: sideEffect;
-			 next: ss1 RandState).
+		(student isNil)
+			ifFalse:[
+			student add: 
+		 	(Transition new
+				state: ss1 RandState;
+			 	if: guard;
+			 	then: sideEffect;
+			 	next: ss1 RandState).
+				^true.]
+			ifTrue: 
+			[^false].
 			]
 		ifFalse: [^false.]
 !
 student: aStudent
 	student := aStudent.
+	(student isNil)
+                ifFalse:[
+                student add:
+                (Transition new
+                                state: ss1 startState;
+                                if: (guard Rand);
+                                then: (sideEffect Rand);
+                                next: ss1 RandState).].
+
 !
 setStudentState: aStudentState
 	ss1 := aStudentState.
@@ -82,18 +97,32 @@ patience
 !
 setPatience: aPatience
 	patience := aPatience.
-exam
+!
+football
+	|phappiness|
 	patience sqrt.
+	phappiness := student happiness.
+	student happiness: phappiness * 1.2.
 !
-gradepublish: aGrade
-	|grade|
+lottory: aGrade
+	|grade phappiness|
+	phappiness := student happiness.
 	(aGrade >0)| (aGrade <80)
-		ifTrue: [ patience := patience * (aGrade/100)].
+		ifTrue: [
+			phappiness := phappiness * (aGrade/100).
+			patience := patience - 5.	
+			student happiness: phappiness.
+			].
+		
 	(aGrade >80) |(aGrade <100)
-		ifTrue: [ patience := patience * (2- aGrade/100)].
+		ifTrue: [ 
+			phappiness := phappiness * (2- aGrade/100).
+			patience := patience - 15.
+			student happiness: phappiness.
+			].
 !
-student 	
-	^student.
+student 
+ 	^student.
 !
 talks: x
 	('Machine:[', id s , ']', x s) o
