@@ -13,7 +13,7 @@ init: aString
 	machines := Stagger new.
 	name := aString.
 	suspended:=false.
-	pressure:=0.01.
+	pressure:=0.25.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -108,9 +108,9 @@ reset
 	machines contents do:[:machine | machine reset]
 !
 report
-	'' loo.
-	('Terminated at tick ', Clock s) oo.
-	('Final patience ', Patience s) oo.
+	App say: ''.
+	App say: ('Terminated at tick ', Clock s).
+	App say: ('Final patience ', Patience s).
 	The historian report.
 !
 run
@@ -145,8 +145,8 @@ walk
 "==============================================="
 ! Factory methodsFor: 'constants' !
 patience
-	^50
+	^250
 !
 tooMuch
-	^100
+	^500
 !!

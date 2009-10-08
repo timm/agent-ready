@@ -13,7 +13,7 @@
 #Factory     isa: App with: 'machines name current oracle historian suspended suspendee pressure'.
 #Machine     isa: App with: 'container name id current start states transitions'.
 #Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed cloture committee party trust scandals caughtLikelihood'.
-#President	isa: Machine with:'party success'.
+#President	isa: Machine with:'party dsuccess rsuccess'.
 #Historian	isa: Machine with:'log score'.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container      id state if then next') public; inits.

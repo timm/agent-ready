@@ -23,7 +23,8 @@ worksIn: factory
 
 	"Investigation"
 	go:#sellG	to:#investigateI	if:[(The factory suspended=false) and: [App random next > 0.75]]
-						then: [The historian record:'nine'];
+						then: [The historian record:'nine'.
+							The machine talks: 'investigating a suspicious colleague'];
 	go:#investigateI	to:#sellG	if:[The factory suspended=false]
 						then: [The historian record:'one'];
 	go:#investigateI  	to: #suspendedH if:[The factory suspended=true]
@@ -116,28 +117,28 @@ polled: aPoller
 	"Are they in the same political party?"
 	(party=(aPoller party))
 		ifTrue: [
-			openMindedness := openMindedness + 0.33.]
+			openMindedness := openMindedness sqrt]
 		ifFalse: [
-			openMindedness := openMindedness - 0.33.].
+			openMindedness := openMindedness raisedTo:2].
 	"Are they on the same committee?"
 	(committee=(aPoller committee))
 		ifTrue: [
-			openMindedness := openMindedness + 0.15.].
+			openMindedness := openMindedness raisedTo:1.5].
 
 	"Is the bill relevant to their committee?"
 	(committee=(aPoller billCommittee))
 		ifTrue: [
 			(party=(aPoller party))
 				ifTrue: [
-					openMindedness:= openMindedness +0.15.]
+					openMindedness:= openMindedness raisedTo:0.75]
 				ifFalse: [
-					openMindedness:= openMindedness -0.15.].
+					openMindedness:= openMindedness raisedTo:1.5].
 		].
 	"Trust factor"
-	openMindedness := openMindedness + ((aPoller trust)*0.15).
+	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
 
 	"Factor in current level of support"
-	openMindedness := openMindedness + ((aPoller billSupport)*0.15).
+	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
@@ -151,13 +152,13 @@ polled: aPoller
 naughty
     |prob1 prob2|
     scandals := scandals+1.
-    caughtLikelihood := caughtLikelihood+(caughtLikelihood sqrt).
+    caughtLikelihood := caughtLikelihood sqrt.
     prob1 := (App random next).
     (prob1>caughtLikelihood)
 	ifTrue: [
 		prob2:= (App random next).
 		billSupport := billSupport+prob2.
-		'You bribed a colleage for their vote. They are just as slimy as you.' oo]
+		App say: 'You bribed a colleage for their vote. They are just as slimy as you.']
 	ifFalse: [
 		self caught].
 !
@@ -166,7 +167,7 @@ caught
     caughtLikelihood :=0.1.
     trust := (trust-0.1).
     billSupport :=0.
-    'You got too greedy and were caught.' oo.
+    App say:'You got too greedy and were caught.'.
 !!
 "============================================"
 !Senator methodsFor: 'accessing' !
@@ -224,5 +225,5 @@ cloture
 "============================================"
 ! Senator methodsFor: 'printing' !
 talks: x
-    ('Machine:[', id s, '] ', x s)oo
+    App say: ('Senator:[', id s, '] ', x s).
 !!

@@ -4,14 +4,15 @@ new: name
 !
 worksIn: factory
     factory oracle: (self new: 'president').
-    'The president is on the floor.' oo.
+    App say: 'The president is on the floor.'.
 !!
 
 "============================================"
 ! President methodsFor: 'creation' !
 init
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
-    	success:=0.
+    	dsuccess:=0.
+	rsuccess:=0.
 !!
 
 "============================================"
@@ -23,15 +24,14 @@ polled: aPoller
 	"Are they in the same political party?"
 	(party=(aPoller party))
 		ifTrue: [
-			openMindedness := openMindedness + 0.33.]
+			openMindedness := openMindedness sqrt]
 		ifFalse: [
-			openMindedness := openMindedness - 0.33.].
-
+			openMindedness := openMindedness raisedTo:2].
 	"Trust factor"
-	openMindedness := openMindedness + ((aPoller trust)*0.15).
+	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
 
 	"Factor in current level of support"
-	openMindedness := openMindedness + ((aPoller billSupport)*0.33).
+	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
@@ -41,26 +41,38 @@ polled: aPoller
 			self talks:'says no'.
 			vote:=false.].
 	^vote.
+
 !
 score
 	|senators|
 	senators:= The factory machines contents size.
 	
-	^((success/senators) asFloat)
-!!
+	^((dsuccess+rsuccess)/senators) asFloat
+!
+score: mode
+	(mode=0)
+		ifTrue:[^(dsuccess/(rsuccess+dsuccess)) asFloat]
+		ifFalse:[^(rsuccess/(rsuccess+dsuccess)) asFloat].
+!
 "============================================"
 ! President methodsFor: 'accessing'!
 party
 	^party
 !
-success: s
-	success:=s.
+dsuccess: s
+	dsuccess:=s.
 !
-success
-	^success
+dsuccess
+	^dsuccess
+!
+rsuccess: s
+	rsuccess:=s.
+!
+rsuccess
+	^rsuccess
 !!
 "============================================"
 ! President methodsFor: 'printing' !
 talks: x
-    ('President:[', id s, '] ', x s)o
+    App say: ('President:[', id s, '] ', x s).
 !!

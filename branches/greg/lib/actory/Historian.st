@@ -4,7 +4,7 @@ new: name
 !
 worksIn: factory
     factory historian: (self new: 'historian').
-    'This session is being recorded.' oo.
+    App say: 'This session is being recorded.'.
 !!
 
 "============================================"
@@ -42,32 +42,32 @@ report
 	(log includesKey: 'ten') ifFalse:[log at: 'ten' put:0].
 
 	senators:= The factory machines contents size.
-	('There were a total of ',senators s,' senators attempting to pass bills today') oo.
+	App say: ('There were a total of ',senators s,' senators attempting to pass bills today').
 	The factory machines contents do: [:machine |
 		(machine party = 0) ifTrue:[dem:=dem+1] ifFalse:[rep:=rep+1].
 	].
-	('Of these, ',dem s,' were Democrats and ',rep s,' were Republicans') oo.
-	('They passed a total of ',The oracle success s,' bills, resulting in an overall score of ',The oracle score s) oo.
-	'' oo.
-	'%Gathering Support, Presenting to Committee,Voting in Committee,Presenting to the Floor,Voting on the Floor,Committing a Scandal,Calling a Filibuster, Suspended for a Filibuster,Investigating a Colleague,Presenting to the President,Total Transitions,Overall Score' oo. 
-	((log at:'one') s,',',(log at:'two') s,',',(log at:'three') s,',',(log at:'four') s,',',(log at:'five') s,',',(log at:'six') s,',',(log at:'seven') s,',',(log at:'eight') s,',',(log at:'nine') s,',',(log at:'ten') s,',',transitions s,',',The oracle score s) oo.
+	App say: ('Of these, ',dem s,' were Democrats and ',rep s,' were Republicans').
+	App say: ('They passed a total of ',(The oracle rsuccess+The oracle dsuccess) s,' bills.'). 
+	App say: ('Democrats passed ',((The oracle score:0)*100) s,' percent of these, and Republicans passed ',
+		((The oracle score:1)*100) s,' percent. This resulted in an overall score of ',The oracle score s).
+	App say: ('%Gathering Support, Presenting to Committee,Voting in Committee,Presenting to the Floor,',
+		'Voting on the Floor,Committing a Scandal,Calling a Filibuster, Suspended for a Filibuster,',
+		'Investigating a Colleague,Presenting to the President,Total Transitions,',
+		'Democrat Percentage, Republican Percentage, Overall Score'). 
+	((log at:'one') s,',',(log at:'two') s,',',(log at:'three') s,',',(log at:'four') s,
+		',',(log at:'five') s,',',(log at:'six') s,',',(log at:'seven') s,',',(log at:'eight') s,
+		',',(log at:'nine') s,',',(log at:'ten') s,',',transitions s,',',(The oracle score:0) s,',',
+		(The oracle score:1) s,',', The oracle score s) oo.
 !
 dominance
-	|enemies support who|
-	enemies:=0.
-	support:=0.
+	|who|
 	(The machine party = 0)
 		ifTrue: [who:=1] ifFalse: [who:=0].
 
-	The factory machines contents do: [:machine |
-		(machine party = who)
-			ifFalse:[
-				support:=support+(machine billSupport).
-				enemies:=enemies+1.].
-	].
-
-	support:= (support/enemies) asFloat.
-	(support>0.85)
+	(The oracle dsuccess = 0 or:[The oracle rsuccess = 0])
+		ifTrue:[^false].
+	
+	((The oracle score:who) > 0.85)
 		ifTrue:[The factory suspended: true.
 			The factory suspendee: The machine party.
 			^true]
@@ -94,5 +94,5 @@ transitions: t
 "============================================"
 ! Historian methodsFor: 'printing' !
 talks: x
-    ('Historian:[', id s, '] ', x s)o
+    App say: ('Historian:[', id s, '] ', x s).
 !!
