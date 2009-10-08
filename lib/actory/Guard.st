@@ -14,5 +14,4 @@ Rand
 !
 add: aGuard
 	guards at: (guards size) put: aGuard.
-	aGuard value oo.
 !!

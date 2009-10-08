@@ -42,12 +42,17 @@ generateTran: guard then: sideEffect
 	|newTransition|
 	(ss1 states size >0)
 		ifTrue: [
-		course add: 
-		 (Transition new
-			 state: ss1 RandState;
-			 if: guard;
-			 then: sideEffect;
-			 next: ss1 RandState).
+		(course isNil)
+			ifFalse:[
+			course add: 
+		 	(Transition new
+				 state: ss1 RandState;
+			 	if: guard;
+			 	then: sideEffect;
+			 	next: ss1 RandState).
+				^true.]
+			ifTrue: 
+			[^false].
 			]
 		ifFalse: [^false.]
 !
