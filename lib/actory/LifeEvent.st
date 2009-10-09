@@ -27,12 +27,11 @@ run: aGuardSideEffect
 !
 run: aGuard effect: aSideEffect
 	|timer index|
-	timer := Delay forSeconds: (((Random next) ) rounded).
+	timer := Delay forMilliseconds: (((Random next)*10 ) rounded).
 	index := 0.
         [(patience >0) & (index < 50)]
 		whileTrue: [timer wait.
 			    index := index + 1.
-			    index oo.
 			    self generateTran: aGuard then: aSideEffect.  
 			    ].
 !!
@@ -101,25 +100,36 @@ setPatience: aPatience
 !
 football
 	|phappiness|
-	patience sqrt.
+	'watch football hahahaha' oo.
+ 	patience := (patience sqrt) rounded.
+	student setPatience: patience.
+	student patience oo.
 	phappiness := student happiness.
-	student happiness: phappiness * 1.2.
+	student happiness: (phappiness * 1.2) rounded.
+	'student happiness changes to ' o.
+	student happiness oo.
 !
 lottory: aGrade
 	|grade phappiness|
 	phappiness := student happiness.
 	(aGrade >0)| (aGrade <80)
 		ifTrue: [
-			phappiness := phappiness * (aGrade/100).
-			patience := patience - 5.	
+			'lose lottory ' o.
+			phappiness := (phappiness * (aGrade/100)) rounded.
+			patience := patience - 5.
+			patience oo.	
 			student happiness: phappiness.
+			student setPatience: patience.
 			].
 		
 	(aGrade >80) |(aGrade <100)
 		ifTrue: [ 
-			phappiness := phappiness * (2- aGrade/100).
+			'win lottory' o.	
+			phappiness := (phappiness * ((aGrade/100) sqrt)) rounded.
 			patience := patience - 15.
+			patience oo.
 			student happiness: phappiness.
+			student setPatience: patience.
 			].
 !
 student 

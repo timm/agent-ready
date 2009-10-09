@@ -104,7 +104,7 @@ Luyi Wang\\
 \maketitle
 \begin{abstract}
 
-This paper proposed an intelligent course planning agent model which is based on {\em Actory} model.{\em Actory} model is a generic agent model which can be applied into diverse fields by enriching with specific domain knowledge. It utilizes BDI \cite{Rao91modelingrational} model as its archetype.  Simulations generated from it are aimed to illustrate real world scenarios where randomness and bias coexist due to undetermined events happening and environment changeableness within specific domain context.  With accumulatively learning and modeling improvement, ideally an actory model would be able to provide people suggestions on principles which can be derived to a comfortable life pattern.  This paper explains a course planning model which is used to assist academic institutes in planning undergraduate level courses.  This model consists of two sub agents. One is life event producer who takes in charge of generating life changing events which mimics the real life happening. The other is Course actor.  It plays an important role in this model where it simulate a real course provider which dispatches exams and gives out grades.  This work is motivated by the problem of automatically arranging course according to their dependency chain and meanwhile relieve the pressure from heavy course work caused by non-systemetic course planning.   
+This paper proposed an intelligent course planning agent model which is based on {\em Actory} model.{\em Actory} model is a generic agent model which can be applied into diverse fields by enriching with specific domain knowledge. It utilizes BDI \cite{rao1991mra} model as its archetype.  Simulations generated from it are aimed to illustrate real world scenarios where randomness and bias coexist due to undetermined events happening and environment changeableness within specific domain context.  With accumulatively learning and modeling improvement, ideally an actory model would be able to provide people suggestions on principles which can be derived to a comfortable life pattern.  This paper explains a course planning model which is used to assist academic institutes in planning undergraduate level courses.  This model consists of two sub agents. One is life event producer who takes in charge of generating life changing events which mimics the real life happening. The other is Course actor.  It plays an important role in this model where it simulate a real course provider which dispatches exams and gives out grades.  This work is motivated by the problem of automatically arranging course according to their dependency chain and meanwhile relieve the pressure from heavy course work caused by non-systemetic course planning.   
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -116,7 +116,7 @@ This paper proposed an intelligent course planning agent model which is based on
 \keywords{Actory mode, course planning}
 
 \section{Introduction}
-Course planning is always a challenge issue for academic institutions.  A well defined course planning system would promote the educational quality by arranging course through prerequisite chain. Meanwhile it would relieve student's pressure in confronting with heavy workload and help them build up a systemic knowledge system.  With more and more research carrying on this area, some obvious demands are also brought in. First is the matrix structure of course prerequisite chain.  There is no obviously cut-off line to separate courses according to their easiness levels.  Some high-level theoretical courses are usually build upon rudimental courses which are provided in certain years. A certain number of courses focus more on practice and experiment which asks for  knowledge from both theoretical and implementation.  Second is how to seek a trade off between the flexibility of timeline and credit hour requirement.  Usually a college level degree requires student get at least 130 credit hours in 4 years.  With these motivation, an course planning system built upon existing academic requirement is required,accompany with adaptive to the dynamic prerequisite chain and flexibilities on course credit hour. \\
+Course planning is always a challenge issue for academic institutions.  A well defined course planning system would promote the educational quality by arranging course through prerequisite chain. Meanwhile it would relieve student's pressure in confronting with heavy workload and help them build up a systemic knowledge system.  With more and more research carrying on this area, some obvious demands are also brought in. First is the matrix structure of course prerequisite chain.  There is no obviously cut-off line to separate courses according to their easiness levels.  Some high-level theoretical courses are usually build upon rudimental courses which are provided in certain years. A certain number of courses focus more on practice and experiment which asks for  knowledge from both theory and implementation.  Second is how to seek a trade off between the flexibility of timeline and credit hour requirement.  Usually a college level degree requires student get at least 130 credit hours in 4 years.  With these motivation, an course planning system built upon existing academic requirement is required,accompany with adaptive to the dynamic prerequisite chain and flexibilities on course credit hour. \\
 
 This paper proposed an approach to building such a agent technologies based one of BDI agent framework, Actory,  with the domain specific knowledge for course planning.   It utilizes the notion of generic programming and first-order agent language to fulfill above requirements. In section 2,  it introduces some notions of generic programming used in this system and also explains the framework of actory. Section 3 focus on describing the logic view of course planning model and details its implementation. Section 4 briefly shows up some experimental result.  The end section, Section 5, concludes current research status and point out the future work. \\
 
@@ -129,7 +129,7 @@ Agent oriented programming puts much more effect on adapting with dynamic enviro
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=90mm ]{actorymodel.png}
+\includegraphics[width=90mm ]{actorymodel}
 \caption{Actory Model Structure}
 \end{figure}
 
@@ -155,15 +155,15 @@ Transition & Intention & Next,Guard, SideEffect \\
 As we narrated before, course planning is an essential part in academic education.  Based on actory model, we can simulate a virtual college environment in which students take courses and enjoy their college life by participate event like football game.  This is also the feature of actory model, domain specific programming.  \\
 
 \subsection{CP Model Structure}
-To enrich actory with domain specific feature, we have to derived component from actory model and brings in sub-system actory which acts as a coordinator in resource allocation and communication. Here we derived two classes from {\em Machine} component as {\em Course} and {\em Student}.    To generate tasks for these two new components ,we invented two sub-system actors as {\em CourseEvent} and {\em LifeEvent}, respectively creating events for course and student life.  Fig 2. Show the Course Planning Model Structure after introducing more components.\\
+To enrich actory with domain specific feature, we have to derived component from actory model and brings in sub-system actor which acts as a coordinator in resource allocation and communication. Here we derived two classes from {\em Machine} component as {\em Course} and {\em Student}.    To generate tasks for these two new components, we invented two sub-system actors as {\em CourseEvent} and {\em LifeEvent}, respectively creating events for course and student life.  Fig 2. Show the Course Planning Model Structure after introducing more components.\\
 \begin{figure}[!h]
 \centering
-\includegraphics[height=90mm ]{courseplanmodel.png}
+\includegraphics[height=90mm ]{courseplanmodel}
 \caption{Course Planning Model Structure}
 \end{figure}
 
 \subsection{CP BDI Notions}
-This two sub-system actor still use the patience to control its work flow and termination state.  So it stills use actory BDI mentalism.  For the student component, we bring in one factor called {\em happiness} to extend its belief.  So from a student perspective, he/she would like to live with happiness and without losing their temper.  To reach this point, they need to seek a balance between life and academic workload.   But this structure doesn't affect the original BDI mentalism established in the actory model. Table 2 gives out the extended BDI architecture in course planning model.\\
+These two sub-system actors still use the patience to control their work flow and termination state.  So this model stills use actory BDI mentalism.  For the student component, we bring in one factor called {\em happiness} to extend its belief.  So from a student perspective, he/she would like to live with happiness and without losing their temper.  To reach this point, they need to seek a balance between life and academic workload.   But this structure doesn't affect the original BDI mentalism established in the actory model. Table 2 gives out the extended BDI architecture in course planning model.\\
 \begin{table*}
 \centering
 \caption{BDI notions in Course Planning Model}
@@ -185,12 +185,12 @@ Transition& Transition & Intention & Next,Guard, SideEffect \\
 \end{table*}
 
 \subsection{CP Work Mechanism}
-In this course plan model, student actively choose courses which is disordered.  Correspondingly, subsystem actor, {\em Lifeevent}, would dynamically generate life events while another {\em courseevent} is generating course events for the course the student taken.  The factor {\em happiness} defined in the student component determines the number of events the student can hold.  When some positive activities, such as {\em win lottery}, take place, the happiness value would be raised up.  Oppositely, the negative activity would reduce the happiness value, such as getting bad grades for exam.  When the events generated, the system actor patience is losing till it enter its termination states where we defined as patience value to 0. Current design doesn't allow the patience value can increase which would lead to an endless state. Also to prevent this happen, a factor called index is introduced in subsystem factor to control the maximum event number which is set as 50.\\
+In this course plan model, student actively choose courses which is disordered.  Correspondingly, subsystem actor, {\em Lifeevent}, would dynamically generate life events while another {\em courseevent} is generating course events for the course the student taken.  The factor {\em happiness} defined in the student component determines the number of events the student can hold.  When some positive activities, such as {\em win lottery}, take place, the happiness value would be raised up.  Oppositely, the negative activity would reduce the happiness value, such as getting bad grades for exam.  When the events generated, the system actor patience is losing till it enters its termination states where we defined as patience value to 0. Current design doesn't allow the patience value to increase which would lead to an endless state. Also to prevent this happen, a factor called index is introduced in subsystem factor to control the maximum event number which is set as 50.\\
 
 Also as we stressed before, the Course Plan Model should conquer challenges of course matrix prerequisite chain.  In this course plan model,  each course has its corresponding prerequisite chain which can be looked up. An already taken course would relieve patience of sub-system actor,{\em course event}, to deduct the number of events which is generated automatically.  This is fair in real life situation.  Also this mechanism would solve the matrix problem by indexing courses, which is currently not implemented. \\ 
 
 \section{Experiment Results}
-Usually running time efficiency is always an important factor in evaluating computation model. However since the dynamic events are generated with time delay, to evaluate this course model by its running time is not executable.  To reach this deal, the number of events generated in certain amount of time becomes to be essential.   Currently all the experiment results is just calculated by this scale.  Before we show the experimental, we should first define the initial value used in this model as table 3 shows.
+Usually running time efficiency is always an important factor in evaluating computation model. However since the dynamic events are generated with time delay, to evaluate this course model by its running time is not executable.  To reach this deal, the number of events generated in certain amount of running times becomes to be essential.   Currently all the experiment results is just calculated by this scale.  Before we show the experimental, we should first define the initial value used in this model as table 3 shows.
 \begin{table}[h]
 \centering
 \caption{Initial value in CP Model }
@@ -206,13 +206,16 @@ index & subsystem Factory &0\\
 \end{tabular}
 \end{table}
 
-
-{\secit Experimental  result is lacked due to knowledge constrains.}
-
+Currently the concurrency model is implemented within the actory model level. The factory controls all the machines running inside itself.  So all the transitions are added before it submitted to the factory. Later on, we will work on a concurrency model where the transitions can be added during running time.  Fig 3. presents the a basic running result in 10 runs of this model.  
+\begin{figure}[!h]
+\centering
+\includegraphics[width=90mm ]{stat}
+\caption{Experiment result in 10 runs.}
+\end{figure}
 
 \section{Conclude and Future work}
-In this paper, we proposed a new course planning model established upon actory model.  This course plan model is trying to simulate the students life by mimic real life event.  It implemented under BDI mentalism and fulfill the requirement of agent programming. However 
-this course plan model is still under developing with more features need to be added, such as courses indexing and others.   Also the current concurrent model is hardly relies on delay which would cost too much computing time on waiting. Some semaphores need to be introduced to solve this problem.  In the future, more work would be done on this model.  
+In this paper, we proposed a new course planning model established upon actory model.  This course plan model is trying to simulate the students life by mimic real life event.  It implemented under BDI mentalism and fulfilled the requirement of agent programming. However 
+this course plan model is still under developing with more features need to be added, such as courses indexing and others.   Also the current concurrent model hardly relies on delay which would cost too much computing time on waiting. Some semaphores need to be introduced to solve this problem.  In the future, more work would be done on this model.  
 
 \bibliographystyle{IEEEtran}
 \bibliography{sig-alternate}

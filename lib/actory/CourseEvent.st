@@ -27,15 +27,12 @@ run: aGuardSideEffect
 !
 run: aGuard effect: aSideEffect
 	|timer index|
-	timer := Delay forSeconds: (((Random next) ) rounded).
+	timer := Delay forMilliseconds: (((Random next)*10 ) rounded).
 	index := 0.
         [(patience >0) & (index < 50)]
 		whileTrue: [timer wait.
 			    index := index + 1.
-			    index oo.
 			    patience := course patience.
-			    'patience is 'o.
-			    patience oo.
 			    self generateTran: aGuard then: aSideEffect.  
 			    ].
 !!
@@ -103,16 +100,22 @@ setPatience: aPatience
 	patience := aPatience.
 !
 exam
-	patience sqrt.
-	course patience: patience.
+	patience := (patience sqrt) rounded.
+	course setPatience: patience.
+	'take exam' oo.
+	patience oo.
 !
 gradepublish: aGrade
 	|grade|
+       'getting grade:' o.
+		aGrade oo.
 	(aGrade >0)| (aGrade <80)
-		ifTrue: [ patience := patience * (aGrade/100)].
+		ifTrue: [ patience := ((patience * ((aGrade/100) sqrt)) rounded)].
 	(aGrade >80) |(aGrade <100)
-		ifTrue: [ patience := patience * (2- aGrade/100)].
-	course patience: patience.
+		ifTrue: [ patience := ((patience * (aGrade/100) ) rounded)].
+	course setPatience: patience.
+	'grade published with patience: ' o.
+	patience oo.
 !
 course 
  	^course.

@@ -78,7 +78,7 @@ report
 	('Final patience ', Patience s) oo.
 !
 run
-	self reset; sleep; start; walk; report.
+	self reset;  start; walk; report.
 !
 start
 	machines contents do: [:machine| machine start].

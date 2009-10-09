@@ -8,6 +8,7 @@ init
 	happiness := 100.
 	lifeEvent := LifeEvent new: name.
 	lifeEvent student: self.
+	patience  := 100.
 !
 lookup: aString
 	(courses includesKey: aString)
@@ -78,4 +79,10 @@ getLifeEvent
 !
 course 
 	^courses.
+!
+patience 
+	^patience.
+!
+setPatience: aPatience
+	patience := aPatience. 
 !!
