@@ -22,9 +22,10 @@ sideEffect1 := ce1 getSideEffect.
 sideEffect1 add: [The machine exam].
 sideEffect1 add: [The machine gradepublish: (((Random next )*100) rounded)].
 'run randomly' oo.
+ce1 run.
+cs1 worksIn: f1.
 'test machine func' oo.
 'inspect factory' oo.
 f1 inspect.
-cs1 worksIn: f1.
 f1 run.
 !

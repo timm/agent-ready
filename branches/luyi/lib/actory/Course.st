@@ -51,6 +51,10 @@ exam
 gradepublish: aNumber
 	selfEvents gradepublish: aNumber.
 !
+football
+!
+lottory: aNumber
+!
 assignStudent: aStudent
 	students at: (aStudent name) put: aStudent.
 !!		

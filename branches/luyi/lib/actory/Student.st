@@ -57,6 +57,10 @@ check: aCourse
 			]
 		]
 !
+exam
+!
+gradepublish: aNumber
+!
 football
 	lifeEvent football.
 !
@@ -71,4 +75,7 @@ happiness: aNumber
 !
 getLifeEvent
 	^lifeEvent.
+!
+course 
+	^courses.
 !!
