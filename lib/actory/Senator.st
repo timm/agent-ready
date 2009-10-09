@@ -18,7 +18,8 @@ worksIn: factory
 	go: #scandalS to: #sellG    	if:[The factory suspended=false]
 					then:  [The historian record:'one'.
 						((App random next > 0.9) or: [The machine caughtLikelihood > 0.95])
-						ifTrue:[The machine talks:'phone tapped by the FBI'.
+						ifTrue:[The historian record:'twelve'.
+							The machine talks:'phone tapped by the FBI'.
 							The machine caught.]];
 
 	"Investigation"
@@ -82,6 +83,9 @@ worksIn: factory
 	go: #sellG	to: #presidentF if:[(The factory suspended=false) and:[The machine billPassed=2]]
 					then: [The historian record:'ten'.
 						The machine talks: 'sending the bill to the president.'.];
+	go: #sellG	to: #failedF 	if:[The machine billProposed>1]
+					then: [The historian record:'eleven'.
+						The machine talks:'failed to pass their bill.'];
 	"Filibuster"
 	go:#sellG	to:#filibuster	if: [(The factory suspended=false) and: [The historian dominance]]
 					then: [The historian record:'seven'.
@@ -111,7 +115,7 @@ init
 "============================================"
 ! Senator methodsFor: 'operations' !
 polled: aPoller
-	|openMindedness vote|
+	|openMindedness vote support|
 	openMindedness:=0.5.
 
 	"Are they in the same political party?"
@@ -138,7 +142,9 @@ polled: aPoller
 	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
 
 	"Factor in current level of support"
-	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
+	support:=1-aPoller billSupport.
+	(support > 0.25) ifTrue:[support:=0.25].
+	openMindedness := openMindedness raisedTo:(0.75+(support)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
@@ -147,7 +153,6 @@ polled: aPoller
 		ifFalse: [
 			self talks:'says no'.
 			vote:=false.].
-
 	^vote.
 !
 naughty
