@@ -104,15 +104,18 @@ stopped
 !
 onEntry
 	|vote|
-	vote:=The oracle polled: The machine.
-	(vote)
-		ifTrue:[
-			App say: 'The bill passes.'.
-			(The machine party =0)
-				ifTrue:[The oracle dsuccess: (The oracle dsuccess)+1]
-				ifFalse:[The oracle rsuccess: (The oracle rsuccess)+1]
-		]
-		ifFalse:[App say: 'The bill is vetoed. Try again tomorrow.'].
+	(The machine billProposed<2)
+	ifTrue:[
+		vote:=The oracle polled: The machine.
+		(vote)
+			ifTrue:[
+				App say: 'The bill passes.'.
+				(The machine party =0)
+					ifTrue:[The oracle dsuccess: (The oracle dsuccess)+1]
+					ifFalse:[The oracle rsuccess: (The oracle rsuccess)+1]
+			]
+			ifFalse:[App say: 'The bill is vetoed. Try again tomorrow.'].
+	].
 
 	The machine talks:'leaving for the day.'.
 !!
@@ -213,7 +216,7 @@ onEntry
 				ifFalse: [
 					App say: 'The bill failed to pass the committee.'.
 					"Add a boost to support for the second time around"
-					The machine billSupport: (The machine billSupport)+(App random next).].
+					The machine billSupport: The machine billSupport sqrt].
 		]
 		"Full senate vote"
 		ifFalse:[
@@ -233,7 +236,7 @@ onEntry
 						ifFalse:[
 							App say:'The bill failed to pass in the senate.'.
 							"Add a boost for the next time around."
-							The machine billSupport: (The machine billSupport)+(App random next).
+							The machine billSupport: The machine billSupport sqrt.
 							The machine billProposed: (The machine billProposed)+1.].
 				].
 		]. 

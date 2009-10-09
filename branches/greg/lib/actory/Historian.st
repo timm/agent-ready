@@ -40,6 +40,10 @@ report
 	(log includesKey: 'eight') ifFalse:[log at: 'eight' put:0].
 	(log includesKey: 'nine') ifFalse:[log at: 'nine' put:0].
 	(log includesKey: 'ten') ifFalse:[log at: 'ten' put:0].
+	(log includesKey: 'eleven') ifFalse:[log at: 'eleven' put:0].
+	(log includesKey: 'twelve') ifFalse:[log at: 'twelve' put:0].
+
+
 
 	senators:= The factory machines contents size.
 	App say: ('There were a total of ',senators s,' senators attempting to pass bills today').
@@ -52,12 +56,12 @@ report
 		((The oracle score:1)*100) s,' percent. This resulted in an overall score of ',The oracle score s).
 	App say: ('%Gathering Support, Presenting to Committee,Voting in Committee,Presenting to the Floor,',
 		'Voting on the Floor,Committing a Scandal,Calling a Filibuster, Suspended for a Filibuster,',
-		'Investigating a Colleague,Presenting to the President,Total Transitions,',
-		'Democrat Percentage, Republican Percentage, Overall Score'). 
+		'Investigating a Colleague,Caught by the FBI,Presenting to the President,Bill Defeated,',
+		'Total Transitions,','Democrat Percentage, Republican Percentage, Overall Score'). 
 	((log at:'one') s,',',(log at:'two') s,',',(log at:'three') s,',',(log at:'four') s,
 		',',(log at:'five') s,',',(log at:'six') s,',',(log at:'seven') s,',',(log at:'eight') s,
-		',',(log at:'nine') s,',',(log at:'ten') s,',',transitions s,',',(The oracle score:0) s,',',
-		(The oracle score:1) s,',', The oracle score s) oo.
+		',',(log at:'nine') s,',',(log at:'twelve') s,',',(log at:'ten') s,',',(log at:'eleven') s,
+		',',transitions s,',',(The oracle score:0) s,',',(The oracle score:1) s,',', The oracle score s) oo.
 !
 dominance
 	|who|

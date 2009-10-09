@@ -19,7 +19,7 @@ init
 ! President methodsFor: 'operations' !
 polled: aPoller
 	|openMindedness vote|
-	openMindedness:=0.5.
+	openMindedness:=0.75.
 
 	"Are they in the same political party?"
 	(party=(aPoller party))
