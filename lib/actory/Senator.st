@@ -123,7 +123,7 @@ polled: aPoller
 	"Are they on the same committee?"
 	(committee=(aPoller committee))
 		ifTrue: [
-			openMindedness := openMindedness raisedTo:1.5].
+			openMindedness := openMindedness raisedTo:0.75].
 
 	"Is the bill relevant to their committee?"
 	(committee=(aPoller billCommittee))
@@ -147,6 +147,7 @@ polled: aPoller
 		ifFalse: [
 			self talks:'says no'.
 			vote:=false.].
+
 	^vote.
 !
 naughty
