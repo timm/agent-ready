@@ -1,5 +1,4 @@
 App reset; asynchronousOff.
-f1 := Factory new: 'courseFactory'.
 cs1 := Course new: 'testcourse'.
 'get courseEvent' oo.
 ce1 := cs1 getSelfEvents.
@@ -21,10 +20,6 @@ sideEffect1 := ce1 getSideEffect.
 'add several sideEffect into this object' oo.
 sideEffect1 add: [The machine exam].
 sideEffect1 add: [The machine gradepublish: (((Random next )*100) rounded)].
-'run randomly' oo.
-'test machine func' oo.
-'inspect factory' oo.
-f1 inspect.
-cs1 worksIn: f1.
-f1 run.
-!
+cs1 worksIn: The factory.
+ce1 run
+

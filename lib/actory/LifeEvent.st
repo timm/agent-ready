@@ -27,11 +27,12 @@ run: aGuardSideEffect
 !
 run: aGuard effect: aSideEffect
 	|timer index|
-	timer := Delay forSeconds: (((Random next) * 5) rounded).
+	timer := Delay forSeconds: (((Random next) ) rounded).
 	index := 0.
-        [(patience >0) & (index < 1)]
+        [(patience >0) & (index < 50)]
 		whileTrue: [timer wait.
 			    index := index + 1.
+			    index oo.
 			    self generateTran: aGuard then: aSideEffect.  
 			    ].
 !!

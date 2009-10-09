@@ -78,7 +78,7 @@ report
 	('Final patience ', Patience s) oo.
 !
 run
-	self reset; start; walk; report.
+	self reset; sleep; start; walk; report.
 !
 start
 	machines contents do: [:machine| machine start].
@@ -95,6 +95,11 @@ step
 		   	   ifTrue: [^true]]].
 	^more
 !
+sleep
+	|timer|
+	timer := Delay forSeconds: 60.
+	timer wait.
+!	
 walk
 	App patience: self patience.
 	[true] whileTrue: [
