@@ -35,7 +35,7 @@ report
 	(log includesKey: 'three') ifFalse:[log at: 'three' put:0].
 	(log includesKey: 'four') ifFalse:[log at: 'four' put:0].
 	(log includesKey: 'five') ifFalse:[log at: 'five' put:0].
-	(log includesKey: 'siz') ifFalse:[log at: 'six' put:0].
+	(log includesKey: 'six') ifFalse:[log at: 'six' put:0].
 	(log includesKey: 'seven') ifFalse:[log at: 'seven' put:0].
 	(log includesKey: 'eight') ifFalse:[log at: 'eight' put:0].
 	(log includesKey: 'nine') ifFalse:[log at: 'nine' put:0].
@@ -67,7 +67,7 @@ dominance
 	(The oracle dsuccess = 0 or:[The oracle rsuccess = 0])
 		ifTrue:[^false].
 	
-	((The oracle score:who) > 0.85)
+	((The oracle score:who) > 0.75)
 		ifTrue:[The factory suspended: true.
 			The factory suspendee: The machine party.
 			^true]
