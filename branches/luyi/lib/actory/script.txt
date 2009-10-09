@@ -1,0 +1,6 @@
+cs1 :=  Course new: 'cs556'.
+ce1 :=  cs1 getSelfEvents.
+ss1 :=  ce1 getStudentState.
+ce1 generateTran: [patience >80] then: [exam].
+
+

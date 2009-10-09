@@ -1,0 +1,11 @@
+set style data lines;
+set title "Events Number with running 10 times";
+set xlabel "running times";
+set ylabel "events number";
+set size 1.0,1.0
+plot "dataset.txt" using 1:2  title 'Life Event', \
+      "dataset.txt" using 1:3  title 'Course Event', \
+      "dataset.txt" using 1:4  title 'Normal State Event';
+set terminal postscript eps;
+set output "stat.eps";
+replot;
