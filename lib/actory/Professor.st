@@ -20,11 +20,11 @@ init
 "----------------------------------"
 ! Professor methodsFor: 'operations' !
 
-worksIn: factory
-    factory machine: self;
+worksIn: building
+    building professor: self;
 	go: #start   to: #run	then: [The machine
-	    	     	 	      	  eats;
-	    	       	   		  talks: 'I just woke up.'];
+	    	     	 	      	  entersBuilding;
+	    	       	   		  talks: 'I just entered the building'];
 	go: #run     to: #hungry if: [The machine hunger > 10]
 	    	     	 	 then: [The machine talks: 'I am hungry, gotta eat.'];
 	go: #hungry  to: #hungry then: [The machine eats.];
@@ -37,13 +37,24 @@ worksIn: factory
 		    	      	then: [The machine talks: 'See you next week.'];
 	go: #run     to: #run   if: [The machine exhaustion > 5]
 		    	     	then: [The machine naps.];
-	go: #run     to: #endF  if: [App random next > 0.95]
-		    	     	 	then: [The machine talks: 'Going to sleep'.
+	go: #run     to: #endF  if: [The machine exhaustion > 7]
+		    	     	 	then: [The machine
+					      	   leavesBuilding;
+						   talks: 'Leaving the building'.
 					      The yourself oo.
 					      The state oo.
 					      The next oo.
 					      The machine oo.
-					      The factory oo.].
+					      The factory oo.
+					      building logs oo.].
+!
+
+entersBuilding
+    self factory professorIn: self name.
+!
+
+leavesBuilding
+   self factory professorOut: self name.
 !
 
 eats
@@ -51,7 +62,7 @@ eats
 !
 
 naps
-    exhaustion := 0.
+    exhaustion := exhaustion - 2.
     hunger := hunger + 1
 !
 
@@ -84,5 +95,5 @@ taught
 "--------------------------------"
 ! Professor methodsFor: 'printing' !
 talks: x
-       ('Machine:[', name s, '] ', x s) oo.
+       ('Professor:[', name s, '] ', x s) oo.
 !!
