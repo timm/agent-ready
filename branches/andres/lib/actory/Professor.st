@@ -1,20 +1,37 @@
 ! Professor class methodsFor: 'creation'!
 new: name
-     ^(super new: name) init
-!
+      ^(super new: name) init
+!!
+
+"--------------------------------"
+! Professor methodsFor: 'creation' !
+
+init
+    hunger := (App random next * 10 rounded) asInteger.
+    exhaustion := (App random next * 10 rounded) asInteger.
+    taught := (App random next * 10 rounded) asInteger.
+    ('****Initial values are:   *****')oo.
+    ('name= ', name s)oo.
+    ('hunger= ', hunger s)oo.
+    ('exhaustion= ',exhaustion s)oo.
+    ('taught= ',taught s)oo.
+!!
+
+"----------------------------------"
+! Professor methodsFor: 'operations' !
 
 worksIn: factory
-	 factory machine: (self new: 'Professor');
-		go: #start   to: #run	then: [The machine
-		    	     	 	      	  eats;
-		    	       	   		  talks: 'I just woke up.'];
-	        go: #run     to: #hungry if: [The machine hunger > 10]
-		    	     	 	 then: [The machine talks: 'I am hungry, gotta eat.'];
-		go: #hungry  to: #hungry then: [The machine eats.];
-		go: #hungry  to: #run    if: [The machine hunger < 1]
-		    	     	 	 then: [The machine talks: 'I am full and ready'];
-		go: #run     to: #teach	then: [The machine talks: 'going to teach.';
-		    	     	 	      	   	  startsClass.];
+    factory machine: self;
+	go: #start   to: #run	then: [The machine
+	    	     	 	      	  eats;
+	    	       	   		  talks: 'I just woke up.'];
+	go: #run     to: #hungry if: [The machine hunger > 10]
+	    	     	 	 then: [The machine talks: 'I am hungry, gotta eat.'];
+	go: #hungry  to: #hungry then: [The machine eats.];
+	go: #hungry  to: #run    if: [The machine hunger < 1]
+	   	     	 	 then: [The machine talks: 'I am full and ready'];
+	go: #run     to: #teach	 then: [The machine talks: 'going to teach.';
+	    	     	 	      	   startsClass.];
 		go: #teach   to: #teach then: [The machine teaches; talks: 'teaching.'];
 	        go: #teach   to: #run   if: [The machine taught > 2]
 		    	     	 	then: [The machine talks: 'See you next week.'];
@@ -27,19 +44,8 @@ worksIn: factory
 					      The next oo.
 					      The machine oo.
 					      The factory oo.].
-!!
+!
 
-"--------------------------------"
-! Professor methodsFor: 'creation' !
-init
-    hunger := (App random next * 10 rounded) asInteger.
-    exhaustion := (App random next * 10 rounded) asInteger.
-    taught := (App random next * 10 rounded) asInteger.
-    ('Initial values are: hunger=', hunger s,' exhaustion=',exhaustion s,'taught=',taught s)oo.
-!!
-
-"----------------------------------"
-! Professor methodsFor: 'operations' !
 eats
     hunger := hunger - 2.
 !
@@ -57,7 +63,10 @@ teaches
     hunger := hunger + 1.
     exhaustion := exhaustion + 1.
     taught := taught + 1.
-!
+!!
+
+"----------------------------------"
+! Professor methodsFor: 'accessing' !
 
 hunger
     ^hunger.
@@ -75,5 +84,5 @@ taught
 "--------------------------------"
 ! Professor methodsFor: 'printing' !
 talks: x
-       ('Machine:[', id s, '] ', x s) oo.
+       ('Machine:[', name s, '] ', x s) oo.
 !!

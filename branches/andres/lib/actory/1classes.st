@@ -27,7 +27,7 @@
 #Building    isa: Factory with: 'floors logs sensors'.
 #Professor   isa: Machine with: 'hunger exhaustion taught'.
 #Floor	     isa: Machine with: 'rooms sensors interferenceSources'.
-#Sensor	     isa: Machine with: 'range batteryLife detectionAccuracy placement'.
+#Sensor	     isa: Machine with: 'frequency range batteryLife'.
 
 Smalltalk at: #The put: nil. "one global"
 
