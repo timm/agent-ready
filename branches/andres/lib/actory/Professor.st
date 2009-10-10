@@ -32,12 +32,12 @@ worksIn: factory
 	   	     	 	 then: [The machine talks: 'I am full and ready'];
 	go: #run     to: #teach	 then: [The machine talks: 'going to teach.';
 	    	     	 	      	   startsClass.];
-		go: #teach   to: #teach then: [The machine teaches; talks: 'teaching.'];
-	        go: #teach   to: #run   if: [The machine taught > 2]
-		    	     	 	then: [The machine talks: 'See you next week.'];
-		go: #run     to: #run   if: [The machine exhaustion > 5]
-		    	     	 	then: [The machine naps.];
-		go: #run     to: #endF  if: [App random next > 0.9]
+	go: #teach   to: #teach then: [The machine teaches; talks: 'teaching.'];
+	go: #teach   to: #run   if: [The machine taught > 2]
+		    	      	then: [The machine talks: 'See you next week.'];
+	go: #run     to: #run   if: [The machine exhaustion > 5]
+		    	     	then: [The machine naps.];
+	go: #run     to: #endF  if: [App random next > 0.95]
 		    	     	 	then: [The machine talks: 'Going to sleep'.
 					      The yourself oo.
 					      The state oo.

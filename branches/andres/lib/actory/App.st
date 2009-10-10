@@ -65,7 +65,7 @@ reset: seed maxLoops: n
 			tooManyLoops: n;
 			seed: seed;
 			asynchronousOff;
-			patience: 50;
+			patience: 150;
 			silent 
 !!
 
