@@ -11,16 +11,21 @@ new: nameString
 
 init: aString
       logs := Dictionary new.
-      sensors := Dictionary new.
-      floors := 0.
+      floors := OrderedCollection new.
       ^super init: aString
 !!
 
 "------------------------------"
 !Building methodsFor: 'storing' !
 
-log: nameString to: nameSensor
-	logs at: nameString put: nameSensor.
+floor: floor
+    current := floor.
+    floors addLast: floor.
+    floor factory: self.
+!
+
+log: aThing at: aPlace
+	logs at: aThing put: aPlace.
 !
 
 logOut: nameString
@@ -44,9 +49,6 @@ placeSensor: aStringID at: floorID
 !Building methodsFor: 'accessing' !
 logs
 	^logs
-!
-sensors
-	^sensors
 !
 
 floors
