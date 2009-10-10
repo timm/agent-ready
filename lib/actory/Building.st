@@ -28,12 +28,12 @@ logOut: nameString
 !
 
 professorIn: nameString
-	   log: nameString to: 'entrance'.
+	   self log: nameString to: 'entrance'.
 	   super machine: name.
 !
 
-sensorPlaced: aStringID at: floorID
-	log: aStringID to: floorID.
+placeSensor: aStringID at: floorID
+	self log: aStringID to: floorID.
 	super machine aStringID.
 !!
 
