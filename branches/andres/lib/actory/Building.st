@@ -18,6 +18,10 @@ init: aString
 "------------------------------"
 !Building methodsFor: 'storing' !
 
+professor: professor
+    self machine: professor.
+!
+
 floor: floor
     current := floor.
     floors addLast: floor.
@@ -28,13 +32,12 @@ log: aThing at: aPlace
 	logs at: aThing put: aPlace.
 !
 
-logOut: nameString
+professorOut: nameString
 	logs removeKey: nameString.
 !
 
 professorIn: nameString
-	   self log: nameString to: 'entrance'.
-	   super machine: name.
+	   self log: nameString at: 'ground'.
 !
 
 placeSensor: aStringID at: floorID
