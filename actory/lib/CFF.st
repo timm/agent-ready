@@ -1,11 +1,11 @@
-! CFF class methodsFor: 'creation'
+! CFF class methodsFor: 'creation' !
 new: name
 	^(super new: name) init
 !
 worksIn: factory
     factory 
     	machine: (self new: 'CFF');
-    	go: #start	to: #
+    	go: #start	to: #endF.
 !!
 
 "============================================"
@@ -29,5 +29,5 @@ helps: person
 	(The factory tasks at:tname) moreWorkers
 !
 donehelping
-	taskhelp := '';
+	taskhelp := ''
 !!

@@ -17,10 +17,10 @@ init
 	refoodOP := Orderedcollection new.
 	reception := Task new: 'reception'.
 	decoration := Task new: 'decoration'.
-	ceremony := Task new 'ceremony'.
-	food := Food new 'food'.
-	refood := Food new 'rehersalfood'.
-	tasks := Dictionary new
+	ceremony := Task new: 'ceremony'.
+	food := Food new: 'food'.
+	refood := Food new: 'rehersalfood'.
+	tasks := Dictionary new.
 !!
 
 "============================================"
@@ -72,7 +72,7 @@ ceremony
 !!
 
 "============================================"
-!Wedding mothodsFor: 'setting' !
+! Wedding mothodsFor: 'setting' !
 bp: size
 	bp: size
 !
@@ -80,7 +80,7 @@ guests: g
 	guests := g
 !
 time: t
-	time := t;
+	time := t
 !
 budget: b
 	budget := b
@@ -102,7 +102,7 @@ ceremony: cer
 !!
 
 "============================================"
-!Wedding mothodsFor: 'operations' !
+! Wedding mothodsFor: 'operations' !
 payfrombudget: b
 	budget := budget - b
 !

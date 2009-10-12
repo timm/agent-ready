@@ -35,7 +35,7 @@
 #BusyNeedHelp isa: NormalState.
 #Idle        isa: NormalState.
 
-#Task        isa: Object with: "name timeneeded timestart timetocompletion cost peopleNum".
+#Task        isa: Object with: 'name timeneeded timestart timetocompletion cost peopleNum'.
 #Reception    isa: Task.
 #Decoration    isa: Task.
 #Ceremony    isa: Task with: 'length '.

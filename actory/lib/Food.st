@@ -1,4 +1,4 @@
-! Food class methodsFor: 'creation" !
+! Food class methodsFor: 'creation' !
 new: foodoption
 	^(super new: foodoption) init 
 !!
