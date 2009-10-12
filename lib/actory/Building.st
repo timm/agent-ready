@@ -10,6 +10,7 @@ new: nameString
 !Building methodsFor: 'creation' !
 
 init: aString
+      totalSensorCost := 0.
       logs := Dictionary new.
       floors := OrderedCollection new.
       ^super init: aString
@@ -23,9 +24,8 @@ professor: professor
 !
 
 floor: floor
-    current := floor.
     floors addLast: floor.
-    floor factory: self.
+    self machine: floor.
 !
 
 log: aThing at: aPlace
@@ -38,11 +38,6 @@ professorOut: nameString
 
 professorIn: nameString
 	   self log: nameString at: 'ground'.
-!
-
-placeSensor: aStringID at: floorID
-	self log: aStringID to: floorID.
-	super machine aStringID.
 !!
 
 
