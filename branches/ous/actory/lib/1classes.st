@@ -13,7 +13,7 @@
 #Factory     isa: App with: 'machines name current'.
 #Machine     isa: App with: 'container name id current start states transitions'.
 (#State      isa: App with: 'container name id visits froms tos') public.
-(#Transition isa: App with: 'container      id state if then next') public; inits.
+(#Transition isa: App with: 'container id state if then next') public; inits.
 #ErrorState  isa: State.
 #LoopState   isa: State.
 #EndState    isa: State.
