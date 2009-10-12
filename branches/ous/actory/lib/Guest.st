@@ -8,12 +8,16 @@ worksIn: factory
     	go: #start	to: #waiting	then: [The machine talks: 'waiting for the ceremony'];
     	go: #waiting	to: #waiting	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony'];
-    	go: #waiting	to: #atceremony	if: [(The factory time > 0) & ((The factory tasks at: 'ceremony') timetocompletion = 0)]
+    	go: #waiting	to: #endF	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion > 0)]
+    					then: [The machine notHappy; talks: 'what a letdown'];
+    	go: #waiting	to: #atceremony	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion = 0)]
     					then: [The machine atceremonyfor: (The factory tasks at: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
     	go: #atceremony	to: #noticesdecor	then: [The machine seesdecor: (The factory tasks at: 'decoration') cost];
-    	
-    	
+    	go: #noticesdecor	to: #atreception	then: [The machine talks: 'at the reception'];
+    	go: #atreception	to: #checksoptions	then: [The machine seesoptions: (The factory tasks at: 'food') options; talks: 'checking options'];
+    	go: #checksoptions	to: #eating		then: [The machine has: (The factory tasks at: 'food') portions; talks: 'having something to eat'];
+    	go: #eating 		to: #endF
 !!
 
 "============================================"
@@ -25,7 +29,7 @@ init
 "============================================"
 ! Guest methodsFor: 'operations' !
 has: portions
-	happiness := happiness*portions/
+	happiness := happiness*portions/The factory guests
 !
 seesoptions: foodoptions
 	happiness := happiness*options
@@ -35,6 +39,9 @@ seesdecor: decorcost
 !
 atceremonyfor: time
 	happiness := happiness-happiness*(time/The factory ceremonytime)
+!
+notHappy
+	happiness := 0
 !!
 
 "============================================"

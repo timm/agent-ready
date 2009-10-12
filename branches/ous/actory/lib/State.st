@@ -7,9 +7,9 @@ nameToClass: aSymbol
 	aSymbol s ~ 'L$' ifTrue: [^LoopState].
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
-	aSymbol s ~ 'B' ifTrue: [^Busy].
-	aSymbol s ~ 'BH' ifTrue: [^BusyNeedHelp].
-	aSymbol s ~ 'I' ifTrue: [^Idle].
+	aSymbol s ~ 'B$' ifTrue: [^Busy].
+	aSymbol s ~ 'BH$' ifTrue: [^BusyNeedHelp].
+	aSymbol s ~ 'I$' ifTrue: [^Idle].
 	^NormalState
 !!
 
