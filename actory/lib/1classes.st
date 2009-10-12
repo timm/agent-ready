@@ -21,6 +21,28 @@
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
+#Wedding     isa: Factory with: 'budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasks'.
+#Guest       isa: Machine with 'happiness'.
+#CFF         isa: Guest with: 'taskhelp'. "Close Friends and Family"
+#BP          isa: CFF with: 'taskname'. "Bridal Party"
+#POB         isa: BP with: 'money'. "Parents Of Bride"
+#POG         isa: BP with: 'money'. "Parents Of Bride"
+"#G-MAN       isa: BP. "Groom's Man"
+#B-MAN       isa: BP. "Best Man"
+#B-MAID      isa: BP. "Bride's Maid"
+#H-MAID      isa: BP. "Maid of Honor""
+
+#Busy        isa: NormalState.
+#BusyNeedHelp isa: NormalState.
+#Idle        isa: NormalState.
+
+#Task        isa: Object with: "name timeneeded timestart timetocompletion cost peopleNum".
+#Reception    isa: Task.
+#Decoration    isa: Task.
+#Ceremony    isa: Task.
+#Food        isa: Task with: 'options'.
+#RehersalDin isa: Food.
+
 Smalltalk at: #The put: nil. "one global"
 
 !
