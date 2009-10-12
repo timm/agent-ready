@@ -105,7 +105,7 @@ onEntry
 
 ! Happy methods !
 onEntry
-	'ha ha ha ha ha' noo.
+	'Woot food!' noo.
 !
 onStay
 	'still laughing' oo.	
