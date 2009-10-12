@@ -51,10 +51,15 @@ worksIn: building
 
 entersBuilding
     self factory professorIn: self name.
+    self goToOffice.
 !
 
 leavesBuilding
    self factory professorOut: self name.
+!
+
+goToOffice
+    ^true.
 !
 
 eats
