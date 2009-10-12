@@ -32,7 +32,7 @@ eats: portions
 	happiness := happiness*portions/The factory guests
 !
 seesoptions: foodoptions
-	happiness := happiness*options
+	happiness := happiness*foodoptions
 !
 seesdecor: decorcost
 	happiness := happiness+ (happiness*decorcost/The factory budget)
