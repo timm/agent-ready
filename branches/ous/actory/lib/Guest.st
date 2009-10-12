@@ -38,7 +38,7 @@ seesdecor: decorcost
 	happiness := happiness+ (happiness*decorcost/The factory budget)
 !
 atceremonyfor: time
-	happiness := happiness-happiness*(time/The factory ceremonytime)
+	happiness := happiness-time
 !
 notHappy
 	happiness := 0
