@@ -6,6 +6,8 @@ new: nameString
 "============================================"
 ! Wedding  methodsFor: 'creation' !
 init
+	bp := 0.
+	guests := 0.
 	time := 0.
 	budget := 0.
 	receptionOP := Orderedcollection new.
@@ -23,6 +25,12 @@ init
 
 "============================================"
 ! Wedding methodsFor: 'accessing' !
+bp
+	^bp
+!
+guests
+	^guests
+!
 time
 	^time
 !
@@ -65,6 +73,12 @@ ceremony
 
 "============================================"
 !Wedding mothodsFor: 'setting' !
+bp: size
+	bp: size
+!
+guests: g
+	guests := g
+!
 time: t
 	time := t;
 !
