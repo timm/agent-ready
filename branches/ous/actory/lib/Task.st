@@ -1,0 +1,43 @@
+! Task class methodsFor: 'creation" !
+new: taskname
+	^super new init: taskname
+!!
+
+"============================================"
+! Task methodsFor: 'creation' !
+init: taskname
+	name := taskname.
+	cost := 0.
+	timeneeded := 0.
+	timestart := 0.
+	timetocompletion := 0.
+	peopleNum := 0;
+!!
+
+"============================================"
+! Task methodsFor: 'accessing' !
+name
+	^name
+!
+cost
+	^cost
+!
+timeneeded
+	^timeneeded
+!
+timestart
+	^timestart
+!
+timetocompletion
+	^timetocompletion
+!
+peopleNum
+	^peopleNum
+!!
+
+"============================================"
+! Task methodsFor: 'operation' !
+workdone
+	timetocompletion := timetocompletion - peopleNum;
+!!
+
