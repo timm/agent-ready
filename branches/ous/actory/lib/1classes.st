@@ -24,7 +24,7 @@
 #Wedding     isa: Factory with: 'budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasks'.
 #Guest       isa: Machine with 'happiness'.
 #CFF         isa: Guest with: 'taskhelp'. "Close Friends and Family"
-#BP          isa: CFF with: 'taskname'. "Bridal Party"
+#BP          isa: CFF with: 'taskname needhelp'. "Bridal Party"
 #POB         isa: BP with: 'money'. "Parents Of Bride"
 #POG         isa: BP with: 'money'. "Parents Of Bride"
 "#G-MAN       isa: BP. "Groom's Man"

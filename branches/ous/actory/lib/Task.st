@@ -36,8 +36,29 @@ peopleNum
 !!
 
 "============================================"
+! Task methodsFor: 'setting' !
+cost: c
+	cost := c
+!
+timeneeded: tn
+	timeneeded := tn
+!
+timestart: ts
+	timestart := ts
+!
+timetocompletion: ttc
+	timetocompletion: ttc
+!!
+
+"============================================"
 ! Task methodsFor: 'operation' !
 workdone
 	timetocompletion := timetocompletion - peopleNum;
+!
+moreWorkers
+	peopleNum := peopleNum + 1
+!
+releaseWorkers
+	peopleNum := 1
 !!
 

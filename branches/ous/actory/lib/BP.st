@@ -9,7 +9,31 @@ worksIn: factory
 !!
 
 "============================================"
+! BP methodsFor: 'creation' !
+init
+	taskname := ''.
+	needhelp := false
+!!
+
+"============================================"
 ! BP methodsFor: 'accessing' !
-taskhelp
-	^taskhelp
+taskname
+	^taskname
+!
+needhelp
+	^needhelp
+!!
+
+"============================================"
+! BP methodsFor: 'setting' !
+pleasehelp
+	needhelp := true;
+!
+nomorehelp
+	needhelp := false;
+!
+thanks4help
+	|tname|
+	tname = self taskname.
+	(The factory tasks at:tname) releaseWorkers
 !!

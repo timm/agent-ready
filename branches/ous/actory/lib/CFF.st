@@ -11,7 +11,7 @@ worksIn: factory
 "============================================"
 ! CFF methodsFor: 'creation' !
 init
-	taskhelp := 0
+	taskhelp := ''
 !!
 
 "============================================"
@@ -21,10 +21,13 @@ taskhelp
 !!
 
 "============================================"
-! CFF methodsFor: 'setting' !
-needhelp
-	taskhelp := 1;
+! CFF methodsFor: 'operations' !
+helps: person
+	|tname|
+	tname = person taskname.
+	taskhelp := tname.
+	(The factory tasks at:tname) moreWorkers
 !
-thanks4help
-	taskhelp := 0;
+donehelping
+	taskhelp := '';
 !!
