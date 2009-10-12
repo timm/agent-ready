@@ -109,4 +109,8 @@ addfoodOP: option
 !
 addrefoodOP: option
 	refoodOP addLast: option
+!
+tick
+	super tick.
+	time := time - 1
 !!
