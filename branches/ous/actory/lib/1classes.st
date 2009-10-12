@@ -27,10 +27,9 @@
 #BP          isa: CFF with: 'taskname needhelp'. "Bridal Party"
 #POB         isa: BP with: 'money'. "Parents Of Bride"
 #POG         isa: BP with: 'money'. "Parents Of Bride"
-"#G-MAN       isa: BP. "Groom's Man"
-#B-MAN       isa: BP. "Best Man"
-#B-MAID      isa: BP. "Bride's Maid"
-#H-MAID      isa: BP. "Maid of Honor""
+#Bride       isa: BP.
+#Groom       isa: BP.
+
 
 #Busy        isa: NormalState.
 #BusyNeedHelp isa: NormalState.
@@ -39,7 +38,7 @@
 #Task        isa: Object with: "name timeneeded timestart timetocompletion cost peopleNum".
 #Reception    isa: Task.
 #Decoration    isa: Task.
-#Ceremony    isa: Task with: 'length'.
+#Ceremony    isa: Task with: 'length '.
 #Food        isa: Task with: 'options'.
 #RehersalDin isa: Food.
 
