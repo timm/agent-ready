@@ -16,8 +16,8 @@ worksIn: factory
     	go: #atceremony	to: #noticesdecor	then: [The machine seesdecor: (The factory tasks at: 'decoration') cost];
     	go: #noticesdecor	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptions	then: [The machine seesoptions: (The factory tasks at: 'food') options; talks: 'checking options'];
-    	go: #checksoptions	to: #eating		then: [The machine has: (The factory tasks at: 'food') portions; talks: 'having something to eat'];
-    	go: #eating 		to: #endF
+    	go: #checksoptions	to: #eating		then: [The machine eats: (The factory tasks at: 'food') portions; talks: 'having something to eat'];
+    	go: #eating 		to: #endF.
 !!
 
 "============================================"
@@ -28,7 +28,7 @@ init
 
 "============================================"
 ! Guest methodsFor: 'operations' !
-has: portions
+eats: portions
 	happiness := happiness*portions/The factory guests
 !
 seesoptions: foodoptions
@@ -42,6 +42,9 @@ atceremonyfor: time
 !
 notHappy
 	happiness := 0
+!
+happiness: h
+	happiness := h
 !!
 
 "============================================"

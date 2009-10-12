@@ -1,11 +1,11 @@
-! BP class methodsFor: 'creation'
+! BP class methodsFor: 'creation' !
 new: name
 	^(super new: name)
 !
 worksIn: factory
     factory 
     	machine: (self new: 'BP');
-    	go: #start	to: #s
+    	go: #start	to: #endF.
 !!
 
 "============================================"
@@ -27,10 +27,10 @@ needhelp
 "============================================"
 ! BP methodsFor: 'setting' !
 pleasehelp
-	needhelp := true;
+	needhelp := true
 !
 nomorehelp
-	needhelp := false;
+	needhelp := false
 !
 thanks4help
 	|tname|

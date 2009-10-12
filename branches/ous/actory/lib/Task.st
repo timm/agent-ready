@@ -1,4 +1,4 @@
-! Task class methodsFor: 'creation" !
+! Task class methodsFor: 'creation' !
 new: taskname
 	^super new init: taskname
 !!
@@ -11,7 +11,7 @@ init: taskname
 	timeneeded := 0.
 	timestart := 0.
 	timetocompletion := 0.
-	peopleNum := 0;
+	peopleNum := 0
 !!
 
 "============================================"
@@ -53,7 +53,7 @@ timetocompletion: ttc
 "============================================"
 ! Task methodsFor: 'operation' !
 workdone
-	timetocompletion := timetocompletion - peopleNum;
+	timetocompletion := timetocompletion - peopleNum
 !
 moreWorkers
 	peopleNum := peopleNum + 1

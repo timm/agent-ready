@@ -1,11 +1,11 @@
-! POB class methodsFor: 'creation'
+! POB class methodsFor: 'creation' !
 new: name
 	^(super new: name) init
 !
 worksIn: factory
     factory 
     	machine: (self new: 'POB');
-    	go: #start	to: #s
+    	go: #start	to: #endF.
 !!
 
 "============================================"
@@ -24,8 +24,8 @@ money
 ! POB methodsFor: 'setting' !
 givemoney: m
 	money := money - m.
-	happiness := happiness - m.
+	super happiness: (super happiness - m).
 	The factory payfrombudget: m.
-	if: [The factory budget < 0]
-	then: [happiness := happiness - m]
+	(The factory budget < 0)
+		ifTrue: [happiness := happiness - m]
 !!
