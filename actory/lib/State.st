@@ -100,7 +100,7 @@ stopped
 	^true
 !
 onEntry
-	'that''s all folks!' oo
+	The machine happiness oo
 !!
 
 ! Happy methods !
