@@ -1,6 +1,6 @@
 |wed|
 App reset; asynchronousOn.
-wed := Factory new: 'wedding'.
+wed := Wedding new: 'wedding'.
 wed guests: 1.
 wed budget: 10000.
 wed decoration cost: 500.
