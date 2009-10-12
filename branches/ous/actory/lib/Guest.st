@@ -5,7 +5,9 @@ new: name
 worksIn: factory
     factory 
     	machine: (self new: 'guest');
-    	go: #start	to: #watchI	if: [The factory clock > The factor 
+    	go: #start	to: #run	then: [The machine talks: 'waiting for the ceremony'];
+    	go: #run	to: #atceremony	if: [(The factory tasks at: 'ceremony') timestart < (The factory time)+1 ]
+    					then: [The machine atceremonyfor: 
 !!
 
 "============================================"
