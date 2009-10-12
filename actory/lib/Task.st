@@ -47,7 +47,7 @@ timestart: ts
 	timestart := ts
 !
 timetocompletion: ttc
-	timetocompletion: ttc
+	timetocompletion := ttc
 !!
 
 "============================================"

@@ -17,7 +17,7 @@ init
 	decoration := Task new: 'decoration'.
 	ceremony := Task new 'ceremony'.
 	food := Food new 'food'.
-	refood := Food new 'receptionfood'.
+	refood := Food new 'rehersalfood'.
 	tasks := Dictionary new
 !!
 
