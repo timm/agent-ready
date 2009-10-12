@@ -72,9 +72,9 @@ ceremony
 !!
 
 "============================================"
-! Wedding mothodsFor: 'setting' !
-bp: size
-	bp: size
+! Wedding methodsFor: 'setting' !
+bp: s
+	bp:= s
 !
 guests: g
 	guests := g
@@ -102,7 +102,7 @@ ceremony: cer
 !!
 
 "============================================"
-! Wedding mothodsFor: 'operations' !
+! Wedding methodsFor: 'operations' !
 payfrombudget: b
 	budget := budget - b
 !
