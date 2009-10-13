@@ -1,5 +1,5 @@
 |b f m|
-App reset; asynchronousOff.
+App reset; asynchronousOn.
 b := Building new: 'csee'.
 f := Floor new: 'ground'.
 f room: 1  isa: 'offc'.

@@ -29,12 +29,9 @@ floor: aFloor
     self machine: aFloor.
 !
 
-sensor: aSensor
-    self machine: aSensor.
-!
-
 professorOut: nameString
-	professors remove: nameString ifAbsent: [The machine talks: 'Weird stuff happened'.]
+	professors remove: nameString ifAbsent: [The machine 
+		   	   	      		     talks: 'Weird stuff happened'.]
 !!
 
 
