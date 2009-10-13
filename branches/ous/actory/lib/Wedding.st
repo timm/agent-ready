@@ -86,6 +86,9 @@ bp: s
 guests: g
 	guests := g
 !
+gettasks: atask
+	^tasksDic at: (atask name)
+!
 time: t
 	time := t
 !
