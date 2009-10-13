@@ -9,12 +9,13 @@ worksIn: factory
     	go: #waitingI	to: #waitingI	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony, I can help though'];
     	go: #waitingI	to: #waitingB	if: [(The factory time > 0) & (App random next > 0.15) ]
-    					then: [The machine talks: 'waiting for the ceremony, I'm busy though'];
+    					then: [The machine talks: 'waiting for the ceremony, I am busy though'];
     	go: #waitingI	to: #endF	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
     	go: #waitingB	to: #endF	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
-    	go: #waitingI	to: #helpingB	if:  
+    	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
+    					then: [(The factory gettasks: ((The factory peopleNeedHelp last) taskname)) moreWorkers];
     	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion = 0)]
     					then: [The machine atceremonyfor: (The factory tasks at: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
