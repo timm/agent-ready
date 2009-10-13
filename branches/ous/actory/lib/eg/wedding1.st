@@ -1,6 +1,6 @@
 |wed|
-App reset; asynchronousOn.
-wed := (Wedding new: 'wedding').
+App reset; asynchronousOff.
+wed := Wedding new: 'wedding'.
 wed guests: 1.
 wed budget: 10000.
 wed decoration cost: 500.
