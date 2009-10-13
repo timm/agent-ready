@@ -12,6 +12,7 @@ init
     taught := (App random next * 10 rounded) asInteger.
     ('****Initial values are:   *****')oo.
     ('name= ', name s)oo.
+    ('id= ', id s)oo.
     ('hunger= ', hunger s)oo.
     ('exhaustion= ',exhaustion s)oo.
     ('taught= ',taught s)oo.
@@ -45,12 +46,10 @@ worksIn: building
 					      The state oo.
 					      The next oo.
 					      The machine oo.
-					      The factory oo.
-					      building logs oo.].
+					      The factory oo]
 !
 
 entersBuilding
-    self factory professorIn: self name.
     self goToOffice.
 !
 
@@ -83,6 +82,10 @@ teaches
 
 "----------------------------------"
 ! Professor methodsFor: 'accessing' !
+
+building
+   ^container.
+!
 
 hunger
     ^hunger.

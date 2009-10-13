@@ -24,10 +24,10 @@
 #Seated	     isa: NormalState.
 #Moving	     isa: LoopState.
 
-#Building    isa: Factory with: 'floors logs totalSensorCost'.
+#Building    isa: Factory with: 'floors professors totalSensorCost'.
 #Professor   isa: Machine with: 'hunger exhaustion taught'.
 #Floor	     isa: Machine with: 'squares rooms sensors interferenceSources'.
-#Sensor	     isa: Machine with: 'frequency range batteryLife'.
+#Sensor	     isa: Machine with: 'signalPower range batteryLife'.
 
 Smalltalk at: #The put: nil. "one global"
 
