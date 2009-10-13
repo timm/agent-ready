@@ -1,4 +1,7 @@
 ! Wedding class methodsFor: 'creation' !
+new
+	self error: 'should not create Weddings without nameStrings'
+!
 new: nameString
 	^(super new: nameString) init
 !!
@@ -10,6 +13,7 @@ init
 	guests := 0.
 	time := 0.
 	budget := 0.
+	peopleNeedHelp := Orderedcollection new.
 	receptionOP := Orderedcollection new.
 	decorationOP := Orderedcollection new.
 	ceremonyOP := Orderedcollection new.
@@ -20,7 +24,7 @@ init
 	ceremony := Task new: 'ceremony'.
 	food := Food new: 'food'.
 	refood := Food new: 'rehersalfood'.
-	tasks := Dictionary new.
+	tasksDic := Dictionary new.
 !!
 
 "============================================"
@@ -37,8 +41,8 @@ time
 budget
 	^budget
 !
-tasks
-	^tasks
+tasksDic
+	^tasksDic
 !
 receptionOP
 	^receptionOP
@@ -69,6 +73,9 @@ refood
 !
 ceremony
 	^ceremony
+!
+peopleNeedHelp
+	^peopleNeedHelp
 !!
 
 "============================================"
@@ -86,19 +93,30 @@ budget: b
 	budget := b
 !
 reception: rec
-	reception := rec
+	reception := rec.
+	self addtasks: reception
 !
 decoration: dec
-	decoration := dec
+	decoration := dec.
+	self addtasks: decoration.
 !
 food: f
-	food := f
+	food := f.
+	self addtasks: food.
 !
 refood: ref
-	refood := ref
+	refood := ref.
+	self addtasks: refood.
 !
 ceremony: cer
-	ceremony := cer
+	ceremony := cer.
+	self addtasks: ceremony
+!
+someoneNeedshelp: aPerson
+	peopleNeedHelp addFirst: aPerson
+!
+nolongerNeedsHelp: aPerson
+	peopleNeedHelp remove: aPerson ifAbsent:[]
 !!
 
 "============================================"
@@ -107,7 +125,7 @@ payfrombudget: b
 	budget := budget - b
 !
 addtasks: atask
-	tasks at: (atask name) put: atask
+	tasksDic at: (atask name) put: atask
 !
 addreceptionOP: option
 	receptionOP addLast: option
