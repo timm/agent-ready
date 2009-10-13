@@ -21,13 +21,11 @@
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
-#Seated	     isa: NormalState.
-#Moving	     isa: LoopState.
-
 #Building    isa: Factory with: 'floors professors totalSensorCost'.
 #Professor   isa: Machine with: 'hunger exhaustion taught'.
-#Floor	     isa: Machine with: 'squares rooms sensors interferenceSources'.
-#Sensor	     isa: Machine with: 'signalPower range batteryLife'.
+#Floor	     isa: Machine with: 'squares rooms'.
+#Sensor	     isa: App with: 'range'.
+#Room	     isa: App with: 'id type sensor interference'.
 
 Smalltalk at: #The put: nil. "one global"
 

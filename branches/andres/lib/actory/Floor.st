@@ -9,8 +9,6 @@ new: name
 init
     squares := 36. "divide floor in squares on a grid 6 x 6"
     rooms := Array new: squares.
-    sensors := OrderedCollection new.
-    interferenceSources := 0.
     ('****Initial values are:   *****')oo.
     ('floor= ', name s)oo.
 !!
@@ -30,14 +28,14 @@ worksIn: building
 							The next oo.
 							The machine oo.
 							The factory oo.
-							self sensors oo.].
+							self rooms oo.].
 !
 
 detecting
     | tRoom tRange tProf |
-    1 to: squares do: [:i|
-        tRoom := (self building machines at: (sensors at: i)) name.
-        tRange := (self building machines at: (sensors at: i)) range.
+    1 to: (sensors size) do: [:i|
+        tRoom := (sensors at: i) room.
+        tRange := (sensors at: i) range.
 	1 to: (self building professors size) do: [:j|
 	    tProf := (self building machines) at: (self building professor at: j).
 	    self distance: tRoom to: tProf > tRange ifTrue: [self sensorAt: tProf]
@@ -64,8 +62,7 @@ room: aRoom isa: roomType
 sensorAt: aRoom
       |s|
       s := Sensor new: aRoom.
-      s worksIn: self building.
-      sensors addLast: s id.
+      sensors at: aRoom put: Sensor new: aRoom.
 !
 
 sensorAtEntrances

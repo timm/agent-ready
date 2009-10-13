@@ -27,7 +27,9 @@ worksIn: building
 	    	     	 	      	  entersBuilding;
 	    	       	   		  talks: 'I just entered the building'];
 	go: #run     to: #hungry if: [The machine hunger > 10]
-	    	     	 	 then: [The machine talks: 'I am hungry, gotta eat.'];
+	    	     	 	 then: [The machine 
+					    talks: 'I am hungry, gotta eat.';
+				       	    goToSnackBar];
 	go: #hungry  to: #hungry then: [The machine eats.];
 	go: #hungry  to: #run    if: [The machine hunger < 1]
 	   	     	 	 then: [The machine talks: 'I am full and ready'];
@@ -55,6 +57,10 @@ entersBuilding
 
 leavesBuilding
    self factory professorOut: self name.
+!
+
+goToSnackBar
+   ^true
 !
 
 goToOffice
