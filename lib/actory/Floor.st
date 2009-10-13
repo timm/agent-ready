@@ -31,7 +31,26 @@ worksIn: building
 							The machine oo.
 							The factory oo.
 							self sensors oo.].
+!
 
+detecting
+    | tRoom tRange tProf |
+    1 to: squares do: [:i|
+        tRoom := (self building machines at: (sensors at: i)) name.
+        tRange := (self building machines at: (sensors at: i)) range.
+	1 to: (self building professors size) do: [:j|
+	    tProf := (self building machines) at: (self building professor at: j).
+	    self distance: tRoom to: tProf > tRange ifTrue: [self sensorAt: tProf]
+	]
+    ]
+!
+
+distance: aRoom to: another
+    | side xdist ydist |
+    side := squares squared.
+    ydist := ((aRoom / side floor) - (another / side floor)) abs.
+    xdist := ((aRoom / side rem) - (another / side rem)) abs.
+    ydist > xdist ifTrue: [ ^ydist] ifFalse: [ ^xdist ].
 !!
 
 
@@ -45,13 +64,13 @@ room: aRoom isa: roomType
 sensorAt: aRoom
       |s|
       s := Sensor new: aRoom.
-      container machine: s.
+      s worksIn: self building.
       sensors addLast: s id.
 !
 
 sensorAtEntrances
     1 to: squares do: [:i|
-      (rooms at: i) = 'strs' ifTrue: [self sensorAt: i]
+      ((rooms at: i) = 'strs' or: [(rooms at: i) = 'elev']) ifTrue: [self sensorAt: i]
       ]
 !!
 
@@ -61,6 +80,10 @@ sensorAtEntrances
 
 squares
     ^squares.
+!
+
+building
+    ^container.
 !
 
 rooms
@@ -75,5 +98,5 @@ sensors
 "--------------------------------"
 ! Floor methodsFor: 'printing' !
 talks: x
-       ('Floor:[', id s, '] ', x s) oo.
+       ('Floor:[', name s, '] ', x s) oo.
 !!

@@ -7,12 +7,11 @@ new: name
 ! Sensor methodsFor: 'creation' !
 
 init
-    frequency := (App random next * 10 rounded) asInteger. 
-    range := 100 - frequency.
+    range :=  2 + (App random next * 2) asInteger. 
     batteryLife := 100.
+    "self worksIn: container."
     ('****Initial values are:   *****')oo.
     ('name= ', name s)oo.
-    ('frequency= ', frequency s)oo.
     ('range= ', range s)oo.
     ('batteryLife= ',batteryLife s)oo.
 !!
@@ -20,8 +19,8 @@ init
 "----------------------------------"
 ! Sensor methodsFor: 'operations' !
 
-worksIn: factory
-    factory machine: self;
+worksIn: building
+    building sensor: self;
 	go: #start   to: #run	then: [The machine
 	    	       	   		  talks: 'I just got placed in ', self name];
 	go: #run     to: #run if: [The machine batteryLife > 1]
@@ -36,28 +35,19 @@ worksIn: factory
 !
 
 discharges
-    batteryLife := batteryLife - (frequency / 5).
-    frequency := frequency sqrt.
-    self calcRange.
-!
-
-calcRange
-    range := range - frequency.
+    batteryLife := batteryLife - range.
+    range := range raisedTo: 0.98.
 !!
 
 "--------------------------------"
 ! Sensor methodsFor: 'accessing' !
 
 range
-    ^range.
+    ^range rounded.
 !
 
 batteryLife
-    ^batteryLife.
-!
-
-frequency
-    ^frequency.
+    ^batteryLife rounded.
 !!
 
 

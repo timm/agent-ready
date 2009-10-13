@@ -11,33 +11,30 @@ new: nameString
 
 init: aString
       totalSensorCost := 0.
-      logs := Dictionary new.
       floors := OrderedCollection new.
+      professors := OrderedCollection new.
       ^super init: aString
 !!
 
 "------------------------------"
 !Building methodsFor: 'storing' !
 
-professor: professor
-    self machine: professor.
+professor: aProfessor
+    professors addLast: aProfessor id.
+    self machine: aProfessor.
 !
 
-floor: floor
-    floors addLast: floor.
-    self machine: floor.
+floor: aFloor
+    floors addLast: aFloor id.
+    self machine: aFloor.
 !
 
-log: aThing at: aPlace
-	logs at: aThing put: aPlace.
+sensor: aSensor
+    self machine: aSensor.
 !
 
 professorOut: nameString
-	logs removeKey: nameString.
-!
-
-professorIn: nameString
-	   self log: nameString at: 'ground'.
+	professors remove: nameString ifAbsent: [The machine talks: 'Weird stuff happened'.]
 !!
 
 
@@ -45,8 +42,8 @@ professorIn: nameString
 
 "-----------------------------"
 !Building methodsFor: 'accessing' !
-logs
-	^logs
+professors
+	^professors
 !
 
 floors
