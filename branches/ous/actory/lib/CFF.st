@@ -15,7 +15,10 @@ worksIn: factory
     	go: #waitingB	to: #endF	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
     	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
-    					then: [(The factory gettasks: ((The factory peopleNeedHelp last) taskname)) moreWorkers];
+    					then: [self helps: The factory peopleNeedHelp last.
+    						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
+    						The factory peopleNeedHelp removeLast];    	
+    	go: #helpingB	to: #waitingB;
     	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion = 0)]
     					then: [The machine atceremonyfor: (The factory tasks at: 'ceremony') length.
     						The machine talks: 'at the ceremony'];

@@ -20,8 +20,7 @@
 #NormalState isa: State.
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
-
-#Wedding     isa: Factory with: 'bp guests budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasksDic peopleNeedHelp'.
+#Wedding     isa: Factory with: 'guests bp budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasksDic peopleNeedHelp'.
 #Guest       isa: Machine with: 'happiness'.
 #CFF         isa: Guest with: 'taskhelp'. "Close Friends and Family"
 #BP          isa: CFF with: 'taskname needhelp'. "Bridal Party"
@@ -29,7 +28,6 @@
 #POG         isa: BP with: 'money'. "Parents Of Bride"
 #Bride       isa: BP.
 #Groom       isa: BP.
-
 
 #Busy        isa: NormalState.
 #BusyNeedHelp isa: NormalState.
