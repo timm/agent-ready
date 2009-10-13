@@ -1,12 +1,12 @@
 ! Ceremony class methodsFor: 'creation' !
 new: ceroption
-	^(super new: ceroption) init 
+	^(super new: ceroption) init
 !!
 
 "============================================"
 ! Ceremony  methodsFor: 'creation' !
 init
-	length := 0.
+	length := 0
 !!
 
 "============================================"
@@ -18,5 +18,5 @@ length
 "============================================"
 ! Ceremony  methodsFor: 'setting' !
 length: l
-	length := l.
+	length := l
 !!

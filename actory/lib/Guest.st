@@ -8,22 +8,23 @@ worksIn: factory
     	go: #start	to: #waitingI	then: [The machine talks: 'waiting for the ceremony'];
     	go: #waitingI	to: #waitingI	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony'];
-    	go: #waitingI	to: #endF	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion > 0)]
+    	go: #waitingI	to: #endF	if: [(The factory time < 1) & ((The factory tasksDic at: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
-    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory tasks at: 'ceremony') timetocompletion = 0)]
-    					then: [The machine atceremonyfor: (The factory tasks at: 'ceremony') length.
+    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory tasksDic at: 'ceremony') timetocompletion = 0)]
+    					then: [The machine atceremonyfor: (The factory tasksDic at: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
-    	go: #atceremony	to: #noticesdecorH	then: [The machine seesdecor: (The factory tasks at: 'decoration') cost];
+    	go: #atceremony	to: #noticesdecorH	then: [The machine seesdecor: (The factory tasksDic at: 'decoration') cost];
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
-    	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory tasks at: 'food') options; talks: 'checking options'];
-    	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory tasks at: 'food') portions; talks: 'having something to eat'];
-    	go: #eatingH 		to: #endF.
+    	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory tasksDic at: 'food') options; talks: 'checking options'];
+    	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory tasksDic at: 'food') portions; talks: 'having something to eat'];
+    	go: #eatingH 		to: #endF	then: ['The final happiness is :' oo. ].
 !!
 
 "============================================"
 ! Guest methodsFor: 'creation' !
 init
-	happiness := 10000
+	happiness := 10000.
+	(self happiness) noo
 !!
 
 "============================================"
