@@ -24,7 +24,7 @@ initwedding
 	decoration := Task new: 'decoration'.
 	ceremony := Ceremony new: 'ceremony'.
 	food := Food new: 'food'.
-	refood := Food new: 'rehersalfood'.
+	refood := Food new: 'refood'.
 	tasksDic := Dictionary new.
 	self addtasks: reception.
 	self addtasks: decoration.

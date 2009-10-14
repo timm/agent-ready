@@ -16,7 +16,7 @@ worksIn: factory
     	go: #atceremony	to: #noticesdecorH	then: [The machine seesdecor: (The factory task: 'decoration') cost];
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory task: 'food') options; talks: 'checking options'];
-    	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory tasks: 'food') portions; talks: 'having something to eat'];
+    	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
     	go: #eatingH 		to: #endF	then: ['The final happiness is :' noo. The machine happiness oo.].
 !!
 
