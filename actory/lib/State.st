@@ -104,17 +104,49 @@ onEntry
 	The machine happiness oo
 !!
 
-! Happy methods !
+! Idle methods !
 onEntry
-	'Woot food!' noo.
+	' Time to relax ' noo.
 !
 onStay
-	'still laughing' oo.	
+	' Got time to kill ' noo.	
 !
 onExit
-	'the fun stops here' oo.
+	' Good I was starting to get bored ' oo.
 !!
 
+! Busy methods !
+onEntry
+	' There are things to do! ' noo.
+!
+onStay
+	' Still not done ' noo.	
+!
+onExit
+	' Finally done with that ' oo.
+!!
+
+! BusyNeedHelp methods !
+onEntry
+	' Gonna need help here! ' noo.
+!
+onStay
+	' Working as a team! ' noo.	
+!
+onExit
+	' Thanks I can handle it from here ' oo.
+!!
+
+! Happy methods !
+onEntry
+	' Sweet! ' noo.
+!
+onStay
+	' Enjoying my time ' noo.	
+!
+onExit
+	' Everything must end sometime ' oo.
+!!
 "============================================"
 
 

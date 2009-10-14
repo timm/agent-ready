@@ -18,11 +18,31 @@ worksIn: factory
     					then: [The machine notHappy; talks: 'what a letdown'];
     	go: #waitingB	to: #endF	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
+    	go: #waitingI	to: #doceremonyB	if: [((The factory task: 'ceremony') peopleNum = 0) & ((The factory task: 'ceremony') timestart < (The factory time+1))]
+    						then: [The machine isinchargeof: 'ceremony'; talks: 'Working on the ceremony'];
+    	go: #waitingI	to: #doreceptionB	if: [((The factory task: 'reception') peopleNum = 0) & ((The factory task: 'reception') timestart < (The factory time+1))]
+    						then: [The machine isinchargeof: 'reception'; talks: 'Working on the reception'];
+    	go: #waitingI	to: #dodecorationB	if: [((The factory task: 'decoration') peopleNum = 0) & ((The factory task: 'decoration') timestart < (The factory time+1))]
+    						then: [The machine isinchargeof: 'decoration'; talks: 'Working on the decoration'];
+    	go: #waitingI	to: #dofoodB	if: [((The factory task: 'food') peopleNum = 0) & ((The factory task: 'food') timestart < (The factory time+1))]
+    						then: [The machine isinchargeof: 'food'; talks: 'Working on the food'];
+    	go: #waitingI	to: #dorefoodB	if: [((The factory task: 'refood') peopleNum = 0) & ((The factory task: 'refood') timestart < (The factory time+1))]
+    						then: [The machine isinchargeof: 'refood'; talks: 'Working on the rehersal food'];
+    	go: #doceremonyB	to: #waitingI	if: [(The factory task: 'ceremony') timetocompletion < 1]
+    						then: [The machine isdone; talks: 'done with the ceremony'];
+    	go: #doreceptionB	to: #waitingI	if: [(The factory task: 'reception') timetocompletion < 1]
+    						then: [The machine isdone; talks: 'done with the reception'];
+    	go: #dodecorationB	to: #waitingI	if: [(The factory task: 'decoration') timetocompletion < 1]
+    						then: [The machine isdone; talks: 'done with the decoration'];
+    	go: #dofoodB	to: #waitingI	if: [(The factory task: 'food') timetocompletion < 1]
+    						then: [The machine isdone; talks: 'done with the food'];
+    	go: #dorefoodB	to: #waitingI	if: [(The factory task: 'refood') timetocompletion < 1]
+    						then: [The machine isdone; talks: 'done with the rehersal food'];
     	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
     					then: [The machine helps: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp removeLast.
-    						The machine talks: 'helping out'.];
+    						The machine talks: 'helping out with'+(The machine taskhelp).];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
     					then: [The machine donehelping; talks: 'Back to waiting'];
     	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion = 0)]
@@ -35,7 +55,7 @@ worksIn: factory
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory task: 'food') options; talks: 'checking options'];
     	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
-    	go: #eatingH 		to: #endF.
+    	go: #eatingH 		to: #endF	then: ['The final happiness is :' noo. The machine happiness oo.].
 !!
 
 "============================================"
@@ -56,14 +76,25 @@ needhelp
 
 "============================================"
 ! BP methodsFor: 'setting' !
+isinchargeof: tname
+	taskname := tname.
+	(The factory task:tname) moreWorkers
+!
+isdone
+	self thanks4help.
+	taskname := ''.
+!
 pleasehelp
-	needhelp := true
+	needhelp := true.
+	The factory peopleNeedHelp addFirst: self
 !
 nomorehelp
-	needhelp := false
+	needhelp := false.
+	The factory peopleNeedHelp remove: self ifAbsent: ['didn't ask for help' noo]
 !
 thanks4help
 	|tname|
 	tname = self taskname.
-	(The factory tasks at:tname) releaseWorkers
+	(The factory tasks at:tname) releaseWorkers.
+	self nomorehelp
 !!

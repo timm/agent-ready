@@ -22,20 +22,20 @@ worksIn: factory
     					then: [The machine helps: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp removeLast.
-    						The machine talks: 'helping out'.];
+    						The machine talks: 'helping out with'+(The machine taskhelp).];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
     					then: [The machine donehelping; talks: 'Back to waiting'];
-    	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion = 0)]
+    	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
     					then: [The machine atceremonyfor: (The factory task: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
-    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion = 0)]
+    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
     					then: [The machine atceremonyfor: (The factory task: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
     	go: #atceremony	to: #noticesdecorH	then: [The machine seesdecor: (The factory task: 'decoration') cost];
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory task: 'food') options; talks: 'checking options'];
     	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
-    	go: #eatingH 		to: #endF.
+    	go: #eatingH 		to: #endF	then: ['The final happiness is :' noo. The machine happiness oo.].
 !!
 
 "============================================"
