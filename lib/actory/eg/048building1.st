@@ -1,4 +1,4 @@
-|b f m|
+|b f m c k t|
 App reset; asynchronousOn.
 b := Building new: 'csee'.
 f := Floor new: 'ground'.
@@ -38,9 +38,14 @@ f room: 33 isa: 'clss'.
 f room: 34 isa: 'clss'.
 f room: 35 isa: 'clss'.
 f room: 36 isa: 'clss'.
-f rooms oo.
 f worksIn: b.
 m := Professor new: 'menzies'.
+c := Professor new: 'cukic'.
+k := Professor new: 'katerina'.
+t := Professor new: 'tanner'.
 m worksIn: b.
+c worksIn: b.
+k worksIn: b.
+t worksIn: b.
 b run.
 !
