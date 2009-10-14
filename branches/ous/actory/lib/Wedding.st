@@ -10,6 +10,7 @@ new: nameString
 ! Wedding  methodsFor: 'creation' !
 init
 	bp := 0.
+	cff := 0.
 	guests := 0.
 	time := 0.
 	budget := 0.
@@ -31,6 +32,9 @@ init
 ! Wedding methodsFor: 'accessing' !
 bp
 	^bp
+!
+cff
+	^cff
 !
 guests
 	^guests
@@ -80,8 +84,14 @@ peopleNeedHelp
 
 "============================================"
 ! Wedding methodsFor: 'setting' !
+task: taskname
+	^tasksDic at: taskname
+!
 bp: s
 	bp:= s
+!
+cff: c
+	cff := c
 !
 guests: g
 	guests := g

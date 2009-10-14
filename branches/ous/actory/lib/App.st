@@ -72,5 +72,5 @@ reset: seed maxLoops: n
 "=============================================="
 ! App class methodsFor: 'printing' !
 say: message
-	Trace ifTrue: [('Actory> ' s, message ) oo] 
+	Trace ifTrue: [('Actory> ' s, message ) noo] 
 !!
