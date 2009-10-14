@@ -26,6 +26,11 @@ initwedding
 	food := Food new: 'food'.
 	refood := Food new: 'rehersalfood'.
 	tasksDic := Dictionary new.
+	self addtasks: reception.
+	self addtasks: decoration.
+	self addtasks: ceremony.
+	self addtasks: food.
+	self addtasks: refood.
 !!
 
 "============================================"
@@ -169,5 +174,7 @@ step
 	^more
 !
 tock
-	time := time - 1
+	time := time - 1.
+	tasksDic keysDo: [:tname|
+		(self tasksDic at: tname) workdone]
 !!
