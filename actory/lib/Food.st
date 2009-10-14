@@ -1,11 +1,11 @@
 ! Food class methodsFor: 'creation' !
 new: foodoption
-	^(super new: foodoption) init 
+	^(super new: foodoption) initfood 
 !!
 
 "============================================"
 ! Food  methodsFor: 'creation' !
-init
+initfood
 	options := 0.
 	portions := 0.
 !!

@@ -3,12 +3,12 @@ new
 	self error: 'should not create Weddings without nameStrings'
 !
 new: nameString
-	^(super new: nameString) init
+	^(super new: nameString) initwedding
 !!
 
 "============================================"
 ! Wedding  methodsFor: 'creation' !
-init
+initwedding
 	bp := 0.
 	cff := 0.
 	guests := 0.
@@ -155,7 +155,19 @@ addfoodOP: option
 addrefoodOP: option
 	refoodOP addLast: option
 !
-tick
-	super tick.
+step
+	| more |
+	App tick.
+	self tock.
+	more := false.
+	self do: [:machine|
+	  machine step 
+		ifTrue: [
+			more := true.
+            Asynchronousp 
+		   	   ifTrue: [^true]]].
+	^more
+!
+tock
 	time := time - 1
 !!

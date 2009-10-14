@@ -1,6 +1,6 @@
 ! POB class methodsFor: 'creation' !
 new: name
-	^(super new: name) init
+	^(super new: name) initpob
 !
 worksIn: factory
     factory 
@@ -10,7 +10,7 @@ worksIn: factory
 
 "============================================"
 ! POB methodsFor: 'creation' !
-init
+initpob
 	money := 0
 !!
 
