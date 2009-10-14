@@ -56,7 +56,7 @@ helps: person
 	|tname|
 	tname = person taskname.
 	taskhelp := tname.
-	(The factory task:tname) moreWorkers
+	(The factory task: tname) moreWorkers
 !
 donehelping
 	taskhelp := ''
