@@ -10,12 +10,6 @@ init
     hunger := (App random next * 10 rounded) asInteger.
     exhaustion := (App random next * 10 rounded) asInteger.
     taught := (App random next * 10 rounded) asInteger.
-    ('****Initial values are:   *****')oo.
-    ('name= ', name s)oo.
-    ('id= ', id s)oo.
-    ('hunger= ', hunger s)oo.
-    ('exhaustion= ',exhaustion s)oo.
-    ('taught= ',taught s)oo.
 !!
 
 "----------------------------------"
@@ -40,31 +34,49 @@ worksIn: building
 		    	      	then: [The machine talks: 'See you next week.'];
 	go: #run     to: #run   if: [The machine exhaustion > 5]
 		    	     	then: [The machine naps.];
-	go: #run     to: #endF  if: [The machine exhaustion > 7]
-		    	     	 	then: [The machine
-					      	   leavesBuilding;
-						   talks: 'Leaving the building'.
-					      The yourself oo.
-					      The state oo.
-					      The next oo.
-					      The machine oo.
-					      The factory oo]
+	go: #run     to: #endF  if: [The machine exhaustion > 8]
+		    	     	then: [The machine leavesBuilding;
+				                   talks: 'Leaving the building'.
+				       The yourself oo.
+				       The state oo.
+				       The next oo.
+				       The machine oo.
+				       The factory oo]
 !
 
 entersBuilding
+    self entersFloor: 'ground'.
     self goToOffice.
 !
 
+entersFloor: aFloor
+    (self building getFloor: aFloor) professorIn: self id.
+    currentFloor := aFloor.
+!
+
+leavesFloor: aFloor
+    (self building getFloor: aFloor) professorOut: self id.
+!
+
 leavesBuilding
-   self factory professorOut: self name.
+    self leavesFloor: currentFloor.
+    currentFloor := nil
+!
+
+goToRestroom
+    ^self goTo: 16.
 !
 
 goToSnackBar
-   ^true
+   ^self goTo: 31.
 !
 
 goToOffice
-    ^true.
+    ^self goTo: (self building randomRoomIn: currentFloor thatIs: 'offc').
+!
+
+goTo: place
+      currentRoom := place
 !
 
 eats
@@ -87,7 +99,18 @@ teaches
 !!
 
 "----------------------------------"
+! Professor methodsFor: 'storing' !
+
+"----------------------------------"
 ! Professor methodsFor: 'accessing' !
+
+currentRoom
+   ^currentRoom
+!
+
+currentFloor
+    ^currentFloor
+!
 
 building
    ^container.
