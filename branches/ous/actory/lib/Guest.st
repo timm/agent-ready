@@ -1,6 +1,6 @@
 ! Guest class methodsFor: 'creation' !
 new: name
-	^(super new: name) init
+	^(super new: name) initguest
 !
 worksIn: factory
     factory 
@@ -22,8 +22,8 @@ worksIn: factory
 
 "============================================"
 ! Guest methodsFor: 'creation' !
-init
-	happiness := 10000. self happiness noo
+initguest
+	happiness := 10000
 !!
 
 "============================================"

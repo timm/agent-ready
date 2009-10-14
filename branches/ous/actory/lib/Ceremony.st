@@ -1,11 +1,11 @@
 ! Ceremony class methodsFor: 'creation' !
 new: ceroption
-	^(super new: ceroption) init
+	^(super new: ceroption) initcer
 !!
 
 "============================================"
 ! Ceremony  methodsFor: 'creation' !
-init
+initcer
 	length := 0
 !!
 

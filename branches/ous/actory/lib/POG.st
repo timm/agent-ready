@@ -1,6 +1,6 @@
 ! POG class methodsFor: 'creation' !
 new: name
-	^(super new: name) init
+	^(super new: name) initpog
 !
 worksIn: factory
     factory 
@@ -10,7 +10,7 @@ worksIn: factory
 
 "============================================"
 ! POG methodsFor: 'creation' !
-init
+initpog
 	money := 0
 !!
 
