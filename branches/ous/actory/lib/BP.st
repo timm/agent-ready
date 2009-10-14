@@ -29,15 +29,15 @@ worksIn: factory
     	go: #waitingI	to: #dorefoodB	if: [((The factory task: 'refood') peopleNum = 0) & ((The factory task: 'refood') timestart < (The factory time+1))]
     						then: [The machine isinchargeof: 'refood'; talks: 'Working on the rehersal food'];
     	go: #doceremonyB	to: #waitingI	if: [(The factory task: 'ceremony') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the ceremony'];
+    						then: [The machine talks: 'done with the ceremony'];
     	go: #doreceptionB	to: #waitingI	if: [(The factory task: 'reception') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the reception'];
+    						then: [The machine talks: 'done with the reception'];
     	go: #dodecorationB	to: #waitingI	if: [(The factory task: 'decoration') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the decoration'];
+    						then: [The machine talks: 'done with the decoration'];
     	go: #dofoodB	to: #waitingI	if: [(The factory task: 'food') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the food'];
+    						then: [The machine talks: 'done with the food'];
     	go: #dorefoodB	to: #waitingI	if: [(The factory task: 'refood') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the rehersal food'];
+    						then: [The machine talks: 'done with the rehersal food'];
     	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
     					then: [The machine helps: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
@@ -80,21 +80,21 @@ isinchargeof: tname
 	taskname := tname.
 	(The factory task:tname) moreWorkers
 !
-isdone
-	self thanks4help.
-	taskname := ''.
-!
 pleasehelp
 	needhelp := true.
 	The factory peopleNeedHelp addFirst: self
 !
 nomorehelp
 	needhelp := false.
-	The factory peopleNeedHelp remove: self ifAbsent: ['didn't ask for help' noo]
+	(The factory peopleNeedHelp) remove: (The machine) ifAbsent: ['didn't ask for help' noo]
 !
-thanks4help
+"thanks4help
 	|tname|
 	tname = self taskname.
 	(The factory tasks at:tname) releaseWorkers.
 	self nomorehelp
+!
+isdone
+	self thanks4help.
+	taskname := ''"
 !!
