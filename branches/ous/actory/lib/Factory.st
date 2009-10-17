@@ -109,7 +109,7 @@ walk
 "==============================================="
 ! Factory methodsFor: 'constants' !
 patience
-	^500
+	^50
 !
 tooMuch
 	^10000
