@@ -144,7 +144,7 @@ nolongerNeedsHelp: aPerson
 "============================================"
 ! Wedding methodsFor: 'operations' !
 finalrating
-	('Total happiness is:',totalhappiness) noo
+	('Total happiness is:', totalhappiness printString) noo
 !
 judgingwedding: j
 	totalhappiness := totalhappiness + j
