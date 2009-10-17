@@ -101,7 +101,7 @@ stopped
 	^true
 !
 onEntry
-	The machine happiness oo
+	App say: (The machine name,'happiness: ',((The machine happiness) printString))
 !!
 
 ! Idle methods !

@@ -36,6 +36,8 @@ worksIn: factory
     						The machine talks: 'at the ceremony'];
     	go: #atceremony	to: #noticesdecorH	if: [(The factory task: 'decoration') timetocompletion < 1]
     						then: [The machine seesdecor: (The factory task: 'decoration') cost];
+    	go: #atceremony	to: #atreception	if: [(The factory task: 'decoration') timetocompletion > 0]
+    						then: [The machine talks: 'at the reception'];
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory task: 'food') options; talks: 'checking options'];
     	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
