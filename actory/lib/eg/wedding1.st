@@ -7,9 +7,10 @@ wed bp: 1.
 wed budget: 10000.
 wed time: 25.
 wed decoration cost: 500.
+wed decoration timeneeded: 10.
 wed ceremony length: 30.
 wed food options: 2.
-wed food portions: 2.
+wed food portions: 200.
 wed addtasks: (wed decoration).
 wed addtasks: (wed ceremony).
 wed addtasks: (wed food).
@@ -17,4 +18,5 @@ wed addtasks: (wed food).
 (wed cff) timesRepeat: [CFF worksIn: wed].
 (wed bp) timesRepeat: [BP worksIn: wed].
 wed run.
+wed finalrating
 !

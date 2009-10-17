@@ -21,7 +21,7 @@
 #Happy       isa: NormalState.
 #KillJoy     isa: Machine with: 'happiness'.
 
-#Wedding     isa: Factory with: 'cff guests bp budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasksDic peopleNeedHelp'.
+#Wedding     isa: Factory with: 'totalhappiness cff guests bp budget time receptionOP decorationOP ceremonyOP foodOP refoodOP reception decoration ceremony food refood tasksDic peopleNeedHelp'.
 #Guest       isa: Machine with: 'happiness'.
 #CFF         isa: Guest with: 'taskhelp'. "Close Friends and Family"
 #BP          isa: CFF with: 'taskname needhelp'. "Bridal Party"

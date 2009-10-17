@@ -41,7 +41,8 @@ cost: c
 	cost := c
 !
 timeneeded: tn
-	timeneeded := tn
+	timeneeded := tn.
+	timetocompletion := tn
 !
 timestart: ts
 	timestart := ts
@@ -53,7 +54,9 @@ timetocompletion: ttc
 "============================================"
 ! Task methodsFor: 'operation' !
 workdone
-	timetocompletion := timetocompletion - peopleNum
+	(timetocompletion < 0)
+	ifFalse: [timetocompletion := timetocompletion - peopleNum.
+		(peopleNum = 0) ifFalse: [App say: (self name),' needs ',(timetocompletion/peopleNum) printString]]
 !
 moreWorkers
 	peopleNum := peopleNum + 1

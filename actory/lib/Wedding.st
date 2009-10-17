@@ -9,6 +9,7 @@ new: nameString
 "============================================"
 ! Wedding  methodsFor: 'creation' !
 initwedding
+	totalhappiness := 0.
 	bp := 0.
 	cff := 0.
 	guests := 0.
@@ -35,6 +36,9 @@ initwedding
 
 "============================================"
 ! Wedding methodsFor: 'accessing' !
+totalhappiness
+	^totalhappiness
+!
 bp
 	^bp
 !
@@ -134,11 +138,17 @@ someoneNeedshelp: aPerson
 	peopleNeedHelp addFirst: aPerson
 !
 nolongerNeedsHelp: aPerson
-	peopleNeedHelp remove: aPerson ifAbsent:[]
+	peopleNeedHelp remove: aPerson ifAbsent:['did not need help' oo]
 !!
 
 "============================================"
 ! Wedding methodsFor: 'operations' !
+finalrating
+	('Total happiness is:',totalhappiness) noo
+!
+judgingwedding: j
+	totalhappiness := totalhappiness + j
+!
 payfrombudget: b
 	budget := budget - b
 !

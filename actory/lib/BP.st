@@ -5,9 +5,11 @@ new: name
 worksIn: factory
     factory 
     	machine: (self new: 'BP');
+    	"================Guest Transitions=============="
     	go: #start	to: #waitingI	then: [The machine talks: 'waiting for the ceremony, I can help though'];
     	go: #waitingI	to: #waitingI	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony, I can help though'];
+    	"================Close Friends/Family Transitions==============="
     	go: #waitingB	to: #waitingB	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony, I am busy though'];
     	go: #waitingI	to: #waitingB	if: [(The factory time > 0) & (App random next > 0.5) ]
@@ -18,6 +20,7 @@ worksIn: factory
     					then: [The machine notHappy; talks: 'what a letdown'];
     	go: #waitingB	to: #endF	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
+    	"================Bridal Party Transitions=============="
     	go: #waitingI	to: #doceremonyB	if: [((The factory task: 'ceremony') peopleNum = 0) & ((The factory task: 'ceremony') timestart < (The factory time+1))]
     						then: [The machine isinchargeof: 'ceremony'; talks: 'Working on the ceremony'];
     	go: #waitingI	to: #doreceptionB	if: [((The factory task: 'reception') peopleNum = 0) & ((The factory task: 'reception') timestart < (The factory time+1))]
@@ -28,16 +31,25 @@ worksIn: factory
     						then: [The machine isinchargeof: 'food'; talks: 'Working on the food'];
     	go: #waitingI	to: #dorefoodB	if: [((The factory task: 'refood') peopleNum = 0) & ((The factory task: 'refood') timestart < (The factory time+1))]
     						then: [The machine isinchargeof: 'refood'; talks: 'Working on the rehersal food'];
+    	"==============Ask for help transitions================="					
+    						
+    						
+    						
+    						
+    						
+    						
+    	"================================================"					
     	go: #doceremonyB	to: #waitingI	if: [(The factory task: 'ceremony') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the ceremony'];
+    						then: [The machine talks: 'done with the ceremony'; isdone];
     	go: #doreceptionB	to: #waitingI	if: [(The factory task: 'reception') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the reception'];
+    						then: [The machine talks: 'done with the reception'; isdone];
     	go: #dodecorationB	to: #waitingI	if: [(The factory task: 'decoration') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the decoration'];
+    						then: [The machine talks: 'done with the decoration'; isdone];
     	go: #dofoodB	to: #waitingI	if: [(The factory task: 'food') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the food'];
+    						then: [The machine talks: 'done with the food'; isdone];
     	go: #dorefoodB	to: #waitingI	if: [(The factory task: 'refood') timetocompletion < 1]
-    						then: [The machine isdone; talks: 'done with the rehersal food'];
+    						then: [The machine talks: 'done with the rehersal food'; isdone];
+    	"===============Close Friends/Family Transitions==============="
     	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
     					then: [The machine helps: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
@@ -45,17 +57,20 @@ worksIn: factory
     						The machine talks: 'helping out with'+(The machine taskhelp).];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
     					then: [The machine donehelping; talks: 'Back to waiting'];
-    	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion = 0)]
+    	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
     					then: [The machine atceremonyfor: (The factory task: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
-    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion = 0)]
+    	"===============Guest Transitions============="
+    	go: #waitingI	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
     					then: [The machine atceremonyfor: (The factory task: 'ceremony') length.
     						The machine talks: 'at the ceremony'];
-    	go: #atceremony	to: #noticesdecorH	then: [The machine seesdecor: (The factory task: 'decoration') cost];
+    	go: #atceremony	to: #noticesdecorH	if: [(The factory task: 'decoration') timetocompletion < 1]
+    						then: [The machine seesdecor: (The factory task: 'decoration') cost];
     	go: #noticesdecorH	to: #atreception	then: [The machine talks: 'at the reception'];
     	go: #atreception	to: #checksoptionsH	then: [The machine seesoptions: (The factory task: 'food') options; talks: 'checking options'];
     	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
-    	go: #eatingH 		to: #endF	then: ['The final happiness is :' noo. The machine happiness oo.].
+    	go: #eatingH 		to: #endF	then: [The factory judgingwedding: The machine happiness].
+    	"================================================"
 !!
 
 "============================================"
@@ -86,11 +101,11 @@ pleasehelp
 !
 nomorehelp
 	needhelp := false.
-	(The factory peopleNeedHelp) remove: self ifAbsent[]
+	The factory nolongerNeedsHelp: self
 !
 thanks4help
 	|tname|
-	tname = self taskname.
+	tname := self taskname.
 	(The factory task: tname) releaseWorkers.
 	self nomorehelp
 !
