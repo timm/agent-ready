@@ -114,7 +114,7 @@ isinchargeof: tname
 pleasehelp
 	needhelp := true.
 	The factory peopleNeedHelp addFirst: self.
-	((The factory peopleNeedHelp size) printString, ' people need help') oo
+	"((The factory peopleNeedHelp size) printString, ' people need help') oo"
 !
 nomorehelp
 	needhelp := false.

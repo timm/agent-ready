@@ -23,7 +23,7 @@ worksIn: factory
     	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
     					then: [The machine talks: 'helping out with',(The machine taskhelp).
     						The machine helps: (The factory peopleNeedHelp last).
-    						(The factory peopleNeedHelp last) taskname,
+    						"((The factory peopleNeedHelp last) taskname,' is being helped') oo."
     						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
     						The factory peopleNeedHelp removeLast.];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
