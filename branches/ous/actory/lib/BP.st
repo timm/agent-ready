@@ -64,11 +64,12 @@ worksIn: factory
     	go: #dorefoodB	to: #waitingI	if: [(The factory task: 'refood') timetocompletion < 1]
     						then: [The machine talks: 'done with the rehersal food'; isdone];
     	"===============Close Friends/Family Transitions==============="
-    	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
-    					then: [The machine helps: The factory peopleNeedHelp last.
-    						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
-    						The factory peopleNeedHelp removeLast.
-    						The machine talks: 'helping out with'+(The machine taskhelp).];
+    	go: #waitingI	to: #helpingB	if: [(The factory tasksNeedHelp size) > 0]
+    					then: [The machine helpsWith: (The factory tasksNeedHelp last).
+    						The machine talks: 'helping out with',(The machine taskhelp).
+    						"((The factory tasksNeedHelp last),' is being helped') oo."
+    						The factory tasksNeedHelp addFirst: The factory tasksNeedHelp last.
+    						The factory tasksNeedHelp removeLast.];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
     					then: [The machine donehelping; talks: 'Back to waiting'];
     	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
@@ -113,17 +114,15 @@ isinchargeof: tname
 !
 pleasehelp
 	needhelp := true.
-	The factory peopleNeedHelp addFirst: self.
-	"((The factory peopleNeedHelp size) printString, ' people need help') oo"
+	The factory someoneNeedsHelpWith: self taskname.
+	"((The factory tasksNeedHelp size) printString, ' tasks need help with') oo"
 !
 nomorehelp
 	needhelp := false.
-	The factory nolongerNeedsHelp: self
+	The factory nolongerNeedsHelpWith: self taskname
 !
 thanks4help
-	|tname|
-	tname := self taskname.
-	(The factory task: tname) releaseWorkers.
+	(The factory task: self taskname) releaseWorkers.
 	self nomorehelp
 !
 isdone

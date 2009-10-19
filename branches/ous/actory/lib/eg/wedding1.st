@@ -7,7 +7,7 @@ wed bp: 1.
 wed budget: 10000.
 wed time: 150.
 wed decoration cost: 500.
-wed decoration timetocompletion: 200.
+wed decoration timetocompletion: 100.
 wed ceremony length: 30.
 wed food options: 1.
 wed food portions: 2.
