@@ -32,12 +32,26 @@ worksIn: factory
     	go: #waitingI	to: #dorefoodB	if: [((The factory task: 'refood') peopleNum = 0) & ((The factory task: 'refood') timestart < (The factory time+1))]
     						then: [The machine isinchargeof: 'refood'; talks: 'Working on the rehersal food'];
     	"==============Ask for help transitions================="					
-    						
-    						
-    						
-    						
-    						
-    						
+    	go: #doceremonyB	to: #doceremonyBH	if: [(The factory task: 'ceremony') timetocompletion > (The factory time - (The factory task: 'ceremony') timeneeded)]
+    						then: [The machine talks: 'need help with the ceremony'; pleasehelp];
+    	go: #doreceptionB	to: #doreceptionBH	if: [(The factory task: 'reception') timetocompletion > (The factory time - (The factory task: 'reception') timeneeded)]
+    						then: [The machine talks: 'need help with the reception'; pleasehelp];
+    	go: #dodecorationB	to: #dodecorationBH	if: [(The factory task: 'decoration') timetocompletion > (The factory time - (The factory task: 'decoration') timeneeded)]
+    						then: [The machine talks: 'need help with the decoration'; pleasehelp];
+    	go: #dofoodB	to: #dofoodBH	if: [(The factory task: 'food') timetocompletion > (The factory time - (The factory task: 'food') timeneeded)]
+    						then: [The machine talks: 'need help with the food'; pleasehelp];
+    	go: #dorefoodB	to: #dorefoodBH	if: [(The factory task: 'refood') timetocompletion > (The factory time - (The factory task: 'refood') timeneeded)]
+    						then: [The machine talks: 'need help with the rehersal food'; pleasehelp];
+    	go: #doceremonyBH	to: #doceremonyB	if: [(The factory task: 'ceremony') timetocompletion < (The factory time - (The factory task: 'ceremony') timeneeded)]
+    						then: [The machine talks: 'thanks for help with the ceremony'; thanks4help];
+    	go: #doreceptionBH	to: #doreceptionB	if: [(The factory task: 'reception') timetocompletion < (The factory time - (The factory task: 'reception') timeneeded)]
+    						then: [The machine talks: 'thanks for help with the reception'; thanks4help];
+    	go: #dodecorationBH	to: #dodecorationB	if: [(The factory task: 'decoration') timetocompletion < (The factory time - (The factory task: 'decoration') timeneeded)]
+    						then: [The machine talks: 'thanks for help with the decoration'; thanks4help];
+    	go: #dofoodBH	to: #dofoodB	if: [(The factory task: 'food') timetocompletion < (The factory time - (The factory task: 'food') timeneeded)]
+    						then: [The machine talks: 'thanks for help with the food'; thanks4help];
+    	go: #dorefoodBH	to: #dorefoodB	if: [(The factory task: 'refood') timetocompletion < (The factory time - (The factory task: 'refood') timeneeded)]
+    						then: [The machine talks: 'thanks for help with the rehersal food'; thanks4help];
     	"================================================"					
     	go: #doceremonyB	to: #waitingI	if: [(The factory task: 'ceremony') timetocompletion < 1]
     						then: [The machine talks: 'done with the ceremony'; isdone];
@@ -99,7 +113,8 @@ isinchargeof: tname
 !
 pleasehelp
 	needhelp := true.
-	The factory peopleNeedHelp addFirst: self
+	The factory peopleNeedHelp addFirst: self.
+	((The factory peopleNeedHelp size) printString, ' people need help') oo
 !
 nomorehelp
 	needhelp := false.

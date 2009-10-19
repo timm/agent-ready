@@ -41,8 +41,7 @@ cost: c
 	cost := c
 !
 timeneeded: tn
-	timeneeded := tn.
-	timetocompletion := tn
+	timeneeded := tn
 !
 timestart: ts
 	timestart := ts

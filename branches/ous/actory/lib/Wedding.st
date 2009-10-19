@@ -186,5 +186,6 @@ step
 tock
 	time := time - 1.
 	tasksDic keysDo: [:tname|
-		(self tasksDic at: tname) workdone]
+		(self tasksDic at: tname) workdone.
+		App say: (tname,' needs ', ((self tasksDic at: tname) timetocompletion) printString, ' at wedding time ', (self time) printString)]
 !!
