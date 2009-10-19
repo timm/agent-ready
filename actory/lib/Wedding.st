@@ -15,7 +15,7 @@ initwedding
 	guests := 0.
 	time := 0.
 	budget := 0.
-	peopleNeedHelp := OrderedCollection new.
+	tasksNeedHelp := OrderedCollection new.
 	receptionOP := OrderedCollection new.
 	decorationOP := OrderedCollection new.
 	ceremonyOP := OrderedCollection new.
@@ -87,8 +87,8 @@ refood
 ceremony
 	^ceremony
 !
-peopleNeedHelp
-	^peopleNeedHelp
+tasksNeedHelp
+	^tasksNeedHelp
 !!
 
 "============================================"
@@ -134,11 +134,11 @@ ceremony: cer
 	ceremony := cer.
 	self addtasks: ceremony
 !
-someoneNeedshelp: aPerson
-	peopleNeedHelp addFirst: aPerson
+someoneNeedsHelpWith: aTaskname
+	tasksNeedHelp addFirst: aTaskname
 !
-nolongerNeedsHelp: aPerson
-	peopleNeedHelp remove: aPerson ifAbsent:['did not need help' oo]
+nolongerNeedsHelpWith: aTaskname
+	tasksNeedHelp remove: aTaskname ifAbsent:['did not need help' oo]
 !!
 
 "============================================"

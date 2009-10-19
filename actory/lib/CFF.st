@@ -20,12 +20,12 @@ worksIn: factory
     					then: [The machine notHappy; talks: 'what a letdown'];
     	go: #waitingB	to: #endF	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
-    	go: #waitingI	to: #helpingB	if: [(The factory peopleNeedHelp size) > 0]
-    					then: [The machine talks: 'helping out with',(The machine taskhelp).
-    						The machine helps: (The factory peopleNeedHelp last).
-    						"((The factory peopleNeedHelp last) taskname,' is being helped') oo."
-    						The factory peopleNeedHelp addFirst: The factory peopleNeedHelp last.
-    						The factory peopleNeedHelp removeLast.];
+    	go: #waitingI	to: #helpingB	if: [(The factory tasksNeedHelp size) > 0]
+    					then: [The machine helpsWith: (The factory tasksNeedHelp last).
+    						The machine talks: 'helping out with',(The machine taskhelp).
+    						"((The factory tasksNeedHelp last),' is being helped') oo."
+    						The factory tasksNeedHelp addFirst: The factory tasksNeedHelp last.
+    						The factory tasksNeedHelp removeLast.];
     	go: #helpingB	to: #waitingI 	if: [(The factory task: (The machine taskhelp)) peopleNum = 1]
     					then: [The machine donehelping; talks: 'Back to waiting'];
     	go: #waitingB	to: #atceremony	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion < 1)]
@@ -60,11 +60,9 @@ taskhelp
 
 "============================================"
 ! CFF methodsFor: 'operations' !
-helps: person
-	|tname|
-	tname = person taskname.
-	taskhelp := tname.
-	(The factory task: tname) moreWorkers
+helpsWith: aTaskname
+	taskhelp := aTaskname.
+	(The factory task: taskhelp) moreWorkers
 !
 donehelping
 	taskhelp := ''
