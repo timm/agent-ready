@@ -27,8 +27,7 @@
 #BP          isa: CFF with: 'taskname needhelp'. "Bridal Party"
 #POB         isa: BP with: 'money'. "Parents Of Bride"
 #POG         isa: BP with: 'money'. "Parents Of Bride"
-#Bride       isa: BP.
-#Groom       isa: BP.
+#BrideGroom  isa: BP.
 
 #Busy        isa: NormalState.
 #BusyNeedHelp isa: NormalState.

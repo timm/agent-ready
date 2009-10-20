@@ -1,11 +1,11 @@
-! POB class methodsFor: 'creation' !
+! BrideGroom class methodsFor: 'creation' !
 new: name
-	^(super new: name) initpob
+	^(super new: name)
 !
 worksIn: factory
     factory 
-    	machine: (self new: 'POB');
-       	"================Guest Transitions=============="
+    	machine: (self new: 'BrideGroom');
+    	"================Guest Transitions=============="
     	go: #start	to: #waitingI	then: [The machine talks: 'waiting for the ceremony, I can help though'];
     	go: #waitingI	to: #waitingI	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony, I can help though'];
@@ -88,26 +88,4 @@ worksIn: factory
     	go: #checksoptionsH	to: #eatingH		then: [The machine eats: (The factory task: 'food') portions; talks: 'having something to eat'];
     	go: #eatingH 		to: #endF	then: [The factory judgingwedding: The machine happiness].
     	"================================================"
-!!
-
-"============================================"
-! POB methodsFor: 'creation' !
-initpob
-	money := 0
-!!
-
-"============================================"
-! POB methodsFor: 'accessing' !
-money
-	^money
-!!
-
-"============================================"
-! POB methodsFor: 'setting' !
-givemoney: m
-	money := money - m.
-	super happiness: (super happiness - m).
-	The factory payfrombudget: m.
-	(The factory budget < 0)
-		ifTrue: [happiness := happiness - m]
 !!
