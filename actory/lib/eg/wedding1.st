@@ -5,7 +5,7 @@ wed guests: 1.
 wed cff: 1.
 wed bp: 1.
 wed budget: 10000.
-wed time: 150.
+wed time: 90.
 wed decoration cost: 500.
 wed decoration timetocompletion: 100.
 wed ceremony length: 30.
