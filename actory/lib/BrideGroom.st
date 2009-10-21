@@ -12,9 +12,9 @@ worksIn: factory
     	"================Close Friends/Family Transitions==============="
     	go: #waitingB	to: #waitingB	if: [The factory time > 0]
     					then: [The machine talks: 'waiting for the ceremony, I am busy though'];
-    	go: #waitingI	to: #waitingB	if: [(The factory time > 0) & (App random next > 0.5) ]
+    	go: #waitingI	to: #waitingB	if: [(The factory time > 0) & (App random next > 0.85) ]
     					then: [The machine talks: 'waiting for the ceremony, I am busy though'];
-    	go: #waitingB	to: #waitingI	if: [(The factory time > 0) & (App random next < 0.5) ]
+    	go: #waitingB	to: #waitingI	if: [(The factory time > 0) & (App random next < 0.85) ]
     					then: [The machine talks: 'waiting for the ceremony, I can help now'];
     	go: #waitingI	to: #endF	if: [(The factory time < 1) & ((The factory task: 'ceremony') timetocompletion > 0)]
     					then: [The machine notHappy; talks: 'what a letdown'];
