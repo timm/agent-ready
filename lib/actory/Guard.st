@@ -6,6 +6,7 @@ new
 init
 	guards := Dictionary new. 
 	guards at: 0 put: [true].
+	guards at: 1 put: [false].
 !
 Rand  
 	|index|

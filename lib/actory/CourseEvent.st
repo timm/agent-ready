@@ -26,13 +26,11 @@ run: aGuardSideEffect
  	self run: pGuard effect: pSide. 
 !
 run: aGuard effect: aSideEffect
-	|timer index|
-	timer := Delay forMilliseconds: (((Random next)*10 ) rounded).
+	|index|
 	index := 0.
-        [(patience >0) & (index < 50)]
-		whileTrue: [timer wait.
+        [index < 50]
+		whileTrue: [
 			    index := index + 1.
-			    patience := course patience.
 			    self generateTran: aGuard then: aSideEffect.  
 			    ].
 !!
@@ -40,18 +38,21 @@ run: aGuard effect: aSideEffect
 "============================================="
 !CourseEvent methodsFor: 'accessing'!
 generateTran: guard then: sideEffect
-	|newTransition|
+	|newTransition pstate|
 	(ss1 states size >0)
 		ifTrue: [
 		(course isNil)
 			ifFalse:[
+			pstate := ss1 RandState.
+			((pstate name s ) ~ 'Course')
+			ifTrue: [ 
 			course add: 
 		 	(Transition new
-				state: ss1 RandState;
+				state: pstate;
 			 	if: guard;
 			 	then: sideEffect;
 			 	next: ss1 RandState).
-				^true.]
+				^true.]]
 			ifTrue: 
 			[^false].
 			]

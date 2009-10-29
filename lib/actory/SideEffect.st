@@ -7,6 +7,8 @@ new
 init
 	effects := Dictionary new. 
 	effects at: 0 put: [true].
+	effects at: 1 put: [false].
+	effects at: 2 put: [nil].
 !
 Rand
 	^effects at: (((effects size)-1) * (Random next)) rounded.

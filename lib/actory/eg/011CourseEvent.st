@@ -22,9 +22,9 @@ sideEffect1 add: [The machine exam].
 
 'run randomly' oo.
 ce1 run.
-ce1 inspect.
-cs1 worksIn: f1.
-f1 run.
-The machine oo.
-The machine current oo.
+cs1 transitions keysAndValuesDo: [:key :value|
+		key o.
+		 ' ' oo.	
+		value contents inspect.]
+	 
 !
