@@ -2,7 +2,7 @@
 
 App resetAny; asynchronousOff; silent.
 f := Factory new: 'f1'.
-President worksIn: f.
+PresidentKEYS worksIn: f.
 Historian worksIn: f.
 
 100 timesRepeat: [
@@ -10,9 +10,12 @@ Historian worksIn: f.
 ].
 
 
-5 timesRepeat: [
+1 to: 100 do: [:x|
 	App resetAny.
 	App resetAny.
 	f run.
+		
+	((x\\20) = 0)
+		ifTrue:['Rebiasing' oo. f oracle learn].
 ].
 !

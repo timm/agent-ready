@@ -1,14 +1,15 @@
-! President class methodsFor: 'creation' !
+! PresidentKEYS class methodsFor: 'creation' !
 new: name
 	^(super new: name) init
 !
 worksIn: factory
     factory oracle: (self new: 'president').
     App say: 'The president is on the floor.'.
+    'Oracle type: KEYS' oo.
 !!
 
 "============================================"
-! President methodsFor: 'creation' !
+! PresidentKEYS methodsFor: 'creation' !
 init
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
     	dsuccess:=0.
@@ -20,7 +21,17 @@ reset
 !!
 
 "============================================"
-! President methodsFor: 'operations' !
+! PresidentKEYS methodsFor: 'operations' !
+learn
+	|sessions archives clog ctransitions|
+	sessions:= The historian session.
+
+	1 to: sessions-1 do: [:c|
+		clog:=The historian archives at:c.
+		ctransitions:=clog at:'transitions'.
+		('Session ', (c s),': ',(ctransitions s)) oo. 
+	].
+!
 polled: aPoller
 	|openMindedness vote|
 	openMindedness:=0.75.
@@ -59,7 +70,7 @@ score: mode
 		ifFalse:[^(rsuccess/(rsuccess+dsuccess)) asFloat].
 !!
 "============================================"
-! President methodsFor: 'accessing'!
+! PresidentKEYS methodsFor: 'accessing'!
 party
 	^party
 !
@@ -76,7 +87,7 @@ rsuccess
 	^rsuccess
 !!
 "============================================"
-! President methodsFor: 'printing' !
+! PresidentKEYS methodsFor: 'printing' !
 talks: x
     App say: ('President:[', id s, '] ', x s).
 !!
