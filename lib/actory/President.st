@@ -13,6 +13,10 @@ init
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
     	dsuccess:=0.
 	rsuccess:=0.
+!
+reset
+	dsuccess:=0.
+	rsuccess:=0.
 !!
 
 "============================================"
