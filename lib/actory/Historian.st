@@ -85,6 +85,9 @@ report
 		',',(log at:'s24') s,',',(log at:'s25') s,',',(log at:'s26') s,',',(log at:'s27') s,
 		',',(log at:'s28') s,',',(log at:'s29') s,
 		',',transitions s,',',(The oracle score s)) oo.
+	log at: 'score' put: The oracle score.
+	log at: 'session' put: session.
+	log at: 'transitions' put: transitions.
 	archives at: session put: log.
 	session:=session+1.
 !
