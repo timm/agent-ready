@@ -105,6 +105,10 @@ pressure
 "==============================================="
 ! Factory methodsFor: 'simulation' !
 reset
+	suspended:=false.
+	pressure:=0.25.
+	historian reset.
+	oracle reset.
 	machines contents do:[:machine | machine reset]
 !
 report
