@@ -7,14 +7,15 @@ new
 init
 	states := Dictionary new. 
 	states at: 0 put: #start.
-	states at: 1 put: #courseEndF.
-	states at: 2 put: #courseworkL.
+	states at: 1 put: #CourseEndF.
+	states at: 2 put: #CourseworkL.
 	states at: 3 put: #CourseHaHa.
 !!
 "=========================================="
 !StudentState methodsFor: 'storing'!
 add: state
-	states at: (states size) put: state.
+	(states includes: state)
+		ifFalse: [states at: (states size) put: state].
 !
 states
 	^states.

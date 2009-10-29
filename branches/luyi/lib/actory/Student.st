@@ -52,15 +52,21 @@ check: aCourse
 			precourses keysDo: [:key |
 			(self lookup: key)
 			ifTrue:
-				[happiness := happiness - 5. ]
+				[happiness := happiness + 5. ]
 			ifFalse:
 				[happiness := happiness - 10.]
 			]
 		]
 !
 exam
+	happiness := happiness - 5.
 !
 gradepublish: aNumber
+	(aNumber > 70)
+		ifTrue:
+			[happiness := happiness + 10]
+		ifFalse:
+			[happiness := happiness - 5] 
 !
 football
 	lifeEvent football.
