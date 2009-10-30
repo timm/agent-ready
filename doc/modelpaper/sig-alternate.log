@@ -112,6 +112,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
+Document Classning \] on input line 2667.
+)
 Document Class 'sig-alternate' <22nd. April '09>. Modified by G.K.M. Tobin/Gerr
 y Murray
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
@@ -124,22 +126,22 @@ Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
-\aucount=\count91
-\originalaucount=\count92
+\aucount=\count92
+\originalaucount=\count93
 \auwidth=\dimen118
 \auskip=\dimen119
-\auskipcount=\count93
+\auskipcount=\count94
 \auskip=\dimen120
 \allauboxes=\dimen121
 \addauthors=\toks21
-\addauflag=\count94
+\addauflag=\count95
 \subtitletext=\toks22
-\savesection=\count95
-\sectioncntr=\count96
-\c@figure=\count97
-\c@table=\count98
+\savesection=\count96
+\sectioncntr=\count97
+\c@figure=\count98
+\c@table=\count99
 \titleboxnotes=\toks23
-\titleboxnoteflag=\count99
+\titleboxnoteflag=\count100
 Document Class: sig-alternate 2009/04/22 - V2.4 - based on acmproc.cls V1.3 <No
 v. 30 '99>
 (/usr/local/texlive/2008/texmf-dist/tex/latex/base/latexsym.sty
@@ -149,26 +151,26 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
 \@acmtitlebox=\box28
-\titlenotecount=\count100
+\titlenotecount=\count101
 \tntoks=\toks24
 \tntokstwo=\toks25
 \tntoksthree=\toks26
 \tntoksfour=\toks27
 \tntoksfive=\toks28
-\catcount=\count101
+\catcount=\count102
 \copyrightnotice=\toks29
 \conf=\toks30
 \confinfo=\toks31
-\c@part=\count102
-\c@section=\count103
-\c@subsection=\count104
-\c@subsubsection=\count105
-\c@paragraph=\count106
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
 
 Using 'Abbrev' bibliography style
 LaTeX Info: Redefining \cite on input line 1211.
 \bibindent=\dimen122
-\colcntr=\count107
+\colcntr=\count108
 \saveb@x=\box29
 \copyrtyr=\toks32
 \acmcopyr=\toks33
@@ -186,30 +188,36 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 (/usr/local/texlive/2008/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-(./sig-alternate.aux)
-\openout1 = `sig-alternate.aux'.
+(./sig-alternate.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+! LaTeX Error: Missing \begin{document}.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 a
+      mple black and white graphic (.eps format).}}{\thepage }}
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.25 a
+      mple black and white graphic (.eps format).}}{\thepage }}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+ 
+Here is how much of TeX's memory you used:
+ 1804 strings out of 493876
+ 20184 string characters out of 1150567
+ 71500 words of memory out of 3000000
+ 5103 multiletter control sequences out of 10000+50000
+ 32753 words of font info for 32 fonts, out of 3000000 for 5000
+ 714 hyphenation exceptions out of 8191
+ 39i,0n,26p,454b,80s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
+2/01/19 v2.2g AMS font definitions
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 104.
 

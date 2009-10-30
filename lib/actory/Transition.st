@@ -43,6 +43,9 @@ machine
 !
 factory
 	^container factory
+!
+stagger 
+	^stagger
 !!
 
 "========================================"
@@ -53,5 +56,8 @@ machine: aMachine
 	next  := aMachine addState: next.
 	state oneMoreFrom.
 	next  oneMoreTo.
+!
+stagger: aStagger
+	stagger := aStagger.
 !!
 
