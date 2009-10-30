@@ -25,6 +25,4 @@ ce1 run.
 ce1 inspect.
 cs1 worksIn: f1.
 f1 run.
-The machine oo.
-The machine current oo.
 !

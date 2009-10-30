@@ -22,6 +22,7 @@ add: transition
 				ifAbsent: [transitions at: what
                                       put: Stagger new].
 	(transitions at: what) add: transition.
+	transition stagger: (transitions at: what).
 
 !
 addState: aState
@@ -91,6 +92,7 @@ step
 			ifTrue: [
 				now  := current.
 				next := candidate fire.
+				((candidate stagger) logger) log: candidate. 
 				(next name = current name)
 					ifTrue:  [current onStay]
 					ifFalse: [now onExit.

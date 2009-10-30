@@ -76,6 +76,11 @@ report
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
+	machines contents do:[:machine|
+		machine transitions keysAndValuesDo:[ :key :value|
+		(value logger) counter oo.]
+	]
+		
 !
 run
 	self reset;  start; walk; report.

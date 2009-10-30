@@ -10,6 +10,7 @@ new: list
 ! Stagger methodsFor: 'creation' !
 init: aList 
 	contents := aList asOrderedCollection.
+	logger := StaggerLogger new: self.
 	contents shuffle.
  	pointer := 1	
 !!
@@ -18,12 +19,16 @@ init: aList
 ! Stagger methodsFor: 'accessing' !
 contents
 	^contents
+!
+logger
+	^logger
 !!
 
 "========================================"
 ! Stagger methodsFor: 'storing' !
 add: item
-	contents add: item
+	contents add: item.
+	logger register: item.
 !!
 
 "========================================"

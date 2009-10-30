@@ -26,5 +26,7 @@ cs1 transitions keysAndValuesDo: [:key :value|
 		key o.
 		 ' ' oo.	
 		value contents inspect.]
-	 
+.	 
+cs1 worksIn: f1.
+f1 run.
 !
