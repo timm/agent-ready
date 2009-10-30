@@ -23,14 +23,48 @@ reset
 "============================================"
 ! PresidentKEYS methodsFor: 'operations' !
 learn
-	|sessions archives clog ctransitions|
+	|best rest archives sessions|
 	sessions:= The historian session.
 
-	1 to: sessions-1 do: [:c|
-		clog:=The historian archives at:c.
-		ctransitions:=clog at:'transitions'.
-		('Session ', (c s),': ',(ctransitions s)) oo. 
+	best:= (0.2*sessions asFloat) rounded.
+	rest:= (0.8*sessions asFloat) rounded.
+
+	archives:= (self classify: best).	
+
+	1 to: sessions-1 do:[:a|
+		((archives at: a) at: 'class') oo.
+	]. 
+
+	The historian learnReset.
+!
+classify: aNumber
+	|clog sessions bscore bsession archives|
+	archives:=The historian archives.
+	sessions:= The historian session.
+	
+	1 to: aNumber do: [:b| 
+		bscore:=0.
+		bsession:=0.
+
+		1 to: sessions-1 do: [:c|
+			clog:=archives at:c.
+			(clog includesKey: 'class') ifFalse:[
+				((clog at: 'score') > bscore) ifTrue:[
+					bscore:=(clog at:'score').
+					bsession:=c.
+				].		
+			].
+		].
+		(archives at: bsession) at: 'class' put: 'best'.
 	].
+
+	1 to: sessions-1 do:[:d|
+		((archives at: d) includesKey: 'class') 
+			ifFalse:[ (archives at: d) at: 'class' put: 'rest'].
+
+	].
+
+	^archives
 !
 polled: aPoller
 	|openMindedness vote|
