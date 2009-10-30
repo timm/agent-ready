@@ -14,6 +14,7 @@ init: aString
 	name := aString.
 	suspended:=false.
 	pressure:=0.25.
+	era:=1.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -67,6 +68,9 @@ suspendee: s
 !
 pressure: p
 	pressure:=p.
+!
+era: e
+	era:=e.
 !!
 "==============================================="
 ! Factory methodsFor: 'printing' !
@@ -100,6 +104,9 @@ suspendee
 !
 pressure
 	^pressure
+!
+era
+	^era
 !!
 
 "==============================================="

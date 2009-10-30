@@ -23,20 +23,82 @@ reset
 "============================================"
 ! PresidentKEYS methodsFor: 'operations' !
 learn
-	|best rest archives sessions|
-	sessions:= The historian session.
+	|best rest archives sessions biases scores|
+	sessions:= The historian session-1.
 
 	best:= (0.2*sessions asFloat) rounded.
 	rest:= (0.8*sessions asFloat) rounded.
 
 	archives:= (self classify: best).	
-
-	1 to: sessions-1 do:[:a|
-		((archives at: a) at: 'class') oo.
-	]. 
-
+	scores:= (self scoreAttributes: archives with: best with: rest).
+	biases:= (self getBiases: scores with:The factory era).
 	The historian learnReset.
+	The factory era:The factory era+1.
 !
+getBiases: aCache with: aNumber
+	|biases bscore bkey att val|
+	biases:=Dictionary new.
+
+	(aNumber asInteger) timesRepeat: [ 
+		bscore:=0.
+		aCache associationsDo:[:entry|
+			att:=(entry key) copyFrom: 2 to: ((entry key) indexOf: $,)-1.
+			(biases includesKey: att) ifFalse:[
+				(entry value > bscore) ifTrue:[
+					bscore:=(entry value).
+					bkey:=(entry key).
+				].
+			].
+		].
+		att:=bkey copyFrom: 2 to: (bkey indexOf: $,)-1.
+		val:=bkey copyFrom: (bkey indexOf: $,)+1 to: (bkey size).
+		aCache removeKey: bkey. 
+		biases at: (att s) put: val.
+		('[',att s,',',val s,']') oo.
+	].
+	
+	^biases
+!
+scoreAttributes: aCollection with: best with: rest
+	|scores att key value score sessions fBest fRest class|
+	scores:= Dictionary new.
+	sessions:=The historian session-1. 
+
+	1 to: sessions do:[:row|
+		1 to: 28 do:[:col|
+			fBest:=0.
+			fRest:=0.
+			att:=('s',col s).
+			value:=(aCollection at: row) at: att. 
+			key:=(att s,',',value s).
+			"Is the score already cached?"
+			(scores includesKey: key) ifFalse:[
+				1 to: sessions do:[:x|
+					"Is the value the same?"
+					(((aCollection at: x) at: att) = value) ifTrue:[
+						class:=(aCollection at: x) at: 'class'.
+						"Get frequency counts"
+						(class='best') 
+							ifTrue:[fBest:=fBest+1.]
+							ifFalse:[fRest:=fRest+1.].
+					].
+				].
+
+				fBest:=fBest/best asFloat. 
+				fRest:=fRest/rest asFloat.
+				fBest:=fBest*0.2.
+				fRest:=fRest*0.8.
+				score:=(fBest raisedTo: 2)/(fBest+fRest) asFloat.
+
+				"cache the sucker"
+				scores at: key put: score.
+			].
+		].
+	].
+		
+	^scores
+!
+
 classify: aNumber
 	|clog sessions bscore bsession archives|
 	archives:=The historian archives.
