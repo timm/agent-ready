@@ -72,15 +72,19 @@ machines
 reset
 	machines contents do:[:machine | machine reset]
 !
+reload
+	machines contents do:[:machine |machine reload].
+!
 report
+	"perform learning in this part"
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
 	machines contents do:[:machine|
 		machine transitions keysAndValuesDo:[ :key :value|
+		key oo.
 		(value logger) counter oo.]
 	]
-		
 !
 run
 	self reset;  start; walk; report.

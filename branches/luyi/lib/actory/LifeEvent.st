@@ -28,7 +28,7 @@ run: aGuardSideEffect
 run: aGuard effect: aSideEffect
 	|index|
 	index := 0.
-        [index < 50]
+        [index < 5]
 		whileTrue: [
 			    index := index + 1.
 			    self generateTran: aGuard then: aSideEffect.  

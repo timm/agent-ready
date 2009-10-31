@@ -9,7 +9,7 @@
 #App         isa:    Object 
              shares: 'Clock Rand Asynchronousp Patience Trace Ids TooManyLoops' .
 
-#Stagger     isa: App with: 'contents pointer logger'.
+#Stagger     isa: App with: 'contents pointer logger learned'.
 #Factory     isa: App with: 'machines name current'.
 #Machine     isa: App with: 'container name id current start states transitions'.
 (#State      isa: App with: 'container name id visits froms tos') public.
@@ -31,7 +31,7 @@
 #Guard         isa: App with: 'guards'.
 #SideEffect    isa: App with: 'effects'.
 #GuardSideEffect isa: App with: 'gsesets'.
-#StaggerLogger isa: App with: 'logger counter stagger'.
+#StaggerLogger isa: App with: 'logger counter stagger learner firelist'.
 Smalltalk at: #The put: nil. "one global"
 
 !
