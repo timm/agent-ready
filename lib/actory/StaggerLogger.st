@@ -5,8 +5,10 @@ new: aStagger
 !StaggerLogger methodsFor: 'creation'!
 init: aStagger
 	logger := Dictionary new.
-	counter := Dictionary new.
+	counter := Bag new.
+	learner := Dictionary new.
 	stagger := aStagger.
+	firelist := OrderedCollection new.
 !
 stagger: aStagger
 	(stagger isNil)
@@ -18,16 +20,10 @@ stagger: aStagger
 register: item
 "item is a tranistion, logger use its id as key and itself as very and init counter "
 	logger at: (item id) put: item.
-	counter at: (item id) put: 0.
 !
 log: candidate 
 "Candidate here is a transition"
-	|id counterno|
-	(stagger isNil)
-		ifTrue: [
-		id := candidate id.
-		counter at: id put: ((counter at: id)+1).  
-		]
+	counter add: candidate. 
 !!
 !StaggerLogger methodsFor: 'accessing'!
 logger
@@ -35,5 +31,41 @@ logger
 !
 counter 
 	^counter.
+!
+learner
+	^learner.
+!
+firelist 
+	^firelist.
 !!
-
+!StaggerLogger methodsFor: 'learning'!
+analyze
+	|plist|
+	plist := counter sortedByCount.
+	plist keysAndValuesDo: [:key |
+		firelist add: key.]
+!
+optlist
+	^firelist.	
+!
+optlist: aNumber
+	|templist|
+	templist := OrderedCollection new.
+	((firelist size) > aNumber) 
+		ifTrue: [
+			 1 to: aNumber do:[:i | 
+			templist add: (firelist at: i).].
+			^templist.
+			]
+		ifFalse: [^firelist].
+!!
+!StaggerLogger methodsFor: 'reset'!
+resetlogger
+	logger := Dictionary new.
+!
+resetcounter
+	counter := Dictionary new.
+!
+resetlearner
+	learner := Dictionary new.
+!!

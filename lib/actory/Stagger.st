@@ -11,6 +11,7 @@ new: list
 init: aList 
 	contents := aList asOrderedCollection.
 	logger := StaggerLogger new: self.
+	learned := false.
 	contents shuffle.
  	pointer := 1	
 !!
@@ -22,6 +23,9 @@ contents
 !
 logger
 	^logger
+!
+learned 
+	^learned
 !!
 
 "========================================"
@@ -49,4 +53,8 @@ next
 reset
 	pointer := 0.
 	contents shuffle.
+!
+reload
+	(learned) 
+		ifFalse: [self reset].
 !!

@@ -59,5 +59,6 @@ machine: aMachine
 !
 stagger: aStagger
 	stagger := aStagger.
+	(stagger logger) register: self.
 !!
 

@@ -80,6 +80,10 @@ reset
 	states do: [:state|
 		state reset]
 !
+reload
+	self candidates do: [:candidate|
+		candidate reload.]
+!
 start
 	^current := start
 !
@@ -93,6 +97,7 @@ step
 				now  := current.
 				next := candidate fire.
 				((candidate stagger) logger) log: candidate. 
+				
 				(next name = current name)
 					ifTrue:  [current onStay]
 					ifFalse: [now onExit.
