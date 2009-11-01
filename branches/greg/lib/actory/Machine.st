@@ -82,11 +82,31 @@ reset
 start
 	^current := start
 !
+stepBias
+	|now next cands candidate|
+	self stopped ifTrue: [^false].
+	cands:= self candidates.
+	(cands size) timesRepeat:[
+		"Select based on biases"
+		The := candidate.
+		candidate ready 
+			ifTrue: [
+				now  := current.
+				next := candidate fire.
+				(next name = current name)
+					ifTrue:  [current onStay]
+					ifFalse: [now onExit.
+							  current := next.
+							  current onEntry].
+				^true]].
+	^false
+!
 step
 	|now next|
 	self stopped ifTrue: [^false].
 	self candidates do: [:candidate |
 		The := candidate.
+		The tid oo.
 		candidate ready 
 			ifTrue: [
 				now  := current.

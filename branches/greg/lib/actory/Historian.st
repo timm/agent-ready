@@ -90,6 +90,11 @@ dominance
 			The factory suspendee: The machine party.
 			^true]
 		ifFalse:[^false].
+!
+reportBiases
+	The factory biases associationsDo:[:entry|
+		('[',(entry key) s,',',(entry value) s,']') oo.
+	].
 !!
 
 "============================================"

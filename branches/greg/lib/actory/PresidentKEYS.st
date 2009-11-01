@@ -31,13 +31,15 @@ learn
 
 	archives:= (self classify: best).	
 	scores:= (self scoreAttributes: archives with: best with: rest).
-	biases:= (self getBiases: scores with:The factory era).
+	The factory biases: (self getBiases: scores with:The factory era).
+
+	The historian reportBiases.
 	The historian learnReset.
 	The factory era:The factory era+1.
 !
 getBiases: aCache with: aNumber
 	|biases bscore bkey att val|
-	biases:=Dictionary new.
+	biases:=The factory biases.
 
 	(aNumber asInteger) timesRepeat: [ 
 		bscore:=0.
@@ -54,7 +56,6 @@ getBiases: aCache with: aNumber
 		val:=bkey copyFrom: (bkey indexOf: $,)+1 to: (bkey size).
 		aCache removeKey: bkey. 
 		biases at: (att s) put: val.
-		('[',att s,',',val s,']') oo.
 	].
 	
 	^biases
