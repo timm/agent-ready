@@ -1,5 +1,6 @@
 ! Transition methodsFor: 'creation'!
 init
+	tid:=0.
 	id  := App nextId.
 	if   := [true].
 	then := [true].
@@ -49,6 +50,12 @@ historian
 !
 oracle
 	^container factory oracle
+!
+tid
+	^tid
+!
+id
+	^id
 !!
 
 "========================================"
@@ -59,5 +66,8 @@ machine: aMachine
 	next  := aMachine addState: next.
 	state oneMoreFrom.
 	next  oneMoreTo.
+!
+tid: aNumber
+	tid:=aNumber.
 !!
 

@@ -15,6 +15,7 @@ init: aString
 	suspended:=false.
 	pressure:=0.25.
 	era:=1.
+	biases:= Dictionary new.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -71,6 +72,9 @@ pressure: p
 !
 era: e
 	era:=e.
+!
+biases: b
+	biases:=b.
 !!
 "==============================================="
 ! Factory methodsFor: 'printing' !
@@ -107,6 +111,9 @@ pressure
 !
 era
 	^era
+!
+biases
+	^biases
 !!
 
 "==============================================="
