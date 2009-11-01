@@ -162,9 +162,12 @@ score
 	^((dsuccess+rsuccess)/senators) asFloat
 !
 score: mode
+	|d r|
+	(rsuccess+dsuccess=0) ifTrue:[d:=0.r:=0.]
+		ifFalse:[d:=(dsuccess/(rsuccess+dsuccess)) asFloat. r:=(rsuccess/(rsuccess+dsuccess)) asFloat].
 	(mode=0)
-		ifTrue:[^(dsuccess/(rsuccess+dsuccess)) asFloat]
-		ifFalse:[^(rsuccess/(rsuccess+dsuccess)) asFloat].
+		ifTrue:[^d]
+		ifFalse:[^r].
 !!
 "============================================"
 ! PresidentKEYS methodsFor: 'accessing'!

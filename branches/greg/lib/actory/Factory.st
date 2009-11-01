@@ -142,11 +142,20 @@ step
 	App tick.
 	more := false.
 	self do: [:machine|
-	  machine step 
-		ifTrue: [
-			more := true.
-            Asynchronousp 
-		   	   ifTrue: [^true]]].
+		(self biases size > 0)
+		ifTrue:[
+	  		machine stepBias
+			ifTrue: [
+				more := true.
+ 		        Asynchronousp 
+		   	   	ifTrue: [^true]]]
+		ifFalse:[
+	 		 machine step 
+			ifTrue: [
+				more := true.
+            		Asynchronousp 
+		   	   	ifTrue: [^true]]].
+	].
 	^more
 !
 walk
