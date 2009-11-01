@@ -11,7 +11,7 @@
 
 #Stagger     isa: App with: 'contents pointer'.
 #Factory     isa: App with: 'biases era machines name current oracle historian suspended suspendee pressure'.
-#Machine     isa: App with: 'container name id current start states transitions'.
+#Machine     isa: App with: 'tcounter container name id current start states transitions'.
 #Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed cloture committee party trust scandals caughtLikelihood'.
 #President	isa: Machine with:'party dsuccess rsuccess'.
 #PresidentKEYS	isa: Machine with:'party dsuccess rsuccess'.

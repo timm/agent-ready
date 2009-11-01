@@ -10,12 +10,15 @@ init: aString
 	id          := App nextId.
 	transitions := Dictionary new.
 	states      := Dictionary new.
+	tcounter :=1.
 !!
 
 "============================================="
 ! Machine methodsFor: 'storing' !
 add: transition
 	|what|
+	transition tid: tcounter.
+	tcounter:=tcounter+1. 
 	transition machine: self.
 	what := transition state name.
 	transitions at: what
@@ -69,6 +72,9 @@ stopped
 !
 transitions
 	^transitions
+!
+tcounter
+	^tcounter
 !!
 
 "============================================="
@@ -83,11 +89,36 @@ start
 	^current := start
 !
 stepBias
-	|now next cands candidate|
+	|now next cands numB base found|
 	self stopped ifTrue: [^false].
 	cands:= self candidates.
-	(cands size) timesRepeat:[
-		"Select based on biases"
+	numB:= The factory biases size. 	
+
+	self candidates do: [:candidate |
+		found:=false. 
+		The factory biases associationsDo: [:b|
+			"Add N times if it is already in biases"
+			(candidate tid= b key) ifTrue:[
+				(b value)-1 timesRepeat:[
+					cands add: candidate.
+					candidate tid oo.
+				].
+				found:=true.
+			].
+		].
+		(found)
+			"Add 1/remaining unbiased if not"
+			ifFalse:[
+				base:= ((1/(self tcounter -1 -numB) asFloat)*100) rounded.
+				(base-1) timesRepeat:[
+					cands add: candidate.
+				].
+		].
+	].
+
+	cands reset.
+
+	cands do: [:candidate |
 		The := candidate.
 		candidate ready 
 			ifTrue: [
@@ -106,7 +137,6 @@ step
 	self stopped ifTrue: [^false].
 	self candidates do: [:candidate |
 		The := candidate.
-		The tid oo.
 		candidate ready 
 			ifTrue: [
 				now  := current.
