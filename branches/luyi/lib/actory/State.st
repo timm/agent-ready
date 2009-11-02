@@ -7,6 +7,9 @@ nameToClass: aSymbol
 	aSymbol s ~ 'L$' ifTrue: [^LoopState].
 	aSymbol s ~ 'F$' ifTrue: [^EndState].
 	aSymbol s ~ 'HaHa$' ifTrue: [^Happy].
+	aSymbol s ~ 'Football$' ifTrue: [^Happy].
+	aSymbol s ~ 'Lottory$' ifTrue: [^Happy].
+	aSymbol s ~ 'Fun$' ifTrue: [^Happy].
 	^NormalState
 !!
 
@@ -102,7 +105,10 @@ onEntry
 
 ! Happy methods !
 onEntry
-	'ha ha ha ha ha' noo.
+	|ahappiness|
+	ahappiness := ((((The factory) student) happiness) * 1.2) rounded.
+	((The factory) student) happiness: ahappiness. 
+	'ha ha ha ha ha' oo.
 !
 onStay
 	'still laughing' oo.	
