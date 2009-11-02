@@ -89,13 +89,12 @@ start
 	^current := start
 !
 stepBias
-	|now next cands numB base found done|
+	|now next cands numB base found nF done|
 	self stopped ifTrue: [^false].
-	cands:= Stagger new.
 	cands:= self candidates.
 	numB:= The factory biases size. 	
 	done:=Dictionary new.
-
+	nF:=0.
 	self candidates do: [:candidate |
 		(done includesKey: (candidate tid s)) ifFalse:[
 		found:=false. 
@@ -106,6 +105,7 @@ stepBias
 					cands add: candidate.
 				].
 				found:=true.
+				nF:=nF+1.
 			].
 		].
 		(found)
@@ -121,15 +121,14 @@ stepBias
 		].
 	].
 
-	"cands reset."
-
-	"cands do:[:x |
-		x tid oo.
-	].
-	'----' oo."
+	cands reset.
+	(nF>0) ifFalse:[cands:=self candidates.].
+	done:= Dictionary new.
 
 	cands do: [:candidate |
+	(done includesKey: (candidate tid s)) ifFalse:[
 		The := candidate.
+		done at:(candidate tid s) put:1.
 		candidate ready 
 			ifTrue: [
 				now  := current.
@@ -140,6 +139,7 @@ stepBias
 							  current := next.
 							  current onEntry].
 				^true]].
+	].
 	^false
 !
 step
