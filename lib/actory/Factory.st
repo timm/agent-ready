@@ -46,6 +46,9 @@ newMachine: name
 !
 transition: trans
 	current add: trans
+!
+student: aStudent
+	student := aStudent.
 !!
 
 "==============================================="
@@ -65,6 +68,9 @@ do: aBlock
 ! Factory methodsFor: 'accessing' !
 machines
 	^machines
+!
+student
+	^student
 !!
 
 "==============================================="
@@ -72,14 +78,16 @@ machines
 reset
 	machines contents do:[:machine | machine reset]
 !
-reload
-	machines contents do:[:machine |machine reload].
+reload 
+	The := self.
+	machines contents do:[:machine |machine reload]
 !
 report
 	"perform learning in this part"
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
+	self student happiness oo.
 	machines contents do:[:machine|
 		machine transitions keysAndValuesDo:[ :key :value|
 		key oo.

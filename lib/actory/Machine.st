@@ -59,6 +59,8 @@ factory
 factory: aFactory
 	container := aFactory
 !
+reload 
+!
 id
 	^id
 !
@@ -79,10 +81,6 @@ reset
                            ifFalse: [start].
 	states do: [:state|
 		state reset]
-!
-reload
-	self candidates do: [:candidate|
-		candidate reload.]
 !
 start
 	^current := start

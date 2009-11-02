@@ -38,18 +38,21 @@ run: aGuard effect: aSideEffect
 "============================================="
 !LifeEvent methodsFor: 'accessing'!
 generateTran: guard then: sideEffect
-	|newTransition|
+	|newTransition pstate|
 	(ss1 states size >0)
 		ifTrue: [
 		(student isNil)
 			ifFalse:[
+			pstate := ss1 RandState.
+			((pstate name s) ~ 'Life')
+			ifTrue: [
 			student add: 
 		 	(Transition new
-				state: ss1 RandState;
+				state: pstate;
 			 	if: guard;
 			 	then: sideEffect;
 			 	next: ss1 RandState).
-				^true.]
+				^true.]]
 			ifTrue: 
 			[^false].
 			]

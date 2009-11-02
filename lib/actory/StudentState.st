@@ -10,6 +10,11 @@ init
 	states at: 1 put: #CourseEndF.
 	states at: 2 put: #CourseworkL.
 	states at: 3 put: #CourseHaHa.
+	states at: 4 put: #LifeFootball.
+	states at: 5 put: #LifeLottory.
+	states at: 6 put: #LifeHaHa.
+	states at: 7 put: #LifeEndF.
+	states at: 8 put: #LifeFun.
 !!
 "=========================================="
 !StudentState methodsFor: 'storing'!

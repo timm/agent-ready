@@ -23,6 +23,10 @@ worksIn: factory
 !
 add: aTransition
 	super add: aTransition.
+!
+setEvent: aCourseEvent
+	selfEvents := aCourseEvent.
+	selfEvents course: self.
 !!
 "========================================"
 ! Course methodsFor: 'accessing'!
@@ -57,4 +61,7 @@ lottory: aNumber
 !
 assignStudent: aStudent
 	students at: (aStudent name) put: aStudent.
+!
+reload
+	patience := 100.
 !!		

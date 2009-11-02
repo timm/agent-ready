@@ -10,7 +10,7 @@
              shares: 'Clock Rand Asynchronousp Patience Trace Ids TooManyLoops' .
 
 #Stagger     isa: App with: 'contents pointer logger learned'.
-#Factory     isa: App with: 'machines name current'.
+#Factory     isa: App with: 'machines name current student'.
 #Machine     isa: App with: 'container name id current start states transitions'.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container      id state if then next stagger') public; inits.
