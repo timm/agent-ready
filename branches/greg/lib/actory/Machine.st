@@ -89,19 +89,21 @@ start
 	^current := start
 !
 stepBias
-	|now next cands numB base found|
+	|now next cands numB base found done|
 	self stopped ifTrue: [^false].
+	cands:= Stagger new.
 	cands:= self candidates.
 	numB:= The factory biases size. 	
+	done:=Dictionary new.
 
 	self candidates do: [:candidate |
+		(done includesKey: (candidate tid s)) ifFalse:[
 		found:=false. 
 		The factory biases associationsDo: [:b|
 			"Add N times if it is already in biases"
 			(candidate tid= b key) ifTrue:[
 				(b value)-1 timesRepeat:[
 					cands add: candidate.
-					candidate tid oo.
 				].
 				found:=true.
 			].
@@ -114,9 +116,17 @@ stepBias
 					cands add: candidate.
 				].
 		].
+
+		done at: (candidate tid s) put: 1.
+		].
 	].
 
-	cands reset.
+	"cands reset."
+
+	"cands do:[:x |
+		x tid oo.
+	].
+	'----' oo."
 
 	cands do: [:candidate |
 		The := candidate.
@@ -137,7 +147,7 @@ step
 	self stopped ifTrue: [^false].
 	self candidates do: [:candidate |
 		The := candidate.
-		candidate ready 
+		candidate ready
 			ifTrue: [
 				now  := current.
 				next := candidate fire.
