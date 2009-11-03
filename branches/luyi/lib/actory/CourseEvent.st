@@ -95,6 +95,9 @@ patience
 setPatience: aPatience
 	patience := aPatience.
 !
+transitions 
+	^transitions.
+!
 exam
 	patience := (patience sqrt) rounded.
 	course setPatience: patience.

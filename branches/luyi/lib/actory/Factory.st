@@ -11,7 +11,8 @@ new: nameString
   
 init: aString 
 	machines := Stagger new.
-	name := aString
+	name := aString.
+	flogger := nil.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -49,6 +50,9 @@ transition: trans
 !
 student: aStudent
 	student := aStudent.
+!
+flogger: aFactoryLogger
+	flogger := aFactoryLogger.
 !!
 
 "==============================================="
@@ -71,6 +75,9 @@ machines
 !
 student
 	^student
+!
+flogger 
+	^flogger
 !!
 
 "==============================================="
@@ -81,16 +88,21 @@ reset
 reload 
 	The := self.
 	machines := Stagger new.
+	self student happiness: 100.
 !
 report
+	|pcounter|
 	"perform learning in this part"
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
+	('Final happiness ', student happiness s) oo.
 	machines contents do:[:machine|
 		machine transitions keysAndValuesDo:[ :key :value|
-		key oo.
-		(value logger) counter oo.]
+		pcounter := (value logger) counter.
+		((pcounter size) = 0) 
+		ifFalse: [flogger log: (student happiness) value: pcounter.].
+	].
 	]
 !
 run

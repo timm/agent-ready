@@ -32,28 +32,18 @@ ce1 run.
 cs1 := Course new: 'cs556'.
 s1  := Student new: 'luyi'.
 f1 := Factory new: 'test'.
-flogger := FactoryLogger new.
-sle transitions inspect.
-ce1 transitions inspect.
-flogger settrans: (sle transitions).
-flogger settrans: (ce1 transitions).
+
 "======================init Learning part====================================="
-1 timesRepeat:[
-App reset; asynchronousOff.
 s1 setLifeEvent: sle.
 cs1 setEvent: ce1.
 s1 take: cs1.
 s1 worksIn: f1.
-f1 flogger: flogger. 
+
+f1 machines do:[:machine| machine transitions keysAndValuesDo: [:key :value|
+                key o.
+                 ' ' oo.
+                value contents inspect.].].
+ 
 "+++++++++++++++++++++++ Learning Part +++++++++++++++++++++++++++++++++"
 f1 run.
-f1 reload.
-cs1 reload.
-s1 reload.
-].
-flogger logger inspect.
-flogger rest. 
-flogger best.
-flogger restDic inspect.
-flogger bestDic inspect.
 !

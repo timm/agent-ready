@@ -29,7 +29,7 @@ run: aGuardSideEffect
 run: aGuard effect: aSideEffect
 	|index|
 	index := 0.
-        [index < 5]
+        [index < 10]
 		whileTrue: [
 			    index := index + 1.
 			    self generateTran: aGuard then: aSideEffect.  
@@ -67,6 +67,9 @@ student: aStudent
 !
 setStudentState: aStudentState
 	ss1 := aStudentState.
+!
+transitions
+	^transitions.
 !
 setGuard: aGuard
 	guard := aGuard.
