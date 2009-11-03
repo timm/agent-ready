@@ -23,7 +23,7 @@ reset
 "============================================"
 ! PresidentKEYS methodsFor: 'operations' !
 learn
-	|best rest archives sessions biases scores|
+	|sum base best rest archives sessions biases scores|
 	sessions:= The historian session-1.
 
 	best:= (0.2*sessions asFloat) rounded.
@@ -31,7 +31,15 @@ learn
 
 	archives:= (self classify: best).	
 	scores:= (self scoreAttributes: archives with: best with: rest).
-	The factory biases: (self getBiases: scores with:28).
+	The factory biases: (self getBiases: scores with:The factory era).
+
+	"set a new base weight"
+	sum:=0.
+	The factory biases associationsDo:[:b|
+		sum:=sum+(b value asInteger).
+	]. 
+	base:= (1/(28-The factory biases size) asFloat * (100-sum)) rounded.
+	The historian base: base.
 
 	The historian reportBiases.
 	The historian learnReset.
@@ -40,6 +48,7 @@ learn
 getBiases: aCache with: aNumber
 	|biases bscore bkey att val|
 	biases:=The factory biases.
+	"biases:=Dictionary new."
 
 	(aNumber asInteger) timesRepeat: [ 
 		bscore:=0.

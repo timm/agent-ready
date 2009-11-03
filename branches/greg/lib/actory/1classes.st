@@ -15,7 +15,7 @@
 #Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed cloture committee party trust scandals caughtLikelihood'.
 #President	isa: Machine with:'party dsuccess rsuccess'.
 #PresidentKEYS	isa: Machine with:'party dsuccess rsuccess'.
-#Historian	isa: Machine with:'log score session archives'.
+#Historian	isa: Machine with:'base log score session archives'.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container tid id state if then next') public; inits.
 #ErrorState  isa: State.

@@ -15,6 +15,7 @@ init
 	transitions:=0.
 	archives:=Array new:1000.
 	session:=1.
+	base:=((1/8) asFloat * 100).
 !
 reset
 	log:=Dictionary new.
@@ -122,6 +123,12 @@ transitions
 !
 transitions: t
 	transitions:=t.
+!
+base: b
+	base:=b.
+!
+base
+	^base
 !!
 "============================================"
 ! Historian methodsFor: 'printing' !
