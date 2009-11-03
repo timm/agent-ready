@@ -9,8 +9,11 @@ guardone add: [The machine happiness >10].
 sideEffect1 := sle getSideEffect.
 sideEffect1 add: [The machine football].
 sideEffect1 add: [The machine lottory: (((Random next)*100) rounded)].
-sle run.
+ss1 := sle getStudentState.
+ss1 add: #running.
+ss1 add: #start.
 
+sle run.
 
 "======================Creating Course Event =================="
 ce1 := CourseEvent new: 'cs556Event'.
@@ -31,14 +34,11 @@ s1  := Student new: 'luyi'.
 f1 := Factory new: 'test'.
 
 "======================init Learning part====================================="
-5 timesRepeat: [
 s1 setLifeEvent: sle.
 cs1 setEvent: ce1.
 s1 take: cs1.
 s1 worksIn: f1.
 "+++++++++++++++++++++++ Learning Part +++++++++++++++++++++++++++++++++"
-f1 run.
-f1 reload.
-The factory inspect.
-].
+5 timesRepeat:
+[f1 run.]
 !

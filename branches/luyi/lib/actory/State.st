@@ -105,9 +105,6 @@ onEntry
 
 ! Happy methods !
 onEntry
-	|ahappiness|
-	ahappiness := ((((The factory) student) happiness) * 1.2) rounded.
-	((The factory) student) happiness: ahappiness. 
 	'ha ha ha ha ha' oo.
 !
 onStay

@@ -10,10 +10,6 @@ init
 	lifeEvent student: self.
 	patience  := 100.
 !
-reload
-	patience := 100.
-	happiness :=100.
-!
 lookup: aString
 	(courses includesKey: aString)
 		ifTrue: [
@@ -31,11 +27,6 @@ worksIn: aFactory
 	aFactory machine: self.
 	self factory: aFactory.
 	aFactory student: self.
-	(courses size = 0)
-		ifFalse:
-		[ 0 to: ((courses size)-1) do:[:i|
-			(courses at: i) worksIn: aFactory.]
-		]
 			
 !
 take: aCourse 
@@ -88,6 +79,9 @@ happiness: aNumber
 setLifeEvent: aLifeEvent
 	lifeEvent := aLifeEvent.
 	lifeEvent student: self.
+	happiness := 100.
+	lifeEvent setPatience: 100.
+	courses := Dictionary new.
 !
 getLifeEvent
 	^lifeEvent.
