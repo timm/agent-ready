@@ -31,7 +31,7 @@ learn
 
 	archives:= (self classify: best).	
 	scores:= (self scoreAttributes: archives with: best with: rest).
-	The factory biases: (self getBiases: scores with:The factory era).
+	The factory biases: (self getBiases: scores with:28).
 
 	The historian reportBiases.
 	The historian learnReset.
