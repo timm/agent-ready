@@ -37,7 +37,7 @@ addState: aState
 "============================================="
 ! Machine methodsFor: 'accessing' !
 anyState
-	states values at: ((App random next * (states size) ) rounded)
+	states do: [:state | ^state].
 !
 candidates
 	^self candidates:  current 
