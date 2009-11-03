@@ -12,6 +12,7 @@ init: aName
 	guard := Guard new.
 	sideEffect := SideEffect new.
 	guardSideEffect := GuardSideEffect new.
+	transitions := OrderedCollection new.
 !!
 "=============================================="
 !LifeEvent methodsFor: 'timer'!
@@ -41,34 +42,28 @@ generateTran: guard then: sideEffect
 	|newTransition pstate|
 	(ss1 states size >0)
 		ifTrue: [
-		(student isNil)
-			ifFalse:[
 			pstate := ss1 RandState.
 			((pstate name s) ~ 'Life')
 			ifTrue: [
-			student add: 
+			transitions add: 
 		 	(Transition new
 				state: pstate;
 			 	if: guard;
 			 	then: sideEffect;
 			 	next: ss1 RandState).
-				^true.]]
-			ifTrue: 
-			[^false].
-			]
+			]]
 		ifFalse: [^false.]
 !
 student: aStudent
 	student := aStudent.
-	(student isNil)
-                ifFalse:[
-                student add:
-                (Transition new
+	student add:           (Transition new
                                 state: ss1 startState;
                                 if: (guard Rand);
                                 then: (sideEffect Rand);
-                                next: ss1 RandState).].
+                                next: ss1 RandState).
 
+	1 to: (transitions size) do: [:i |
+	student add: (transitions at: i).]
 !
 setStudentState: aStudentState
 	ss1 := aStudentState.

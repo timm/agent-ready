@@ -12,6 +12,7 @@ init: aName
 	guard := Guard new.
 	sideEffect := SideEffect new.
 	guardSideEffect := GuardSideEffect new.
+	transitions := OrderedCollection new.
 !!
 "=============================================="
 !CourseEvent methodsFor: 'timer'!
@@ -28,7 +29,7 @@ run: aGuardSideEffect
 run: aGuard effect: aSideEffect
 	|index|
 	index := 0.
-        [index < 5]
+        [index < 10]
 		whileTrue: [
 			    index := index + 1.
 			    self generateTran: aGuard then: aSideEffect.  
@@ -41,34 +42,28 @@ generateTran: guard then: sideEffect
 	|newTransition pstate|
 	(ss1 states size >0)
 		ifTrue: [
-		(course isNil)
-			ifFalse:[
 			pstate := ss1 RandState.
 			((pstate name s ) ~ 'Course')
-			ifTrue: [ 
-			course add: 
+			ifTrue:[
+			transitions add: 
 		 	(Transition new
 				state: pstate;
 			 	if: guard;
 			 	then: sideEffect;
 			 	next: ss1 RandState).
-				^true.]]
-			ifTrue: 
-			[^false].
-			]
+				^true.
+			]]
 		ifFalse: [^false.]
 !
 course: aCourse
 	course := aCourse.
-	(course isNil)
-                ifFalse:[
-                course add:
-                (Transition new
+	course add:             (Transition new
                                 state: ss1 startState;
                                 if: (guard Rand);
                                 then: (sideEffect Rand);
-                                next: ss1 RandState).].
-
+                                next: ss1 RandState).
+	1 to: (transitions size) do:[:i|
+	course add: (transitions at: i)]. 
 !
 setStudentState: aStudentState
 	ss1 := aStudentState.

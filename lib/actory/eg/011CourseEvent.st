@@ -22,6 +22,7 @@ sideEffect1 add: [The machine exam].
 
 'run randomly' oo.
 ce1 run.
+cs1 setEvent: ce1.
 cs1 transitions keysAndValuesDo: [:key :value|
 		key o.
 		 ' ' oo.	

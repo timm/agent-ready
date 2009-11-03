@@ -37,7 +37,7 @@ addState: aState
 "============================================="
 ! Machine methodsFor: 'accessing' !
 anyState
-	states do: [:state | ^state].
+	states values at: ((App random next * (states size) ) rounded)
 !
 candidates
 	^self candidates:  current 
@@ -60,6 +60,8 @@ factory: aFactory
 	container := aFactory
 !
 reload 
+	transitions := Dictionary new.
+	states := Dictionary new.
 !
 id
 	^id
