@@ -1,4 +1,4 @@
-! Machine class methodsFor: 'creation' !
+!Machine class methodsFor: 'creation' !
 new: name
 	^super new init: name
 !!
@@ -88,48 +88,43 @@ reset
 start
 	^current := start
 !
-stepBias
-	|now next cands numB base found nF done|
-	self stopped ifTrue: [^false].
-	cands:= self candidates.
-	numB:= The factory biases size. 	
-	done:=Dictionary new.
-	nF:=0.
-	self candidates do: [:candidate |
-		(done includesKey: (candidate tid s)) ifFalse:[
-		found:=false. 
-		The factory biases associationsDo: [:b|
-			"Add N times if it is already in biases"
-			(candidate tid= b key) ifTrue:[
-				(b value)-1 timesRepeat:[
-					cands add: candidate.
-				].
-				found:=true.
-				nF:=nF+1.
-			].
-		].
-		(found)
-			"Add 1/remaining unbiased if not"
-			ifFalse:[
-				base:= ((1/(self tcounter -1 -numB) asFloat)*100) rounded.
-				(base-1) timesRepeat:[
-					cands add: candidate.
-				].
-		].
-
-		done at: (candidate tid s) put: 1.
-		].
+pick: aSortedCollection with: aNumber
+	|r n|
+	r:= (App random next * (aNumber+(aNumber/3 asFloat))) rounded.
+	n:=0.
+	
+	aSortedCollection do:[:x|
+		n:=(x value s).
+		(r>(x key)) ifTrue:[^n]	
 	].
 
-	cands reset.
-	(nF>0) ifFalse:[cands:=self candidates.].
-	done:= Dictionary new.
+	^n.
+!
+stepBias
+	|now next cdf numB base max cands candidate r|
+	self stopped ifTrue: [^false].
+	numB:= The factory biases size. 
+	cdf:= SortedCollection new. 
+	cands:=Dictionary new.
+	(numB<28) ifTrue:[base:= ((1/(self tcounter -1 -numB) asFloat)*100) rounded.] ifFalse:[base:=0.].
+	max:=base.
+	
+	"Populate weight list"
+	self candidates do: [:c|
+		(The factory biases includesKey: (c tid s))
+		ifTrue:[cdf add: (Association key: (The factory biases at: (c tid s)) asInteger value: (c tid)).
+			((The factory biases at: (c tid s))>max) 
+				ifTrue:[max:=(The factory biases at: (c tid s)) asInteger].]
+		ifFalse:[cdf add: (Association key: base value: (c tid))].
 
-	cands do: [:candidate |
-	(done includesKey: (candidate tid s)) ifFalse:[
+		cands at: (c tid s) put: c.
+	].
+
+	(cands size) timesRepeat: [
+		r:= (self pick: cdf with: max) s.
+		candidate:= cands at: r.
 		The := candidate.
-		done at:(candidate tid s) put:1.
-		candidate ready 
+		candidate ready
 			ifTrue: [
 				now  := current.
 				next := candidate fire.
@@ -139,7 +134,6 @@ stepBias
 							  current := next.
 							  current onEntry].
 				^true]].
-	].
 	^false
 !
 step
