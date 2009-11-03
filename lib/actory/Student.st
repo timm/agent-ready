@@ -27,7 +27,11 @@ worksIn: aFactory
 	aFactory machine: self.
 	self factory: aFactory.
 	aFactory student: self.
-			
+	(courses size = 0)
+		ifFalse:
+		[ 0 to: ((courses size)-1) do:[:i|
+			(courses at: i) worksIn: aFactory.]
+		]			
 !
 take: aCourse 
 	(self lookup: (aCourse name))
