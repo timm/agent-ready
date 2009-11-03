@@ -104,11 +104,19 @@ onEntry
 !!
 
 ! Happy methods !
+increaseHappy
+	|phappiness|
+	phappiness := self factory student happiness.
+	self factory student happiness: ((phappiness * 1.2) rounded).
+!
 onEntry
 	'ha ha ha ha ha' oo.
+	self increaseHappy.
 !
 onStay
+	self increaseHappy.
 	'still laughing' oo.	
+	self increaseHappy.
 !
 onExit
 	'the fun stops here' oo.
