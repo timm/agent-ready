@@ -89,6 +89,7 @@ reload
 	The := self.
 	machines := Stagger new.
 	self student happiness: 100.
+	self student courses: Dictionary new.
 !
 report
 	|pcounter|

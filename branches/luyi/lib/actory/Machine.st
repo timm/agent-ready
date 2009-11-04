@@ -10,6 +10,7 @@ init: aString
 	id          := App nextId.
 	transitions := Dictionary new.
 	states      := Dictionary new.
+	ptrans      := OrderedCollection new.
 !!
 
 "============================================="
@@ -21,6 +22,7 @@ add: transition
 	transitions at: what
 				ifAbsent: [transitions at: what
                                       put: Stagger new].
+	ptrans add: transition.
 	(transitions at: what) add: transition.
 	transition stagger: (transitions at: what).
 
@@ -42,6 +44,9 @@ anyState
 candidates
 	^self candidates:  current 
 !
+ptrans
+	^ptrans.
+!
 candidates: aState
      ^transitions at: aState name
 	    ifAbsent: [#()].
@@ -62,6 +67,7 @@ factory: aFactory
 reload 
 	transitions := Dictionary new.
 	states := Dictionary new.
+	ptrans := OrderedCollection new.
 !
 id
 	^id

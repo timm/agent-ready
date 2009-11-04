@@ -30,17 +30,19 @@ worksIn: aFactory
 	(courses size = 0)
 		ifFalse:
 		[ 0 to: ((courses size)-1) do:[:i|
-			(courses at: i) worksIn: aFactory.]
+			(courses at: i) worksIn: aFactory.].
 		]			
 !
 take: aCourse 
 	(self lookup: (aCourse name))
 	ifFalse:[
+		'did not take this course before' o.
 		courses at: (courses size) put: aCourse.
 		aCourse assignStudent: self.
 		self check: aCourse.	
 		(self factory isNil)
-			ifFalse: [aCourse worksIn: (self factory).]
+			ifFalse: ['works in' oo.
+			 aCourse worksIn: (self factory).]
 		].
 !
 check: aCourse
@@ -86,6 +88,9 @@ setLifeEvent: aLifeEvent
 	happiness := 100.
 	lifeEvent setPatience: 100.
 	courses := Dictionary new.
+!
+courses: aCourses
+	courses := aCourses.	
 !
 getLifeEvent
 	^lifeEvent.
