@@ -42,4 +42,22 @@ P.~Bresciani, P.~Giorgini, F.~Giunchiglia, J.~Mylopoulos, and A.~Perini,
 H.~J. Levesque, R.~Reiter, Y.~Lespérance, F.~Lin, R.~B. Scherl, and R.~B,
   ``Golog: A logic programming language for dynamic domains,'' 1994.
 
+\bibitem{FIPA1998}
+fipa.org, ``Foundation for intelligent physical agents, fipa 1998
+  specification,'' 1998.
+
+\bibitem{statbok}
+Hinkelmann, Klaus, Kempthorne, and Oscar, \emph{Design and Analysis of
+  Experiments, Volume I: Introduction to Experimental Design(Second
+  ed.)}.\hskip 1em plus 0.5em minus 0.4em\relax Wiley, 2008.
+
+\bibitem{gay09keys}
+G.~Gay, T.~Menzies, O.~Jalali, G.~M. an~d Beau~Gilkerson, M.~Feather, and
+  J.~Kiper, ``Finding robust solutions in requirements models,''
+  \emph{Automated Software Engineering}, 2009, submitted draft, September 2009.
+
+\bibitem{kmean}
+Hartigan and J.~A., \emph{Clustering Algorithms.}\hskip 1em plus 0.5em minus
+  0.4em\relax Wiley, 1975.
+
 \end{thebibliography}
