@@ -46,152 +46,69 @@
 % For tracking purposes - this is V1.8 - June 2007
 
 \documentclass{sig-alternate}
-
+\usepackage{times}
+\usepackage{url}
+\usepackage{cite}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{smallenum}}
+\newcommand{\ee}{\end{smallenum}}
+\newcommand{\tion}[1]{\S\ref{tion:#1}}
+\newcommand{\eq}[1]{Equation~\ref{eq:#1}}
+\newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+\newenvironment{smallitem}
+ {\setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \begin{itemize}
+   \setlength{\leftmargin}{.2in}
+  \setlength{\parsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt}}
+ {\end{itemize}}
+\newenvironment{smallenum}
+ {\setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \begin{enumerate}
+  \setlength{\leftmargin}{.2in}
+  \setlength{\parsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt}}
+ {\end{enumerate}}
+ 
 \begin{document}
-%
-% --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
-%\CopyrightYear{2007} % Allows default copyright year (200X) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
-% --- End of Author Metadata ---
 
-\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
-Format\titlenote{(Produces the permission block, and
-copyright information). For use with
-SIG-ALTERNATE.CLS. Supported by ACM.}}
-\subtitle{[Extended Abstract]
-\titlenote{A full version of this paper is available as
-\textit{Author's Guide to Preparing ACM SIG Proceedings Using
-\LaTeX$2_\epsilon$\ and BibTeX} at
-\texttt{www.acm.org/eaddress.htm}}}
-%
-% You need the command \numberofauthors to handle the 'placement
-% and alignment' of the authors beneath the title.
-%
-% For aesthetic reasons, we recommend 'three authors at a time'
-% i.e. three 'name/affiliation blocks' be placed beneath the title.
-%
-% NOTE: You are NOT restricted in how many 'rows' of
-% "name/affiliations" may appear. We just ask that you restrict
-% the number of 'columns' to three.
-%
-% Because of the available 'opening page real-estate'
-% we ask you to refrain from putting more than six authors
-% (two rows with three columns) beneath the article title.
-% More than six makes the first-page appear very cluttered indeed.
-%
-% Use the \alignauthor commands to handle the names
-% and affiliations for an 'aesthetic maximum' of six authors.
-% Add names, affiliations, addresses for
-% the seventh etc. author(s) as the argument for the
-% \additionalauthors command.
-% These 'additional authors' will be output/set for you
-% without further effort on your part as the last section in
-% the body of your article BEFORE References or any Appendices.
+\conferenceinfo{~}{~}
 
-\numberofauthors{1} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
+\title{An Agent Based Wedding Model}
+
+
+\numberofauthors{1} 
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
+Oussama El-Rawas\\
+       \affaddr{CPE,  West Virginia University,  USA}\\
+       \email{oelrawas@mix.wvu.edu}
 }
-% There's nothing stopping you putting the seventh, eighth, etc.
-% author on the opening page (as the 'third row') but we ask,
-% for aesthetic reasons that you place these 'additional authors'
-%% in the \additional authors block, viz.
-%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-%\date{30 July 1999}
-% Just remember to make sure that the TOTAL number of authors
-% is the number that will appear on the first page PLUS the
-% number that will appear in the \additionalauthors section.
 
 \maketitle
 \begin{abstract}
-
+In this course we have attempted to study agent based development and agent concepts to be applied in software development. In an effort to do just that, we have been presented with an architecture that aims to emulate the concept of agent programming. This Architecture's name is called Actory, and it is implemented in the Smalltalk scripting language. Using Actory, we attempt to model planning a wedding in an agent based manner. Though incomplete, we will present this implementation, along with the projected implementation and learning concepts that were planned, but not implemented. Before that, we will present Actory and how, in this author's opinion, Actory can be improved.
 \end{abstract}
 
-\keywords{}
+\keywords{Agents, BDI, Actory}
 
 \section{Introduction}
+Going into this course, one of our objectives was to learn and critique Agent-based programming methods in an attempt to understand further what agents are, or even what they ought to be.
 
 \section{The {\secit Body} of The Paper}
 
 \section{Conclusions}
 
-%\end{document}  % This is where a 'short' article might terminate
-
-%ACKNOWLEDGMENTS are optional
-%\section{Acknowledgments}
-
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{refs}  % sigproc.bib is the name of the Bibliography in this case
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-%APPENDICES are optional
-%\balancecolumns
-\appendix
-%Appendix A
-\section{Headings in Appendices}
+\bibliography{refs} 
 
-\subsection{Introduction}
-\subsection{The Body of the Paper}
-\subsubsection{Type Changes and  Special Characters}
-\subsubsection{Math Equations}
-\paragraph{Inline (In-text) Equations}
-\paragraph{Display Equations}
-\subsubsection{Citations}
-\subsubsection{Tables}
-\subsubsection{Figures}
-\subsubsection{Theorem-like Constructs}
-\subsubsection*{A Caveat for the \TeX\ Expert}
-\subsection{Conclusions}
-\subsection{Acknowledgments}
-\subsection{Additional Authors}
-This section is inserted by \LaTeX; you do not insert it.
-You just add the names and information in the
-\texttt{{\char'134}additionalauthors} command at the start
-of the document.
-\subsection{References}
-Generated by bibtex from your ~.bib file.  Run latex,
-then bibtex, then latex twice (to resolve references)
-to create the ~.bbl file.  Insert that ~.bbl file into
-the .tex source file and comment out
-the command \texttt{{\char'134}thebibliography}.
-% This next section command marks the start of
-% Appendix B, and does not continue the present hierarchy
-\section{More Help for the Hardy}
-The sig-alternate.cls file itself is chock-full of succinct
-and helpful comments.  If you consider yourself a moderately
-experienced to expert user of \LaTeX, you may find reading
-it useful but please remember not to change it.
-%\balancecolumns % GM June 2007
-% That's all folks!
+\appendix
+
 \end{document}
