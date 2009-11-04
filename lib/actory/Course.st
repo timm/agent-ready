@@ -17,9 +17,9 @@ init
 !!
 "======================"
 ! Course methodsFor: 'storing'!
-worksIn: factory
-	factory machine: self.
-	self factory: factory.
+worksIn: aFactory
+	aFactory machine: self.
+        self factory: aFactory.
 !
 add: aTransition
 	super add: aTransition.

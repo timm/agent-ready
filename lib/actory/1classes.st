@@ -11,7 +11,7 @@
 
 #Stagger     isa: App with: 'contents pointer logger learned'.
 #Factory     isa: App with: 'machines name current student flogger'.
-#Machine     isa: App with: 'container name id current start states transitions'.
+#Machine     isa: App with: 'container name id current start states transitions ptrans'.
 (#State      isa: App with: 'container name id visits froms tos') public.
 (#Transition isa: App with: 'container      id state if then next stagger') public; inits.
 #ErrorState  isa: State.
