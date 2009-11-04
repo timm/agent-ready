@@ -35,9 +35,10 @@ f1 := Factory new: 'test'.
 flogger := FactoryLogger new.
 flogger settrans: (sle transitions).
 flogger settrans: (ce1 transitions).
-
+ptable := Dictionary new.
+flogger trans do: [:each| each id o. ' ' o. ptable at: (each id) put: 0.].
 "======================init Learning part====================================="
-100 timesRepeat:[
+1 timesRepeat:[
 App reset; asynchronousOff.
 s1 setLifeEvent: sle.
 cs1 setEvent: ce1.
@@ -46,10 +47,10 @@ s1 take: cs1.
 s1 worksIn: f1.
 f1 flogger: flogger. 
 ' check all transitions in factory ' oo.
-f1 machines contents do: [:machine| machine ptrans do:[:tran|tran id o. ' ' o.].].
 
 "+++++++++++++++++++++++ Learning Part +++++++++++++++++++++++++++++++++"
 f1 run.
+f1 machines contents do: [:machine| machine transitions keysAndValuesDo:[:key :value |((value logger) counter) inspect.].].
 f1 reload.
 cs1 reload.
 s1 reload.
@@ -60,13 +61,6 @@ flogger best.
 flogger restDic inspect.
 flogger bestDic inspect.
 
-ptable := Dictionary new.
-
-'total transitions: ' s oo.
-
-flogger trans do: [:each| each id o. ' ' o. ptable at: (each id) put: 0.].
-' ' oo.
-ptable oo.
 'fire transitions: ' s oo. 
 " values is an value, each is an orderedcollection, peach  is a bag, paeach is transition "
 

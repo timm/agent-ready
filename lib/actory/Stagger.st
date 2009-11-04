@@ -54,6 +54,9 @@ reset
 	pointer := 0.
 	contents shuffle.
 !
+contents: aOrderedCollection
+	contents := aOrderedCollection. 
+!	
 reload
 	(learned) 
 		ifFalse: [self reset].
