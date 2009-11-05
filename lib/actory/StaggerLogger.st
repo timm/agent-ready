@@ -64,7 +64,7 @@ resetlogger
 	logger := Dictionary new.
 !
 resetcounter
-	counter := Dictionary new.
+	counter := Bag new.
 !
 resetlearner
 	learner := Dictionary new.

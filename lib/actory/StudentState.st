@@ -25,11 +25,16 @@ add: state
 states
 	^states.
 !
-RandState
-	|index|
-	index := (Random next * ((states size)-1)) rounded.
-	^State from: (states at: index).
+RandState: aString
+	|index pstates pkeys key|
+	pstates := (states select: [:value| value ~ aString]).
+	pkeys := pstates keys asOrderedCollection.
+	
+	index := Random between: 1 and: (pkeys size). 
+	key := pkeys at: index.
+ 	^(pstates at: key).
+	
 !
 startState
-	^State from: (states at: 0).
+	^(states at: 0).
 !!

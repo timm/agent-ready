@@ -69,6 +69,9 @@ reload
 	states := Dictionary new.
 	ptrans := OrderedCollection new.
 !
+states 
+	^states
+!
 id
 	^id
 !

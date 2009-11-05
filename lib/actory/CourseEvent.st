@@ -29,7 +29,7 @@ run: aGuardSideEffect
 run: aGuard effect: aSideEffect
 	|index|
 	index := 0.
-        [index < 50]
+        [index < 10]
 		whileTrue: [
 			    index := index + 1.
 			    self generateTran: aGuard then: aSideEffect.  
@@ -42,7 +42,7 @@ generateTran: guard then: sideEffect
 	|newTransition pstate|
 	(ss1 states size >0)
 		ifTrue: [
-			pstate := ss1 RandState.
+			pstate := (ss1 RandState: 'Course') state.
 			((pstate name s ) ~ 'Course')
 			ifTrue:[
 			transitions add: 
@@ -50,18 +50,23 @@ generateTran: guard then: sideEffect
 				state: pstate;
 			 	if: guard;
 			 	then: sideEffect;
-			 	next: ss1 RandState).
+			 	next: ((ss1 RandState: 'Course') state)).
 				^true.
 			]]
 		ifFalse: [^false.]
 !
 course: aCourse
+	|pstate|
+	pstate :=  ss1 RandState: 'Course'.
+	[pstate ~ 'End'	]
+		whileTrue: [pstate := ss1 RandState: 'Course'].
 	course := aCourse.
+	
 	course add:             (Transition new
-                                state: ss1 startState;
+                                state: ((ss1 startState) state );
                                 if: (guard Rand);
                                 then: (sideEffect Rand);
-                                next: ss1 RandState).
+                                next: pstate state).
 	1 to: (transitions size) do:[:i|
 	course add: (transitions at: i)]. 
 !

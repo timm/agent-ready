@@ -22,7 +22,14 @@ sideEffect1 add: [The machine exam].
 
 'run randomly' oo.
 ce1 run.
-ce1 inspect.
-cs1 worksIn: f1.
+cs1 setEvent: ce1 .
+cs1 ptrans inspect.
+cs1 states inspect.
+st1 := Student new:'luyi'.
+st1 take: cs1.
+st1 worksIn: f1.
+flogger := FactoryLogger new. 
+flogger settrans: (ce1 transitions).
+f1 flogger: flogger.
 f1 run.
 !
