@@ -36,30 +36,37 @@ flogger := FactoryLogger new.
 flogger settrans: (sle transitions).
 flogger settrans: (ce1 transitions).
 ptable := Dictionary new.
-flogger trans do: [:each| each id o. ' ' o. ptable at: (each id) put: 0.].
+runstable := Dictionary new.
+runtemp := Dictionary new.
+flogger trans do: [:each|ptable at: (each id) put: 0.]
 "======================init Learning part====================================="
-1 timesRepeat:[
+10 timesRepeat:[
 App reset; asynchronousOff.
 s1 setLifeEvent: sle.
 cs1 setEvent: ce1.
-
 s1 take: cs1.
 s1 worksIn: f1.
 f1 flogger: flogger. 
-' check all transitions in factory ' oo.
-
+flogger trans do: [:each|runtemp at: (each id) put: 0.].
 "+++++++++++++++++++++++ Learning Part +++++++++++++++++++++++++++++++++"
 f1 run.
-f1 machines contents do: [:machine| machine transitions keysAndValuesDo:[:key :value |((value logger) counter) inspect.].].
+f1 machines contents do:
+	 [:machine| machine transitions keysAndValuesDo:
+		[:key :value|
+		((value logger) counter) contents
+		 keysAndValuesDo: [:key :value |
+		(runtemp includesKey: (key id))
+			ifTrue:[runtemp at:(key id) put: value.].
+				].
+		].
+	 ].
+runstable at: (runstable size) put: (runtemp values) asOrderedCollection.
 f1 reload.
 cs1 reload.
 s1 reload.
 ].
-flogger logger inspect.
 flogger rest. 
 flogger best.
-flogger restDic inspect.
-flogger bestDic inspect.
 
 'fire transitions: ' s oo. 
 " values is an value, each is an orderedcollection, peach  is a bag, paeach is transition "
@@ -70,5 +77,8 @@ flogger logger values do: [:each| each do:[:peach|peach do: [:paeach|
 	(ptable includesKey: (paeach id))	
 	 ifTrue: [ptable at: (paeach id) put: ((ptable at:(paeach id))+1).].
 	 ].]. ' ' oo].
-ptable o.
+runstable keysAndValuesDo: [:key :value|
+	'runs: ' o. key o. ' ' o.
+	value oo.	
+	] 
 !
