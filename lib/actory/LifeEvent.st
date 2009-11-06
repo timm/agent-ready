@@ -55,12 +55,16 @@ generateTran: guard then: sideEffect
 		ifFalse: [^false.]
 !
 student: aStudent
+	|pstate|
+	pstate := ss1 RandState: 'Life'.
+	[pstate ~ 'End']
+		whileTrue: [pstate := ss1 RandState: 'Life'].
 	student := aStudent.
 	student add:           (Transition new
                                 state: ((ss1 startState) state) ;
                                 if: (guard Rand);
                                 then: (sideEffect Rand);
-                                next: ((ss1 RandState: 'Life') state) ).
+                                next: pstate state ).
 
 	1 to: (transitions size) do: [:i |
 	student add: (transitions at: i).]
