@@ -38,6 +38,8 @@ flogger settrans: (ce1 transitions).
 ptable := Dictionary new.
 runstable := Dictionary new.
 runtemp := Dictionary new.
+transDic := Dictionary new.
+flogger trans do: [:each|transDic at: (each id) put: 0.].
 "======================init Learning part====================================="
 10 timesRepeat:[
 App reset; asynchronousOff.
@@ -50,17 +52,18 @@ flogger trans do: [:each|runtemp at: (each id) put: 0.].
 "+++++++++++++++++++++++ Learning Part +++++++++++++++++++++++++++++++++"
 f1 run.
 ptable at: (runstable size) put: (f1 student happiness).
+runtemp oo.
 f1 machines contents do:
 	 [:machine| machine transitions keysAndValuesDo:
 		[:key :value|
 		((value logger) counter) contents
 		 keysAndValuesDo: [:key :value |
 		(runtemp includesKey: (key id))
-			ifTrue:[runtemp at:(key id) put: value.].
+			ifTrue:[runtemp at:(key id) put: ((runtemp at: (key id)) + value).].
 				].
 		].
 	 ].
-runstable at: (runstable size) put: (runtemp values) asOrderedCollection.
+runstable at: (runstable size) put: runtemp. 
 f1 reload.
 cs1 reload.
 s1 reload.
@@ -68,35 +71,40 @@ s1 reload.
 flogger rest. 
 flogger best.
 
-flogger bestDic oo.
 flogger bestDic do:[:item|
 		'happiness is ' o.
 		(item at:1) oo.
 		(item at: 2) do: [:pitem|
 		pitem contents keys do:[:key|
-		(key id) o. 
-		' ' o.
+		(transDic includesKey: (key id))
+		ifTrue: [(key id) o. 
+		' ' o.].
 		].]
 		. ' ' oo.].
 
-flogger trans do: [:tran|(tran id) o. ' ' o.]. 
-' ' oo.
-
 runstable keysAndValuesDo: [:key :value|
 	'runs: ' o. key o. ' ' o.
-	value o.
+	(value values ) asOrderedCollection o.
 	' with happiness '  o.	
 	(ptable at: key )oo.
 	].
 
-patiencesorder := (ptable values asSortedCollection).
-patiencesorder oo.
+pfre := Dictionary new.
+transDic keys asOrderedCollection.
+1 to: ((flogger trans) size) do:[:i|
+	|id counts|
+	id:= (flogger trans at: i) id.
+	id o. ' ' o.
+	counts := 0.
+	(runstable values) do: [:value|
+	((value at: id) = 0)
+		ifFalse: [ counts := counts + 1].
+	].
+	pfre at: id put: counts	
+	].
+pfre oo.
 
-alpha := 0.2.
-best := (alpha * (patiencesorder size)) floor.
-best oo.
-runsrowno := (ptable keyAtValue: (patiencesorder last)) oo.
-
+(flogger bestDic size) oo.
 
 !
 
