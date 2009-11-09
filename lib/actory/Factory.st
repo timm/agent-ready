@@ -93,19 +93,21 @@ reload
 	
 !
 report
-	|pcounter|
+	|pcounter ptemp| 
 	"perform learning in this part"
 	'' loo.
 	('Terminated at tick ', Clock s) oo.
 	('Final patience ', Patience s) oo.
 	('Final happiness ', student happiness s) oo.
+	ptemp := OrderedCollection new.
 	machines contents do:[:machine|
 		machine transitions keysAndValuesDo:[ :key :value|
 		pcounter := (value logger) counter.
 		((pcounter size) = 0) 
-		ifFalse: [flogger log: (student happiness) value: pcounter.].
+		ifFalse: [ptemp add: pcounter.].
+		].
 	].
-	]
+	flogger log: (student happiness) value: ptemp.
 !
 run
 	self reset;  start; walk; report.

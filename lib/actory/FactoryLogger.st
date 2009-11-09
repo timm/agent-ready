@@ -4,35 +4,45 @@ new
 !!
 !FactoryLogger methodsFor: 'creation'!
 init
-	logger := Dictionary new.
+	logger := OrderedCollection new.
 	optlist := OrderedCollection new.
-	bestDic := Dictionary new.
-	restDic := Dictionary new.
+	bestDic := OrderedCollection new.
+	restDic := OrderedCollection new.
 	trans   := OrderedCollection new.
 !!
 !FactoryLogger methodsFor: 'storing'!
 log: aKey value: aValue
 	|pvalue|
-	logger at: aKey 
-		ifAbsent: [ logger at: aKey put: (OrderedCollection new).].
-	pvalue := logger at: aKey.
+	pvalue := OrderedCollection new.
+	pvalue add: aKey.
 	pvalue add: aValue.
-	logger at: aKey put: pvalue.
+	logger add: pvalue.
 !
-rest
+sort
+	|tempCollection|
+	tempCollection := logger asSortedCollection sortBlock:[:a :b| (a at: 1) < (b at: 1)].
+	^tempCollection.
+!
+rest 
+	self rest: 0.8.
+!
+best  
+	self best: 0.8.
+!
+rest: alpha
 	|psc restsize|
-	restsize := (0.8 * (logger size)) rounded.
-	psc := logger keys asSortedCollection.
+	restsize := (alpha * (logger size)) floor.
+	psc := self sort.
 	1 to: restsize do: [:i|
-		restDic at: (psc at:i) put: (logger at: (psc at: i))].
-	restDic.
+		restDic add: (psc at: i)].
 !
-best
-	|psc|
-	(restDic isEmpty) ifTrue: [self rest].
-	psc := logger.
-	bestDic := psc removeAllKeys: (restDic keys).
-	bestDic.
+best: alpha
+	|psc restsize|
+	(restDic isEmpty) ifTrue: [self rest: alpha].
+	psc := self sort.
+	restsize := ((alpha * (logger size)) floor)+1.	
+	restsize to: (psc size) do:[:i|
+		bestDic add: (psc at: i)].
 !
 settrans: atrans
 	atrans do: [:each | trans add: each].

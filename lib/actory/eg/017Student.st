@@ -68,11 +68,35 @@ s1 reload.
 flogger rest. 
 flogger best.
 
+flogger bestDic oo.
+flogger bestDic do:[:item|
+		'happiness is ' o.
+		(item at:1) oo.
+		(item at: 2) do: [:pitem|
+		pitem contents keys do:[:key|
+		(key id) o. 
+		' ' o.
+		].]
+		. ' ' oo.].
+
+flogger trans do: [:tran|(tran id) o. ' ' o.]. 
+' ' oo.
 
 runstable keysAndValuesDo: [:key :value|
 	'runs: ' o. key o. ' ' o.
 	value o.
 	' with happiness '  o.	
 	(ptable at: key )oo.
-	] 
+	].
+
+patiencesorder := (ptable values asSortedCollection).
+patiencesorder oo.
+
+alpha := 0.2.
+best := (alpha * (patiencesorder size)) floor.
+best oo.
+runsrowno := (ptable keyAtValue: (patiencesorder last)) oo.
+
+
 !
+
