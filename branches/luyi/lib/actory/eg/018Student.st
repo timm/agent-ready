@@ -57,31 +57,22 @@ f1 machines contents do:
 		[:key :value|
 		((value logger) counter) contents
 		 keysAndValuesDo: [:key :value |
-		(key id) o. ' ' o. value o. ' ' oo.
 		(runtemp includesKey: (key id))
 			ifTrue:[runtemp at:(key id) put: ((runtemp at: (key id)) + value).].
 				].
 		].
 	 ].
-runtemp oo.
 runstable at: (runstable size) put: (Dictionary from: (runtemp associations)) . 
 f1 reload.
 cs1 reload.
 s1 reload.
 ].
+
+"========================mining part ======================"
+alpha := 0.8.
 flogger rest. 
 flogger best.
 
-flogger bestDic do:[:item|
-		'happiness is ' o.
-		(item at:1) oo.
-		(item at: 2) do: [:pitem|
-		pitem contents keys do:[:key|
-		(transDic includesKey: (key id))
-		ifTrue: [(key id) o. 
-		' ' o.].
-		].]
-		. ' ' oo.].
 
 runstable keysAndValuesDo: [:key :value|
 	|pvalue|
@@ -93,11 +84,9 @@ runstable keysAndValuesDo: [:key :value|
 	].
 
 pfre := Dictionary new.
-transDic keys asOrderedCollection.
 1 to: ((flogger trans) size) do:[:i|
 	|id counts|
 	id:= (flogger trans at: i) id.
-	id o. ' ' o.
 	counts := 0.
 	(runstable values) do: [:value|
 	((value at: id ) = 0 )
@@ -107,7 +96,45 @@ transDic keys asOrderedCollection.
 	].
 pfre oo.
 
-(flogger bestDic size) oo.
+bestfre := Dictionary new.
+itemno := 0.
+flogger bestDic do:[:item|
+		|itembag|
+		itemno := itemno +1.
+		itembag := Bag new.
+		'happiness is ' o.
+		(item at:1) oo.
+		(item at: 2) do: [:pitem|
+		pitem contents keys do:[:key|
+		(transDic includesKey: (key id))
+		ifTrue: [
+		(key id) o. 
+		itembag add: (key id).
+		' ' o.
+		].].].
+		bestfre at: itemno put: (itembag asSortedCollection).
+		' ' oo.].
+bestfre oo.
 
+bestfreDict := Dictionary new.
+1 to: ((flogger trans) size) do:[:i|
+        |id counts|
+        id:= ((flogger trans) at: i) id. 
+        counts := 0.
+	bestfre values do: [:value|
+	(value includes: id)
+	ifTrue: [
+		counts:= counts+1.
+		].
+	].
+	bestfreDict at: id put: counts.
+        ].  
+bestfreDict oo.
+
+restfreDict := Dictionary new.
+
+pfre keysAndValuesDo: [:key :value|
+	restfreDict at: key put: ((pfre at: key)- (bestfreDict at:key))].
+
+restfreDict oo.
 !
-
