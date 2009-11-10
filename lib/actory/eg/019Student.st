@@ -74,6 +74,7 @@ flogger rest.
 flogger best.
 
 "==================running result matrix==================="
+phsum := 0.
 runstable keysAndValuesDo: [:key :value|
 	|pvalue|
 	'runs: ' o. key o. ' ' o.
@@ -81,8 +82,9 @@ runstable keysAndValuesDo: [:key :value|
 	(pvalue values ) asOrderedCollection o.
 	' with happiness '  o.	
 	(ptable at: key )oo.
+	phsum := phsum+ (ptable at:key).
 	].
-
+((phsum/(runstable size)) floor) oo.
 "==================frequency table ========================"
 pfre := Dictionary new.
 1 to: ((flogger trans) size) do:[:i|
@@ -162,4 +164,46 @@ brvector keysAndValuesDo: [:key :value|
 	].
 biasedcourseTrans oo.
 biasedlifeTrans oo.
+sle transitions: biasedlifeTrans.
+ce1 transitions: biasedcourseTrans.
+biasedptable := Dictionary new.
+biasedruntemp := Dictionary new.
+biasedrunstable := Dictionary new.
+10 timesRepeat:[
+App reset; asynchronousOff.
+s1 setLifeEvent: sle.
+cs1 setEvent: ce1.
+s1 take: cs1.
+s1 worksIn: f1.
+f1 flogger: flogger. 
+flogger trans do: [:each|biasedruntemp at: (each id) put: 0.].
+f1 run.
+biasedptable at: (biasedrunstable size) put: (f1 student happiness).
+f1 machines contents do:
+         [:machine| machine transitions keysAndValuesDo:
+                [:key :value|
+                ((value logger) counter) contents
+                 keysAndValuesDo: [:key :value |
+                (biasedruntemp includesKey: (key id))
+                        ifTrue:[biasedruntemp at:(key id) put: ((biasedruntemp at: (key id)) + value).].
+                                ].
+                ].
+         ].
+biasedrunstable at: (biasedrunstable size) put: (Dictionary from: (biasedruntemp associations)) . 
+f1 reload.
+cs1 reload.
+s1 reload.
+].
+"==================running result matrix==================="
+biasedphsum := 0.
+biasedrunstable keysAndValuesDo: [:key :value|
+        |pvalue|
+        'runs: ' o. key o. ' ' o.
+        pvalue := value.
+        (pvalue values ) asOrderedCollection o.
+        ' with happiness '  o.  
+        (biasedptable at: key )oo.
+	biasedphsum := biasedphsum + (biasedptable at: key).
+        ].
+((biasedphsum/(biasedptable size)) floor) oo.
 !

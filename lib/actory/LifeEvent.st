@@ -75,6 +75,9 @@ setStudentState: aStudentState
 transitions
 	^transitions.
 !
+transitions: trans
+	transitions := trans.
+!
 setGuard: aGuard
 	guard := aGuard.
 ! 
