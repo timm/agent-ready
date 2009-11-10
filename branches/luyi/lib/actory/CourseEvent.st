@@ -70,6 +70,9 @@ course: aCourse
 	1 to: (transitions size) do:[:i|
 	course add: (transitions at: i)]. 
 !
+transitions: trans
+	transitions := trans.
+!
 setStudentState: aStudentState
 	ss1 := aStudentState.
 !
