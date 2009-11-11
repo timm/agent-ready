@@ -1,0 +1,10 @@
+set style data line;
+set title "transition fires inuns";
+set xlabel "running times";
+set ylabel "transition fires";
+
+plot "dataset_pro2.txt" using 1:3  title 'before' , \
+    "dataset_pro2.txt" using 1:5  title 'after' ; 
+set term postscript eps ;
+set output "trans_fire_happiness.eps";
+replot;

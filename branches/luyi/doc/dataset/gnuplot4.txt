@@ -1,0 +1,10 @@
+set style data line;
+set title "happiness changes in runs";
+set xlabel "running times";
+set ylabel "happiness";
+
+plot "dataset_pro2.txt" using 1:2  title 'before' , \
+    "dataset_pro2.txt" using 1:4  title 'after' ; 
+set term postscript eps ;
+set output "trans_happiness.eps";
+replot;

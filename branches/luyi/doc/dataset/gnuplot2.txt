@@ -1,0 +1,9 @@
+set style data boxes ;
+set title "running times for transitions";
+set xlabel "transitions id";
+set ylabel "running times";
+set size 1.0,1.0
+plot "dataset_pro.txt" using 1:2  title 'before' with imp 1, \
+    "dataset_pro.txt" using 1:3  title 'after'  with imp 2
+set term postscript eps ;
+replot;

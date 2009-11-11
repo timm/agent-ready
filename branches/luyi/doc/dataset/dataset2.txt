@@ -1,0 +1,29 @@
+32 17 29 26 35 50 20 23 5 38 53 56 59 8 14 44 41 11 47
+
+47 38 50 
+
+before:
+runs: 0 OrderedCollection (0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 ) with happiness 208
+runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 28
+runs: 2 OrderedCollection (0 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 2 ) with happiness 173
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 120
+runs: 4 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+runs: 6 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 5 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 ) with happiness 120
+runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+runs: 8 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 120
+runs: 9 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+
+after:
+
+runs: 0 OrderedCollection (0 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 2 ) with happiness 208
+runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 2 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+runs: 3 OrderedCollection (0 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 2 ) with happiness 173
+runs: 4 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+runs: 6 OrderedCollection (0 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 2 ) with happiness 208
+runs: 5 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 8 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 ) with happiness 100
+runs: 9 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+
