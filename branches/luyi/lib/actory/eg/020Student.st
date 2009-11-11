@@ -78,8 +78,9 @@ learner resultmatrix.
 learner findbestTrans.
 learner biasedcourseTrans oo.
 learner biasedlifeTrans oo.
-sle transitions: biasedlifeTrans.
-ce1 transitions: biasedcourseTrans.
+
+sle transitions: (learner biasedlifeTrans).
+ce1 transitions: (learner biasedcourseTrans).
 
 flogger2 := FactoryLogger new.
 flogger2 settrans: (sle transitions).
