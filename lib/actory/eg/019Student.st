@@ -84,7 +84,7 @@ runstable keysAndValuesDo: [:key :value|
 	(ptable at: key )oo.
 	phsum := phsum+ (ptable at:key).
 	].
-((phsum/(runstable size)) floor) oo.
+(o(phsum/(runstable size)) floor) oo.
 "==================frequency table ========================"
 pfre := Dictionary new.
 1 to: ((flogger trans) size) do:[:i|

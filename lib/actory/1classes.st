@@ -33,6 +33,7 @@
 #GuardSideEffect isa: App with: 'gsesets'.
 #StaggerLogger isa: App with: 'logger counter stagger learner firelist'.
 #FactoryLogger isa: App with: 'logger optlist bestDic restDic trans'.
+#Learning      isa: App with: 'ptable runstable phsum transDic flogger biasedcourseTrans biasedlifeTrans'.
 Smalltalk at: #The put: nil. "one global"
 
 !
