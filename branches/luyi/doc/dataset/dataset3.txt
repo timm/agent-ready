@@ -1,0 +1,13 @@
+runs: 0 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 ) with happiness 28
+runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 2 OrderedCollection (0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 ) with happiness 247
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 4 OrderedCollection (0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 34
+runs: 6 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 5 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 8 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 9 OrderedCollection (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+104
+
+
