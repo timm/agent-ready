@@ -1,0 +1,10 @@
+set style data line;
+set title "Events frequence";
+set xlabel "transition id";
+set ylabel "number of it";
+
+plot "dataset_pro.txt" using 1:5  title 'before' , \
+    "dataset_pro.txt" using 1:6  title 'after' ; 
+set term postscript eps ;
+set output "trans_fre.eps";
+replot;
