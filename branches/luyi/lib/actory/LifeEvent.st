@@ -76,7 +76,8 @@ transitions
 	^transitions.
 !
 transitions: trans
-	transitions := trans.
+	1 to: (trans size) do:[:i|
+	transitions add: (trans at: i).]. 
 !
 setGuard: aGuard
 	guard := aGuard.
