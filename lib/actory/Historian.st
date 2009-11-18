@@ -72,6 +72,36 @@ report
 	archives at: session put: log.
 	session:=session+1.
 !
+reportStats
+	|scores mean std log temp|
+	scores:= SortedCollection new.
+	mean:= 0.
+	std:=0.
+
+	1 to: session-1 do:[:x|
+		log:=self archives at:x.
+		scores add: (log at:'score') asFloat.
+	].
+
+	('Median = ',(scores at: 10) s) oo. 
+	scores do:[:x|
+		mean:= mean+x.
+	].
+	
+	mean:=(mean/scores size) asFloat.
+	('Mean = ',mean s) oo.
+
+	scores do:[:x|
+		temp:= (x-mean) asFloat.
+		temp:=(temp abs) raisedTo:2.
+		std:=std+temp.		
+	].
+
+	std:=(std/scores size) asFloat.
+	std:= std raisedTo:0.5.
+	('Std.Dev= ',std s) oo.
+!
+
 percentage: aNumber
 	|percent|
 	percent:= ((aNumber/transitions) asFloat*100) rounded.

@@ -101,7 +101,7 @@ pick: aSortedCollection with: aNumber
 	^n.
 !
 stepBias
-	|now next cdf numB base max cands candidate r|
+	|now next cdf numB base max cands candidate r temp|
 	self stopped ifTrue: [^false].
 	numB:= The factory biases size. 
 	cdf:= SortedCollection new. 
@@ -122,6 +122,12 @@ stepBias
 
 	(cands size) timesRepeat: [
 		r:= (self pick: cdf with: max) s.
+		temp:= SortedCollection new.
+		cdf do:[:x|
+			(x value s = r) ifFalse:[temp add: x].
+		].
+		cdf:=temp.
+
 		candidate:= cands at: r.
 		The := candidate.
 		candidate ready
