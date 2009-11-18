@@ -10,12 +10,12 @@ Historian worksIn: f.
 ].
 
 
-1 to: 100 do: [:x|
+1 to: 500 do: [:x|
 	App resetAny.
 	App resetAny.
 	f run.
 		
-	((x\\20) = 0)
+	((x\\100) = 0)
 		ifTrue:['Rebiasing' oo. f oracle learn].
 ].
 !

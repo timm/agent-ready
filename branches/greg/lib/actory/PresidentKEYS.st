@@ -41,6 +41,7 @@ learn
 	base:= (1/(28-The factory biases size) asFloat * (100-sum)) rounded.
 	The historian base: base.
 
+	The historian reportStats. 
 	The historian reportBiases.
 	The historian learnReset.
 	The factory era:The factory era+1.
