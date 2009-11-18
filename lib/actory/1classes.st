@@ -10,7 +10,7 @@
              shares: 'Clock Rand Asynchronousp Patience Trace Ids TooManyLoops' .
 
 #Stagger     isa: App with: 'contents pointer'.
-#Factory     isa: App with: 'biases era machines name current oracle historian suspended suspendee pressure'.
+#Factory     isa: App with: 'biases blacklist era machines name current oracle historian suspended suspendee pressure'.
 #Machine     isa: App with: 'tcounter container name id current start states transitions'.
 #Senator    isa: Machine with: 'billCommittee billSupport billPassed billProposed cloture committee party trust scandals caughtLikelihood'.
 #President	isa: Machine with:'party dsuccess rsuccess'.

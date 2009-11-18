@@ -83,7 +83,7 @@ reportStats
 		scores add: (log at:'score') asFloat.
 	].
 
-	('Median = ',(scores at: 10) s) oo. 
+	('Median = ',(scores at: 50) s) oo. 
 	scores do:[:x|
 		mean:= mean+x.
 	].
