@@ -16,6 +16,14 @@ init: aString
 	pressure:=0.25.
 	era:=1.
 	biases:= Dictionary new.
+	blacklist:=OrderedCollection new.
+	blacklist add: '3'.
+	blacklist add: '7'.
+	blacklist add: '8'.
+	blacklist add: '13'.
+	blacklist add: '15'.
+	blacklist add: '19'.
+	blacklist add: '23'.
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -75,6 +83,9 @@ era: e
 !
 biases: b
 	biases:=b.
+!
+blacklist: b
+	blacklist:=b.
 !!
 "==============================================="
 ! Factory methodsFor: 'printing' !
@@ -114,6 +125,9 @@ era
 !
 biases
 	^biases
+!
+blacklist
+	^blacklist
 !!
 
 "==============================================="

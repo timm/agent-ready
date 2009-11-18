@@ -47,18 +47,22 @@ learn
 	The factory era:The factory era+1.
 !
 getBiases: aCache with: aNumber
-	|biases bscore bkey att val|
+	|biases bscore bkey att val blacklist howMany|
 	biases:=The factory biases.
-	"biases:=Dictionary new."
+	blacklist:= The factory blacklist.
+	howMany:=aNumber asInteger.
+	(howMany > (28-The factory biases size)) ifTrue:[howMany:=28-The factory biases size].
 
-	(aNumber asInteger) timesRepeat: [ 
+	howMany timesRepeat: [ 
 		bscore:=0.
 		aCache associationsDo:[:entry|
 			att:=(entry key) copyFrom: 2 to: ((entry key) indexOf: $,)-1.
 			(biases includesKey: att) ifFalse:[
-				(entry value > bscore) ifTrue:[
-					bscore:=(entry value).
-					bkey:=(entry key).
+				(blacklist includes: att) ifFalse:[
+					(entry value > bscore) ifTrue:[
+						bscore:=(entry value).
+						bkey:=(entry key).
+					].
 				].
 			].
 		].

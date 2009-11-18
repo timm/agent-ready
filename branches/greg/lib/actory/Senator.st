@@ -9,7 +9,7 @@ worksIn: factory
 	go: #start   to: #sellG	then:[The historian record:'s1'];
 
 	"Scandal"
-	go: #sellG to: #scandalS	if: [(The factory suspended=false) and:[App random next > 0.65]]
+	go: #sellG to: #scandalS	if: [The factory suspended=false]
 					then: [The historian record:'s2'.
 						The machine talks: 'bribing a colleague'];
        	go: #scandalS  to: #suspendedH   if:[The factory suspended]
@@ -22,7 +22,7 @@ worksIn: factory
 							The machine caught.]];
 
 	"Investigation"
-	go:#sellG	to:#investigateI	if:[(The factory suspended=false) and: [App random next > 0.75]]
+	go:#sellG	to:#investigateI	if:[The factory suspended=false]
 						then: [The historian record:'s5'.
 							The machine talks: 'investigating a suspicious colleague'];
 	go:#investigateI	to:#sellG	if:[The factory suspended=false]
