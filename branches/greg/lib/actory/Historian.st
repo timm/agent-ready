@@ -15,7 +15,7 @@ init
 	transitions:=0.
 	archives:=Array new:1000.
 	session:=1.
-	base:=((1/8) asFloat * 100).
+	base:=((1/76) asFloat * 100) rounded.
 !
 reset
 	log:=Dictionary new.
@@ -54,19 +54,19 @@ report
 	App say: ('Of these, ',dem s,' were Democrats and ',rep s,' were Republicans').
 	App say: ('They passed a total of ',(The oracle rsuccess+The oracle dsuccess) s,' bills.'). 
 	App say: ('Democrats passed ',((The oracle score:0)*100) s,' percent of these, and Republicans passed ',
-		((The oracle score:1)*100) s,' percent. This resulted in an overall score of ',The oracle score s).
+		((The oracle score:1)*100) s,' percent. This resulted in an overall score of ',The oracle scoreSupport s).
 	
 	output:=('Session ',(session s),':').
 	
-	1 to: 28 do: [:x|
+	1 to: 76 do: [:x|
 		st:=('s',(x s)).
 		(log includesKey: st) ifTrue:[log at: st put: (self percentage: (log at: st))] ifFalse:[log at: st put:0].
 		output:=(output,(log at: st) s,',').
 	].
-	output:=(output,transitions s,',',(The oracle score s)).
+	output:=(output,transitions s,',',(The oracle scoreSupport s)).
 	output oo.
 
-	log at: 'score' put: (The oracle score asFloat).
+	log at: 'score' put: (The oracle scoreSupport asFloat).
 	log at: 'session' put: session.
 	log at: 'transitions' put: transitions.
 	archives at: session put: log.

@@ -106,7 +106,7 @@ stepBias
 	numB:= The factory biases size. 
 	cdf:= SortedCollection new. 
 	cands:=Dictionary new.
-	(numB<28) ifTrue:[base:= The historian base.] ifFalse:[base:=0.].
+	(numB<76) ifTrue:[base:= The historian base.] ifFalse:[base:=0.].
 	max:=base.
 	
 	"Populate weight list"

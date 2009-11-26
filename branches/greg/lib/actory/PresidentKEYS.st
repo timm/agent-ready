@@ -14,10 +14,12 @@ init
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
     	dsuccess:=0.
 	rsuccess:=0.
+	support:=0.
 !
 reset
 	dsuccess:=0.
 	rsuccess:=0.
+	support:=0.
 !!
 
 "============================================"
@@ -38,7 +40,7 @@ learn
 	The factory biases associationsDo:[:b|
 		sum:=sum+(b value asInteger).
 	]. 
-	base:= (1/(28-The factory biases size) asFloat * (100-sum)) rounded.
+	base:= (1/(76-The factory biases size) asFloat * (100-sum)) rounded.
 	The historian base: base.
 
 	The historian reportStats. 
@@ -51,7 +53,7 @@ getBiases: aCache with: aNumber
 	biases:=The factory biases.
 	blacklist:= The factory blacklist.
 	howMany:=aNumber asInteger.
-	(howMany > (28-The factory biases size)) ifTrue:[howMany:=28-The factory biases size].
+	(howMany > (76-The factory biases size)) ifTrue:[howMany:=76-The factory biases size].
 
 	howMany timesRepeat: [ 
 		bscore:=0.
@@ -80,7 +82,7 @@ scoreAttributes: aCollection with: best with: rest
 	sessions:=The historian session-1. 
 
 	1 to: sessions do:[:row|
-		1 to: 28 do:[:col|
+		1 to: 76 do:[:col|
 			fBest:=0.
 			fRest:=0.
 			att:=('s',col s).
@@ -162,6 +164,7 @@ polled: aPoller
 	(App random next < openMindedness)
 		ifTrue: [
 			self talks:'says yes'.
+			support:=support+(aPoller billSupport).
 			vote:=true.]
 		ifFalse: [
 			self talks:'says no'.
@@ -174,6 +177,9 @@ score
 	senators:= The factory machines contents size.
 	
 	^((dsuccess+rsuccess)/senators) asFloat
+!
+scoreSupport
+	^(support/(dsuccess+rsuccess)) asFloat
 !
 score: mode
 	|d r|
@@ -199,6 +205,12 @@ rsuccess: s
 !
 rsuccess
 	^rsuccess
+!
+support: s
+	support:=s.
+!
+support
+	^support
 !!
 "============================================"
 ! PresidentKEYS methodsFor: 'printing' !

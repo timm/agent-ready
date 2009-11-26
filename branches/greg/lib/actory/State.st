@@ -243,11 +243,10 @@ onEntry
 !!
 ! Presenting methods !
 onEntry
-	|prob1 support|
+	|prob1|
 	The machine talks: 'gives a rousing speech.'.
 	prob1:= App random next.
-	support:= (App random next)/2 asFloat.
-	(prob1 > 0.33)
+	(prob1 > 0.05)
 		ifTrue:[The machine billSupport: The machine billSupport sqrt. 
 			App say:'The audience approves and applauds.']
 		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:2).
@@ -255,14 +254,13 @@ onEntry
 		
 !
 onStay
-	|prob1 support|
+	|prob1|
 	The machine talks: 'continues to speak in a desperate attempt to garner support.'.
 	prob1:= App random next.
-	support:= (App random next)/2 asFloat.
-	(prob1 > 0.66)
+	(prob1 > 0.25)
 		ifTrue:[The machine billSupport: The machine billSupport sqrt.
 			App say:'You have the audience in the palm of your hand.']
-		ifFalse:[The machine billSupport: (The machine billSupport) raisedTo:2.
+		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:2).
 			App say:'The audience is not interested. Get out of there and preserve your dignity.'].
 !!
 ! Suspended methods !
