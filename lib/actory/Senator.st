@@ -258,7 +258,7 @@ init
     committee := ((App random next)*16) rounded. 
     billCommittee := ((App random next)*16) rounded.
     billPassed := 0.
-    billSupport := 0.
+    billSupport := 0.25.
     billProposed :=0.
     trust :=1.
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
@@ -269,7 +269,7 @@ reset
     	scandals := 0.
   	caughtLikelihood := 0.1.
    	 billPassed := 0.
-    	billSupport := 0.
+    	billSupport := 0.25.
    	billProposed :=0.
     	trust :=1.
     	cloture:=0.
@@ -323,7 +323,7 @@ naughty
     caughtLikelihood := caughtLikelihood sqrt.
     (App random next > caughtLikelihood)
 	ifTrue: [
-		billSupport := billSupport sqrt.
+		billSupport := billSupport raisedTo:0.35.
 		App say: 'You bribed a colleage for their vote. They are just as slimy as you.']
 	ifFalse: [
 		self caught].
@@ -332,7 +332,7 @@ caught
     scandals :=0.
     caughtLikelihood :=0.1.
     trust := (trust-0.1).
-    billSupport :=0.
+    billSupport :=0.1.
     App say:'You got too greedy and were caught.'.
 !!
 "============================================"

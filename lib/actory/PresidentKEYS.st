@@ -148,18 +148,21 @@ classify: aNumber
 polled: aPoller
 	|openMindedness vote|
 	openMindedness:=0.75.
-
+	"Taking away power to veto to help learning"
+	vote:=true.
+	support:=support+(aPoller billSupport).
 	"Are they in the same political party?"
-	(party=(aPoller party))
+	"(party=(aPoller party))
 		ifTrue: [
 			openMindedness := openMindedness sqrt]
 		ifFalse: [
 			openMindedness := openMindedness raisedTo:2].
+	"
 	"Trust factor"
-	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
-
+"	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
+"
 	"Factor in current level of support"
-	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
+"	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
@@ -169,6 +172,7 @@ polled: aPoller
 		ifFalse: [
 			self talks:'says no'.
 			vote:=false.].
+"
 	^vote.
 
 !

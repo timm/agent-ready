@@ -63,7 +63,7 @@ report
 		(log includesKey: st) ifTrue:[log at: st put: (self percentage: (log at: st))] ifFalse:[log at: st put:0].
 		output:=(output,(log at: st) s,',').
 	].
-	output:=(output,transitions s,',',(The oracle scoreSupport s)).
+	output:=(output,transitions s,',',((The oracle score*100) s),',',(The oracle scoreSupport s)).
 	output oo.
 
 	log at: 'score' put: (The oracle scoreSupport asFloat).
@@ -83,7 +83,7 @@ reportStats
 		scores add: (log at:'score') asFloat.
 	].
 
-	('Median = ',(scores at: 50) s) oo. 
+	('Median = ',(scores at: 10) s) oo. 
 	scores do:[:x|
 		mean:= mean+x.
 	].
