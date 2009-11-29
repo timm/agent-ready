@@ -27,30 +27,36 @@ run: aGuardSideEffect
  	self run: pGuard effect: pSide. 
 !
 run: aGuard effect: aSideEffect
-	|index|
+	|index pstate ppstate statehash|
 	index := 0.
+	statehash := Dictionary new.
+	ppstate := (ss1 RandState: 'Course') state.
+	statehash at: 0 put: ppstate.
         [index < 10]
 		whileTrue: [
-			    index := index + 1.
-			    self generateTran: aGuard then: aSideEffect.  
+			|startstate |
+			startstate := statehash at: ((statehash size)-1).	
+			pstate := (ss1 RandState: 'Course') state.
+			statehash at:(statehash size)  put: pstate.
+		    	index := index + 1.
+			self generateTran: aGuard then: aSideEffect startstate: startstate endstate: pstate.
 			    ].
 !!
 
 "============================================="
 !CourseEvent methodsFor: 'accessing'!
-generateTran: guard then: sideEffect
-	|newTransition pstate|
+generateTran: guard then: sideEffect startstate: astartState endstate: aendState
+	|newTransition |
 	(ss1 states size >0)
 		ifTrue: [
-			pstate := (ss1 RandState: 'Course') state.
-			((pstate name s ) ~ 'Course')
+			((astartState name s ) ~ 'Course')
 			ifTrue:[
 			transitions add: 
 		 	(Transition new
-				state: pstate;
+				state: astartState; 
 			 	if: guard;
 			 	then: sideEffect;
-			 	next: ((ss1 RandState: 'Course') state)).
+			 	next: aendState).
 				^true.
 			]]
 		ifFalse: [^false.]
