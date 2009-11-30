@@ -1,544 +1,29 @@
 
 ---| 021Student.st |-----------------------------------------
 
-Object: LifeEvent new "<0x1020a0120>" error: did not understand #generateTran:then:
-MessageNotUnderstood(Exception)>>signal (AnsiExcept.st:216)
-LifeEvent(Object)>>doesNotUnderstand: #generateTran:then: (AnsiExcept.st:1556)
-[] in LifeEvent>>run:effect: (LifeEvent.st:43)
-BlockClosure>>whileTrue: (BlkClosure.st:329)
-LifeEvent>>run:effect: (LifeEvent.st:36)
-LifeEvent>>run (LifeEvent.st:20)
-UndefinedObject>>executeStatements (eg/021Student.st:16)
 didnot learn this course before
-did not take this course beforewatch football hahahaha
+did not take this course beforetake exam
 10
-student happiness changes to 120
 ha ha ha ha ha
+take exam
+3
 that's all folks!
 
 ____________________________________________________________
 
 Terminated at tick 54
 Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-getting grade:77
-grade published with patience: 68
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 48
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
 Final happiness 120
 didnot learn this course before
 did not take this course beforeworks in
 watch football hahahaha
 10
 student happiness changes to 120
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:22
-grade published with patience: 10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-getting grade:4
-grade published with patience: 1
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:14
-grade published with patience: 5
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
 ha ha ha ha ha
 
 ____________________________________________________________
 
 Terminated at tick 52
-Final patience -1
-Final happiness 28
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
 Final patience -1
 Final happiness 144
 didnot learn this course before
@@ -546,13 +31,19 @@ did not take this course beforeworks in
 lose lottory 95
 win lottory80
 ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
 that's all folks!
 
 ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 58
+Final happiness 37
 didnot learn this course before
 did not take this course beforeworks in
 ha ha ha ha ha
@@ -562,6 +53,1180 @@ ____________________________________________________________
 Terminated at tick 52
 Final patience -1
 Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+getting grade:65
+grade published with patience: 53
+ha ha ha ha ha
+take exam
+7
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 360
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:59
+grade published with patience: 45
+ha ha ha ha ha
+take exam
+7
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 360
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:59
+grade published with patience: 45
+ha ha ha ha ha
+take exam
+7
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:46
+grade published with patience: 31
+take exam
+6
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:68
+grade published with patience: 56
+take exam
+7
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:54
+grade published with patience: 39
+take exam
+6
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:2
+grade published with patience: 0
+take exam
+0
+take exam
+0
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:41
+grade published with patience: 26
+take exam
+5
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 watch football hahahaha
@@ -576,12 +1241,186 @@ Final patience -1
 Final happiness 144
 didnot learn this course before
 did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
 
 ____________________________________________________________
 
-Terminated at tick 51
+Terminated at tick 53
 Final patience -1
 Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
 didnot learn this course before
 did not take this course beforeworks in
 ha ha ha ha ha
@@ -593,58 +1432,10 @@ Final patience -1
 Final happiness 120
 didnot learn this course before
 did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-getting grade:26
-grade published with patience: 13
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
+take exam
+10
+take exam
+3
 that's all folks!
 
 ____________________________________________________________
@@ -656,173 +1447,10 @@ didnot learn this course before
 did not take this course beforeworks in
 take exam
 10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:11
-grade published with patience: 4
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
 take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:10
-grade published with patience: 3
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
+3
 take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
+2
 that's all folks!
 
 ____________________________________________________________
@@ -834,83 +1462,24 @@ didnot learn this course before
 did not take this course beforeworks in
 take exam
 10
-ha ha ha ha ha
-the fun stops here
+take exam
+3
+take exam
+2
 that's all folks!
 
 ____________________________________________________________
 
 Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-getting grade:18
-grade published with patience: 8
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
 Final patience -1
 Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
+ha ha ha ha ha
 take exam
 10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
 take exam
-10
-ha ha ha ha ha
-the fun stops here
+3
 that's all folks!
 
 ____________________________________________________________
@@ -918,304 +1487,211 @@ ____________________________________________________________
 Terminated at tick 53
 Final patience -1
 Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 23
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 41
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-runs: 0 OrderedCollection (0 0 1 0 0 1 0 0 0 0 ) with happiness 144
+runs: 0 OrderedCollection (0 0 1 0 0 1 0 0 0 0 ) with happiness 120
 runs: 66 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 4 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 98 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 70 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 8 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 12 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 78 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 4 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 98 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 70 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 8 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 12 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 78 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
 runs: 74 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 16 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 24 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 28 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 94 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 82 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 20 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 90 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 86 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 23
-runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 48 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 56 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 16 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 24 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 28 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 94 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 82 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 20 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 90 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 86 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 48 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 56 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 60 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 65 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 97 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 67 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 99 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 36 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 52 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 69 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 71 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 40 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 44 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 73 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 97 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 67 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 99 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 36 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 52 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 69 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 71 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 40 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 44 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 73 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 77 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 79 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 75 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 81 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 89 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 41
-runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 95 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 83 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 91 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 85 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 87 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 63 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 33 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 2 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 35 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 49 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 51 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 6 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 79 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 75 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 81 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 89 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 95 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 83 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 91 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 85 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 87 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 63 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 33 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 2 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 37
+runs: 35 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 49 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 51 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 6 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
 runs: 39 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 55 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 37 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 53 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 55 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 37 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 53 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 57 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 59 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 61 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 14 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 47 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
+runs: 59 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 14 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 47 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 41 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 10 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 43 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 28
-runs: 45 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 68 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 72 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 76 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 30 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 80 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 41 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 10 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 43 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 45 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 68 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 72 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 76 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 96 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 30 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 80 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 18 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 26 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 88 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 92 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 22 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 84 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 62 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 1 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 3 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 26 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 88 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 92 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 22 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 84 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 62 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
 runs: 34 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 50 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 58
-runs: 58 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 7 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 38 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 5 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 54 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 15 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 46 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 9 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 48
-runs: 13 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 11 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 42 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 31 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 50 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 58 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 38 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 5 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 54 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 15 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 46 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 9 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 13 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 11 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 42 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 31 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 25 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 19 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 29 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 23 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 21 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-111
-happiness is 120
- 
-happiness is 120
- 
-happiness is 120
-23 23  
-happiness is 120
- 
-happiness is 120
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-9 11 9 11  
-happiness is 144
-9 11 9 11  
-happiness is 144
-23 23  
-happiness is 144
-9 11  
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-9 11 9 11  
-happiness is 144
-23 23  
-happiness is 144
- 
-happiness is 173
-23 23  
-happiness is 173
-23 23  
-happiness is 173
-23 23  
+runs: 29 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 23 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 21 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+159
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 360
+14 32 14 32  
+happiness is 360
+14 32 14 32  
 Dictionary (
-	17->0
-	19->0
-	7->0
-	23->0.04363636363636362
-	5->0
-	21->0
-	15->0
-	9->0.005161290322580643
-	13->0
-	11->0.005161290322580643
+	16->0
+	24->0
+	28->0.0
+	30->0
+	18->0
+	26->0.0
+	32->0.1176470588235294
+	20->0
+	22->0
+	14->0.1176470588235294
 )
-OrderedCollection (Transition(from: Happy(CourseHaHa#631) to: EndState(CourseEndF#3)) Transition(from: LoopState(CourseworkL#625) to: LoopState(CourseworkL#625)) Transition(from: LoopState(CourseworkL#625) to: EndState(CourseEndF#3)) )
+OrderedCollection (Transition(from: Happy(CourseHaHa#616) to: Happy(CourseHaHa#616)) Transition(from: Happy(CourseHaHa#616) to: EndState(CourseEndF#13)) )
 OrderedCollection ()
 didnot learn this course before
 did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
 take exam
 10
 ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
 the fun stops here
 that's all folks!
 
@@ -1223,7 +1699,260 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:39
+grade published with patience: 24
+ha ha ha ha ha
+take exam
+5
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+lose lottory 95
+win lottory80
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 61
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
 Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
 didnot learn this course before
 did not take this course beforeworks in
 
@@ -1235,6 +1964,44 @@ Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
 the fun stops here
 that's all folks!
 
@@ -1242,7 +2009,461 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
 Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+getting grade:77
+grade published with patience: 68
+ha ha ha ha ha
+take exam
+8
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 360
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:62
+grade published with patience: 49
+ha ha ha ha ha
+take exam
+7
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:16
+grade published with patience: 6
+take exam
+2
+take exam
+1
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
 didnot learn this course before
 did not take this course beforeworks in
 lose lottory 95
@@ -1253,13 +2474,115 @@ ____________________________________________________________
 
 Terminated at tick 52
 Final patience -1
-Final happiness 106
+Final happiness 34
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 lose lottory 95
 win lottory80
 ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 86
+didnot learn this course before
+did not take this course beforeworks in
 ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
 the fun stops here
 that's all folks!
 
@@ -1267,7 +2590,74 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 106
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+
+____________________________________________________________
+
+Terminated at tick 52
+Final patience -1
+Final happiness 120
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 watch football hahahaha
@@ -1275,6 +2665,14 @@ watch football hahahaha
 student happiness changes to 120
 ha ha ha ha ha
 ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
 the fun stops here
 that's all folks!
 
@@ -1282,32 +2680,24 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 173
+Final happiness 360
 didnot learn this course before
 did not take this course beforeworks in
-getting grade:63
-grade published with patience: 50
 ha ha ha ha ha
-the fun stops here
-that's all folks!
 
 ____________________________________________________________
 
-Terminated at tick 53
+Terminated at tick 52
 Final patience -1
 Final happiness 120
 didnot learn this course before
 did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:73
-grade published with patience: 62
+take exam
+10
+take exam
+3
+take exam
+2
 that's all folks!
 
 ____________________________________________________________
@@ -1325,23 +2715,17 @@ Final patience -1
 Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
+take exam
+10
 ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
 the fun stops here
 that's all folks!
 
@@ -1349,21 +2733,159 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 120
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+lose lottory 95
+win lottory80
+ha ha ha ha ha
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 175
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 144
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+getting grade:62
+grade published with patience: 49
+ha ha ha ha ha
+take exam
+7
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 360
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:49
+grade published with patience: 34
+ha ha ha ha ha
+take exam
+6
+still laughing
+take exam
+2
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+watch football hahahaha
+10
+student happiness changes to 120
+ha ha ha ha ha
+getting grade:8
+grade published with patience: 2
+ha ha ha ha ha
+take exam
+1
+still laughing
+take exam
+1
+still laughing
+take exam
+1
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 360
 didnot learn this course before
 did not take this course beforeworks in
 getting grade:29
 grade published with patience: 16
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
 ha ha ha ha ha
+take exam
+4
+still laughing
+take exam
+2
+still laughing
+take exam
+1
 the fun stops here
 that's all folks!
 
@@ -1371,36 +2893,7 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:91
-grade published with patience: 86
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
+Final happiness 250
 didnot learn this course before
 did not take this course beforeworks in
 
@@ -1412,7 +2905,71 @@ Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 ha ha ha ha ha
+take exam
+10
+ha ha ha ha ha
+take exam
+3
+still laughing
+take exam
+2
+still laughing
+take exam
+1
 the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 300
+didnot learn this course before
+did not take this course beforeworks in
+getting grade:78
+grade published with patience: 69
+ha ha ha ha ha
+take exam
+8
+still laughing
+take exam
+3
+still laughing
+take exam
+2
+the fun stops here
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+ha ha ha ha ha
+take exam
+10
+take exam
+3
+take exam
+2
 that's all folks!
 
 ____________________________________________________________
@@ -1423,6 +2980,14 @@ Final happiness 120
 didnot learn this course before
 did not take this course beforeworks in
 ha ha ha ha ha
+take exam
+10
+still laughing
+take exam
+3
+still laughing
+take exam
+2
 the fun stops here
 that's all folks!
 
@@ -1430,7 +2995,54 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 120
+Final happiness 250
+didnot learn this course before
+did not take this course beforeworks in
+
+____________________________________________________________
+
+Terminated at tick 51
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
+didnot learn this course before
+did not take this course beforeworks in
+take exam
+10
+take exam
+3
+that's all folks!
+
+____________________________________________________________
+
+Terminated at tick 53
+Final patience -1
+Final happiness 100
 didnot learn this course before
 did not take this course beforeworks in
 
@@ -1451,338 +3063,28 @@ didnot learn this course before
 did not take this course beforeworks in
 take exam
 10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
 take exam
-10
+3
 that's all folks!
 
 ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
 Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
 didnot learn this course before
 did not take this course beforeworks in
 getting grade:95
 grade published with patience: 92
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 131
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
 ha ha ha ha ha
 take exam
 10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-getting grade:92
-grade published with patience: 88
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
+still laughing
 take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
+3
+still laughing
 take exam
-10
-ha ha ha ha ha
+2
 the fun stops here
 that's all folks!
 
@@ -1790,835 +3092,361 @@ ____________________________________________________________
 
 Terminated at tick 53
 Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-getting grade:44
-grade published with patience: 29
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:19
-grade published with patience: 8
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-getting grade:15
-grade published with patience: 6
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 47
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-
-____________________________________________________________
-
-Terminated at tick 51
-Final patience -1
-Final happiness 100
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-lose lottory 95
-win lottory80
-ha ha ha ha ha
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 1
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-
-____________________________________________________________
-
-Terminated at tick 52
-Final patience -1
-Final happiness 144
-didnot learn this course before
-did not take this course beforeworks in
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 120
-didnot learn this course before
-did not take this course beforeworks in
-watch football hahahaha
-10
-student happiness changes to 120
-ha ha ha ha ha
-ha ha ha ha ha
-the fun stops here
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 173
-didnot learn this course before
-did not take this course beforeworks in
-take exam
-10
-that's all folks!
-
-____________________________________________________________
-
-Terminated at tick 53
-Final patience -1
-Final happiness 100
-runs: 0 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+Final happiness 250
+runs: 0 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
 runs: 66 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 4 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 106
-runs: 98 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 70 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 8 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 12 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 78 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 74 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 16 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 24 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 28 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 94 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 82 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 20 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 90 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 47
-runs: 86 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 48 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 56 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 60 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 65 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 97 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 67 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 99 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 36 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 52 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 69 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 71 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 40 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 44 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 73 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 77 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 79 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 75 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 81 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 89 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 93 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 95 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 1
-runs: 83 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 91 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 85 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 87 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 63 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 33 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 2 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 35 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 49 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 131
-runs: 51 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 6 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 39 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 55 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 37 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 53 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 57 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 59 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 14 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 47 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 41 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 10 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 43 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 45 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 68 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 72 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 76 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 30 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 80 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 18 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 26 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 88 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 92 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 22 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 84 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 62 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 106
-runs: 34 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 50 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 58 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 38 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 5 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 54 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 15 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 46 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 9 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 13 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 11 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 42 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 31 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 17 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 19 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 29 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 23 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 21 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-113
-happiness is 120
-9 11 9 11  
-happiness is 131
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-9 11 9 11  
-happiness is 144
-23 23  
-happiness is 144
- 
-happiness is 144
-9 11 9 11  
-happiness is 144
- 
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
-9 11 9 11  
-happiness is 144
-9 11 9 11  
-happiness is 144
-23 23  
-happiness is 144
-23 23  
-happiness is 144
- 
-happiness is 173
-23 23  
-happiness is 173
-23 23  
-happiness is 173
-23 23  
-happiness is 173
-23 23  
-Dictionary (
-	17->0
-	19->0
-	7->0
-	23->0.03999999999999998
-	5->0
-	21->0
-	15->0
-	9->0.01
-	13->0
-	11->0.01
-)
-OrderedCollection (Transition(from: Happy(CourseHaHa#1225) to: EndState(CourseEndF#3)) Transition(from: LoopState(CourseworkL#1231) to: LoopState(CourseworkL#1231)) Transition(from: LoopState(CourseworkL#1231) to: EndState(CourseEndF#3)) )
-OrderedCollection ()
-runs: 0 OrderedCollection (0 0 1 0 0 1 0 0 0 0 ) with happiness 144
-runs: 66 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 4 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 98 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 70 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 8 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 12 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 78 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 4 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 98 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 70 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 8 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 12 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 61
+runs: 78 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 175
 runs: 74 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 16 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 24 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 28 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 94 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 82 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 16 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 24 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 28 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 94 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 82 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 20 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 90 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 86 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 23
-runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 48 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 56 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 90 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 86 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 32 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 48 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 56 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 34
+runs: 60 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 65 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 97 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 67 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 99 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 36 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 52 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 69 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 71 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 40 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 44 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 73 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 77 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 79 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 75 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 81 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 89 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 95 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 83 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 91 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 85 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 87 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 63 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 33 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 2 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 35 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 49 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 51 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 6 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 39 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 55 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 37 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 53 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 57 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 59 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 86
+runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 14 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 47 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 41 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 10 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 43 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 45 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 68 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 72 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 76 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 30 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 80 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 18 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 26 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 88 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 92 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 22 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 84 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 62 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 1 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 34 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 50 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 58 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 7 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 38 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 5 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 54 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 15 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 46 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 9 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 13 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 11 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 42 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 31 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 19 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 29 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 23 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 21 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+163
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 250
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 300
+14 32 14 32  
+happiness is 360
+14 32 14 32  
+happiness is 360
+14 32 14 32  
+happiness is 360
+14 32 14 32  
+happiness is 360
+14 32 14 32  
+Dictionary (
+	16->0
+	24->0
+	28->0.0
+	30->0
+	18->0
+	26->0.0
+	32->0.1081081081081081
+	20->0
+	22->0
+	14->0.1081081081081081
+)
+OrderedCollection (Transition(from: Happy(CourseHaHa#1240) to: Happy(CourseHaHa#1240)) Transition(from: Happy(CourseHaHa#1240) to: EndState(CourseEndF#13)) )
+OrderedCollection ()
+runs: 0 OrderedCollection (0 0 1 0 0 1 0 0 0 0 ) with happiness 120
+runs: 66 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 4 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 98 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 70 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 8 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 12 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 78 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 74 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 16 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 24 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 28 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 94 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 82 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 20 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 90 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 86 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 48 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 56 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 60 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 65 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 97 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 67 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 99 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 36 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 52 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 69 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 71 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 40 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 44 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 73 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 77 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 79 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 75 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 81 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 89 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 41
-runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 95 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 83 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 91 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 85 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 87 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 63 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 33 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 2 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 35 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 49 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 51 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 6 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 39 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 55 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 37 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 53 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 57 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 59 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 61 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 14 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 47 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 41 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 10 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 43 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 28
-runs: 45 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 68 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 72 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 76 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 30 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 80 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 18 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 26 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 88 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 92 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 22 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 84 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 62 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 1 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 3 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 34 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 50 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 58
-runs: 58 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 7 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 38 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 5 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 54 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 15 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 46 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 9 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 48
-runs: 13 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 11 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 42 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 31 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 19 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 29 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 23 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 21 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-222
-runs: 0 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 66 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 4 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 106
-runs: 98 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 70 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 8 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 12 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 78 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 74 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 16 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 24 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 28 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 94 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 82 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 20 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 90 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 47
-runs: 86 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 32 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 48 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 56 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 60 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 65 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 97 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 67 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 99 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 36 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 52 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 69 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 97 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 67 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 99 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 36 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 52 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 69 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 71 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
 runs: 40 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 44 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 73 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 77 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 79 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 75 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 81 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 44 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 73 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 77 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 79 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 75 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 81 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
 runs: 89 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 93 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 95 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 1
-runs: 83 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 91 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
-runs: 85 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 87 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 63 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 33 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 2 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 35 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 49 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 131
-runs: 51 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 6 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 39 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 55 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 95 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 83 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 91 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 85 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 87 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 63 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 33 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 2 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 37
+runs: 35 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 49 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 51 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 6 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 39 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 55 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 37 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 53 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 57 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
+runs: 53 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 57 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
 runs: 59 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
-runs: 14 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 47 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 14 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 47 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 41 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 41 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
 runs: 10 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 43 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 45 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 68 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 72 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 76 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
-runs: 30 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 80 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 43 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 45 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 68 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 72 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 76 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 96 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 30 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 80 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 18 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 26 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 88 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 92 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 22 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 84 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 62 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 144
-runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 106
-runs: 34 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
-runs: 50 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 58 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 26 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 88 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 92 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 22 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 84 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 62 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 1 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 34 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 50 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 58 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
 runs: 7 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 38 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 5 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 173
-runs: 54 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 15 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 46 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 9 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 38 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 5 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 54 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 15 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 46 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 9 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
 runs: 13 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 11 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 42 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
-runs: 31 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 17 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 19 OrderedCollection (0 0 0 0 0 0 0 2 0 0 ) with happiness 120
+runs: 11 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 42 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 31 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 25 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 19 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
 runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 29 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-runs: 23 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
-runs: 21 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
-227
+runs: 29 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 23 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 21 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+319
+runs: 0 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 66 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 4 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 98 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 70 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 8 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 12 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 61
+runs: 78 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 175
+runs: 74 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 16 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 24 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 28 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 94 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 82 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 20 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 90 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 86 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 32 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 48 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 56 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 34
+runs: 60 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 65 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 97 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 67 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 99 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 36 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 52 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 69 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 71 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 40 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 44 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 73 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 77 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 79 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 75 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 81 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 89 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 93 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 95 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 83 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 91 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 85 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 87 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 63 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 33 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 2 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 35 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 49 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 51 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 6 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 39 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 55 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 37 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 53 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 57 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 59 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 86
+runs: 61 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 14 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 47 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 64 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 144
+runs: 41 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 10 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 43 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 45 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 68 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 72 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 360
+runs: 76 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 96 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 30 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 80 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 18 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 300
+runs: 26 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 88 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 92 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 22 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 84 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 62 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 120
+runs: 1 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 3 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 34 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 50 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 58 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 7 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 38 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 5 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 54 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 15 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 46 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 9 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 13 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+runs: 11 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 42 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 31 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 100
+runs: 17 OrderedCollection (0 0 2 0 0 2 0 0 0 0 ) with happiness 144
+runs: 25 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 19 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 27 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 29 OrderedCollection (0 0 0 0 0 0 4 2 0 0 ) with happiness 250
+runs: 23 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 100
+runs: 21 OrderedCollection (0 0 0 0 0 0 0 0 0 0 ) with happiness 120
+326
