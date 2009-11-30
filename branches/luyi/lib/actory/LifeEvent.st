@@ -40,7 +40,7 @@ run: aGuard effect: aSideEffect
 			statehash at:(statehash size)  put: pstate.
 
 			    index := index + 1.
-			    self generateTran: aGuard then: aSideEffect.  
+			    self generateTran: aGuard then: aSideEffect startstate: startstate endstate: pstate.  
 			    ].
 !!
 
