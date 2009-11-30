@@ -306,8 +306,8 @@ polled: aPoller
 
 	"Factor in current level of support"
 	support:=1-aPoller billSupport.
-	(support > 0.25) ifTrue:[support:=0.25].
-	openMindedness := openMindedness raisedTo:(0.75+(support)). 
+	(support > 0.5) ifTrue:[support:=0.5].
+	openMindedness := openMindedness raisedTo:(0.5+(support)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
