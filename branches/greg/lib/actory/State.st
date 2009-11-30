@@ -139,7 +139,7 @@ onEntry
 	target:= The factory machines contents at: target.
 
 	(target caughtLikelihood > 0.75)
-		ifTrue:[ App say: 'They exposed a dirty senator'.
+		ifTrue:[ App say: 'They exposed a dirty senator and were rewarded for it.'.
 			The machine billSupport: (The machine billSupport sqrt).
 			target caught]
 		ifFalse:[ App say: 'They failed to catch anybody.'].
@@ -154,7 +154,7 @@ onEntry
 onEntry
 	|vote senators rand1 position count|
 	The machine talks:'gathering support'.
-	The machine billSupport: (The machine billSupport sqrt).
+	The machine billSupport: (The machine billSupport raisedTo:0.75).
 	"senators:= ((The factory) machines contents) size.
 	count:=1.
 
@@ -249,7 +249,7 @@ onEntry
 	The machine talks: 'gives a rousing speech.'.
 	prob1:= App random next.
 	(prob1 > 0.05)
-		ifTrue:[The machine billSupport: The machine billSupport sqrt. 
+		ifTrue:[The machine billSupport: (The machine billSupport sqrt). 
 			App say:'The audience approves and applauds.']
 		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.75).
 			App say:'The senators seem to not like your proposal.You only gain some support.'].
@@ -260,9 +260,10 @@ onStay
 	The machine talks: 'continues to speak in a desperate attempt to garner support.'.
 	prob1:= App random next.
 	(prob1 > 0.25)
-		ifTrue:[The machine billSupport: The machine billSupport sqrt.
+		
+ifTrue:[The machine billSupport: (The machine billSupport sqrt)
 			App say:'You have the audience in the palm of your hand.']
-		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.85).
+		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.75).
 			App say:'The audience is not interested. Get out of there and preserve your dignity.'].
 !!
 ! Suspended methods !
