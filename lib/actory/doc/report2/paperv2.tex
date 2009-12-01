@@ -98,16 +98,38 @@
 
 \maketitle
 \begin{abstract}
-
-(To be filled in)
-
+In this research, we model the United States Senate as an intelligent agent system where each Senator is an 
+independent agent. 
+This is an interesting domain because it provides a space where one-hundred independent 
+agents are selfishly trying to complete their goal of passing a bill. However, they must rely on the other agents for support. This 
+presents numerous opportunities for observing interesting behavior patterns. 
+This research also has the goal of making them act intelligently. To accomplish this, we have implimented a 
+treatment learning algorithm called {\em KEYS2}.
 \end{abstract}
 \category{i.5}{learning}{machine learning}
 \keywords{intelligent agents, modeling, simulation}
 
 \section{Introduction}
 
-(To be filled in)
+Intelligent agent systems have become a major topic over the past decade. In these systems, artificial intelligence constructs
+attempt to independently solve a series of problems or work within a virtual environment. These agents act without interaction 
+from the user and decide on courses of action based on available skills and a derived world view. 
+
+Some of these agent systems are {\em deliberative}. That is, they contain sophisticated theorem-proving algorithms and fleshed-out plan
+libraries. These agents tend to be slower, but take more intelligent actions. They are capable of solving greater problems. Other agents are
+{\em reactive}. They take actions based on a hierarchy of behaviors where higher actions require more thought. These agents are able to
+quickly react to environmental stimuli that would stump deliberative agents. However, they tend to be unable to solve the same kinds of
+higher-level issues. 
+
+This research models an interesting domain, the United States Senate. In the Senate, one-hundred elected officials compete, compromise, and
+form alliances in order to pass new legislature. This is an interesting domain because it provides a space where one-hundred independent 
+agents are selfishly trying to complete their goal of passing a bill. However, they must rely on the other agents for support. This 
+presents numerous opportunities for observing interesting behavior patterns. 
+
+In addition to modelling the Senate, this research has the goal of making them act {\em intelligently}. To accomplish this, a 
+treatment learning algorithm called {\em KEYS2} is used. This algorithm exploits the key variables within a model and biases actions
+that it feels will lead to improved scores (we score based on the average support value that a bill has when it passes). We observe the effects
+of this learner over several rounds of feedback.
 
 \section{The Domain}
 
@@ -369,10 +391,10 @@ trustworthiness of the senator, and the level of support for the bill
 within the senate. Because the President does not belong to any committees, 
 they have fewer modifiers on their openmindedness level. 
 
-The President also reports three scores when the simulation is complete.
-These include the percentage of bills passed by Democrats, percentage passed by Republicans, and a final simulation score. This final score
-is the number of bills passed divided by the number of senators (as
-each senator may potentially pass one bill. 
+The President also reports four scores when the simulation is complete.
+These include the percentage of bills passed by Democrats, percentage passed by Republicans,
+the total number of bills passed divided by the number of senators (as
+each senator may potentially pass one bill), and the median level of support that each bill had.
 
 Oracle agents are intended to not only score the output of the system, 
 but to use the statistics recorded by the Historian to bias the system
@@ -386,7 +408,7 @@ learning mechanisms.
 
 The Historian is a reactive agent used within the simulation as a log of events. It sits there and waits for input from the Senators or President.
 All of the actions enumerated above for the Senator are modeled as trasitions within the system. 
-There are a total of 28 transitions that can be recorded by the Historian.  
+There are a total of 76 transitions that can be recorded by the Historian.  
 
 Some of the events include:
 \bi
@@ -569,15 +591,112 @@ used to guide which transitions are taken in subsequent $eras$.
 
 \section{Experiment}
 
-(To be added in future deliverable)
+In order to test this system, we observe the simulation over eight subsequent rounds of learning. Each round consists of twenty 
+complete runs of the factory. Based on evidence from those twenty executions, the learner will form a treatment and add those
+values to the biasing technique. Each round, $N= round number$ new (action,value) pairs will be fixed for thee subsequent round. 
+In order to rule out outliers, we repeat this analysis ten times. This gives us a total of two-hundred executions per round to pull data
+from. 
 
-\section{Results}
+All of the tests were conducted over a remote SSH connection to a server at West Virginia University's Lane 
+Department of Computer Science and Electrical Engineering. These machines are running a unique branch of the Ubuntu
+Linux distribution called LOUD. The runtime for a single execution of the simulation is 2.97 seconds and the runtime for a complete cycle (20 runs x 8 rounds)
+is 475.36 seconds.
 
-(To be added in future deliverable)
+\section{Initial Results}
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{l|l|l}
+Round&50\%&Quartiles\\\hline
+&&\\
+1&50&\boxplot{6.1}{23.5}{50.2}{58.9}{25.6}  \\
+2&46&\boxplot{7.8}{27.6}{45.6}{59.3}{21.9}  \\
+3&48&\boxplot{8.3}{28.0}{48.0}{61.4}{25.0}  \\
+4&44&\boxplot{8.3}{27.1}{43.8}{58.9}{21.2}  \\
+5&38&\boxplot{4.5}{22.1}{38.4}{59.0}{21.3}  \\
+6&38&\boxplot{4.5}{20.0}{37.5}{53.8}{22.7}  \\
+7&40&\boxplot{3.5}{12.3}{39.5}{62.5}{19.2}  \\
+8&39&\boxplot{3.5}{14.8}{39.1}{71.8}{13.3}  \\
+\multicolumn{2}{l}{~}&~~~~0~~~~~~50~~~~~100
+\end{tabular}
+\end{center}
+\caption{Quartile results for each round of feedback. These numbers are taken from average level of support that passed bills have and 
+summarize 200 runs of the Factory.
+}\label{fig:part1}
+\end{figure}
+
+Several changes were made to the initial simulation model in order to apply the learning methods. 
+Additional actions were made available. Originally, there were only 28 possible transitions, now there
+are 76. Additionally, nearly all randomness was removed. The learner had very little effect at first because
+many actions had random results. It is impossible to apply any sort of effective treatment if actions do not
+have predictable results. 
+
+At first glance, the results gathered in \fig{part1} are very poor. The median scores actually drop over
+subsequent rounds of learner feedback. 
+However, when we look at the individual values, we see a very clear trend. One piece of randomness was left in the model -
+the filibuster. Although the filibuster is a famous Senate tactic, it is one that is deliberately designed to hurt the overall
+productivity. While a filibuster is in effect, no senator may progress the passing of their own bills. This was left in with 
+the intention that the learner would immediately learn how important it is to avoid calling for any sort of filibuster.
+
+In practice, this did not happen. The learner always found more important actions to fix, and never learned to avoid filibusters. 
+Curiously, it did appear that the median support levels were rising on rounds where no filibuster took place (i.e. no party
+dominated the proceedings). Although it would be wise to remove {\em all randomnes} from the model, leaving in the 
+filibuster was intended to be an interesting test. 
+As the learner was unable to cope with this, we decided to repeat the initial experiments without the possibility of a filibuster. 
+
+\section{Round 2 Results}
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{l|l|l}
+Round&50\%&Quartiles\\\hline
+&&\\
+1&59&\boxplot{29.9}{51.2}{58.6}{62.9}{23.5}  \\
+2&54&\boxplot{20.5}{45.3}{53.8}{60.2}{25.4}  \\
+3&57&\boxplot{22.1}{45.6}{56.5}{66.0}{19.5}  \\
+4&63&\boxplot{22.1}{53.0}{63.3}{69.0}{19.9}  \\
+5&62&\boxplot{23.5}{54.7}{62.1}{68.0}{18.3}  \\
+6&63&\boxplot{9.7}{48.8}{62.5}{68.4}{6.1}  \\
+7&62&\boxplot{9.7}{46.7}{62.1}{70.9}{5.4}  \\
+8&50&\boxplot{16.0}{38.0}{50.2}{64.0}{17.8}  \\
+\multicolumn{2}{l}{~}&~~~~0~~~~~~50~~~~~100
+\end{tabular}
+\end{center}
+\caption{Quartile results for each round of feedback. These numbers are taken from average level of support that passed bills have and 
+summarize 200 runs of the Factory.
+}\label{fig:part2}
+\end{figure}
+
+The new results seen in \fig{part2} are far better than the initial values seen in \fig{part1}. Without the possibility of
+a filibuster, the behavior of the simulation is more stable (i.e, spread between the 75th and 25th percentiles is smaller) and the
+medians are higher. 
+However, these results are still not what we would like to see. The higher medians are purely a result of removing the filibuster.
+If the learner had any effect on the results, it was miniscule (the push from 59-63 on medians). This increase is small enough that
+it could be random chance. What suggests that there may be some effect from the learning is that the highest value rose steadily 
+throughout subsequent rounds (from 76.5 in the first round to 94.6 in the seventh round). We are currently
+unable to explain the sudden drop in values during the last round. 
 
 \section{Conclusions and Future Work}
 
-(To be added in future deliverable)
+This research models an interesting domain, the United States Senate. In the Senate, one-hundred elected officials compete, compromise, and
+form alliances in order to pass new legislature. This is an interesting domain because it provides a space where one-hundred independent 
+agents are selfishly trying to complete their goal of passing a bill. However, they must rely on the other agents for support. This 
+presents numerous opportunities for observing interesting behavior patterns. 
+
+In addition to modelling the Senate, this research has the goal of making them act {\em intelligently}. To accomplish this, a 
+treatment learning algorithm called {\em KEYS2} is used. This algorithm exploits the key variables within a model and biases actions
+that it feels will lead to improved scores (we score based on the average support value that a bill has when it passes). We observe the effects
+of this learner over several rounds of feedback.
+
+We are not satisfied with the current results. We have succeeded in modelling the domain. A series of independent agents are working
+to pass legislature, and their interactions are {\em certainly interesting}. 
+However, the use of treatment learning to bias the actions has had disappointing results. The learning algorithm works, 
+and the actions are pushed towards the altered probability distributions. Unfortunately, its actions do not seem to have much effect on the
+support scores. 
+
+Given more time, we would like to investigate this matter further. We would like to try different combinations for both the scoring
+method and the results of actions during the simulation. We would like to add additional actions to the system that clearly have {\em
+negative effects} in order to test whether the learning algorithm will adapt to avoid them. 
 
 \bibliographystyle{plain}
 \bibliography{refs}
