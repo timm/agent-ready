@@ -16,14 +16,28 @@ init: aString
 	pressure:=0.25.
 	era:=1.
 	biases:= Dictionary new.
+	bases:=Dictionary new.
 	blacklist:=OrderedCollection new.
-	blacklist add: '3'.
-	blacklist add: '7'.
-	blacklist add: '8'.
-	blacklist add: '13'.
-	blacklist add: '15'.
-	blacklist add: '19'.
-	blacklist add: '23'.
+	blacklist add: '1'.
+	blacklist add: '2'.
+	blacklist add: '5'.
+	blacklist add: '14'.
+	blacklist add: '26'.
+	blacklist add: '38'.
+	blacklist add: '44'.
+	blacklist add: '54'.
+	blacklist add: '61'.
+
+	"Initial weights"
+	1 to: 76 do:[:x|
+		(x=1) ifTrue:[bases at:'1' put:100]
+			ifFalse:[ (x=2) ifTrue:[bases at:'2' put:100]
+					ifFalse:[(x<36) ifTrue:[bases at:(x s) put:9]
+							ifFalse:[(x<43) ifTrue:[bases at:(x s) put:14]
+									ifFalse:[(x<52) ifTrue:[bases at:(x s) put:11]
+											ifFalse:[(x<59) ifTrue:[bases at:(x s) put:14]
+													ifFalse:[bases at:(x s) put:11].].].].].].
+	].
 !
 go: state1 to: state2                          
 	^self go: state1 to: state2 if: [true] then: [true] 
@@ -81,6 +95,9 @@ pressure: p
 era: e
 	era:=e.
 !
+bases: b
+	bases:=b.
+!
 biases: b
 	biases:=b.
 !
@@ -125,6 +142,9 @@ era
 !
 biases
 	^biases
+!
+bases
+	^bases
 !
 blacklist
 	^blacklist

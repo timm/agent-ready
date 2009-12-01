@@ -10,7 +10,7 @@ Historian worksIn: f.
 ].
 
 
-1 to: 160 do: [:x|
+1 to: 200 do: [:x|
 	App resetAny.
 	App resetAny.
 	f run.

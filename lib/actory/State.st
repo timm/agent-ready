@@ -261,7 +261,7 @@ onStay
 	prob1:= App random next.
 	(prob1 > 0.25)
 		
-ifTrue:[The machine billSupport: (The machine billSupport sqrt)
+ifTrue:[The machine billSupport: (The machine billSupport sqrt).
 			App say:'You have the audience in the palm of your hand.']
 		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.75).
 			App say:'The audience is not interested. Get out of there and preserve your dignity.'].
