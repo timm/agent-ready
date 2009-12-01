@@ -1,0 +1,5 @@
+<<>>=
+datafile = read.table("datafile1229.txt",header = T)
+attach(datafile)
+kruskal.test(before ~ after, data = airquality)
+@
