@@ -15,6 +15,10 @@ init
     	dsuccess:=0.
 	rsuccess:=0.
 	support:=0.
+	basesums:=Dictionary new.
+	3 to:10 do:[:x|
+		basesums at:(x s) put:100.
+	].
 !
 reset
 	dsuccess:=0.
@@ -34,19 +38,76 @@ learn
 	archives:= (self classify: best).	
 	scores:= (self scoreAttributes: archives with: best with: rest).
 	The factory biases: (self getBiases: scores with:The factory era).
-
-	"set a new base weight"
-	sum:=0.
-	The factory biases associationsDo:[:b|
-		sum:=sum+(b value asInteger).
-	]. 
-	base:= (1/(76-The factory biases size) asFloat * (100-sum)) rounded.
-	The historian base: base.
+	The factory bases: (self getBases).
 
 	The historian reportStats. 
 	The historian reportBiases.
 	The historian learnReset.
 	The factory era:The factory era+1.
+!
+getBases
+	|bases biases temp|
+	bases:=The factory bases.
+	biases:=The factory biases.
+
+	3 to: 13 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'3').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	14 to: 24 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'4').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	25 to: 35 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'5').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	36 to: 42 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'6').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	43 to: 51 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'7').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	52 to: 58 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'8').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	59 to: 67 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'9').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+	68 to: 76 do:[:x|
+		temp:=bases at:(x s).
+		temp:=temp*(basesums at:'10').
+		temp:=(temp/100) asFloat rounded.
+		bases at:(x s) put:temp.
+		(biases includesKey:(x s)) ifTrue:[bases at:(x s) put:((biases at:(x s)) asInteger)].
+	].
+
+	^bases
 !
 getBiases: aCache with: aNumber
 	|biases bscore bkey att val blacklist howMany|
@@ -72,6 +133,16 @@ getBiases: aCache with: aNumber
 		val:=bkey copyFrom: (bkey indexOf: $,)+1 to: (bkey size).
 		aCache removeKey: bkey. 
 		biases at: (att s) put: val.
+		
+		att:=(att asInteger).
+		(att<14) ifTrue:[basesums at:'3' put:((basesums at:'3')-(val asInteger))]
+			ifFalse:[(att<25) ifTrue:[basesums at:'4' put:((basesums at:'4')-(val asInteger))]
+				ifFalse:[(att<36) ifTrue:[basesums at:'5' put:((basesums at:'5')-(val asInteger))]
+					ifFalse:[(att<43) ifTrue:[basesums at:'6' put:((basesums at:'6')-(val asInteger))]
+						ifFalse:[(att<52) ifTrue:[basesums at:'7' put:((basesums at:'7')-(val asInteger))]
+							ifFalse:[(att<59) ifTrue:[basesums at:'8' put:((basesums at:'8')-(val asInteger))]
+								ifFalse:[(att<68) ifTrue:[basesums at:'9' put:((basesums at:'9')-(val asInteger))]
+									ifFalse:[basesums at:'10' put:((basesums at:'10')-(val asInteger))].].].].].].].
 	].
 	
 	^biases
@@ -159,10 +230,10 @@ polled: aPoller
 			openMindedness := openMindedness raisedTo:2].
 	"
 	"Trust factor"
-"	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller trust)).
+"	openMindedness := openMindedness raisedTo:(0.76+(1-aPoller trust)).
 "
 	"Factor in current level of support"
-"	openMindedness := openMindedness raisedTo:(0.75+(1-aPoller billSupport)). 
+"	openMindedness := openMindedness raisedTo:(0.76+(1-aPoller billSupport)). 
 	
 	(App random next < openMindedness)
 		ifTrue: [
@@ -215,6 +286,12 @@ support: s
 !
 support
 	^support
+!
+basesums
+	^basesums
+!
+basesums: b
+	basesums:=b.
 !!
 "============================================"
 ! PresidentKEYS methodsFor: 'printing' !

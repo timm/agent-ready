@@ -88,9 +88,14 @@ reset
 start
 	^current := start
 !
-pick: aSortedCollection with: aNumber
-	|r n|
-	r:= (App random next * (aNumber+(aNumber/3 asFloat))) rounded.
+pick: aSortedCollection
+	|r n max|
+	
+	max:=0.
+	aSortedCollection do:[:x|
+		((x value asInteger) > max) ifTrue:[max:=(x value asInteger)].
+	].
+	r:= (App random next * (max+(max/3 asFloat))) rounded.
 	n:=0.
 	
 	aSortedCollection do:[:x|
@@ -101,27 +106,24 @@ pick: aSortedCollection with: aNumber
 	^n.
 !
 stepBias
-	|now next cdf numB base max cands candidate r temp|
+	|now next cdf numB max cands candidate r temp|
 	self stopped ifTrue: [^false].
 	numB:= The factory biases size. 
 	cdf:= SortedCollection new. 
 	cands:=Dictionary new.
-	(numB<76) ifTrue:[base:= The historian base.] ifFalse:[base:=0.].
-	max:=base.
+	max:=0.
 	
 	"Populate weight list"
 	self candidates do: [:c|
 		(The factory biases includesKey: (c tid s))
-		ifTrue:[cdf add: (Association key: (The factory biases at: (c tid s)) asInteger value: (c tid)).
-			((The factory biases at: (c tid s))>max) 
-				ifTrue:[max:=(The factory biases at: (c tid s)) asInteger].]
-		ifFalse:[cdf add: (Association key: base value: (c tid))].
+		ifTrue:[cdf add: (Association key: (The factory biases at: (c tid s)) asInteger value: (c tid))]
+		ifFalse:[cdf add: (Association key: (The factory bases at: (c tid s)) asInteger value: (c tid))].
 
 		cands at: (c tid s) put: c.
 	].
 
 	(cands size) timesRepeat: [
-		r:= (self pick: cdf with: max) s.
+		r:= (self pick: cdf) s.
 		temp:= SortedCollection new.
 		cdf do:[:x|
 			(x value s = r) ifFalse:[temp add: x].

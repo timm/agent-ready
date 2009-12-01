@@ -13,21 +13,23 @@ init
 	log:=Dictionary new.
 	score :=0.
 	transitions:=0.
-	archives:=Array new:1000.
+	archives:=Array new:10000.
 	session:=1.
-	base:=((1/76) asFloat * 100) rounded.
+	subtotals:=Dictionary new.
 !
 reset
 	log:=Dictionary new.
 	score :=0.
 	transitions:=0.
+	subtotals:=Dictionary new.
 !
 learnReset
 	log:=Dictionary new.
 	score :=0.
 	transitions:=0.
-	archives:=Array new:1000.
+	archives:=Array new:10000.
 	session:=1.
+	subtotals:=Dictionary new.
 !
 
 "============================================"
@@ -43,10 +45,60 @@ replace: newLog
 	log:=newLog
 !
 report
-	|senators dem rep st output|
+	|senators dem rep st output temp|
 	dem:=0.
 	rep:=0.
-	
+	subtotals at:'1' put:100.
+	subtotals at:'2' put:100.
+	temp:=0.
+	3 to:13 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'3' put:temp.
+	temp:=0.
+	14 to:24 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'4' put:temp.
+	temp:=0.
+	25 to:35 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'5' put:temp.
+	temp:=0.
+	36 to:42 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'6' put:temp.
+	temp:=0.
+	43 to:51 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'7' put:temp.
+	temp:=0.
+	52 to:58 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'8' put:temp.
+	temp:=0.
+	59 to:67 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'9' put:temp.
+	temp:=0.
+	68 to:76 do:[:x|
+		st:=('s',(x s)).
+		(log includesKey: st) ifTrue:[temp:=temp+(log at:st)].
+	].
+	subtotals at:'10' put:temp.
+
 	App say: ('There were a total of ',senators s,' senators attempting to pass bills today').
 	The factory machines contents do: [:machine |
 		(machine party = 0) ifTrue:[dem:=dem+1] ifFalse:[rep:=rep+1].
@@ -60,10 +112,10 @@ report
 	
 	1 to: 76 do: [:x|
 		st:=('s',(x s)).
-		(log includesKey: st) ifTrue:[log at: st put: (self percentage: (log at: st))] ifFalse:[log at: st put:0].
+		(log includesKey: st) ifTrue:[log at: st put: (self percentage: (log at: st) with:x)] ifFalse:[log at: st put:0].
 		output:=(output,(log at: st) s,',').
 	].
-	output:=(output,transitions s,',',((The oracle score*100) s),',',(The oracle scoreSupport s)).
+	output:=(output,transitions s,',',(((The oracle score*100) rounded) s),',',(The oracle scoreSupport s)).
 	output oo.
 
 	log at: 'score' put: (The oracle scoreSupport asFloat).
@@ -101,10 +153,19 @@ reportStats
 	std:= std raisedTo:0.5.
 	('Std.Dev= ',std s) oo.
 !
+percentage: aNumber with: aState
+	|percent subt|
+	(aState<14) ifTrue:[subt:=(subtotals at:'3')]
+		ifFalse:[(aState<25) ifTrue:[subt:=(subtotals at:'4')]
+			ifFalse:[(aState<36) ifTrue:[subt:=(subtotals at:'5')]
+				ifFalse:[(aState<43) ifTrue:[subt:=(subtotals at:'6')]
+					ifFalse:[(aState<52) ifTrue:[subt:=(subtotals at:'7')]
+						ifFalse:[(aState<59) ifTrue:[subt:=(subtotals at:'8')]
+							ifFalse:[(aState<68) ifTrue:[subt:=(subtotals at:'9')]
+								ifFalse:[subt:=(subtotals at:'10')].].].].].].].
+	percent:= ((aNumber/subt) asFloat*100) rounded.
 
-percentage: aNumber
-	|percent|
-	percent:= ((aNumber/transitions) asFloat*100) rounded.
+	(aState=1 or:[aState=2]) ifTrue:[percent:=100].
 
 	^percent
 !
@@ -154,11 +215,11 @@ transitions
 transitions: t
 	transitions:=t.
 !
-base: b
-	base:=b.
+subtotals:s
+	subtotals:=s.
 !
-base
-	^base
+subtotals
+	^subtotals
 !!
 "============================================"
 ! Historian methodsFor: 'printing' !
