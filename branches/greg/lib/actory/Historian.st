@@ -177,7 +177,7 @@ dominance
 	(The oracle dsuccess = 0 or:[The oracle rsuccess = 0])
 		ifTrue:[^false].
 	
-	((The oracle score:who) > 0.75)
+	(((The oracle score:who) > 0.85) and:[(The oracle dsuccess+ The oracle rsuccess) > 9])
 		ifTrue:[The factory suspended: true.
 			The factory suspendee: The machine party.
 			^true]

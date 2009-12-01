@@ -14,7 +14,7 @@ init
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
     	dsuccess:=0.
 	rsuccess:=0.
-	support:=0.
+	support:=SortedCollection new.
 	basesums:=Dictionary new.
 	3 to:10 do:[:x|
 		basesums at:(x s) put:100.
@@ -23,7 +23,7 @@ init
 reset
 	dsuccess:=0.
 	rsuccess:=0.
-	support:=0.
+	support:=SortedCollection new.
 !!
 
 "============================================"
@@ -221,7 +221,7 @@ polled: aPoller
 	openMindedness:=0.75.
 	"Taking away power to veto to help learning"
 	vote:=true.
-	support:=support+(aPoller billSupport).
+	support add:(aPoller billSupport).
 	"Are they in the same political party?"
 	"(party=(aPoller party))
 		ifTrue: [
@@ -254,7 +254,10 @@ score
 	^((dsuccess+rsuccess)/senators) asFloat
 !
 scoreSupport
-	^(support/(dsuccess+rsuccess)) asFloat
+	|sup|
+	sup:= support at:(((dsuccess+rsuccess)/2) asFloat rounded).
+
+	^sup
 !
 score: mode
 	|d r|
