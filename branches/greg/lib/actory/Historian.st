@@ -108,7 +108,7 @@ report
 	App say: ('Democrats passed ',((The oracle score:0)*100) s,' percent of these, and Republicans passed ',
 		((The oracle score:1)*100) s,' percent. This resulted in an overall score of ',The oracle scoreSupport s).
 	
-	output:=('Session ',(session s),':').
+	output:=''.
 	
 	1 to: 76 do: [:x|
 		st:=('s',(x s)).
@@ -171,17 +171,18 @@ percentage: aNumber with: aState
 !
 dominance
 	|who|
-	(The machine party = 0)
+"	(The machine party = 0)
 		ifTrue: [who:=1] ifFalse: [who:=0].
 
 	(The oracle dsuccess = 0 or:[The oracle rsuccess = 0])
 		ifTrue:[^false].
 	
-	(((The oracle score:who) > 0.85) and:[(The oracle dsuccess+ The oracle rsuccess) > 9])
+	(((The oracle score:who) > 0.85) and:[(The oracle dsuccess+ The oracle rsuccess) > 10])
 		ifTrue:[The factory suspended: true.
 			The factory suspendee: The machine party.
 			^true]
-		ifFalse:[^false].
+		ifFalse:[^false]."
+	^false
 !
 reportBiases
 	The factory biases associationsDo:[:entry|
