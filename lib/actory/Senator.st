@@ -52,10 +52,7 @@ worksIn: factory
 					then: [The historian record:'s14'.
 						The machine talks: 'suspended for a filibuster'];
 	go: #scandalS to: #sellG    	if:[The factory suspended=false]
-					then:  [The historian record:'s15'.
-						((App random next > 0.75) or: [The machine caughtLikelihood > 0.95])
-						ifTrue:[The machine talks:'phone tapped by the FBI'.
-							The machine caught.]];
+					then:  [The historian record:'s15'.];
 	go: #scandalS to: #investigateI	if:[The factory suspended=false]
 					then:[The historian record:'s16'.
 						The machine talks: 'investigating a suspicious colleague.'.];
@@ -265,7 +262,7 @@ init
     committee := ((App random next)*16) rounded. 
     billCommittee := ((App random next)*16) rounded.
     billPassed := 0.
-    billSupport := 0.25.
+    billSupport := 0.01.
     billProposed :=0.
     trust :=1.
 	(App random next > 0.5) ifTrue:[party:=0] ifFalse:[party:=1].
@@ -276,7 +273,7 @@ reset
     	scandals := 0.
   	caughtLikelihood := 0.1.
    	 billPassed := 0.
-    	billSupport := 0.25.
+    	billSupport := 0.01.
    	billProposed :=0.
     	trust :=1.
     	cloture:=0.
@@ -328,9 +325,9 @@ polled: aPoller
 naughty
     scandals := scandals+1.
     caughtLikelihood := caughtLikelihood sqrt.
-    (App random next > caughtLikelihood)
+    (caughtLikelihood < 0.95)
 	ifTrue: [
-		billSupport := billSupport raisedTo:0.35.
+		billSupport := (billSupport raisedTo:0.75).
 		App say: 'You bribed a colleage for their vote. They are just as slimy as you.']
 	ifFalse: [
 		self caught].
@@ -339,7 +336,7 @@ caught
     scandals :=0.
     caughtLikelihood :=0.1.
     trust := (trust-0.1).
-    billSupport :=0.1.
+    billSupport :=0.01.
     App say:'You got too greedy and were caught.'.
 !!
 "============================================"

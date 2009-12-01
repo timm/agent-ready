@@ -138,9 +138,9 @@ onEntry
 	(target = 0) ifTrue:[target:=1].	
 	target:= The factory machines contents at: target.
 
-	(target caughtLikelihood > 0.75)
+	(target caughtLikelihood > 0.85)
 		ifTrue:[ App say: 'They exposed a dirty senator and were rewarded for it.'.
-			The machine billSupport: (The machine billSupport sqrt).
+			The machine billSupport: (The machine billSupport raisedTo:0.9).
 			target caught]
 		ifFalse:[ App say: 'They failed to catch anybody.'].
 !!
@@ -154,7 +154,7 @@ onEntry
 onEntry
 	|vote senators rand1 position count|
 	The machine talks:'gathering support'.
-	The machine billSupport: (The machine billSupport raisedTo:0.75).
+	The machine billSupport: (The machine billSupport raisedTo:0.9).
 	"senators:= ((The factory) machines contents) size.
 	count:=1.
 
@@ -213,12 +213,11 @@ onEntry
 			(support >= (3/5 asFloat))
 				ifTrue: [
 					App say: 'The bill passes the committee.'.
-					The machine billPassed: 1.
-					The machine billSupport: 0.]
+					The machine billPassed: 1.]
 				ifFalse: [
 					App say: 'The bill failed to pass the committee.'.
 					"Add a boost to support for the second time around"
-					The machine billSupport: The machine billSupport sqrt].
+					The machine billSupport: (The machine billSupport raisedTo:0.9)].
 		]
 		"Full senate vote"
 		ifFalse:[
@@ -238,7 +237,7 @@ onEntry
 						ifFalse:[
 							App say:'The bill failed to pass in the senate.'.
 							"Add a boost for the next time around."
-							The machine billSupport: The machine billSupport sqrt.
+							The machine billSupport: (The machine billSupport raisedTo:0.9).
 							The machine billProposed: (The machine billProposed)+1.].
 				].
 		]. 
@@ -249,9 +248,9 @@ onEntry
 	The machine talks: 'gives a rousing speech.'.
 	prob1:= App random next.
 	(prob1 > 0.05)
-		ifTrue:[The machine billSupport: (The machine billSupport sqrt). 
+		ifTrue:[The machine billSupport: (The machine billSupport raisedTo:0.8). 
 			App say:'The audience approves and applauds.']
-		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.75).
+		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.95).
 			App say:'The senators seem to not like your proposal.You only gain some support.'].
 		
 !
@@ -261,9 +260,9 @@ onStay
 	prob1:= App random next.
 	(prob1 > 0.25)
 		
-ifTrue:[The machine billSupport: (The machine billSupport sqrt).
+ifTrue:[The machine billSupport: (The machine billSupport raisedTo:0.9).
 			App say:'You have the audience in the palm of your hand.']
-		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.75).
+		ifFalse:[The machine billSupport: (The machine billSupport raisedTo:0.95).
 			App say:'The audience is not interested. Get out of there and preserve your dignity.'].
 !!
 ! Suspended methods !
