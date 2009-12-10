@@ -28,7 +28,9 @@ BEGIN {
 
 END {
 	INNUM = InputNum();
-	print OUTNUM;
+	
+	if (OUTNUM > MATS) MATS = OUTNUM;
+	#print OUTNUM;
 	
 	
 	#for(j=1; j<=OUTNUM; j++) for(i=1; i<=NF; i++) print TT[(j-1),(i-1)];
@@ -105,6 +107,14 @@ function RandInt(min, max) {
 	return int(rand()*(max-min) + min);
 }
 
+function Coor2In(layer, row) {
+	return row + INNUM + layer*MATS;
+}
+
+function In2Layer(innum) {
+	return (innum - INNUM)%MATS;
+}
+
 function CircuitReset() {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";
 }
@@ -113,11 +123,14 @@ function CircuitCp(copy, orig) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
-function CircuitRand(	temp) {
+function CircuitRand(	temp, outcount) {
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
 			if (rand() > 0.5 || row == MATS-1) {
-			
+				
+				do {
+				 
+				} while();
 				#Circuit[layer,row] = 
 				
 			}
