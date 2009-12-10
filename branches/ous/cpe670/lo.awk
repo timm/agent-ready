@@ -49,7 +49,14 @@ END {
 	CircuitRand();
 	CircuitMatPrint();
 	
-	GateCount();
+	print TotalGateCount();
+	print TotalWireCount();
+	
+	o[0] = 0;
+	o[1] = 2;
+	
+	print GateCount(o);
+	print WireCount(o);
 	
 	#print In2Layer(13) " " In2Row(13) " " Coor2In(In2Layer(13), In2Row(13));
 	
@@ -165,18 +172,47 @@ function CircuitMatPrint( layer, row) {
 	}
 }
 
-function GateCount(	outar, i) {
-	Gatelogger(outar, MATS-1, 0);
-	for (i in outar) printf (i " ");
-	print ""; 
+function GateCount(outputs,	outar, x, i, count) {
+	count = 0;
+	for (x in outputs) Gatelogger(outar, MATS-1, outputs[x]);
+	for (i in outar) count++;
+	return count;
+}
+
+function TotalGateCount(	outar, x, i, count) {
+	count = 0;
+	for (x=0; x<OUTNUM; x++) Gatelogger(outar, MATS-1, x);
+	for (i in outar) count++;
+	return count;
 }
 
 function Gatelogger(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") == 0) outar[Coor2In(layer, row)] = 1;
+	if (index(Circuit[layer, row], "WIRE") == 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
 	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]);
-
+	for (i in temp) if (i != 1) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
+
+function WireCount(outputs,	outar, x, i, count) {
+	count = 0;
+	for (x in outputs) Wirelogger(outar, MATS-1, outputs[x]);
+	for (i in outar) count++;
+	return count;
+}
+
+function TotalWireCount(	outar, x, i, count) {
+	count = 0;
+	for (x=0; x<OUTNUM; x++) Wirelogger(outar, MATS-1, x);
+	for (i in outar) count++;
+	return count;
+}
+
+function Wirelogger(outar, layer, row	,temp, i) {
+	if (index(Circuit[layer, row], "WIRE") != 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
+	split(Circuit[layer, row], temp, ",");
+	for (i in temp) if (i != 1) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+}
+
+function
 
 #################################################
 #Learning and Circuit manipulation functions
