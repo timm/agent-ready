@@ -120,13 +120,17 @@ function In2Layer(innum) {return int((innum - INNUM)/MATS);} # Convert input num
 
 function In2Row(innum) {return (innum - INNUM)%MATS;} # Convert input number to row
 
+###############################################
+#Circuit utility functions
+###############################################
+
 function CircuitReset(	layer, row) {for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";}
 
 function CircuitCp(copy, orig	,layer, row) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
-function CircuitRand(	buff, randin, ginnum) {
+function CircuitRand(	buff, randin, ginnum, tmp) {
 	CircuitReset();
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
@@ -137,7 +141,8 @@ function CircuitRand(	buff, randin, ginnum) {
 				while(ginnum>0) {
 					do {
 						randin = RandInt(0, Coor2In(layer, 0));
-					} while(Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM);
+						if (randin < 10) randin = "0" randin;
+					} while(Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM && index(buff, randin) == 0);
 					buff = buff "," randin;
 					ginnum--;
 				}
@@ -156,6 +161,8 @@ function CircuitMatPrint( layer, row) {
 		print "";
 	}
 }
+
+
 
 #################################################
 #Learning and Circuit manipulation functions
