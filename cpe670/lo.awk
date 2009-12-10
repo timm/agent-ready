@@ -212,7 +212,19 @@ function Wirelogger(outar, layer, row	,temp, i) {
 	for (i in temp) if (i != 1) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
-function
+function Evaluate() {
+	for (j in OUTS) delete OUTS[j];
+	for (j=0; j<NF; j++) {
+		Get01Input(j);
+		for (i=0; i<OUTNUM; i++) OUTS[i,j] = EVAL(MATS-1, i);	
+	}
+}
+
+function EVAL(outar, layer, row	,temp, i) {
+	#if (index(Circuit[layer, row], "WIRE") != 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
+	split(Circuit[layer, row], temp, ",");
+	for (i in temp) if (i != 1) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+}
 
 #################################################
 #Learning and Circuit manipulation functions
