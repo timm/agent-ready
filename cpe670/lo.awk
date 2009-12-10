@@ -42,7 +42,8 @@ END {
 	#for (i=0; i<3; i++) print RandInt(0,7);
 	
 	
-	
+	print In2Layer(5);
+	print In2Row(5);
 	
 }
 
@@ -107,30 +108,27 @@ function RandInt(min, max) {
 	return int(rand()*(max-min) + min);
 }
 
-function Coor2In(layer, row) {
-	return row + INNUM + layer*MATS;
-}
+function Coor2In(layer, row) {return row + INNUM + layer*MATS;} # Convert matrix coordinates to input number
 
-function In2Layer(innum) {
-	return (innum - INNUM)%MATS;
-}
+function In2Layer(innum) {return int((innum - INNUM)/MATS);} 
 
-function CircuitReset() {
-	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";
-}
+function In2Row(innum) {return (innum - INNUM)%MATS;}
 
-function CircuitCp(copy, orig) {
+function CircuitReset(	layer, row) {for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";}
+
+function CircuitCp(copy, orig	,layer, row) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
 function CircuitRand(	temp, outcount) {
+	CircuitReset()
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
 			if (rand() > 0.5 || row == MATS-1) {
 				
 				do {
 				 
-				} while();
+				} while(Circuit[layer,row] == "");
 				#Circuit[layer,row] = 
 				
 			}
