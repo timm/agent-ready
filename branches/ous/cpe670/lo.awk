@@ -65,13 +65,14 @@ END {
 	
 	loop=10000;
 	
-	while (loop>0) {
-		CircuitRand(); 
-		Evaluate();
-		#print 
-		loop--;
-	}
+	#while (loop>0) {
+	#	CircuitRand(); 
+	#	Evaluate();
+	#	#print 
+	#	loop--;
+	#}
 	
+	print rand();
 }
 
 
@@ -255,22 +256,23 @@ function EVAL(layer, row	,temp, i, buff) {
 #################################################
 
 
-function SA(	c, cb, e, eb, k) {
-	CircuitCp(c, Circuit); e = E(s);           # Initial state, energy.
+function SA(	c, cb, cn, e, eb, en, k) {
+	CircuitCp(c, Circuit); e = E(c);           # Initial state, energy.
 	CircuitCp(cb, c); eb = e;             # Initial "best" solution
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
-		sn = neighbour(s);         #   Pick some neighbour.
-		en = E(sn);               #   Compute its energy.
-		if (en < eb) {         #   Is this a new best?
-			sb = sn; eb = en;      #     Yes, save it.
+		CircuitCp(c, cn);
+		neighbour(cn);         #   Pick some neighbour.
+		en = E(cn);               #   Compute its energy.
+		if (en > eb) {         #   Is this a new best?
+			CircuitCp(cb, cn); eb = en;      #     Yes, save it.
 		}
-		if (random() < P(e, en, Temperature(k/kmax))) { #     Maybe jump
-			s = sn; e = en;     
+		else if (rand() < P(e, en, Temperature(k/kmax))) { #     Maybe jump
+			CircuitCp(c, cn); e = en;     
 		}
 		k = k + 1;              #   One more evaluation done
 	}
-	return sb;                   # Return best
+	CircuitCp(Circuit, cb);                  # Return best
 }
 
 function P(e, en, temp) {
@@ -284,5 +286,27 @@ function Temperature(k, kmax) {
 function E(s) {}
 
 
-function neighbor() {}
+function neighbor(c,	buff, randin, ginnum, tmpin, i) {
+	tmpin[0] = 0;
+	for (layer=0; layer<MATS; layer++) {
+		for (row=0; row<MATS; row++) {
+			if (rand() > 0.66) {
+				buff = GNAMES[RandInt(0,GCOUNT)];
+				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
+				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
+				for(i in tmpin) delete tmpin[i];
+				while(ginnum>0) {
+					do {
+						randin = RandInt(0, Coor2In(layer, 0));	
+					} while((c[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmpin[randin] == 1);
+					tmpin[randin] = 1;
+					ginnum--;
+				}
+				for (i in tmpin) {buff = buff "," i; delete tmpin[i];}
+				c[layer, row] = buff;				
+			}
+			if (layer == MATS-1 && row == OUTNUM-1) return;
+		}
+	}
+}
 
