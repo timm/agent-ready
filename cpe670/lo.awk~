@@ -1,4 +1,7 @@
 BEGIN {
+	srand();
+	coolFactor = -10;
+	kmax = 10000;
 	MATS = 5;
 	Circuit[0,0] = "";
 	OUTNUM = 1;
@@ -27,11 +30,11 @@ END {
 	INNUM = InputNum();
 	#for(j=1; j<=OUTNUM; j++) for(i=1; i<=NF; i++) print TT[(j-1),(i-1)];
 	
+	#Get01Input(2);
+	#for (i in INS) print INS[i];
 	
 	
-	
-	
-	
+	for (i=0; i<3; i++) print RandInt(0,7);
 	
 	
 	
@@ -41,11 +44,9 @@ END {
 
 
 
-function RandC() {}
 
-function neighbor() {}
-
-#Logic functions, all of which accept and input array
+#############################################
+#Logic functions
 ###############################################
 function AND(input	,buff) {
 	buff = input[0];
@@ -72,24 +73,21 @@ function XNOR(input) {return !XOR(input);}
 function NOT(input) {return !input[0];}
 
 ###############################################
-
+#Utility functions
+###############################################
 function Get01Input(innum,       t, retstr, i, retstrlen) { #Convert input number to binary input
         retstr = "";
         t=innum;
-	while( t )
-        {
-                if ( t%2==0 ) {
-                        retstr = "0" retstr;
-                } else {
-                        retstr = "1" retstr;
-                }
+	while(t) {
+                if ( t%2==0 ) retstr = "0" retstr;
+                else retstr = "1" retstr;
                 t = int(t/2);
         }
         retstrlen = length(retstr);
-	for (i=INNUM-1; i>=0; i--) INS[i] = (i >= retstrlen-1? 0 : substr(retstr, i+1, 1));
+	for (i=0; i<INNUM; i++) INS[i] = (i >= retstrlen? 0 : substr(retstr, retstrlen-i, 1));
 }
 
-function CopyNames(	i, count) {
+function CopyNames(	i, count) { #Copying Gate names to GNAMES array
 	count = 0;
 	for (i in GATES) GNAMES[count++] = i;
 }
@@ -100,9 +98,40 @@ function InputNum( incount) {
 	return incount;
 }
 
-function SA(kmax) {
-	s = s0; e = E(s);           # Initial state, energy.
-	sb = s; eb = e;             # Initial "best" solution
+function RandInt(min, max) {
+	return int(rand()*(max-min) + min);
+}
+
+function CircuitReset() {
+	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";
+}
+
+function CircuitCp(copy, orig) {
+	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
+}
+
+function CircuitRand(	temp) {
+	for (layer=0; layer<MATS; layer++) {
+		for (row=0; row<MATS; row++) {
+			if (rand() > 0.5 || row == MATS-1) {
+			
+				#Circuit[layer,row] = 
+				
+			}
+		}
+	}
+}
+
+
+
+#################################################
+#Learning and Circuit manipulation functions
+#################################################
+
+
+function SA(	c, cb, e, eb, k) {
+	CircuitCp(c, Circuit); e = E(s);           # Initial state, energy.
+	CircuitCp(cb, c); eb = e;             # Initial "best" solution
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
 		sn = neighbour(s);         #   Pick some neighbour.
@@ -117,3 +146,17 @@ function SA(kmax) {
 	}
 	return sb;                   # Return best
 }
+
+function P(e, en, temp) {
+	return exp((e-en)/temp);
+}
+
+function Temperature(k, kmax) {
+	return exp(coolFactor*k/kmax);
+}
+
+function E(s) {}
+
+
+function neighbor() {}
+
