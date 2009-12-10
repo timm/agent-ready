@@ -49,6 +49,7 @@ END {
 	CircuitRand();
 	CircuitMatPrint();
 	
+	GateCount();
 	
 	#print In2Layer(13) " " In2Row(13) " " Coor2In(In2Layer(13), In2Row(13));
 	
@@ -164,7 +165,18 @@ function CircuitMatPrint( layer, row) {
 	}
 }
 
+function GateCount(	outar, i) {
+	Gatelogger(outar, MATS-1, 0);
+	for (i in outar) printf (i " ");
+	print ""; 
+}
 
+function Gatelogger(outar, layer, row	,temp, i) {
+	if (index(Circuit[layer, row], "WIRE") == 0) outar[Coor2In(layer, row)] = 1;
+	split(Circuit[layer, row], temp, ",");
+	for (i in temp) if (i != 1) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]);
+
+}
 
 #################################################
 #Learning and Circuit manipulation functions
