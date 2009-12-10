@@ -130,7 +130,8 @@ function CircuitCp(copy, orig	,layer, row) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
-function CircuitRand(	buff, randin, ginnum, tmp, i) {
+function CircuitRand(	buff, randin, ginnum, tmpin, i) {
+	tmpin[0] = 0;
 	CircuitReset();
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
@@ -138,16 +139,15 @@ function CircuitRand(	buff, randin, ginnum, tmp, i) {
 				buff = GNAMES[RandInt(0,GCOUNT)];
 				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
 				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
+				for(i in tmpin) delete tmpin[i];
 				while(ginnum>0) {
 					do {
-						randin = RandInt(0, Coor2In(layer, 0));
-						if (randin in tmp) tmp[randin] = 0;
-						else tmp[randin] = ginnum;
-					} while((Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmp[randin] == 0);	
-					for (i in tmp) delete tmp[i];			
-					buff = buff "," randin;
+						randin = RandInt(0, Coor2In(layer, 0));	
+					} while((Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmpin[randin] == 0);
+					tmpin[randin] = 0;
 					ginnum--;
 				}
+				for (i in tmpin) {buff = buff "," i; delete tmpin[i];}
 				Circuit[layer, row] = buff;				
 			}
 			if (layer == MATS-1 && row == OUTNUM-1) return;
