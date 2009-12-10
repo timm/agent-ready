@@ -27,7 +27,9 @@ END {
 	INNUM = InputNum();
 	#for(j=1; j<=OUTNUM; j++) for(i=1; i<=NF; i++) print TT[(j-1),(i-1)];
 	
-	
+	Get01Input(5);
+	for (i=0; i<INNUM; i++) printf (INS[i]);
+	print;
 	
 	
 	
@@ -73,7 +75,7 @@ function NOT(input) {return !input[0];}
 
 ###############################################
 
-function Get01Input(innum,       t, retstr, i) { #Convert input number to binary input
+function Get01Input(innum,       t, retstr, i, retstrlen) { #Convert input number to binary input
         retstr = "";
         t=innum;
 	while( t )
@@ -85,8 +87,8 @@ function Get01Input(innum,       t, retstr, i) { #Convert input number to binary
                 }
                 t = int(t/2);
         }
-
-        return retstr;
+        retstrlen = length(retstr);
+	for (i=INNUM-1; i>=0; i--) INS[i] = (i >= retstrlen-1? 0 : substr(retstr, i+1, 1));
 }
 
 function CopyNames(	i, count) {
