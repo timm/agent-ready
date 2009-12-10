@@ -28,13 +28,16 @@ BEGIN {
 
 END {
 	INNUM = InputNum();
+	print OUTNUM;
+	
+	
 	#for(j=1; j<=OUTNUM; j++) for(i=1; i<=NF; i++) print TT[(j-1),(i-1)];
 	
 	#Get01Input(2);
 	#for (i in INS) print INS[i];
 	
 	
-	for (i=0; i<3; i++) print RandInt(0,7);
+	#for (i=0; i<3; i++) print RandInt(0,7);
 	
 	
 	
