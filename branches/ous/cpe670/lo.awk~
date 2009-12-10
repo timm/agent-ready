@@ -17,6 +17,7 @@ BEGIN {
 	GATES["XNOR"] = 0;
 	GATES["NOT"] = 0;
 	GNAMES[0] = "";
+	GCOUNT = 8;
 	CopyNames();
 	TT[0,0] = 0;
 }
@@ -42,7 +43,15 @@ END {
 	#for (i=0; i<3; i++) print RandInt(0,7);
 	
 	
-	print In2Layer(5);
+	#print In2Layer(5);
+	#print In2Row(5);
+	
+	CircuitRand();
+	CircuitPrint();
+	
+	
+	#print In2Layer(13) " " In2Row(13) " " Coor2In(In2Layer(13), In2Row(13));
+	
 	
 }
 
@@ -103,15 +112,13 @@ function InputNum( incount) {
 	return incount;
 }
 
-function RandInt(min, max) {
-	return int(rand()*(max-min) + min);
-}
+function RandInt(min, max) {return int(rand()*(max-min) + min);} # Generating an integer between min (inclusive) and max (exclusive)
 
 function Coor2In(layer, row) {return row + INNUM + layer*MATS;} # Convert matrix coordinates to input number
 
-function In2Layer(innum) {return int((innum - INNUM)/MATS);} 
+function In2Layer(innum) {return int((innum - INNUM)/MATS);} # Convert input number to layer
 
-function In2Row(innum) {return (innum - INNUM)%MATS;}
+function In2Row(innum) {return (innum - INNUM)%MATS;} # Convert input number to row
 
 function CircuitReset(	layer, row) {for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";}
 
@@ -119,23 +126,36 @@ function CircuitCp(copy, orig	,layer, row) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
-function CircuitRand(	temp, outcount) {
-	CircuitReset()
+function CircuitRand(	buff, randin, ginnum) {
+	CircuitReset();
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
-			if (rand() > 0.5 || row == MATS-1) {
-				
-				do {
-				 
-				} while(Circuit[layer,row] == "");
-				#Circuit[layer,row] = 
-				
+			if (rand() > 0.5 || layer == MATS-1) {
+				buff = GNAMES[RandInt(0,GCOUNT)];
+				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
+				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
+				while(ginnum>0) {
+					do {
+						randin = RandInt(0, Coor2In(layer, 0));
+					} while(Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM);
+					buff = buff "," randin;
+					ginnum--;
+				}
+				Circuit[layer, row] = buff;				
 			}
+			if (layer == MATS-1 && row == OUTNUM-1) return;
 		}
 	}
 }
 
-
+function CircuitPrint( layer, row) {
+	for (row=0; row<MATS; row++) {
+		for (layer=0; layer<MATS; layer++) {
+			printf(Coor2In(layer, row) ": " Circuit[layer,row] "\t\t|");
+		}
+		print "";
+	}
+}
 
 #################################################
 #Learning and Circuit manipulation functions
