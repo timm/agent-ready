@@ -36,8 +36,8 @@ END {
 	
 	#for(j=1; j<=OUTNUM; j++) for(i=1; i<=NF; i++) print TT[(j-1),(i-1)];
 	
-	#Get01Input(2);
-	#for (i in INS) print INS[i];
+	#Get01Input(5);
+	
 	
 	
 	#for (i=0; i<3; i++) print RandInt(0,7);
@@ -46,20 +46,31 @@ END {
 	#print In2Layer(5);
 	#print In2Row(5);
 	
-	CircuitRand();
-	CircuitMatPrint();
+	#CircuitRand();
+	#CircuitMatPrint();
 	
-	print TotalGateCount();
-	print TotalWireCount();
+	#print TotalGateCount();
+	#print TotalWireCount();
 	
-	o[0] = 0;
-	o[1] = 2;
+	#o[0] = 0;
+	#o[1] = 2;
 	
-	print GateCount(o);
-	print WireCount(o);
+	#print GateCount(o);
+	#print WireCount(o);
 	
 	#print In2Layer(13) " " In2Row(13) " " Coor2In(In2Layer(13), In2Row(13));
 	
+	#for (i in INS) print i ": " INS[i];
+	#print EVAL(MATS-1, 0);
+	
+	loop=1000;
+	
+	while (loop>0) {
+		CircuitRand(); 
+		Evaluate();
+		#print 
+		loop--;
+	}
 	
 }
 
@@ -187,9 +198,9 @@ function TotalGateCount(	outar, x, i, count) {
 }
 
 function Gatelogger(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") == 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
+	if (index(Circuit[layer, row], "WIRE") == 0) outar[Coor2In(layer, row)] = 1;
 	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+	for (i in temp) if (i != 1 && temp[i] >= INNUM) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
 function WireCount(outputs,	outar, x, i, count) {
@@ -207,25 +218,36 @@ function TotalWireCount(	outar, x, i, count) {
 }
 
 function Wirelogger(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") != 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
+	if (index(Circuit[layer, row], "WIRE") != 0) outar[Coor2In(layer, row)] = 1;
 	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+	for (i in temp) if (i != 1 && temp[i] >= INNUM) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
 function Evaluate() {
-	for (i in OUTS) delete OUTS[i];
-	for (i=0; i<OUTNUM; i++) {
-		for (j=0; j<NF; j++) {
-			OUTS[i,j] 
-	
+	for (j in OUTS) delete OUTS[j];
+	for (j=0; j<NF; j++) {
+		Get01Input(j);
+		for (i=0; i<OUTNUM; i++) OUTS[i,j] = EVAL(MATS-1, i);	
 	}
-
 }
 
-function EVAL(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") != 0 && Coor2In(layer, row) >= INNUM) outar[Coor2In(layer, row)] = 1;
+function EVAL(layer, row	,temp, i, buff) {
 	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+	for (i in temp) {
+		if (i != 1 ) {
+			if (temp[i] >= INNUM) buff[i-2] = EVAL(In2Layer(temp[i]), In2Row(temp[i]));
+			else {buff[i-2] = INS[temp[i]];} # print temp[i] " " INS[temp[i]] " " Coor2In(layer, row);}
+			#print i-2 ": " buff[i-2] "=> " Coor2In(layer, row);
+		}
+	}
+	if (temp[1] == "AND") return AND(buff);
+	if (temp[1] == "OR") return OR(buff);
+	if (temp[1] == "XOR") return XOR(buff);
+	if (temp[1] == "WIRE") return WIRE(buff);
+	if (temp[1] == "NAND") return NAND(buff);
+	if (temp[1] == "NOR") return NOR(buff);
+	if (temp[1] == "XNOR") return XNOR(buff);
+	if (temp[1] == "NOT") return NOT(buff);
 }
 
 #################################################
