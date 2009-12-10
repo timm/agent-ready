@@ -130,7 +130,7 @@ function CircuitCp(copy, orig	,layer, row) {
 	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
 }
 
-function CircuitRand(	buff, randin, ginnum, tmp) {
+function CircuitRand(	buff, randin, ginnum, tmp, i) {
 	CircuitReset();
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
@@ -141,9 +141,10 @@ function CircuitRand(	buff, randin, ginnum, tmp) {
 				while(ginnum>0) {
 					do {
 						randin = RandInt(0, Coor2In(layer, 0));
-						if (randin < 10) randin = "0" randin;
-					} while(Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM);
-					
+						if (randin in tmp) tmp[randin] = 0;
+						else tmp[randin] = ginnum;
+					} while((Circuit[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmp[randin] == 0);	
+					for (i in tmp) delete tmp[i];			
 					buff = buff "," randin;
 					ginnum--;
 				}
