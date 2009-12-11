@@ -1,7 +1,7 @@
 BEGIN {
 	srand();
 	coolFactor = -10;
-	kmax = 1000;
+	kmax = 10000;
 	MATS = 5;
 	Circuit[0,0] = "";
 	OUTNUM = 1;
@@ -35,7 +35,7 @@ END {
 	print "The number of inputs: " INNUM;
 	print "The number of outputs: " OUTNUM;
 	
-	EMAX = OUTNUM * (NF + MATS);
+	EMAX = OUTNUM * (NF) + MATS;
 	
 	print "The required truth table is:";
 	for(j=0; j<OUTNUM; j++) {
@@ -86,9 +86,8 @@ END {
 		if (CMatch == 1) print "Its a match!!";
 		else {
 			print "Nope, let's try again...";
-			MATS = int(MATS*1.25);
-			print "Increasing the matrix size to " MATS;
-			
+			MATS++;
+		}
 	}		
 }
 
@@ -336,35 +335,44 @@ function E(c	, i, j, cocount, feasible) { # The fitness function
 	for (i=0; i<OUTNUM; i++) {
 		for(j=0; j<NF; j++) {
 			if (OUTS[i,j] == TT[i,j]) cocount++;
-			else feasible = 0;
+			else {feasible = 0; cocount--;}
 		}
-	}	
+	}
+	if (cocount < 0) cocount = 0;
 	if (feasible == 1) { print "GOT IT!!"; return (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX;} #print "GOT IT!!" (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX; 
 	else return cocount/EMAX;
 }
 
 
-function neighbour(c,	buff, randin, ginnum, tmpin, i) {
+function neighbour(c,	buff, randin, ginnum, tmpin, i, count) {
 	tmpin[0] = 0;
-	for (layer=0; layer<MATS; layer++) {
-		for (row=0; row<MATS; row++) {
-			if (rand() > 0.33) {
-				buff = GNAMES[RandInt(0,GCOUNT)];
-				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
-				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
-				for(i in tmpin) delete tmpin[i];
-				while(ginnum>0) {
-					do {
-						randin = RandInt(0, Coor2In(layer, 0));	
-					} while((c[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmpin[randin] == 1);
-					tmpin[randin] = 1;
-					ginnum--;
-				}
-				for (i in tmpin) {buff = buff "," i; delete tmpin[i];}
-				c[layer, row] = buff;				
-			}
-			if (layer == MATS-1 && row == OUTNUM-1) return;
-		}
+	count = int(MATS*MATS*0.33);
+	
+	while (count > 0) {
+		#for (layer=0; layer<MATS; layer++) {
+		#	for (row=0; row<MATS; row++) {
+		#		if (rand() > 0.33) {
+		
+		layer = RandInt(0,MATS);
+		row = RandInt(0,MATS);
+					buff = GNAMES[RandInt(0,GCOUNT)];
+					if(buff == "WIRE" || buff == "NOT") ginnum = 1;
+					else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
+					for(i in tmpin) delete tmpin[i];
+					while(ginnum>0) {
+						do {
+							randin = RandInt(0, Coor2In(layer, 0));	
+						} while((c[In2Layer(randin),In2Row(randin)] == "" && randin >= INNUM) || tmpin[randin] == 1);
+						tmpin[randin] = 1;
+						ginnum--;
+					}
+					for (i in tmpin) {buff = buff "," i; delete tmpin[i];}
+					c[layer, row] = buff;				
+		#		}
+		#		if (layer == MATS-1 && row == OUTNUM-1) return;
+		#	}
+		#}
+		count--;
 	}
 }
 
