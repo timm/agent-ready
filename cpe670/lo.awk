@@ -188,11 +188,26 @@ function CircuitMatPrint(c,  layer, row) {
 	}
 }
 
-function CircuitExpPrint(c,	outar, x, i, count) {
-	count = 0;
-	for (x=0; x<OUTNUM; x++) EXP(c, outar, MATS-1, x);
-	for (i in outar) count++;
-	return count;
+function CircuitExpPrint(c,	x, express) {
+	for (x=0; x<OUTNUM; x++) EXP(c, MATS-1, x);
+}
+
+function EXP(c, layer, row	, express, temp, i) {
+	express = "";
+	split(c[layer, row], temp, ",");
+	if (temp[1] == "WIRE") return EXP(c, In2Layer(temp[2]), In2Row(temp[2]);
+	
+	express = "(";
+	for (i in temp) {
+		if (i != 1) {
+			if (temp[i] >= INNUM) express = express " " EXP(c, In2Layer(temp[i]), In2Row(temp[i]));
+			else express = express " " temp[i];
+			
+			if ((i == 3 && temp[i+1] != "") || i < 3) express " " temp[1];
+		}
+	}
+	express = express " )";
+	return express;
 }
 
 function GateCount(c, outputs,	outar, x, i, count) {
