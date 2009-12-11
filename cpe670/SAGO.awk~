@@ -35,8 +35,6 @@ END {
 	print "The number of inputs: " INNUM;
 	print "The number of outputs: " OUTNUM;
 	
-	print MATS;
-	
 	EMAX = OUTNUM * (NF + MATS);
 	
 	print "The required truth table is:";
@@ -48,10 +46,11 @@ END {
 	
 	print "";
 	
-	CircuitRand();
+	
 	CMatch = 0;
 	
-	while(CMatch == 0) {	
+	while(CMatch == 0) {
+		CircuitRand();	
 		print "The following is the initial circuit martix";
 		CircuitMatPrint(Circuit);
 	
@@ -85,7 +84,11 @@ END {
 		CMatch = 1;
 		for(j=0; j<OUTNUM; j++) for(i=0; i<NF; i++) if (TT[j,i] != OUTS[j,i]) CMatch = 0; 
 		if (CMatch == 1) print "Its a match!!";
-		else print "Nope, let's try again";	
+		else {
+			print "Nope, let's try again...";
+			MATS = int(MATS*1.25);
+			print "Increasing the matrix size to " MATS;
+			
 	}		
 }
 
@@ -332,11 +335,11 @@ function E(c	, i, j, cocount, feasible) { # The fitness function
 	feasible = 1;
 	for (i=0; i<OUTNUM; i++) {
 		for(j=0; j<NF; j++) {
-			if (OUTS[i,j] == TT[i,j]) cocount++; # print OUTS[i,j] " " TT[i,j] "=> " cocount;}
+			if (OUTS[i,j] == TT[i,j]) cocount++;
 			else feasible = 0;
 		}
 	}	
-	if (feasible == 1) { return (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX;} #print "GOT IT!!" (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX; 
+	if (feasible == 1) { print "GOT IT!!"; return (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX;} #print "GOT IT!!" (cocount + TotalWireCount(c)/TotalGateCount(c))/EMAX; 
 	else return cocount/EMAX;
 }
 
