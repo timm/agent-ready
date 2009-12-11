@@ -51,7 +51,22 @@ END {
 	print "The following are the initial output functions";
 	CircuitExpPrint(Circuit);
 	
-	#CircuitOptimizer
+	CircuitOptimizer();
+	
+	print "";
+	
+	CircuitRand();
+	print "The following is the final circuit martix";
+	CircuitMatPrint(Circuit);
+	
+	print "";
+	
+	print "The following are the final output functions";
+	CircuitExpPrint(Circuit);
+	
+	print ""
+	
+	print "The final fitness is: " E(Circuit);
 	
 	#neighbor(Circuit);
 	#print "\n";

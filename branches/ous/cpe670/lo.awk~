@@ -51,7 +51,18 @@ END {
 	print "The following are the initial output functions";
 	CircuitExpPrint(Circuit);
 	
-	#CircuitOptimizer
+	CircuitOptimizer();
+	
+	print "";
+	
+	CircuitRand();
+	print "The following is the initial circuit martix";
+	CircuitMatPrint(Circuit);
+	
+	print "";
+	
+	print "The following are the initial output functions";
+	CircuitExpPrint(Circuit);
 	
 	#neighbor(Circuit);
 	#print "\n";
@@ -62,7 +73,7 @@ END {
 	#print TotalGateCount(Circuit);
 	#print TotalWireCount(Circuit);
 	
-	CircuitExpPrint(Circuit);
+	#CircuitExpPrint(Circuit);
 	
 	#print E(Circuit);
 	
