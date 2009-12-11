@@ -68,7 +68,7 @@ END {
 	
 	print "The final fitness is: " E(Circuit);
 	
-	#neighbor(Circuit);
+	#neighbour(Circuit);
 	#print "\n";
 	#CircuitMatPrint(Circuit);
 	#Evaluate(Circuit);
@@ -352,7 +352,7 @@ function E(c	, i, j, cocount, feasible) { # The fitness function
 }
 
 
-function neighbor(c,	buff, randin, ginnum, tmpin, i) {
+function neighbour(c,	buff, randin, ginnum, tmpin, i) {
 	tmpin[0] = 0;
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
