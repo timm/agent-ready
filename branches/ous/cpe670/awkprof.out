@@ -1,0 +1,501 @@
+	# gawk profile, created Fri Dec 11 01:02:39 2009
+
+	# BEGIN block(s)
+
+	BEGIN {
+     1  	srand()
+     1  	coolFactor = -10
+     1  	kmax = 10000
+     1  	MATS = 5
+     1  	Circuit[0, 0] = ""
+     1  	OUTNUM = 1
+     1  	OUTS[0, 0] = 0
+     1  	INNUM = 1
+     1  	INS[0] = 0
+     1  	GATES["AND"] = 0
+     1  	GATES["OR"] = 0
+     1  	GATES["XOR"] = 0
+     1  	GATES["WIRE"] = 0
+     1  	GATES["NAND"] = 0
+     1  	GATES["NOR"] = 0
+     1  	GATES["XNOR"] = 0
+     1  	GATES["NOT"] = 0
+     1  	GNAMES[0] = ""
+     1  	GCOUNT = 8
+     1  	CopyNames()
+     1  	TT[0, 0] = 0
+     1  	EMAX = 0
+     1  	CircuitCache[0] = 0
+	}
+
+	# Rule(s)
+
+     1  {
+     8  	for (i = 1; i <= NF; i++) {
+     8  		TT[NR - 1, i - 1] = $i
+		}
+     1  	OUTNUM = NR
+	}
+
+	# END block(s)
+
+	END {
+     1  	INNUM = InputNum()
+     1  	if (OUTNUM > MATS) {
+			MATS = int(OUTNUM * 1.5)
+		}
+     1  	print ("The number of inputs: " INNUM)
+     1  	print ("The number of outputs: " OUTNUM)
+     1  	EMAX = OUTNUM * (NF + MATS)
+     1  	print "The required truth table is:"
+     1  	for (j = 0; j < OUTNUM; j++) {
+     1  		printf ("Output " j ": ")
+     8  		for (i = 0; i < NF; i++) {
+     8  			printf TT[j, i]
+			}
+     1  		print ""
+		}
+     1  	print ""
+     1  	CircuitRand()
+     1  	print "The following is the initial circuit martix"
+     1  	CircuitMatPrint(Circuit)
+     1  	print ""
+     1  	print "The following are the initial output functions"
+     1  	CircuitExpPrint(Circuit)
+     1  	print ""
+     1  	print ("The initial fitness is: " (E(Circuit)))
+     1  	CircuitOptimizer()
+     1  	CircuitMatPrint(cc)
+     1  	print ""
+     1  	CircuitRand()
+     1  	print "The following is the final circuit martix"
+     1  	CircuitMatPrint(Circuit)
+     1  	print ""
+     1  	print "The following are the final output functions"
+     1  	CircuitExpPrint(Circuit)
+     1  	print ""
+     1  	print ("The final fitness is: " (E(Circuit)))
+	}
+
+	# Functions, listed alphabetically
+
+134568  function AND(input, buff, i)
+	{
+134568  	buff = input[0]
+269136  	for (i = 1; i < INNUM; i++) {
+269136  		buff = buff && input[i]
+		}
+134568  	return buff
+	}
+
+ 19637  function CircuitCp(orig, copy, i)
+	{
+549836  	for (i in orig) {
+549836  		copy[i] = orig[i]
+		}
+	}
+
+     2  function CircuitExpPrint(c, x)
+	{
+     2  	for (x = 0; x < OUTNUM; x++) {
+     2  		print ("Output " (x) ": " (EXP(c, MATS - 1, x)))
+		}
+	}
+
+     3  function CircuitMatPrint(c, layer, row)
+	{
+    15  	for (row = 0; row < MATS; row++) {
+    75  		for (layer = 0; layer < MATS; layer++) {
+    75  			printf ((Coor2In(layer, row)) ": " c[layer, row] "\t\t|")
+			}
+    15  		print ""
+		}
+	}
+
+     1  function CircuitOptimizer(c, cb, cn, e, eb, en, k)
+	{
+     1  	CircuitCp(Circuit, c)
+     1  	e = E(c)
+     1  	CircuitCp(c, cb)
+     1  	eb = e
+     1  	k = 0
+ 10000  	while (k < kmax) {
+ 10000  		CircuitCp(c, cn)
+ 10000  		neighbour(cn)
+ 10000  		en = E(cn)
+ 10000  		if (en > eb) { # 3
+     3  			CircuitCp(cn, cb)
+     3  			eb = en
+  9997  		} else {
+  9997  			if (rand() < P(e, en, Temperature(k / kmax))) { # 9631
+  9631  				CircuitCp(cn, c)
+  9631  				e = en
+				}
+			}
+ 10000  		k = k + 1
+		}
+     1  	CircuitCp(cb, Circuit)
+	}
+
+     2  function CircuitRand(buff, randin, ginnum, tmpin, i, layer, row)
+	{
+     2  	tmpin[0] = 0
+     2  	CircuitReset()
+    10  	for (layer = 0; layer < MATS; layer++) {
+    42  		for (row = 0; row < MATS; row++) {
+    42  			if (rand() > 0.5 || layer == MATS - 1) { # 27
+    27  				buff = GNAMES[RandInt(0, GCOUNT)]
+    27  				if (buff == "WIRE" || buff == "NOT") { # 10
+    10  					ginnum = 1
+    17  				} else {
+    17  					ginnum = RandInt(2, 4)
+					}
+    27  				for (i in tmpin) { # treated internally as `delete' tmpin'
+						delete tmpin[i]
+					}
+    53  				while (ginnum > 0) {
+    80  					do {
+    80  						randin = RandInt(0, Coor2In(layer, 0))
+						} while (Circuit[In2Layer(randin), In2Row(randin)] == "" && randin >= INNUM || tmpin[randin] == 1)
+    53  					tmpin[randin] = 1
+    53  					ginnum--
+					}
+    53  				for (i in tmpin) {
+    53  					buff = ((buff) "," (i))
+						delete tmpin[i]
+					}
+    27  				Circuit[layer, row] = buff
+				}
+    42  			if (layer == MATS - 1 && row == OUTNUM - 1) { # 2
+     2  				return 0
+				}
+			}
+		}
+	}
+
+     2  function CircuitReset(layer, row)
+	{
+    10  	for (layer = 0; layer < MATS; layer++) {
+    50  		for (row = 0; row < MATS; row++) {
+    50  			Circuit[layer, row] = ""
+			}
+		}
+	}
+
+352108  function Coor2In(layer, row)
+	{
+352108  	return row + INNUM + layer * MATS
+	}
+
+     1  function CopyNames(i, count)
+	{
+     1  	count = 0
+     8  	for (i in GATES) {
+     8  		GNAMES[count++] = i
+		}
+	}
+
+ 10003  function E(c, i, j, cocount, feasible)
+	{
+ 10003  	Evaluate(c)
+ 10003  	cocount = 0
+ 10003  	feasible = 1
+ 10003  	for (i = 0; i < OUTNUM; i++) {
+ 80024  		for (j = 0; j < NF; j++) {
+ 80024  			if (OUTS[i, j] == TT[i, j]) { # 39943
+ 39943  				cocount++
+ 40081  			} else {
+ 40081  				feasible = 0
+				}
+			}
+		}
+ 10003  	if (feasible == 1) { # 49
+    49  		return (cocount + TotalWireCount(c)) / EMAX
+  9954  	} else {
+  9954  		return cocount / EMAX
+		}
+	}
+
+539248  function EVAL(c, layer, row, temp, i, buff)
+	{
+539248  	split(c[layer, row], temp, ",")
+1689176  	for (i in temp) {
+1689176  		if (i != 1) { # 1149928
+1149928  			if (temp[i] >= INNUM) { # 459224
+459224  				buff[i - 2] = EVAL(c, In2Layer(temp[i]), In2Row(temp[i]))
+690704  			} else {
+690704  				buff[i - 2] = INS[temp[i]]
+				}
+			}
+		}
+539248  	if (temp[1] == "AND") { # 67144
+ 67144  		return AND(buff) ? 1 : 0
+		}
+472104  	if (temp[1] == "OR") { # 68952
+ 68952  		return OR(buff) ? 1 : 0
+		}
+403152  	if (temp[1] == "XOR") { # 65728
+ 65728  		return XOR(buff) ? 1 : 0
+		}
+337424  	if (temp[1] == "WIRE") { # 67336
+ 67336  		return WIRE(buff) ? 1 : 0
+		}
+270088  	if (temp[1] == "NAND") { # 67424
+ 67424  		return NAND(buff) ? 1 : 0
+		}
+202664  	if (temp[1] == "NOR") { # 69752
+ 69752  		return NOR(buff) ? 1 : 0
+		}
+132912  	if (temp[1] == "XNOR") { # 65912
+ 65912  		return XNOR(buff) ? 1 : 0
+		}
+ 67000  	if (temp[1] == "NOT") { # 67000
+ 67000  		return NOT(buff) ? 1 : 0
+		}
+	}
+
+     5  function EXP(c, layer, row, express, temp, i)
+	{
+     5  	express = ""
+     5  	split(c[layer, row], temp, ",")
+     5  	if (temp[1] == "WIRE") { # 1
+     1  		if (temp[2] >= INNUM) { # 1
+     1  			return EXP(c, In2Layer(temp[2]), In2Row(temp[2]))
+			} else {
+				return temp[2]
+			}
+		}
+     4  	express = (temp[1] "(")
+    12  	for (i in temp) {
+    12  		if (i != 1) { # 8
+     8  			if (temp[i] >= INNUM) { # 2
+     2  				express = ((express) "" (EXP(c, In2Layer(temp[i]), In2Row(temp[i]))) ",")
+     6  			} else {
+     6  				express = ((express) "" temp[i] ",")
+				}
+			}
+		}
+     4  	express = express "\b)"
+     4  	return express
+	}
+
+ 10003  function Evaluate(c, i, j)
+	{
+ 10003  	for (j in OUTS) { # treated internally as `delete' OUTS'
+			delete OUTS[j]
+		}
+ 80024  	for (j = 0; j < NF; j++) {
+ 80024  		Get01Input(j)
+ 80024  		for (i = 0; i < OUTNUM; i++) {
+ 80024  			OUTS[i, j] = EVAL(c, MATS - 1, i)
+			}
+		}
+	}
+
+	function GateCount(c, outputs, outar, x, i, count)
+	{
+		count = 0
+		for (x in outputs) {
+			Gatelogger(c, outar, MATS - 1, outputs[x])
+		}
+		for (i in outar) {
+			count++
+		}
+		return count
+	}
+
+	function Gatelogger(c, outar, layer, row, temp, i)
+	{
+		if (index(c[layer, row], "WIRE") == 0) {
+			outar[Coor2In(layer, row)] = 1
+		}
+		split(c[layer, row], temp, ",")
+		for (i in temp) {
+			if (i != 1 && temp[i] >= INNUM) {
+				Gatelogger(c, outar, In2Layer(temp[i]), In2Row(temp[i]))
+			}
+		}
+	}
+
+ 80024  function Get01Input(innum, t, retstr, i, retstrlen)
+	{
+ 80024  	retstr = ""
+ 80024  	t = innum
+170051  	while (t) {
+170051  		if (t % 2 == 0) { # 50015
+ 50015  			retstr = ("0" (retstr))
+120036  		} else {
+120036  			retstr = ("1" (retstr))
+			}
+170051  		t = int(t / 2)
+		}
+ 80024  	retstrlen = length(retstr)
+240072  	for (i = 0; i < INNUM; i++) {
+240072  		INS[i] = i >= retstrlen ? 0 : substr(retstr, retstrlen - i, 1)
+		}
+	}
+
+811499  function In2Layer(innum)
+	{
+811499  	return int((innum - INNUM) / MATS)
+	}
+
+811499  function In2Row(innum)
+	{
+811499  	return (innum - INNUM) % MATS
+	}
+
+     1  function InputNum(incount)
+	{
+     1  	incount = log(NF) / log(2)
+     1  	if (incount > int(incount)) {
+			incount++
+		}
+     1  	return incount
+	}
+
+ 67424  function NAND(input)
+	{
+ 67424  	return ! AND(input)
+	}
+
+ 69752  function NOR(input)
+	{
+ 69752  	return ! OR(input)
+	}
+
+ 67000  function NOT(input)
+	{
+ 67000  	return ! input[0]
+	}
+
+138704  function OR(input, buff, i)
+	{
+138704  	buff = input[0]
+277408  	for (i = 1; i < INNUM; i++) {
+277408  		buff = buff || input[i]
+		}
+138704  	return buff
+	}
+
+  9997  function P(e, en, temp)
+	{
+  9997  	return exp((e - en) / temp)
+	}
+
+597813  function RandInt(min, max)
+	{
+597813  	return int(rand() * (max - min) + min)
+	}
+
+  9997  function Temperature(k)
+	{
+  9997  	return exp(coolFactor * k / kmax)
+	}
+
+	function TotalGateCount(c, outar, x, i, count)
+	{
+		count = 0
+		for (x = 0; x < OUTNUM; x++) {
+			Gatelogger(c, outar, MATS - 1, x)
+		}
+		for (i in outar) {
+			count++
+		}
+		return count
+	}
+
+    49  function TotalWireCount(c, outar, x, i, count)
+	{
+    49  	count = 0
+    49  	for (x = 0; x < OUTNUM; x++) {
+    49  		Wirelogger(c, outar, MATS - 1, x)
+		}
+    40  	for (i in outar) {
+    40  		count++
+		}
+    49  	return count
+	}
+
+ 67336  function WIRE(input)
+	{
+ 67336  	return input[0]
+	}
+
+	function WireCount(c, outputs, outar, x, i, count)
+	{
+		count = 0
+		for (x in outputs) {
+			Wirelogger(c, outar, MATS - 1, outputs[x])
+		}
+		for (i in outar) {
+			count++
+		}
+		return count
+	}
+
+   335  function Wirelogger(c, outar, layer, row, temp, i)
+	{
+   335  	if (index(c[layer, row], "WIRE") != 0) { # 47
+    47  		outar[Coor2In(layer, row)] = 1
+		}
+   335  	split(c[layer, row], temp, ",")
+  1080  	for (i in temp) {
+  1080  		if (i != 1 && temp[i] >= INNUM) { # 286
+   286  			Wirelogger(c, outar, In2Layer(temp[i]), In2Row(temp[i]))
+			}
+		}
+	}
+
+ 65912  function XNOR(input)
+	{
+ 65912  	return ! XOR(input)
+	}
+
+131640  function XOR(input, buff, i)
+	{
+131640  	buff = input[0]
+263280  	for (i = 1; i < INNUM; i++) {
+263280  		if (buff == 1 && input[i] == 1 || buff == 0 && input[i] == 0) { # 131802
+131802  			buff = 0
+131478  		} else {
+131478  			buff = 1
+			}
+		}
+131640  	return buff
+	}
+
+ 10000  function neighbour(c, buff, randin, ginnum, tmpin, i)
+	{
+ 10000  	tmpin[0] = 0
+ 50000  	for (layer = 0; layer < MATS; layer++) {
+210000  		for (row = 0; row < MATS; row++) {
+210000  			if (rand() > 0.33) { # 140493
+140493  				buff = GNAMES[RandInt(0, GCOUNT)]
+140493  				if (buff == "WIRE" || buff == "NOT") { # 35203
+ 35203  					ginnum = 1
+105290  				} else {
+105290  					ginnum = RandInt(2, 4)
+					}
+140493  				for (i in tmpin) { # treated internally as `delete' tmpin'
+						delete tmpin[i]
+					}
+298585  				while (ginnum > 0) {
+351906  					do {
+351906  						randin = RandInt(0, Coor2In(layer, 0))
+						} while (c[In2Layer(randin), In2Row(randin)] == "" && randin >= INNUM || tmpin[randin] == 1)
+298585  					tmpin[randin] = 1
+298585  					ginnum--
+					}
+298585  				for (i in tmpin) {
+298585  					buff = ((buff) "," (i))
+						delete tmpin[i]
+					}
+140493  				c[layer, row] = buff
+				}
+210000  			if (layer == MATS - 1 && row == OUTNUM - 1) { # 10000
+ 10000  				return 0
+				}
+			}
+		}
+	}
