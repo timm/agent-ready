@@ -28,9 +28,9 @@ BEGIN {
 }
 
 END {
-	INNUM = InputNum();
-	
+	INNUM = InputNum();	
 	if (OUTNUM > MATS) MATS = OUTNUM;
+	CircuitRand()
 	#print OUTNUM;
 	
 	
@@ -46,11 +46,17 @@ END {
 	#print In2Layer(5);
 	#print In2Row(5);
 	
-	#CircuitRand();
-	#CircuitMatPrint();
+	;
+	CircuitMatPrint(Circuit);
+	Evaluate(Circuit);
 	
-	#print TotalGateCount();
-	#print TotalWireCount();
+	neighbor(Circuit);
+	print "\n";
+	CircuitMatPrint(Circuit);
+	Evaluate(Circuit);
+	
+	print TotalGateCount(Circuit);
+	print TotalWireCount(Circuit);
 	
 	#o[0] = 0;
 	#o[1] = 2;
@@ -70,9 +76,7 @@ END {
 	#	Evaluate();
 	#	#print 
 	#	loop--;
-	#}
-	
-	print rand();
+	#}	
 }
 
 
@@ -175,68 +179,68 @@ function CircuitRand(	buff, randin, ginnum, tmpin, i) {
 	}
 }
 
-function CircuitMatPrint( layer, row) {
+function CircuitMatPrint(c,  layer, row) {
 	for (row=0; row<MATS; row++) {
 		for (layer=0; layer<MATS; layer++) {
-			printf(Coor2In(layer, row) ": " Circuit[layer,row] "\t\t|");
+			printf(Coor2In(layer, row) ": " c[layer,row] "\t\t|");
 		}
 		print "";
 	}
 }
 
-function GateCount(outputs,	outar, x, i, count) {
+function GateCount(c, outputs,	outar, x, i, count) {
 	count = 0;
-	for (x in outputs) Gatelogger(outar, MATS-1, outputs[x]);
+	for (x in outputs) Gatelogger(c, outar, MATS-1, outputs[x]);
 	for (i in outar) count++;
 	return count;
 }
 
-function TotalGateCount(	outar, x, i, count) {
+function TotalGateCount(c	, outar, x, i, count) {
 	count = 0;
-	for (x=0; x<OUTNUM; x++) Gatelogger(outar, MATS-1, x);
+	for (x=0; x<OUTNUM; x++) Gatelogger(c, outar, MATS-1, x);
 	for (i in outar) count++;
 	return count;
 }
 
-function Gatelogger(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") == 0) outar[Coor2In(layer, row)] = 1;
-	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1 && temp[i] >= INNUM) Gatelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+function Gatelogger(c, outar, layer, row	,temp, i) {
+	if (index(c[layer, row], "WIRE") == 0) outar[Coor2In(layer, row)] = 1;
+	split(c[layer, row], temp, ",");
+	for (i in temp) if (i != 1 && temp[i] >= INNUM) Gatelogger(c, outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
-function WireCount(outputs,	outar, x, i, count) {
+function WireCount(c, outputs,	outar, x, i, count) {
 	count = 0;
-	for (x in outputs) Wirelogger(outar, MATS-1, outputs[x]);
+	for (x in outputs) Wirelogger(c, outar, MATS-1, outputs[x]);
 	for (i in outar) count++;
 	return count;
 }
 
-function TotalWireCount(	outar, x, i, count) {
+function TotalWireCount(c,	outar, x, i, count) {
 	count = 0;
-	for (x=0; x<OUTNUM; x++) Wirelogger(outar, MATS-1, x);
+	for (x=0; x<OUTNUM; x++) Wirelogger(c, outar, MATS-1, x);
 	for (i in outar) count++;
 	return count;
 }
 
-function Wirelogger(outar, layer, row	,temp, i) {
-	if (index(Circuit[layer, row], "WIRE") != 0) outar[Coor2In(layer, row)] = 1;
-	split(Circuit[layer, row], temp, ",");
-	for (i in temp) if (i != 1 && temp[i] >= INNUM) Wirelogger(outar, In2Layer(temp[i]), In2Row(temp[i]));
+function Wirelogger(c, outar, layer, row	,temp, i) {
+	if (index(c[layer, row], "WIRE") != 0) outar[Coor2In(layer, row)] = 1;
+	split(c[layer, row], temp, ",");
+	for (i in temp) if (i != 1 && temp[i] >= INNUM) Wirelogger(c, outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
-function Evaluate() {
+function Evaluate(c) {
 	for (j in OUTS) delete OUTS[j];
 	for (j=0; j<NF; j++) {
 		Get01Input(j);
-		for (i=0; i<OUTNUM; i++) OUTS[i,j] = EVAL(MATS-1, i);	
+		for (i=0; i<OUTNUM; i++) OUTS[i,j] = EVAL(c, MATS-1, i);	
 	}
 }
 
-function EVAL(layer, row	,temp, i, buff) {
-	split(Circuit[layer, row], temp, ",");
+function EVAL(c, layer, row	,temp, i, buff) {
+	split(c[layer, row], temp, ",");
 	for (i in temp) {
 		if (i != 1 ) {
-			if (temp[i] >= INNUM) buff[i-2] = EVAL(In2Layer(temp[i]), In2Row(temp[i]));
+			if (temp[i] >= INNUM) buff[i-2] = EVAL(c, In2Layer(temp[i]), In2Row(temp[i]));
 			else {buff[i-2] = INS[temp[i]];} # print temp[i] " " INS[temp[i]] " " Coor2In(layer, row);}
 			#print i-2 ": " buff[i-2] "=> " Coor2In(layer, row);
 		}
@@ -283,7 +287,14 @@ function Temperature(k, kmax) {
 	return exp(coolFactor*k/kmax);
 }
 
-function E(s) {}
+function E(c	, i, j, wcount, cocount) {
+	Evaluate(c);
+	#TotalWireCount
+	for (i=0; i<OUTNUM; i++)
+		for(j=0; j<NF; j++);
+			
+	
+}
 
 
 function neighbor(c,	buff, randin, ginnum, tmpin, i) {
