@@ -20,6 +20,8 @@ BEGIN {
 	GCOUNT = 8;
 	CopyNames();
 	TT[0,0] = 0;
+	EMAX = 0;
+	CircuitCache[0] = 0;
 }
 
 {
@@ -29,9 +31,11 @@ BEGIN {
 
 END {
 	INNUM = InputNum();	
-	if (OUTNUM > MATS) MATS = OUTNUM;
+	if (OUTNUM > MATS) MATS = int (OUTNUM * 1.5);
 	print "The number of inputs: " INNUM;
 	print "The number of outputs: " OUTNUM;
+	
+	EMAX = OUTNUM * (NF + MATS);
 	
 	print "The required truth table is:";
 	for(j=0; j<OUTNUM; j++) {
@@ -51,7 +55,15 @@ END {
 	print "The following are the initial output functions";
 	CircuitExpPrint(Circuit);
 	
-	CircuitOptimizer();
+	print ""
+	
+	print "The initial fitness is: " E(Circuit);
+	
+	CircuitOptimizer(); 
+	
+	#CircuitCp(Circuit, cc)
+	
+	#CircuitMatPrint(cc);
 	
 	print "";
 	
@@ -176,8 +188,8 @@ function In2Row(innum) {return (innum - INNUM)%MATS;} # Convert input number to 
 
 function CircuitReset(	layer, row) {for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) Circuit[layer,row] = "";}
 
-function CircuitCp(copy, orig	,layer, row) {
-	for (layer=0; layer<MATS; layer++) for (row=0; row<MATS; row++) copy[layer,row] = orig[layer,row];
+function CircuitCp(orig, copy	,i) {
+	for (i in orig) copy[i] = orig[i];
 }
 
 function CircuitRand(	buff, randin, ginnum, tmpin, i, layer, row) {
@@ -311,29 +323,31 @@ function EVAL(c, layer, row	,temp, i, buff) {
 
 
 function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
-	CircuitCp(c, Circuit); e = E(c);           # Initial state, energy.
-	CircuitCp(cb, c); eb = e;             # Initial "best" solution
+	CircuitCp(Circuit, c); e = E(c);           # Initial state, energy.
+	CircuitCp(c, cb); eb = e;             # Initial "best" solution
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
 		CircuitCp(c, cn);
 		neighbour(cn);         #   Pick some neighbour.
 		en = E(cn);               #   Compute its energy.
 		if (en > eb) {         #   Is this a new best?
-			CircuitCp(cb, cn); eb = en;      #     Yes, save it.
+			CircuitCp(cn, cb); eb = en;      #     Yes, save it.
 		}
-		else if (rand() < P(e, en, Temperature(k/kmax))) { #     Maybe jump
-			CircuitCp(c, cn); e = en;     
+		else if (rand() < P(e, en, Temperature(k))) { #     Maybe jump
+			CircuitCp(cn, c); e = en;     
 		}
 		k = k + 1;              #   One more evaluation done
 	}
-	CircuitCp(Circuit, cb);                  # Return best
+	CircuitCp(cb, Circuit);                  # Return best
 }
 
 function P(e, en, temp) {
+	print exp((e-en)/temp);
 	return exp((e-en)/temp);
 }
 
-function Temperature(k, kmax) {
+function Temperature(k) {
+	#print exp(coolFactor*k/kmax);
 	return exp(coolFactor*k/kmax);
 }
 
@@ -347,8 +361,8 @@ function E(c	, i, j, cocount, feasible) { # The fitness function
 			else feasible = 0;
 		}
 	}	
-	if (feasible == 1) { return cocount + TotalWireCount(c); print "GOT ONE!!!"}
-	else return cocount;
+	if (feasible == 1) {  return (cocount + TotalWireCount(c))/EMAX;} #print "GOT IT!!";
+	else return cocount/EMAX;
 }
 
 
@@ -356,7 +370,7 @@ function neighbour(c,	buff, randin, ginnum, tmpin, i) {
 	tmpin[0] = 0;
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
-			if (rand() > 0.66) {
+			if (rand() > 0.33) {
 				buff = GNAMES[RandInt(0,GCOUNT)];
 				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
 				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
