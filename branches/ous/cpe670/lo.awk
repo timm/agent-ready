@@ -58,6 +58,8 @@ END {
 	print TotalGateCount(Circuit);
 	print TotalWireCount(Circuit);
 	
+	CircuitExpPrint(Circuit);
+	
 	#o[0] = 0;
 	#o[1] = 2;
 	
@@ -188,25 +190,27 @@ function CircuitMatPrint(c,  layer, row) {
 	}
 }
 
-function CircuitExpPrint(c,	x, express) {
-	for (x=0; x<OUTNUM; x++) EXP(c, MATS-1, x);
+function CircuitExpPrint(c,	x) {
+	for (x=0; x<OUTNUM; x++) print "Output " x ": " EXP(c, MATS-1, x);	
 }
 
 function EXP(c, layer, row	, express, temp, i) {
 	express = "";
 	split(c[layer, row], temp, ",");
-	if (temp[1] == "WIRE") return EXP(c, In2Layer(temp[2]), In2Row(temp[2]);
 	
-	express = "(";
+	if (temp[1] == "WIRE") {
+		if (temp[2] >= INNUM) return EXP(c, In2Layer(temp[2]), In2Row(temp[2]));
+		else return temp[2];
+	}
+	
+	express = temp[1] "(";
 	for (i in temp) {
 		if (i != 1) {
-			if (temp[i] >= INNUM) express = express " " EXP(c, In2Layer(temp[i]), In2Row(temp[i]));
-			else express = express " " temp[i];
-			
-			if ((i == 3 && temp[i+1] != "") || i < 3) express " " temp[1];
+			if (temp[i] >= INNUM) express = express "" EXP(c, In2Layer(temp[i]), In2Row(temp[i])) ",";
+			else express = express "" temp[i] ",";
 		}
 	}
-	express = express " )";
+	express = express "\b)";
 	return express;
 }
 
