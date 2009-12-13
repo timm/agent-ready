@@ -349,9 +349,12 @@ function neighbour(c,	buff, randin, ginnum, tmpin, i, count) {
 	count = int(MATS*MATS*0.33);
 	
 	while (count > 0) {
-		for (layer=0; layer<MATS; layer++) {
-			for (row=0; row<MATS; row++) {
-				if (rand() > 0.33) {
+		#for (layer=0; layer<MATS; layer++) {
+		#	for (row=0; row<MATS; row++) {
+		#		if (rand() > 0.33) {
+		
+		layer = RandInt(0,MATS);
+		row = RandInt(0,MATS);
 					buff = GNAMES[RandInt(0,GCOUNT)];
 					if(buff == "WIRE" || buff == "NOT") ginnum = 1;
 					else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
@@ -365,10 +368,10 @@ function neighbour(c,	buff, randin, ginnum, tmpin, i, count) {
 					}
 					for (i in tmpin) {buff = buff "," i; delete tmpin[i];}
 					c[layer, row] = buff;				
-				}
-				if (layer == MATS-1 && row == OUTNUM-1) return;
-			}
-		}
+		#		}
+		#		if (layer == MATS-1 && row == OUTNUM-1) return;
+		#	}
+		#}
 		count--;
 	}
 }
