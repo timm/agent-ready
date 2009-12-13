@@ -306,9 +306,9 @@ function Gatelogger(c, outar, layer, row	,temp, i) {
 	for (i in temp) if (i != 1 && temp[i] >= INNUM) Gatelogger(c, outar, In2Layer(temp[i]), In2Row(temp[i]));
 }
 
-function WireCount(c, outputs,	outar, x, i, count) {
+function WireCount(c, output,	outar, x, i, count) {
 	count = 0;
-	for (x in outputs) Wirelogger(c, outar, MATS-1, outputs[x]);
+	Wirelogger(c, outar, MATS-1, output);
 	for (i in outar) count++;
 	return count;
 }
@@ -387,27 +387,28 @@ function Temperature(k) {
 	return exp(coolFactor*k/kmax);
 }
 
-function E(c	, i, j, iocount, feasible, ofeasible, enow) { # The fitness function
+function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow) { # The fitness function
 	Evaluate(c);
 	enow = 0;
 	feasible = 1;
-	
+	Tiocount = 0;
 	for (i=0; i<OUTNUM; i++) {
 		ofeasible = 1;
 		iocount = 0;
 		for(j=0; j<NF; j++) {
 			if(OUTS[i,j] != TT[i,j]) {
 				iocount++;
+				Tiocount++;
 				feasible = 0;
 				ofeasible = 0;
 			}
 		}
-		if (ofeasible == 1) { enow = enow + GateCount(c, i);}# print "Got Output " i;}
-		else enow = enow + GateCount(c, i) + iocount * OUTNUM * NF;
+		if (ofeasible == 1) { enow = enow + GateCount(c, i) - WireCount(c,i);}# print "Got Output " i;}
+		else enow = enow + GateCount(c, i)^2 + iocount * NF;
 	}
 	
-	if (feasible == 1) {enow = enow + TotalGateCount(c);}# print "GOT IT!!" enow;}
-	else enow = enow + TotalGateCount(c) * OUTNUM * NF;
+	if (feasible == 1) {enow = enow + TotalGateCount(c) - TotalWireCount(c);}# print "GOT IT!!" enow;}
+	else enow = enow + TotalGateCount(c)^2 + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
