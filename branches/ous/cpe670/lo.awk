@@ -408,11 +408,11 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow) { # The fitne
 			}
 		}
 		if (ofeasible == 1) { enow = enow + GateCount(c, i) - WireCount(c,i);}# print "Got Output " i;}
-		else enow = enow + GateCount(c, i) + iocount * NF;
+		else enow = enow + GateCount(c, i) + GateCount(c, i)/WireCount(c,i) + iocount * OUTNUM * NF;
 	}
 	
 	if (feasible == 1) {enow = enow + TotalGateCount(c) - TotalWireCount(c);}# print "GOT IT!!" enow;}
-	else enow = enow + TotalGateCount(c) + Tiocount * NF;
+	else enow = enow + TotalGateCount(c) + TotalGateCount(c)/TotalWireCount(c) + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
