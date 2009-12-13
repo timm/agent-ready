@@ -1,7 +1,7 @@
 BEGIN { # This part here sets up the initial program parameters
 	srand(); #initializing the random function seed
 	coolFactor = -10; #The cooling factor for the temperature function
-	kmax = 500; #The number of iterations per run of the circuit optimizer
+	kmax = 1000; #The number of iterations per run of the circuit optimizer
 	MATS = 5; #The size of the circuit matrix
 	Circuit[0,0] = ""; #The Circuit Matrix
 	OUTNUM = 1; #The number of outputs
@@ -407,7 +407,7 @@ function E(c	, i, j, iocount, feasible, ofeasible, enow) { # The fitness functio
 	}
 	
 	if (feasible == 1) {enow = enow + TotalGateCount(c);}# print "GOT IT!!" enow;}
-	else enow = enow + TotalGateCount(c) + OUTNUM * NF;
+	else enow = enow + TotalGateCount(c) * OUTNUM * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
