@@ -370,10 +370,12 @@ function EVAL(c, layer, row	,temp, i, buff, incount) {
 
 
 function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
+	print "Try to figure out the circuit";
 	CircuitCp(Circuit, c); e = eb = E(c);           # Initial state and best energy.
 	CircuitCp(c, cb);
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
+		printf ".";
 		CircuitCp(c, cn);
 		neighbour(cn);         #   Pick some neighbour.
 		en = E(cn);               #   Compute its energy.
@@ -385,6 +387,7 @@ function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
 		}
 		k = k + 1;              #   One more evaluation done
 	}
+	print "";
 	CircuitCp(cb, Circuit);                  # Return best
 }
 

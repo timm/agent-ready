@@ -420,14 +420,14 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # T
 		gc = GateCount(c,i);
 		wc = WireCount(c,i);
 		
-		if (ofeasible == 1) { enow = enow + gc - wc;}# print "Got Output " i;}
-		else enow = enow + gc + gc/(wc+1) + iocount * OUTNUM * NF;
+		if (ofeasible == 1) { enow = enow + gc;}# print "Got Output " i;}
+		else enow = enow + gc + iocount * OUTNUM * NF;
 	}
 	gc = TotalGateCount(c) ;
 	wc = TotalWireCount(c);
 	
-	if (feasible == 1) {enow = enow + gc - wc; print "GOT IT!!";}# print "GOT IT!!" enow;}
-	else enow = enow + gc + gc/(wc+1) + Tiocount * NF;
+	if (feasible == 1) {enow = enow + gc; print "GOT IT!!";}# print "GOT IT!!" enow;}
+	else enow = enow + gc + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
