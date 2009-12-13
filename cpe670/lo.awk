@@ -27,19 +27,22 @@ BEGIN { # This part here sets up the initial program parameters
 	EMAX = 0; #This saves worst fitness reached
 }
 
-{
-	for(i=1; i<=NF; i++) TT[(NR-1),(i-1)] = $i;
-	OUTNUM = NR;
+{#This part of the program has to do with reading the input file.
+	for(i=1; i<=NF; i++) TT[(NR-1),(i-1)] = $i; #Reading in the truth table
+	OUTNUM = NR; #keeping track of the output number
 }
 
-END {
-	if (OUTNUM > MATS) MATS = int (OUTNUM * 1.5);
-	INNUM = InputNum();
+END { #This Part of the program does the majority of the screen output.
+#The majority of the processing is also enclosed in this part.
+	if (OUTNUM > MATS) MATS = int (OUTNUM * 1.25); #Adjusting matrix size 
+	#according to the number of ouput functions
+	INNUM = InputNum(); #finding the number of inputs
 	print "The number of inputs: " INNUM;
 	print "The number of outputs: " OUTNUM;
 	
-	EMAX = -1;
+	EMAX = -1; #Setting the initial worst case rating
 	
+	#Outputting the needed truth table
 	print "The required truth table is:";
 	for(j=0; j<OUTNUM; j++) {
 		printf ("Output " j ": "); 
@@ -49,7 +52,8 @@ END {
 	
 	print "";
 	
-	CircuitRand();
+	CircuitRand(); #providing the initial randomized circuit
+	#Printing the above random circuit matrix and expressions
 	print "The following is the initial circuit martix";
 	CircuitMatPrint(Circuit);
 	
@@ -60,10 +64,12 @@ END {
 	
 	print ""
 	
-	print "The initial fitness is: " E(Circuit);
+	print "The initial fitness is: " E(Circuit); #The initial fitness value
+	#(less is better). Note here that EMAX is set dynamically, so the 
+	#initial fitness is always 1.
 	
-	CMatch = 0;
-	LNum = 0;
+	CMatch = 0; #keeping track of whether a match is found
+	LNum = 0; #keeping track of the number of loops
 	Optimize = 0;
 	
 	while(CMatch == 0 || Optimize < 2) {
