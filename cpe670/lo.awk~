@@ -64,8 +64,9 @@ END {
 	
 	CMatch = 0;
 	LNum = 0;
+	Optimize = 0;
 	
-	while(CMatch == 0) {
+	while(CMatch == 0 || Optimize < 2) {
 	
 		CircuitOptimizer(); 
 	
@@ -87,7 +88,8 @@ END {
 		Evaluate(Circuit);
 		CMatch = 1;
 		for(j=0; j<OUTNUM; j++) for(i=0; i<NF; i++) if (TT[j,i] != OUTS[j,i]) CMatch = 0; 
-		if (CMatch == 1) print "Its a match!!";
+		if (CMatch == 1 && Optimize == 0) {print "Its a match!! Optimizing!"; Optimize++;}
+		else if (CMatch == 1 && Optimize == 1) {print "Done!"; Optimize++;}
 		else {
 			print "Nope, let's try again...";
 		}
@@ -101,70 +103,11 @@ END {
 		}
 		LNum++;
 		kmax = kmax + 250;
-		if(LNum%20 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
+		if(LNum%20 == 0 && Optimize == 0) {print "Got stuck. Randomizing."; CircuitRand();}
 	}
-	
-	#neighbour(Circuit);
-	#print "\n";
-	#CircuitMatPrint(Circuit);
-	
-	#for(j=1; j<=OUTNUM; j++) {for(i=1; i<=NF; i++) printf (OUTS[(j-1),(i-1)]); print "";}
-	
-	#print TotalGateCount(Circuit);
-	#print TotalWireCount(Circuit);
-	
-	#CircuitExpPrint(Circuit);
-	
-	#print E(Circuit);
-	
-#	Evaluate(Circuit);
-#	for(j=1; j<=OUTNUM; j++) {for(i=1; i<=NF; i++) printf (TT[(j-1),(i-1)]); print "";}
-#	print "";
-#	for(j=1; j<=OUTNUM; j++) {for(i=1; i<=NF; i++) printf (OUTS[(j-1),(i-1)]); print "";}
-#	
-
-#	for (k=0; k<100; k++) {
-#	Evaluate(Circuit);
-#	for(j=1; j<=OUTNUM; j++) {for(i=1; i<=NF; i++) printf (OUTS[(j-1),(i-1)]); print "";}
-#	}
-#	for (j=0; j<NF; j++) {
-#		Get01Input(j);
-#		printf(j " " );
-#		for (i=NF-1; i>=0; i--) printf(INS[i]);
-#		
-#		printf(" " OR(INS));
-#		print "";
-#	}
-	#o[0] = 0;
-	#o[1] = 2;
-	
-	#print GateCount(o);
-	#print WireCount(o);
-	
-	#print In2Layer(13) " " In2Row(13) " " Coor2In(In2Layer(13), In2Row(13));
-	
-	#for (i in INS) print i ": " INS[i];
-	#print EVAL(MATS-1, 0);
-	
-	#loop=10000;
-	
-	#while (loop>0) {
-	#	CircuitRand(); 
-	#	Evaluate();
-	#	#print 
-	#	loop--;
-	#}	
-	
-#	inp[0] = 0; inp[1] = 1; inp[2];
-#	
-#	print NAND(inp[0], inp[1], inp[2]);
 }
 
-
-
-
-
-#############################################
+###############################################
 #Logic functions
 ###############################################
 function AND(input1, input2, input3	,buff2) {
@@ -369,13 +312,14 @@ function EVAL(c, layer, row	,temp, i, buff, incount) {
 #################################################
 
 
-function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
+function CircuitOptimizer(	c, cb, cn, e, eb, en, k, ind, l) {
 	print "Try to figure out the circuit";
 	CircuitCp(Circuit, c); e = eb = E(c);           # Initial state and best energy.
 	CircuitCp(c, cb);
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
-		printf ".";
+		"%" int(k*100/kmax)
+		printf (ind);
 		CircuitCp(c, cn);
 		neighbour(cn);         #   Pick some neighbour.
 		en = E(cn);               #   Compute its energy.
@@ -386,6 +330,7 @@ function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
 			CircuitCp(cn, c); e = en;     
 		}
 		k = k + 1;              #   One more evaluation done
+		for(l=0; l<length(ind); l++) printf("\b");
 	}
 	print "";
 	CircuitCp(cb, Circuit);                  # Return best
@@ -420,15 +365,15 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # T
 		gc = GateCount(c,i);
 		wc = WireCount(c,i);
 		
-		if (ofeasible == 1) { enow = enow + gc - wc;}# print "Got Output " i;}
-		else enow = enow + gc + gc/(wc+1) + iocount * OUTNUM * NF;
+		if (ofeasible == 1) { enow = enow + gc;}# print "Got Output " i;}
+		else enow = enow + gc + iocount * OUTNUM * NF;
 	}
 	gc = TotalGateCount(c) ;
 	wc = TotalWireCount(c);
 	
-	if (feasible == 1) {enow = enow + gc - wc; print "GOT IT!!";}# print "GOT IT!!" enow;}
-	else enow = enow + gc + gc/(wc+1) + Tiocount * NF;
-	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
+	if (feasible == 1) {enow = enow + gc;}# print "GOT IT!!" enow;}
+	else enow = enow + gc + Tiocount * NF;
+	if (enow > EMAX) {EMAX = enow;} #print "EMAX: " EMAX;
 	
 	return enow/EMAX;
 }
