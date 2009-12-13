@@ -416,7 +416,7 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # T
 	gc = TotalGateCount(c) ;
 	wc = TotalWireCount(c);
 	
-	if (feasible == 1) {enow = enow + gc - wc;}# print "GOT IT!!" enow;}
+	if (feasible == 1) {enow = enow + gc - wc; print "GOT IT!!";}# print "GOT IT!!" enow;}
 	else enow = enow + gc + gc/(wc+1) + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
