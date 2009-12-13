@@ -63,6 +63,7 @@ END {
 	print "The initial fitness is: " E(Circuit);
 	
 	CMatch = 0;
+	LNum = 0;
 	
 	while(CMatch == 0) {
 	
@@ -98,6 +99,8 @@ END {
 			for(i=1; i<=NF; i++) printf (OUTS[(j-1),(i-1)]);
 			print "";
 		}
+		LNum++;
+		if(LNum%20 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
 	}
 	
 	#neighbour(Circuit);

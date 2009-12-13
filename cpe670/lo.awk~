@@ -63,6 +63,7 @@ END {
 	print "The initial fitness is: " E(Circuit);
 	
 	CMatch = 0;
+	LNum = 0;
 	
 	while(CMatch == 0) {
 	
@@ -98,6 +99,8 @@ END {
 			for(i=1; i<=NF; i++) printf (OUTS[(j-1),(i-1)]);
 			print "";
 		}
+		LNum++;
+		if(LNum%20 == 0) CircuitRand();
 	}
 	
 	#neighbour(Circuit);
@@ -404,11 +407,11 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow) { # The fitne
 			}
 		}
 		if (ofeasible == 1) { enow = enow + GateCount(c, i) - WireCount(c,i);}# print "Got Output " i;}
-		else enow = enow + GateCount(c, i)^2 + iocount * NF^2;
+		else enow = enow + GateCount(c, i)^2 + iocount * NF;
 	}
 	
 	if (feasible == 1) {enow = enow + TotalGateCount(c) - TotalWireCount(c);}# print "GOT IT!!" enow;}
-	else enow = enow + TotalGateCount(c)^2 + Tiocount * NF^2;
+	else enow = enow + TotalGateCount(c)^2 + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
