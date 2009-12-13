@@ -1,7 +1,7 @@
 BEGIN { # This part here sets up the initial program parameters
 	srand(); #initializing the random function seed
 	coolFactor = -10; #The cooling factor for the temperature function
-	kmax = 1000; #The number of iterations per run of the circuit optimizer
+	kmax = 2500; #The number of iterations per run of the circuit optimizer
 	MATS = 5; #The size of the circuit matrix
 	Circuit[0,0] = ""; #The Circuit Matrix
 	OUTNUM = 1; #The number of outputs
@@ -101,7 +101,7 @@ END {
 		}
 		LNum++;
 		kmax = kmax + 250;
-		if(LNum%10 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
+		if(LNum%20 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
 	}
 	
 	#neighbour(Circuit);
@@ -337,6 +337,13 @@ function Evaluate(c	,i ,j) {
 	}
 }
 
+function EvaluateO(c, onum	,i ,j) {
+	for (j=0; j<NF; j++) {
+		Get01Input(j);
+		OUTS[onum,j] = EVAL(c, MATS-1, onum);	
+	}
+}
+
 function EVAL(c, layer, row	,temp, i, buff, incount) {
 	split(c[layer, row], temp, ",");
 	incount=0;
@@ -363,8 +370,8 @@ function EVAL(c, layer, row	,temp, i, buff, incount) {
 
 
 function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
-	CircuitCp(Circuit, c); e = E(c);           # Initial state, energy.
-	CircuitCp(c, cb); eb = e;             # Initial "best" solution
+	CircuitCp(Circuit, c); e = eb = E(c);           # Initial state and best energy.
+	CircuitCp(c, cb);
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
 		CircuitCp(c, cn);
@@ -389,6 +396,28 @@ function P(e, en, temp	,buff, p) {
 
 function Temperature(k) {
 	return exp(coolFactor*k/kmax);
+}
+
+function EO(c, onum	, i, j, iocount, ofeasible, enow, gc, wc) { # The fitness function
+	EvaluateO(c, onum);
+	enow = 0;
+	ofeasible = 1;
+	iocount = 0;
+	for(j=0; j<NF; j++) {
+		if(OUTS[onum,j] != TT[onum,j]) {
+			iocount++;
+			ofeasible = 0;
+		}
+	}
+	gc = GateCount(c,onum);
+	wc = WireCount(c,onum);
+	
+	if (ofeasible == 1) { enow = enow + gc - wc;}# print "Got Output " i;}
+	else enow = enow + gc + gc/(wc+1) + iocount * NF;	
+	
+	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
+	
+	return enow/EMAX;
 }
 
 function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # The fitness function
@@ -422,7 +451,6 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # T
 	
 	return enow/EMAX;
 }
-
 
 function neighbour(c,	buff, randin, ginnum, tmpin, i, layer, row) {
 	tmpin[0] = 0;

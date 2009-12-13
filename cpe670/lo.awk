@@ -101,7 +101,7 @@ END {
 		}
 		LNum++;
 		kmax = kmax + 250;
-		if(LNum%10 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
+		if(LNum%20 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
 	}
 	
 	#neighbour(Circuit);
@@ -337,6 +337,13 @@ function Evaluate(c	,i ,j) {
 	}
 }
 
+function EvaluateO(c, onum	,i ,j) {
+	for (j=0; j<NF; j++) {
+		Get01Input(j);
+		OUTS[onum,j] = EVAL(c, MATS-1, onum);	
+	}
+}
+
 function EVAL(c, layer, row	,temp, i, buff, incount) {
 	split(c[layer, row], temp, ",");
 	incount=0;
@@ -363,8 +370,8 @@ function EVAL(c, layer, row	,temp, i, buff, incount) {
 
 
 function CircuitOptimizer(	c, cb, cn, e, eb, en, k) {
-	CircuitCp(Circuit, c); e = E(c);           # Initial state, energy.
-	CircuitCp(c, cb); eb = e;             # Initial "best" solution
+	CircuitCp(Circuit, c); e = eb = E(c);           # Initial state and best energy.
+	CircuitCp(c, cb);
 	k = 0;                       # Energy evaluation count.
 	while (k < kmax) { # Loop
 		CircuitCp(c, cn);
@@ -422,7 +429,6 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow, gc, wc) { # T
 	
 	return enow/EMAX;
 }
-
 
 function neighbour(c,	buff, randin, ginnum, tmpin, i, layer, row) {
 	tmpin[0] = 0;
