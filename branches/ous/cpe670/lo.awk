@@ -100,7 +100,8 @@ END {
 			print "";
 		}
 		LNum++;
-		if(LNum%20 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
+		kmax = kmax + 250;
+		if(LNum%10 == 0) {print "Got stuck. Randomizing."; CircuitRand();}
 	}
 	
 	#neighbour(Circuit);
@@ -236,7 +237,7 @@ function CircuitRand(	buff, randin, ginnum, tmpin, i, layer, row) {
 	CircuitReset();
 	for (layer=0; layer<MATS; layer++) {
 		for (row=0; row<MATS; row++) {
-			if (rand() > 0.5 || layer == MATS-1) {
+			if (rand() > 0.8 || layer == MATS-1) {
 				buff = GNAMES[RandInt(0,GCOUNT)];
 				if(buff == "WIRE" || buff == "NOT") ginnum = 1;
 				else ginnum = RandInt(2,4); # Having either 2 or 3 inputs
@@ -407,11 +408,11 @@ function E(c	, i, j, iocount, Tiocount, feasible, ofeasible, enow) { # The fitne
 			}
 		}
 		if (ofeasible == 1) { enow = enow + GateCount(c, i) - WireCount(c,i);}# print "Got Output " i;}
-		else enow = enow + GateCount(c, i)^2 + iocount * NF;
+		else enow = enow + GateCount(c, i) + iocount * NF;
 	}
 	
 	if (feasible == 1) {enow = enow + TotalGateCount(c) - TotalWireCount(c);}# print "GOT IT!!" enow;}
-	else enow = enow + TotalGateCount(c)^2 + Tiocount * NF;
+	else enow = enow + TotalGateCount(c) + Tiocount * NF;
 	if (enow > EMAX) {EMAX = enow; print "EMAX: " EMAX;}
 	
 	return enow/EMAX;
