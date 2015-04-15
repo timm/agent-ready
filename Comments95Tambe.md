@@ -1,0 +1,265 @@
+Milind Tambe, W. Lewis Johnson, Randolph M. Jones, Frank Koss, John E. Laird, Paul S. Rosenbloom, and Karl Schwamb
+
+AI MAGAZINE: SPRING 1995
+
+# Cast #
+
+  * Laird: AI for human modeling
+  * Rosenbloom:  co-PI of  [Soar Project](http://sitemaker.umich.edu/soar/home) (? with Laird)
+  * Tambe: the optimization king
+  * amongst others
+
+# SOAR #
+
+A multi-disciplinary, multi-site attempt at developing, understanding, and applying a cognitive architecture capable of supporting general intelligence. Research spanned areas such as machine learning, problem solving and planning, production systems, intelligent agents, virtual humans, multi-agent systems, knowledge-based systems, neural networks, and cognitive modeling. The most significant applications were intelligent automated pilots and commanders for synthetic battlespaces, as deployed in Synthetic Theater of War '97 (STOW-97)
+
+# STOW-97 4–7 November 1994 #
+
+  * 2000 entities originating from 19 sites across the United States and Europe.
+  * represented everything from aircraft, ships, and ground vehicles to individual soldiers and missiles.
+  * Some entities corresponded to actual manned vehicles (for example, actual F18 fighter jets) that were broadcasting their status over the DIS network or to manned simulators.
+  * See paper, Figure 1
+
+Figure 2 shows a snapshot taken of Mod-SAF’s plan-view display of an air-combat simulation.
+
+  * The background shading indicates the terrain. The grid is used for measurement; in this case, each grid cell indicates an area of 10 by 10 kilometers.
+  * The light-shaded aircraft are simulated F-14Ds, and the dark-shaded ones are simulated MiG-29 aircraft.
+  * The smaller windows along the side of the figure display information about the active goal(/operator) hierarchies of the TacAir-Soar–based pilots controlling these aircraft.
+  * These goal hierarchies are a small portion of the entire forest of goals that the pilots can possibly have (figure 3).
+
+
+# Inside SOAR #
+
+All tasks in Soar are formulated as attempts to achieve
+goals in problem spaces (Newell et al. 1991). Each
+problem space consists of a set of states and a set of
+operators. States represent situations, and operators
+represent actions. Operators perform the basic deliberate
+acts of the system. They can perform simple, primitive
+actions that modify the internal state (such as
+determining if all commit criteria are achieved) and/or
+generate primitive external actions (such as switching
+radar modes), or they can perform arbitrarily complex
+actions, such as executing a mission. The basic processing
+cycle is to repeatedly propose, select, and
+apply operators of the problem space to a state, moving
+ahead one decision at a time. Operator selection,
+application, and termination are all dynamically determined
+by the system’s knowledge.
+
+For expert-level performance, sufficient knowledge
+is generally available so that the selection of the next
+appropriate operator is not problematic. However,
+when operator-selection knowledge is insufficient to
+determine the next operator to apply, an impasse
+occurs, leading to the creation of a subgoal to determine
+which operator should be selected (possibly
+through some search or planning technique [Rosenbloom,
+Lee, and Unruh 1993; Laird, Newell, and
+Rosenbloom 1987]). Similarly, if an operator is too
+complex or unfamiliar for the available application
+knowledge to handle directly, an impasse occurs, leading
+to the creation of a subgoal to apply the operator.
+This type of operator and associated subgoal is ubiquitous
+in TacAir-Soar, where operators such as intercept
+are selected and, in turn, lead to a goal in which operators
+specific to intercepts, such as plan-interceptgeometry
+or employ-missile, are proposed, selected,
+and applied to carry out the intercept. This is a goaldecomposition
+scheme in which the decomposition of
+a goal is not static but is determined step by step as
+operators are dynamically selected and applied. Thus,
+subgoals arise during the process of selecting and
+applying operators, leading to the dynamic generation
+of a goal hierarchy. These subgoals disappear when
+the associated impasse is resolved, either because an
+operator can be selected or because a selected operator
+is terminated.
+
+Each problem space for each goal in the hierarchy
+has its own state. Each such state includes a representation
+of all its supergoals (and their states)—Soar’s
+subgoals are functionally at the metalevel (Rosenbloom,
+Laird, and Newell 1988)—plus, possibly, representations
+that are local to the particular goal and
+problem space. The top state includes all sensor data
+from the external environment, which is thus also
+available in all subgoals. At any time, states at any level
+of the goal hierarchy can change, usually through
+the changing of sensor values. Because Soar’s knowledge
+is also active for all levels, an operator can terminate
+at any level of the hierarchy—including intermediate
+levels—at any time. Such a termination
+automatically flushes all lower levels of the hierarchy
+and can lead to the selection of a new operator to
+replace the terminated one.
+
+All Soar’s knowledge, be it for selection, application,
+or termination of operators, is stored in the form of
+productions (condition-action rules). Any changes in
+goals, states, and perceptions can cause these productions
+to fire. There is no conflict resolution, so all applicable
+productions are allowed to fire in parallel. Operator-
+selection knowledge consists of productions that
+test the current goal or state and generate symbolic
+preferences about the absolute or relative worth of
+operators. For example, given a particular situation, a
+production might generate a preference that an operator
+to turn left is better than an operator to turn
+right. As the state changes, some preferences can be
+retracted (if the situation no longer matches the conditions
+of the rules that generated them) and others
+generated, so that decisions—which are made by a
+fixed, architectural decision procedure—can always be
+based on preferences relevant to the current situation.
+Operator-application knowledge consists of productions
+that modify the state in accordance with the particular
+operator selected and, possibly, generate output commands.
+Operator-termination knowledge consists of
+productions that test the state and generate a termination
+signal if the state corresponds to what the
+operator is to accomplish.
+
+Goals and their results form the basis of Soar’s learning
+mechanism, chunking. Chunking acquires new
+productions, called chunks, that summarize the processing
+that leads to subgoal results, that is, to elements
+generated in subgoals that are accessible in
+supergoals. A chunk’s actions are based on these
+results. Its conditions are based on those aspects of
+the supergoals that are relevant to the determination
+of the results. Once a chunk is learned, it can fire in
+relevantly similar future situations, directly producing
+the required result and possibly avoiding the impasse
+that led to its formation. This chunking process is a
+form of explanation-based learning (Mitchell, Keller,
+and Kedar-Cabelli 1986; Rosenbloom and Laird 1986).
+
+# SOAR's Operator Hierarchy and STOW-07 #
+
+(See Figure 10).
+
+In the top-most problem space (top-PS), LL
+is attempting to accomplish its mission by
+applying the execute-mission operator. The termination
+condition of this operator is the
+completion of LL’s mission (which is to protect
+its home base for a mission-specified
+time period). Because this condition has not
+yet been achieved, a subgoal is generated to
+complete the application of execute-mission.
+
+The execute-mission problem space is selected
+for use in this subgoal. In this problem
+space, LL selects the intercept operator to perform
+the intercept. The termination condition
+of this operator—that the opponents are
+either destroyed or chased away—is also not
+yet achieved, leading to a second subgoal of
+completing the intercept.
+
+The intercept problem
+space is selected for use in this goal.
+Within this problem space, LL selects the
+employ-missile operator, which uses missiles to
+either destroy the opponents or force them to
+run away. However, because LL has not
+reached a position from which it can fire a
+missile, a third subgoal is generated.
+
+The
+employ-missile problem space is selected for
+use in this subgoal. Within this problem
+space, LL attempts to achieve a firing position
+for its missile by selecting the get-missile-LAR
+operator. (LAR stands for launch acceptability
+region, that is, the region from which LL can
+effectively fire a missile at its opponents).
+Because such a position has not been
+achieved, a fourth subgoal is generated, and
+the get-missile-LAR problem space is selected
+for it.
+
+Here, the cut-to-LS operator is selected
+to achieve lateral separation. Finally, the cutto-
+LS operator leads to a fifth subgoal, within
+which the desired-maneuver problem space
+is selected. Within this space, the just-turn
+operator is selected and applies directly to
+issue a new heading command to the cockpit
+interface, causing the aircraft to turn in an  attempt to achieve lateral separation.
+
+As LL turns, if the termination conditions
+of any of the operators in the hierarchy are
+satisfied, then the operator is terminated, and
+all the subgoals generated in response to this
+operator are removed—they are now irrelevant.
+For example, if the desired lateral separation
+is achieved, then the termination condition
+of the cut-to-LS operator is achieved.
+The operator is then terminated and replaced
+by the maintain-LS operator—to maintain lateral
+separation—and its subgoal and associated
+problem space (desired-maneuver) are
+flushed. Similarly, if a missile-firing position
+is reached, the termination condition of LL’s
+get-missile-LAR operator is satisfied; hence, it
+is terminated along with the two subgoals
+beneath it.
+
+# SOAR and ACTORY #
+
+SOAR's core implementation is based on rules. Why? Cog Sci research in the 1970s.
+
+What would an SE/OO version of SOAR look like?  Not rules, but (possibly stochastic) finite state machines.
+States as objects. Machines as objects. Not "nested problem spaces"  but nested calls to machines.
+
+What would chunking  (learning) look like over stochastic finite state machines? Learn biases on transition selection.
+
+One similarity: SOAR's rule selection mechanism for its rules is a bunch of rules.  Similarly, our control strategy could be a master FSM that fires off an machine that says if any machine has stopped firing new transitions, ask that machine what are its sub-goals and fire off one of those.
+
+# Related Work #
+
+Semiautomated forces tend to be developed as
+combinations of finite-state machines (FSMs)
+and arbitrary code (Calder et al. 1993).
+
+  * This strategy has proven adequate for encoding fragments of well-defined behavior
+  * But,  so far, have fallen considerably short of autonomously competent behavior (thus requiring frequent intervention by knowledgeable humans).
+
+FSM
+languages are simply  restrictive to support
+the representation of humanlike intelligence.
+  * The ability to use arbitrary code does provide significant improvements in flexibility.
+  * This flexibility of language unfortunately does not by itself translate into flexibility of behavior by the system that is programmed within the language.
+  * What is missing is higher-level support necessary to enable such behavioral flexibility, such as the support for
+    * dynamic integration of knowledge during behavior and goal-driven problem solving and planning
+
+Most of the systems that go beyond the
+simple FSM strategy are structured as simple
+rule-based expert systems for tactical decision
+making:
+
+  * Given TacAir-Soar’s own knowledgeintensive (rule-based) approach to decision making, it does share some similarities with such systems.
+  * However, standard rule-based syste,s they are weak in other areas.
+  * For example, in a standard rule-based approach, it is difficult to capture the complexity of the multiple dynamic goals about which pilots must reason.
+  * In addition, these systems typically rely only on high-level tactical knowledge and, as a result, prove to be rather rigid—unless they can be preprogrammed for every possible contingency, their performance degrades greatly when faced with unexpected situations.
+  * Finally, expert systems generally ignore the other cognitive aspects of the task, such as modeling of other agents in the environment and behaving in a humanlike manner.
+
+Soar was specifically constructed to overcome such limitations of standard rule-based expert systems.
+
+Besides Soar, one other system in this class that attempts to provide for flexible behavior is a recent effort at the Australian Artificial Intelligence Institute (Rao et al. 1993) that attempts to use the procedural reasoning system
+(PRS) (Georgeff and Lansky 1986) as a basis for modeling pilots in air-combat simulation.
+
+  * However, this effort does not yet appear to be far enough along to evaluate the extent to which it can actually provide such flexibility in this demanding domain.
+
+The second class of systems includes those
+based on other AI agent architectures that
+attempt the integration of a variety of component
+capabilities.
+  * Unfortunately, the characteristics of the space of agent designs and architectures are not well enough understood to enable a clear understanding of the relationship between TacAir-Soar and these other systems.
+  * About the best we can do at this point is to compare the number and types of capabilities exhibited by these systems.
+  * Based on such an evaluation, TacAir-Soar appears to be one of a very few systems that integrate so many distinct capabilities
+
+
+Other systems use variants of TAC-SOAR: see paper.
