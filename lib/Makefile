@@ -5,6 +5,8 @@ X=0lib.st#
 #where to find the test cases
 Eg=eg#
 
+St=/usr/local/Cellar/gnu-smalltalk/3.2.5_6/bin/gst 
+
 # Banner for top of each test
 Hi=printf "\n---| $X |-----------------------------------------\n\n"
 
@@ -16,7 +18,7 @@ Tmp		=	$(HOME)/tmp#
 Testdir	=	$(Here)/$(Eg)#
 Tests 	:=	$(shell cd $(Testdir); ls *.st  | grep -v want  | sort -n)#
 System	:=  $(shell ls *.st) 
-Run		=	bash st $(System) #
+Run		=	bash $(St)  $(System) #
 
 all :  
 	$(MAKE) X=$X test
